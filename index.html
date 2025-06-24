@@ -39,48 +39,40 @@
     </script>
     <style>
         :where([class^="ri-"])::before { content: "\f3c2"; }
-        .map-container {
-            background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png');
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
         object {
-  width: 85vw;
-  height: 90vh;
-  display: block;
-  margin: 0 auto;
-
-}
-#clickBox, #hoverBox {
-  position: absolute;
-  background: #fff;
-  border: 1px solid #999;
-  padding: 8px 12px;
-  border-radius: 5px;
-  display: none;
-  pointer-events: none;
-  z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-}
-#clickBox { pointer-events: auto; max-width: 300px; }
-    table { width: 100%; border-collapse: collapse; margin-top: 8px; }
-    th, td { border: 1px solid #ccc; padding: 6px; text-align: left; }
-    .close-btn {
-      margin-top: 10px; padding: 6px 10px; background: #444; color: #fff; border: none; cursor: pointer;
-    }
-.legend-swatch {
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  border: 1px solid #999;
-  margin-right: 8px;
-  vertical-align: middle;
-}
-#legend-table table td {
-  padding: 4px 8px;
-  vertical-align: middle;
-}
+            width: 100%;
+            height: 500px;
+            display: block;
+        }
+        #clickBox, #hoverBox {
+            position: absolute;
+            background: #fff;
+            border: 1px solid #999;
+            padding: 8px 12px;
+            border-radius: 5px;
+            display: none;
+            pointer-events: none;
+            z-index: 1000;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+        #clickBox { pointer-events: auto; max-width: 300px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+        th, td { border: 1px solid #ccc; padding: 6px; text-align: left; }
+        .close-btn {
+            margin-top: 10px; padding: 6px 10px; background: #444; color: #fff; border: none; cursor: pointer;
+        }
+        .legend-swatch {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 1px solid #999;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        #legend-table table td {
+            padding: 4px 8px;
+            vertical-align: middle;
+        }
 
         .custom-checkbox {
             appearance: none;
@@ -541,164 +533,46 @@
             </div>
         </div>
     </section>
-    <section class="bg-gray-100 py-8">
+
+    <section id="pakistan-crop-map" class="bg-gray-100 py-8">
         <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Pakistan Crop Map</h2>
             <div class="flex flex-col md:flex-row gap-4">
                 <div class="w-full md:w-3/4 relative">
-                    <div class="bg-white rounded shadow-md overflow-hidden h-[500px] map-container"></div>
-                    <div class="absolute top-4 left-4 z-10">
-                        <div class="bg-white p-3 rounded shadow-md">
-                            <div class="flex items-center space-x-2">
-                                <div class="w-8 h-8 flex items-center justify-center">
-                                    <i class="ri-zoom-in-line ri-lg"></i>
-                                </div>
-                                <div class="w-8 h-8 flex items-center justify-center">
-                                    <i class="ri-zoom-out-line ri-lg"></i>
-                                </div>
-                                <div class="w-8 h-8 flex items-center justify-center">
-                                    <i class="ri-focus-3-line ri-lg"></i>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="bg-white rounded shadow-md overflow-hidden h-[500px] relative">
+                        <object id="svgMap" type="image/svg+xml" data="pakistanHigh.svg"></object>
+                        <div id="hoverBox"></div>
+                        <div id="clickBox"></div>
                     </div>
                 </div>
                 <div class="w-full md:w-1/4">
                     <div class="bg-white rounded shadow-md p-5 h-[500px] overflow-y-auto">
                         <h2 class="text-lg font-bold text-gray-800 mb-4">Map Legend</h2>
-                        <div class="space-y-4">
-                            <div>
-                                <h3 class="text-sm font-medium text-gray-700 mb-2">Production Zones</h3>
-                                <div class="space-y-2">
-                                    <div class="flex items-center">
-                                        <div class="w-4 h-4 bg-green-500 rounded-sm mr-2"></div>
-                                        <span class="text-sm text-gray-600">Major Production</span>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <div class="w-4 h-4 bg-green-300 rounded-sm mr-2"></div>
-                                        <span class="text-sm text-gray-600">Minor Production</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <h3 class="text-sm font-medium text-gray-700 mb-2">Distribution Routes</h3>
-                                <div class="space-y-2">
-                                    <div class="flex items-center">
-                                        <div class="w-8 h-1 bg-blue-500 mr-2"></div>
-                                        <span class="text-sm text-gray-600">Primary Routes</span>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <div class="w-8 h-1 bg-blue-400 mr-2 border-t border-dashed"></div>
-                                        <span class="text-sm text-gray-600">Secondary Routes</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <h3 class="text-sm font-medium text-gray-700 mb-2">Market Locations</h3>
-                                <div class="space-y-2">
-                                    <div class="flex items-center">
-                                        <div class="w-5 h-5 flex items-center justify-center text-red-500 mr-2">
-                                            <i class="ri-store-2-fill"></i>
-                                        </div>
-                                        <span class="text-sm text-gray-600">Major Markets</span>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <div class="w-5 h-5 flex items-center justify-center text-orange-500 mr-2">
-                                            <i class="ri-store-2-fill"></i>
-                                        </div>
-                                        <span class="text-sm text-gray-600">Regional Markets</span>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <div class="w-5 h-5 flex items-center justify-center text-yellow-500 mr-2">
-                                            <i class="ri-store-2-fill"></i>
-                                        </div>
-                                        <span class="text-sm text-gray-600">Local Markets</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <h3 class="text-sm font-medium text-gray-700 mb-2">Processing Centers</h3>
-                                <div class="space-y-2">
-                                    <div class="flex items-center">
-                                        <div class="w-5 h-5 flex items-center justify-center text-purple-500 mr-2">
-                                            <i class="ri-building-2-fill"></i>
-                                        </div>
-                                        <span class="text-sm text-gray-600">Processing Plants</span>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <div class="w-5 h-5 flex items-center justify-center text-indigo-500 mr-2">
-                                            <i class="ri-archive-fill"></i>
-                                        </div>
-                                        <span class="text-sm text-gray-600">Storage Facilities</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <h3 class="text-sm font-medium text-gray-700 mb-2">Export Destinations</h3>
-                                <div class="space-y-2">
-                                    <div class="flex items-center">
-                                        <div class="w-5 h-5 flex items-center justify-center text-teal-500 mr-2">
-                                            <i class="ri-ship-fill"></i>
-                                        </div>
-                                        <span class="text-sm text-gray-600">Shipping Ports</span>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <div class="w-5 h-5 flex items-center justify-center text-cyan-500 mr-2">
-                                            <i class="ri-plane-fill"></i>
-                                        </div>
-                                        <span class="text-sm text-gray-600">Air Freight</span>
-                                    </div>
-                                </div>
-                            </div>
+                        <div id="legend-table">
+                            <table style="border-collapse: collapse; width: 100%;">
+                                <thead>
+                                    <tr>
+                                        <th style="border-bottom: 1px solid #ccc; padding-bottom: 6px; text-align: left;" colspan="2">Legend</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td><span class="legend-swatch" style="background:#23822cff;"></span></td><td>Southern Irrigated Land</td></tr>
+                                    <tr><td><span class="legend-swatch" style="background:#125e0094;"></span></td><td>Northern Irrigated Land</td></tr>
+                                    <tr><td><span class="legend-swatch" style="background:#505325ff;"></span></td><td>Western Mountains</td></tr>
+                                    <tr><td><span class="legend-swatch" style="background:#64B5F6;"></span></td><td>Wet Mountains</td></tr>
+                                    <tr><td><span class="legend-swatch" style="background:#f6f4a2ff;"></span></td><td>Suleman Piedmont</td></tr>
+                                    <tr><td><span class="legend-swatch" style="background:#79660cff;"></span></td><td>Desert</td></tr>
+                                    <tr><td><span class="legend-swatch" style="background:#a85d31ff;"></span></td><td>Barani Land</td></tr>
+                                    <tr><td><span class="legend-swatch" style="background:#9ea449ff;"></span></td><td>Western Plateau</td></tr>
+                                    <tr><td><span class="legend-swatch" style="background:#000000;"></span></td><td>No Data</td></tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <section id="pakistan-crop-map" style="padding: 40px 0; background: #f5f5f5;">
-  <h2 class="text-3xl font-bold text-gray-800 mb-4" style="text-align: center; ">Pakistan Crop Map</h2>
-
-     <div style="position: relative;">
-    <object id="svgMap" type="image/svg+xml" data="pakistanHigh.svg"></object>
-    <div id="hoverBox"></div>
-    <div id="clickBox"></div>
-    <div id="legend-table" style="
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  padding: 12px;
-  font-size: 14px;
-  z-index: 1000;
-  max-width: 300px;
-  overflow: auto;
-">
-  <table style="border-collapse: collapse; width: 100%;">
-    <thead>
-      <tr>
-        <th style="border-bottom: 1px solid #ccc; padding-bottom: 6px; text-align: left;" colspan="2">Legend</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td><span class="legend-swatch" style="background:#23822cff;"></span></td><td>Southern Irrigated Land</td></tr>
-      <tr><td><span class="legend-swatch" style="background:#125e0094;"></span></td><td>Northern Irrigated Land</td></tr>
-      <tr><td><span class="legend-swatch" style="background:#505325ff;"></span></td><td>Western Mountains</td></tr>
-      <tr><td><span class="legend-swatch" style="background:#64B5F6;"></span></td><td>Wet Mountains</td></tr>
-      <tr><td><span class="legend-swatch" style="background:#f6f4a2ff;"></span></td><td>Suleman Piedmont</td></tr>
-      <tr><td><span class="legend-swatch" style="background:#79660cff;"></span></td><td>Desert</td></tr>
-      <tr><td><span class="legend-swatch" style="background:#a85d31ff;"></span></td><td>Barani Land</td></tr>
-      <tr><td><span class="legend-swatch" style="background:#9ea449ff;"></span></td><td>Western Plateau</td></tr>
-      <tr><td><span class="legend-swatch" style="background:#000000;"></span></td><td>No Data</td></tr>
-    </tbody>
-  </table>
-</div>
-  </div>
-</section>
-
 
     <section class="py-12 bg-white">
         <div class="container mx-auto px-4">
