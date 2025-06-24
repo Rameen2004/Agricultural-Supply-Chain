@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,13 +39,18 @@
         }
     </script>
     <style>
-        :where([class^="ri-"])::before { content: "\f3c2"; }
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
         object {
             width: 100%;
             height: 500px;
             display: block;
         }
-        #clickBox, #hoverBox {
+
+        #clickBox,
+        #hoverBox {
             position: absolute;
             background: #fff;
             border: 1px solid #999;
@@ -53,14 +59,36 @@
             display: none;
             pointer-events: none;
             z-index: 1000;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
         }
-        #clickBox { pointer-events: auto; max-width: 300px; }
-        table { width: 100%; border-collapse: collapse; margin-top: 8px; }
-        th, td { border: 1px solid #ccc; padding: 6px; text-align: left; }
+
+        #clickBox {
+            pointer-events: auto;
+            max-width: 300px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 8px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 6px;
+            text-align: left;
+        }
+
         .close-btn {
-            margin-top: 10px; padding: 6px 10px; background: #444; color: #fff; border: none; cursor: pointer;
+            margin-top: 10px;
+            padding: 6px 10px;
+            background: #444;
+            color: #fff;
+            border: none;
+            cursor: pointer;
         }
+
         .legend-swatch {
             display: inline-block;
             width: 16px;
@@ -69,6 +97,7 @@
             margin-right: 8px;
             vertical-align: middle;
         }
+
         #legend-table table td {
             padding: 4px 8px;
             vertical-align: middle;
@@ -84,10 +113,12 @@
             cursor: pointer;
             transition: all 0.2s;
         }
+
         .custom-checkbox:checked {
             background-color: #2563eb;
             border-color: #2563eb;
         }
+
         .custom-checkbox:checked::after {
             content: '';
             position: absolute;
@@ -99,6 +130,7 @@
             border-width: 0 2px 2px 0;
             transform: rotate(45deg);
         }
+
         .custom-radio {
             appearance: none;
             width: 1.25rem;
@@ -109,9 +141,11 @@
             cursor: pointer;
             transition: all 0.2s;
         }
+
         .custom-radio:checked {
             border-color: #2563eb;
         }
+
         .custom-radio:checked::after {
             content: '';
             position: absolute;
@@ -122,17 +156,20 @@
             border-radius: 50%;
             background-color: #2563eb;
         }
+
         .switch {
             position: relative;
             display: inline-block;
             width: 3rem;
             height: 1.5rem;
         }
+
         .switch input {
             opacity: 0;
             width: 0;
             height: 0;
         }
+
         .slider {
             position: absolute;
             cursor: pointer;
@@ -144,6 +181,7 @@
             transition: .4s;
             border-radius: 34px;
         }
+
         .slider:before {
             position: absolute;
             content: "";
@@ -155,12 +193,15 @@
             transition: .4s;
             border-radius: 50%;
         }
-        input:checked + .slider {
+
+        input:checked+.slider {
             background-color: #2563eb;
         }
-        input:checked + .slider:before {
+
+        input:checked+.slider:before {
             transform: translateX(1.5rem);
         }
+
         .range-slider {
             -webkit-appearance: none;
             width: 100%;
@@ -169,6 +210,7 @@
             background: #e5e7eb;
             outline: none;
         }
+
         .range-slider::-webkit-slider-thumb {
             -webkit-appearance: none;
             appearance: none;
@@ -178,6 +220,7 @@
             background: #2563eb;
             cursor: pointer;
         }
+
         .range-slider::-moz-range-thumb {
             width: 18px;
             height: 18px;
@@ -186,39 +229,47 @@
             cursor: pointer;
             border: none;
         }
+
         input[type="number"]::-webkit-inner-spin-button,
         input[type="number"]::-webkit-outer-spin-button {
             -webkit-appearance: none;
             margin: 0;
         }
+
         .product-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
+
         .tab-active {
             color: #2563eb;
             border-bottom: 2px solid #2563eb;
         }
+
         .tippy-box[data-theme~='custom'] {
             background-color: #ffffff;
             color: #1f2937;
             border: 1px solid #e5e7eb;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
         .tippy-box[data-theme~='custom'] .tippy-arrow {
             color: #ffffff;
             border-color: #e5e7eb;
         }
+
         .product-grid {
             display: grid;
             grid-template-columns: repeat(5, minmax(0, 1fr));
             gap: 1.5rem;
         }
+
         @media (max-width: 1024px) {
             .product-grid {
                 grid-template-columns: repeat(3, minmax(0, 1fr));
             }
         }
+
         @media (max-width: 640px) {
             .product-grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -234,7 +285,7 @@
             margin: 0 auto;
             overflow: visible;
         }
-        
+
         .stage-node {
             position: absolute;
             width: 180px;
@@ -242,12 +293,12 @@
             transition: transform 0.3s ease;
             z-index: 5;
         }
-        
+
         .stage-node:hover {
             transform: scale(1.05);
             z-index: 10;
         }
-        
+
         .stage-icon {
             width: 60px;
             height: 60px;
@@ -262,7 +313,7 @@
             border: 2px solid #93c5fd;
             position: relative;
         }
-        
+
         .stage-number {
             position: absolute;
             top: -10px;
@@ -279,7 +330,7 @@
             font-weight: bold;
             font-size: 14px;
         }
-        
+
         .warning-icon {
             position: absolute;
             top: -10px;
@@ -296,7 +347,7 @@
             font-size: 16px;
             cursor: pointer;
         }
-        
+
         .stage-title {
             background-color: #1e40af;
             color: white;
@@ -310,15 +361,16 @@
             overflow: hidden;
             text-overflow: ellipsis;
         }
-        
+
         .stage-description {
             font-size: 12px;
             color: #4b5563;
             max-width: 160px;
             margin: 0 auto;
         }
-        
-        .tooltip, .bottleneck-tooltip {
+
+        .tooltip,
+        .bottleneck-tooltip {
             visibility: hidden;
             position: absolute;
             border-radius: 8px;
@@ -330,42 +382,44 @@
             transition: opacity 0.3s;
             text-align: left;
         }
-        
+
         .tooltip {
             background-color: white;
             border: 1px solid #e5e7eb;
         }
-        
+
         .bottleneck-tooltip {
             background-color: #fef2f2;
             border: 1px solid #dc2626;
             display: none;
         }
-        
+
         .stage-node:hover .stage-tooltip {
             visibility: visible;
             opacity: 1;
         }
-        
-        .tooltip-title, .bottleneck-title {
+
+        .tooltip-title,
+        .bottleneck-title {
             font-weight: bold;
             margin-bottom: 5px;
             font-size: 14px;
         }
-        
+
         .tooltip-title {
             color: #1e40af;
         }
-        
+
         .bottleneck-title {
             color: #dc2626;
         }
-        
-        .tooltip-content, .bottleneck-content {
+
+        .tooltip-content,
+        .bottleneck-content {
             font-size: 12px;
             color: #4b5563;
         }
-        
+
         .tooltip-stats {
             margin-top: 8px;
             padding-top: 8px;
@@ -373,7 +427,7 @@
             font-size: 11px;
             color: #6b7280;
         }
-        
+
         .toggle-button {
             background-color: white;
             color: #1e40af;
@@ -385,22 +439,22 @@
             border: 1px solid #1e40af;
             font-size: 14px;
         }
-        
+
         .toggle-button:hover {
             background-color: #f0f9ff;
         }
-        
+
         .toggle-button.active {
             background-color: #dc2626;
             color: white;
             border: 1px solid #dc2626;
         }
-        
+
         .toggle-button.active:hover {
             background-color: #b91c1c;
             border: 1px solid #b91c1c;
         }
-        
+
         /* Modal specific adjustments */
         .supply-chain-modal {
             transform: scale(0.85);
@@ -413,23 +467,24 @@
                 transform: scale(0.75);
             }
         }
-        
+
         @media (max-width: 992px) {
             .supply-chain-modal {
                 transform: scale(0.65);
             }
         }
-        
+
         @media (max-width: 768px) {
             .supply-chain-modal {
                 transform: scale(0.55);
             }
-            
-            .tooltip, .bottleneck-tooltip {
+
+            .tooltip,
+            .bottleneck-tooltip {
                 width: 200px;
             }
         }
-        
+
         @media (max-width: 576px) {
             .supply-chain-modal {
                 transform: scale(0.45);
@@ -437,6 +492,7 @@
         }
     </style>
 </head>
+
 <body class="bg-gray-50 font-sans">
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="container mx-auto px-4 py-3 flex items-center justify-between">
@@ -454,8 +510,10 @@
             </nav>
             <div class="flex items-center space-x-4">
                 <div class="relative ml-4">
-                    <input type="text" placeholder="Search products..." class="pl-10 pr-4 py-2 w-48 border border-gray-200 rounded-button text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary">
-                    <div class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-400">
+                    <input type="text" placeholder="Search products..."
+                        class="pl-10 pr-4 py-2 w-48 border border-gray-200 rounded-button text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary">
+                    <div
+                        class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-400">
                         <i class="ri-search-line"></i>
                     </div>
                 </div>
@@ -473,27 +531,32 @@
                         <div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full text-primary">
                             <i class="ri-plant-line ri-xl"></i>
                         </div>
-                        <span class="text-xs font-medium text-blue-600 bg-blue-100 px-2 py-1 rounded-full">+12.5% YoY</span>
+                        <span class="text-xs font-medium text-blue-600 bg-blue-100 px-2 py-1 rounded-full">+12.5%
+                            YoY</span>
                     </div>
                     <h3 class="text-2xl font-bold text-gray-800 mb-1">127.8M</h3>
                     <p class="text-gray-600">Total Production (Tons)</p>
                 </div>
                 <div class="bg-green-50 p-6 rounded-lg">
                     <div class="flex items-center justify-between mb-4">
-                        <div class="w-12 h-12 flex items-center justify-center bg-green-100 rounded-full text-green-600">
+                        <div
+                            class="w-12 h-12 flex items-center justify-center bg-green-100 rounded-full text-green-600">
                             <i class="ri-route-line ri-xl"></i>
                         </div>
-                        <span class="text-xs font-medium text-green-600 bg-green-100 px-2 py-1 rounded-full">+8.3% YoY</span>
+                        <span class="text-xs font-medium text-green-600 bg-green-100 px-2 py-1 rounded-full">+8.3%
+                            YoY</span>
                     </div>
                     <h3 class="text-2xl font-bold text-gray-800 mb-1">15,420</h3>
                     <p class="text-gray-600">Distribution Routes</p>
                 </div>
                 <div class="bg-purple-50 p-6 rounded-lg">
                     <div class="flex items-center justify-between mb-4">
-                        <div class="w-12 h-12 flex items-center justify-center bg-purple-100 rounded-full text-purple-600">
+                        <div
+                            class="w-12 h-12 flex items-center justify-center bg-purple-100 rounded-full text-purple-600">
                             <i class="ri-store-2-line ri-xl"></i>
                         </div>
-                        <span class="text-xs font-medium text-purple-600 bg-purple-100 px-2 py-1 rounded-full">+5.7% YoY</span>
+                        <span class="text-xs font-medium text-purple-600 bg-purple-100 px-2 py-1 rounded-full">+5.7%
+                            YoY</span>
                     </div>
                     <h3 class="text-2xl font-bold text-gray-800 mb-1">3,275</h3>
                     <p class="text-gray-600">Market Centers</p>
@@ -503,7 +566,8 @@
                         <div class="w-12 h-12 flex items-center justify-center bg-red-100 rounded-full text-red-600">
                             <i class="ri-error-warning-line ri-xl"></i>
                         </div>
-                        <span class="text-xs font-medium text-red-600 bg-red-100 px-2 py-1 rounded-full">-18.2% YoY</span>
+                        <span class="text-xs font-medium text-red-600 bg-red-100 px-2 py-1 rounded-full">-18.2%
+                            YoY</span>
                     </div>
                     <h3 class="text-2xl font-bold text-gray-800 mb-1">142</h3>
                     <p class="text-gray-600">Supply Chain Bottlenecks</p>
@@ -552,19 +616,47 @@
                             <table style="border-collapse: collapse; width: 100%;">
                                 <thead>
                                     <tr>
-                                        <th style="border-bottom: 1px solid #ccc; padding-bottom: 6px; text-align: left;" colspan="2">Legend</th>
+                                        <th style="border-bottom: 1px solid #ccc; padding-bottom: 6px; text-align: left;"
+                                            colspan="2">Legend</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr><td><span class="legend-swatch" style="background:#23822cff;"></span></td><td>Southern Irrigated Land</td></tr>
-                                    <tr><td><span class="legend-swatch" style="background:#125e0094;"></span></td><td>Northern Irrigated Land</td></tr>
-                                    <tr><td><span class="legend-swatch" style="background:#505325ff;"></span></td><td>Western Mountains</td></tr>
-                                    <tr><td><span class="legend-swatch" style="background:#64B5F6;"></span></td><td>Wet Mountains</td></tr>
-                                    <tr><td><span class="legend-swatch" style="background:#f6f4a2ff;"></span></td><td>Suleman Piedmont</td></tr>
-                                    <tr><td><span class="legend-swatch" style="background:#79660cff;"></span></td><td>Desert</td></tr>
-                                    <tr><td><span class="legend-swatch" style="background:#a85d31ff;"></span></td><td>Barani Land</td></tr>
-                                    <tr><td><span class="legend-swatch" style="background:#9ea449ff;"></span></td><td>Western Plateau</td></tr>
-                                    <tr><td><span class="legend-swatch" style="background:#000000;"></span></td><td>No Data</td></tr>
+                                    <tr>
+                                        <td><span class="legend-swatch" style="background:#23822cff;"></span></td>
+                                        <td>Southern Irrigated Land</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="legend-swatch" style="background:#125e0094;"></span></td>
+                                        <td>Northern Irrigated Land</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="legend-swatch" style="background:#505325ff;"></span></td>
+                                        <td>Western Mountains</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="legend-swatch" style="background:#64B5F6;"></span></td>
+                                        <td>Wet Mountains</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="legend-swatch" style="background:#f6f4a2ff;"></span></td>
+                                        <td>Suleman Piedmont</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="legend-swatch" style="background:#79660cff;"></span></td>
+                                        <td>Desert</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="legend-swatch" style="background:#a85d31ff;"></span></td>
+                                        <td>Barani Land</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="legend-swatch" style="background:#9ea449ff;"></span></td>
+                                        <td>Western Plateau</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="legend-swatch" style="background:#000000;"></span></td>
+                                        <td>No Data</td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -578,233 +670,303 @@
         <div class="container mx-auto px-4">
             <div class="text-center mb-10">
                 <h2 class="text-3xl font-bold text-gray-800 mb-4">Agricultural Products</h2>
-                <p class="text-sm text-gray-600 max-w-2xl mx-auto">Explore detailed supply chain maps for 15 key agricultural products in Pakistan, from production zones to market distribution networks.</p>
+                <p class="text-sm text-gray-600 max-w-2xl mx-auto">Explore detailed supply chain maps for 15 key
+                    agricultural products in Pakistan, from production zones to market distribution networks.</p>
             </div>
             <div class="flex justify-center flex-wrap mb-8" id="category-buttons">
-                <button data-category="all" class="category-button m-1 px-4 py-2 bg-primary text-white rounded-full text-sm hover:bg-primary/90 transition-colors !rounded-button whitespace-nowrap">All Products</button>
-                <button data-category="grains" class="category-button m-1 px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 transition-colors !rounded-button whitespace-nowrap">Grains</button>
-                <button data-category="fruits" class="category-button m-1 px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 transition-colors !rounded-button whitespace-nowrap">Fruits</button>
-                <button data-category="vegetables" class="category-button m-1 px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 transition-colors !rounded-button whitespace-nowrap">Vegetables</button>
-                <button data-category="dairy" class="category-button m-1 px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 transition-colors !rounded-button whitespace-nowrap">Dairy</button>
-                <button data-category="others" class="category-button m-1 px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 transition-colors !rounded-button whitespace-nowrap">Others</button>
+                <button data-category="all"
+                    class="category-button m-1 px-4 py-2 bg-primary text-white rounded-full text-sm hover:bg-primary/90 transition-colors !rounded-button whitespace-nowrap">All
+                    Products</button>
+                <button data-category="grains"
+                    class="category-button m-1 px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 transition-colors !rounded-button whitespace-nowrap">Grains</button>
+                <button data-category="fruits"
+                    class="category-button m-1 px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 transition-colors !rounded-button whitespace-nowrap">Fruits</button>
+                <button data-category="vegetables"
+                    class="category-button m-1 px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 transition-colors !rounded-button whitespace-nowrap">Vegetables</button>
+                <button data-category="dairy"
+                    class="category-button m-1 px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 transition-colors !rounded-button whitespace-nowrap">Dairy</button>
+                <button data-category="others"
+                    class="category-button m-1 px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 transition-colors !rounded-button whitespace-nowrap">Others</button>
             </div>
             <div id="product-grid" class="product-grid">
                 <!-- Product 1: Wheat -->
-                <div class="product-card bg-white rounded shadow-md overflow-hidden transition-all duration-300" data-category="grains">
+                <div class="product-card bg-white rounded shadow-md overflow-hidden transition-all duration-300"
+                    data-category="grains">
                     <div class="h-40 bg-gray-100 relative">
-                        <img src="https://cdn.pixabay.com/photo/2023/07/30/07/23/soft-wheat-8158264_1280.jpg" alt="Wheat" class="w-full h-full object-cover object-top">
+                        <img src="https://cdn.pixabay.com/photo/2023/07/30/07/23/soft-wheat-8158264_1280.jpg"
+                            alt="Wheat" class="w-full h-full object-cover object-top">
                     </div>
                     <div class="p-4">
                         <h3 class="font-bold text-gray-800 mb-1">Wheat</h3>
                         <p class="text-gray-600 text-sm mb-3">Primary grain crop with nationwide cultivation</p>
                         <div class="flex justify-between items-center">
                             <span class="text-xs text-gray-500">Production: 25.2M tons</span>
-                            <button onclick="showSupplyChainView(this)" data-product="Wheat" class="text-primary hover:text-primary/80 transition-colors text-sm font-medium !rounded-button whitespace-nowrap">View Map</button>
+                            <button onclick="showSupplyChainView(this)" data-product="Wheat"
+                                class="text-primary hover:text-primary/80 transition-colors text-sm font-medium !rounded-button whitespace-nowrap">View
+                                Map</button>
                         </div>
                     </div>
                 </div>
                 <!-- Product 2: Rice -->
-                <div class="product-card bg-white rounded shadow-md overflow-hidden transition-all duration-300" data-category="grains">
+                <div class="product-card bg-white rounded shadow-md overflow-hidden transition-all duration-300"
+                    data-category="grains">
                     <div class="h-40 bg-gray-100 relative">
-                        <img src="https://cdn.pixabay.com/photo/2016/08/15/06/35/rice-1594612_1280.jpg" alt="Rice" class="w-full h-full object-cover object-top">
+                        <img src="https://cdn.pixabay.com/photo/2016/08/15/06/35/rice-1594612_1280.jpg" alt="Rice"
+                            class="w-full h-full object-cover object-top">
                     </div>
                     <div class="p-4">
                         <h3 class="font-bold text-gray-800 mb-1">Rice</h3>
                         <p class="text-gray-600 text-sm mb-3">Key export crop grown in irrigated areas</p>
                         <div class="flex justify-between items-center">
                             <span class="text-xs text-gray-500">Production: 8.4M tons</span>
-                            <button onclick="showSupplyChainView(this)" data-product="Rice" class="text-primary hover:text-primary/80 transition-colors text-sm font-medium !rounded-button whitespace-nowrap">View Map</button>
+                            <button onclick="showSupplyChainView(this)" data-product="Rice"
+                                class="text-primary hover:text-primary/80 transition-colors text-sm font-medium !rounded-button whitespace-nowrap">View
+                                Map</button>
                         </div>
                     </div>
                 </div>
                 <!-- Product 3: Sugarcane -->
-                <div class="product-card bg-white rounded shadow-md overflow-hidden transition-all duration-300" data-category="others">
+                <div class="product-card bg-white rounded shadow-md overflow-hidden transition-all duration-300"
+                    data-category="others">
                     <div class="h-40 bg-gray-100 relative">
-                        <img src="https://cdn.pixabay.com/photo/2020/07/09/20/00/sugarcane-5388614_1280.jpg" alt="Sugarcane" class="w-full h-full object-cover object-top">
+                        <img src="https://cdn.pixabay.com/photo/2020/07/09/20/00/sugarcane-5388614_1280.jpg"
+                            alt="Sugarcane" class="w-full h-full object-cover object-top">
                     </div>
                     <div class="p-4">
                         <h3 class="font-bold text-gray-800 mb-1">Sugarcane</h3>
                         <p class="text-gray-600 text-sm mb-3">Cash crop for sugar production</p>
                         <div class="flex justify-between items-center">
                             <span class="text-xs text-gray-500">Production: 75.5M tons</span>
-                            <button onclick="showSupplyChainView(this)" data-product="Sugarcane" class="text-primary hover:text-primary/80 transition-colors text-sm font-medium !rounded-button whitespace-nowrap">View Map</button>
+                            <button onclick="showSupplyChainView(this)" data-product="Sugarcane"
+                                class="text-primary hover:text-primary/80 transition-colors text-sm font-medium !rounded-button whitespace-nowrap">View
+                                Map</button>
                         </div>
                     </div>
                 </div>
                 <!-- Product 4: Chili -->
-                <div class="product-card bg-white rounded shadow-md overflow-hidden transition-all duration-300" data-category="vegetables">
+                <div class="product-card bg-white rounded shadow-md overflow-hidden transition-all duration-300"
+                    data-category="vegetables">
                     <div class="h-40 bg-gray-100 relative">
-                        <img src="https://cdn.pixabay.com/photo/2019/06/25/18/53/pepperoni-4298825_1280.jpg" alt="Chili" class="w-full h-full object-cover object-top">
+                        <img src="https://cdn.pixabay.com/photo/2019/06/25/18/53/pepperoni-4298825_1280.jpg" alt="Chili"
+                            class="w-full h-full object-cover object-top">
                     </div>
                     <div class="p-4">
                         <h3 class="font-bold text-gray-800 mb-1">Chili</h3>
                         <p class="text-gray-600 text-sm mb-3">Spice crop with export potential</p>
                         <div class="flex justify-between items-center">
                             <span class="text-xs text-gray-500">Production: 145K tons</span>
-                            <button onclick="showSupplyChainView(this)" data-product="Chili" class="text-primary hover:text-primary/80 transition-colors text-sm font-medium !rounded-button whitespace-nowrap">View Map</button>
+                            <button onclick="showSupplyChainView(this)" data-product="Chili"
+                                class="text-primary hover:text-primary/80 transition-colors text-sm font-medium !rounded-button whitespace-nowrap">View
+                                Map</button>
                         </div>
                     </div>
                 </div>
                 <!-- Product 5: Garlic -->
-                <div class="product-card bg-white rounded shadow-md overflow-hidden transition-all duration-300" data-category="vegetables">
+                <div class="product-card bg-white rounded shadow-md overflow-hidden transition-all duration-300"
+                    data-category="vegetables">
                     <div class="h-40 bg-gray-100 relative">
-                        <img src="https://cdn.pixabay.com/photo/2017/02/25/13/24/garlic-2097759_1280.jpg" alt="Garlic" class="w-full h-full object-cover object-top">
+                        <img src="https://cdn.pixabay.com/photo/2017/02/25/13/24/garlic-2097759_1280.jpg" alt="Garlic"
+                            class="w-full h-full object-cover object-top">
                     </div>
                     <div class="p-4">
                         <h3 class="font-bold text-gray-800 mb-1">Garlic</h3>
                         <p class="text-gray-600 text-sm mb-3">Essential spice crop with domestic and export demand</p>
                         <div class="flex justify-between items-center">
                             <span class="text-xs text-gray-500">Production: 150K tons</span>
-                            <button onclick="showSupplyChainView(this)" data-product="Garlic" class="text-primary hover:text-primary/80 transition-colors text-sm font-medium !rounded-button whitespace-nowrap">View Map</button>
+                            <button onclick="showSupplyChainView(this)" data-product="Garlic"
+                                class="text-primary hover:text-primary/80 transition-colors text-sm font-medium !rounded-button whitespace-nowrap">View
+                                Map</button>
                         </div>
                     </div>
                 </div>
                 <!-- Product 6: Potato -->
-                <div class="product-card bg-white rounded shadow-md overflow-hidden transition-all duration-300" data-category="vegetables">
+                <div class="product-card bg-white rounded shadow-md overflow-hidden transition-all duration-300"
+                    data-category="vegetables">
                     <div class="h-40 bg-gray-100 relative">
-                        <img src="https://cdn.pixabay.com/photo/2018/05/25/15/40/potato-3429379_1280.jpg" alt="Potato" class="w-full h-full object-cover object-top">
+                        <img src="https://cdn.pixabay.com/photo/2018/05/25/15/40/potato-3429379_1280.jpg" alt="Potato"
+                            class="w-full h-full object-cover object-top">
                     </div>
                     <div class="p-4">
                         <h3 class="font-bold text-gray-800 mb-1">Potato</h3>
                         <p class="text-gray-600 text-sm mb-3">Major vegetable crop with nationwide demand</p>
                         <div class="flex justify-between items-center">
                             <span class="text-xs text-gray-500">Production: 4.6M tons</span>
-                            <button onclick="showSupplyChainView(this)" data-product="Potato" class="text-primary hover:text-primary/80 transition-colors text-sm font-medium !rounded-button whitespace-nowrap">View Map</button>
+                            <button onclick="showSupplyChainView(this)" data-product="Potato"
+                                class="text-primary hover:text-primary/80 transition-colors text-sm font-medium !rounded-button whitespace-nowrap">View
+                                Map</button>
                         </div>
                     </div>
                 </div>
                 <!-- Product 7: Tomato -->
-                <div class="product-card bg-white rounded shadow-md overflow-hidden transition-all duration-300" data-category="fruits">
+                <div class="product-card bg-white rounded shadow-md overflow-hidden transition-all duration-300"
+                    data-category="fruits">
                     <div class="h-40 bg-gray-100 relative">
-                        <img src="https://cdn.pixabay.com/photo/2022/09/05/09/50/tomatoes-7433786_1280.jpg" alt="Tomato" class="w-full h-full object-cover object-top">
+                        <img src="https://cdn.pixabay.com/photo/2022/09/05/09/50/tomatoes-7433786_1280.jpg" alt="Tomato"
+                            class="w-full h-full object-cover object-top">
                     </div>
                     <div class="p-4">
                         <h3 class="font-bold text-gray-800 mb-1">Tomato</h3>
                         <p class="text-gray-600 text-sm mb-3">High-value vegetable with processing potential</p>
                         <div class="flex justify-between items-center">
                             <span class="text-xs text-gray-500">Production: 575K tons</span>
-                            <button onclick="showSupplyChainView(this)" data-product="Tomato" class="text-primary hover:text-primary/80 transition-colors text-sm font-medium !rounded-button whitespace-nowrap">View Map</button>
+                            <button onclick="showSupplyChainView(this)" data-product="Tomato"
+                                class="text-primary hover:text-primary/80 transition-colors text-sm font-medium !rounded-button whitespace-nowrap">View
+                                Map</button>
                         </div>
                     </div>
                 </div>
                 <!-- Product 8: Mango -->
-                <div class="product-card bg-white rounded shadow-md overflow-hidden transition-all duration-300" data-category="fruits">
+                <div class="product-card bg-white rounded shadow-md overflow-hidden transition-all duration-300"
+                    data-category="fruits">
                     <div class="h-40 bg-gray-100 relative">
-                        <img src="https://cdn.pixabay.com/photo/2020/04/01/18/27/yellow-4992183_1280.jpg" alt="Mango" class="w-full h-full object-cover object-top">
+                        <img src="https://cdn.pixabay.com/photo/2020/04/01/18/27/yellow-4992183_1280.jpg" alt="Mango"
+                            class="w-full h-full object-cover object-top">
                     </div>
                     <div class="p-4">
                         <h3 class="font-bold text-gray-800 mb-1">Mango</h3>
                         <p class="text-gray-600 text-sm mb-3">Premium fruit with global demand</p>
                         <div class="flex justify-between items-center">
                             <span class="text-xs text-gray-500">Production: 1.9M tons</span>
-                            <button onclick="showSupplyChainView(this)" data-product="Mango" class="text-primary hover:text-primary/80 transition-colors text-sm font-medium !rounded-button whitespace-nowrap">View Map</button>
+                            <button onclick="showSupplyChainView(this)" data-product="Mango"
+                                class="text-primary hover:text-primary/80 transition-colors text-sm font-medium !rounded-button whitespace-nowrap">View
+                                Map</button>
                         </div>
                     </div>
                 </div>
                 <!-- Product 9: Apple -->
-                <div class="product-card bg-white rounded shadow-md overflow-hidden transition-all duration-300" data-category="fruits">
+                <div class="product-card bg-white rounded shadow-md overflow-hidden transition-all duration-300"
+                    data-category="fruits">
                     <div class="h-40 bg-gray-100 relative">
-                        <img src="https://cdn.pixabay.com/photo/2019/03/14/21/15/apple-4055926_1280.jpg" alt="Apple" class="w-full h-full object-cover object-top">
+                        <img src="https://cdn.pixabay.com/photo/2019/03/14/21/15/apple-4055926_1280.jpg" alt="Apple"
+                            class="w-full h-full object-cover object-top">
                     </div>
                     <div class="p-4">
                         <h3 class="font-bold text-gray-800 mb-1">Apple</h3>
                         <p class="text-gray-600 text-sm mb-3">High-value fruit from northern areas</p>
                         <div class="flex justify-between items-center">
                             <span class="text-xs text-gray-500">Production: 600K tons</span>
-                            <button onclick="showSupplyChainView(this)" data-product="Apple" class="text-primary hover:text-primary/80 transition-colors text-sm font-medium !rounded-button whitespace-nowrap">View Map</button>
+                            <button onclick="showSupplyChainView(this)" data-product="Apple"
+                                class="text-primary hover:text-primary/80 transition-colors text-sm font-medium !rounded-button whitespace-nowrap">View
+                                Map</button>
                         </div>
                     </div>
                 </div>
                 <!-- Product 10: Orange -->
-                <div class="product-card bg-white rounded shadow-md overflow-hidden transition-all duration-300" data-category="fruits">
+                <div class="product-card bg-white rounded shadow-md overflow-hidden transition-all duration-300"
+                    data-category="fruits">
                     <div class="h-40 bg-gray-100 relative">
-                        <img src="https://cdn.pixabay.com/photo/2016/01/02/02/03/orange-1117645_1280.jpg" alt="Orange" class="w-full h-full object-cover object-top">
+                        <img src="https://cdn.pixabay.com/photo/2016/01/02/02/03/orange-1117645_1280.jpg" alt="Orange"
+                            class="w-full h-full object-cover object-top">
                     </div>
                     <div class="p-4">
                         <h3 class="font-bold text-gray-800 mb-1">Orange</h3>
                         <p class="text-gray-600 text-sm mb-3">Citrus fruit with domestic and export markets</p>
                         <div class="flex justify-between items-center">
                             <span class="text-xs text-gray-500">Production: 1.6M tons</span>
-                            <button onclick="showSupplyChainView(this)" data-product="Orange" class="text-primary hover:text-primary/80 transition-colors text-sm font-medium !rounded-button whitespace-nowrap">View Map</button>
+                            <button onclick="showSupplyChainView(this)" data-product="Orange"
+                                class="text-primary hover:text-primary/80 transition-colors text-sm font-medium !rounded-button whitespace-nowrap">View
+                                Map</button>
                         </div>
                     </div>
                 </div>
                 <!-- Product 11: Lentils -->
-                <div class="product-card bg-white rounded shadow-md overflow-hidden transition-all duration-300 hidden" data-category="others">
+                <div class="product-card bg-white rounded shadow-md overflow-hidden transition-all duration-300 hidden"
+                    data-category="others">
                     <div class="h-40 bg-gray-100 relative">
-                        <img src="https://cdn.pixabay.com/photo/2023/02/06/17/34/lentils-7772450_1280.jpg" alt="Lentils" class="w-full h-full object-cover object-top">
+                        <img src="https://cdn.pixabay.com/photo/2023/02/06/17/34/lentils-7772450_1280.jpg" alt="Lentils"
+                            class="w-full h-full object-cover object-top">
                     </div>
                     <div class="p-4">
                         <h3 class="font-bold text-gray-800 mb-1">Lentils</h3>
                         <p class="text-gray-600 text-sm mb-3">Key pulse crop with nutritional value</p>
                         <div class="flex justify-between items-center">
                             <span class="text-xs text-gray-500">Production: 300K tons</span>
-                            <button onclick="showSupplyChainView(this)" data-product="Lentils" class="text-primary hover:text-primary/80 transition-colors text-sm font-medium !rounded-button whitespace-nowrap">View Map</button>
+                            <button onclick="showSupplyChainView(this)" data-product="Lentils"
+                                class="text-primary hover:text-primary/80 transition-colors text-sm font-medium !rounded-button whitespace-nowrap">View
+                                Map</button>
                         </div>
                     </div>
                 </div>
                 <!-- Product 12: Maize -->
-                <div class="product-card bg-white rounded shadow-md overflow-hidden transition-all duration-300 hidden" data-category="grains">
+                <div class="product-card bg-white rounded shadow-md overflow-hidden transition-all duration-300 hidden"
+                    data-category="grains">
                     <div class="h-40 bg-gray-100 relative">
-                        <img src="https://cdn.pixabay.com/photo/2020/03/30/21/18/corn-4985460_1280.jpg" alt="Maize" class="w-full h-full object-cover object-top">
+                        <img src="https://cdn.pixabay.com/photo/2020/03/30/21/18/corn-4985460_1280.jpg" alt="Maize"
+                            class="w-full h-full object-cover object-top">
                     </div>
                     <div class="p-4">
                         <h3 class="font-bold text-gray-800 mb-1">Maize</h3>
                         <p class="text-gray-600 text-sm mb-3">Important feed and grain</p>
                         <div class="flex justify-between items-center">
                             <span class="text-xs text-gray-500">Production: 6M tons</span>
-                            <button onclick="showSupplyChainView(this)" data-product="Maize" class="text-primary hover:text-primary/80 transition-colors text-sm font-medium !rounded-button whitespace-nowrap">View Map</button>
+                            <button onclick="showSupplyChainView(this)" data-product="Maize"
+                                class="text-primary hover:text-primary/80 transition-colors text-sm font-medium !rounded-button whitespace-nowrap">View
+                                Map</button>
                         </div>
                     </div>
                 </div>
                 <!-- Product 13: Milk -->
-                <div class="product-card bg-white rounded shadow-md overflow-hidden transition-all duration-300 hidden" data-category="dairy">
+                <div class="product-card bg-white rounded shadow-md overflow-hidden transition-all duration-300 hidden"
+                    data-category="dairy">
                     <div class="h-40 bg-gray-100 relative">
-                        <img src="https://cdn.pixabay.com/photo/2017/01/18/15/23/milk-can-1990072_1280.jpg" alt="Milk" class="w-full h-full object-cover object-top">
+                        <img src="https://cdn.pixabay.com/photo/2017/01/18/15/23/milk-can-1990072_1280.jpg" alt="Milk"
+                            class="w-full h-full object-cover object-top">
                     </div>
                     <div class="p-4">
                         <h3 class="font-bold text-gray-800 mb-1">Milk</h3>
                         <p class="text-gray-600 text-sm mb-3">Major dairy product with widespread production</p>
                         <div class="flex justify-between items-center">
                             <span class="text-xs text-gray-500">Production: 40M tons</span>
-                            <button onclick="showSupplyChainView(this)" data-product="Milk" class="text-primary hover:text-primary/80 transition-colors text-sm font-medium !rounded-button whitespace-nowrap">View Map</button>
+                            <button onclick="showSupplyChainView(this)" data-product="Milk"
+                                class="text-primary hover:text-primary/80 transition-colors text-sm font-medium !rounded-button whitespace-nowrap">View
+                                Map</button>
                         </div>
                     </div>
                 </div>
                 <!-- Product 14: Mustard -->
-                <div class="product-card bg-white rounded shadow-md overflow-hidden transition-all duration-300 hidden" data-category="others">
+                <div class="product-card bg-white rounded shadow-md overflow-hidden transition-all duration-300 hidden"
+                    data-category="others">
                     <div class="h-40 bg-gray-100 relative">
-                        <img src="https://cdn.pixabay.com/photo/2019/10/22/13/27/autumn-4568733_1280.jpg" alt="Mustard" class="w-full h-full object-cover object-top">
+                        <img src="https://cdn.pixabay.com/photo/2019/10/22/13/27/autumn-4568733_1280.jpg" alt="Mustard"
+                            class="w-full h-full object-cover object-top">
                     </div>
                     <div class="p-4">
                         <h3 class="font-bold text-gray-800 mb-1">Mustard</h3>
                         <p class="text-gray-600 text-sm mb-3">Oilseed crop for edible oil production</p>
                         <div class="flex justify-between items-center">
                             <span class="text-xs text-gray-500">Production: 200K tons</span>
-                            <button onclick="showSupplyChainView(this)" data-product="Mustard" class="text-primary hover:text-primary/80 transition-colors text-sm font-medium !rounded-button whitespace-nowrap">View Map</button>
+                            <button onclick="showSupplyChainView(this)" data-product="Mustard"
+                                class="text-primary hover:text-primary/80 transition-colors text-sm font-medium !rounded-button whitespace-nowrap">View
+                                Map</button>
                         </div>
                     </div>
                 </div>
                 <!-- Product 15: Banana -->
-                <div class="product-card bg-white rounded shadow-md overflow-hidden transition-all duration-300 hidden" data-category="fruits">
+                <div class="product-card bg-white rounded shadow-md overflow-hidden transition-all duration-300 hidden"
+                    data-category="fruits">
                     <div class="h-40 bg-gray-100 relative">
-                        <img src="https://cdn.pixabay.com/photo/2014/04/16/09/58/banana-325461_1280.jpg" alt="Banana" class="w-full h-full object-cover object-top">
+                        <img src="https://cdn.pixabay.com/photo/2014/04/16/09/58/banana-325461_1280.jpg" alt="Banana"
+                            class="w-full h-full object-cover object-top">
                     </div>
                     <div class="p-4">
                         <h3 class="font-bold text-gray-800 mb-1">Banana</h3>
                         <p class="text-gray-600 text-sm mb-3">Popular fruit with domestic demand</p>
                         <div class="flex justify-between items-center">
                             <span class="text-xs text-gray-500">Production: 150K tons</span>
-                            <button onclick="showSupplyChainView(this)" data-product="Banana" class="text-primary hover:text-primary/80 transition-colors text-sm font-medium !rounded-button whitespace-nowrap">View Map</button>
+                            <button onclick="showSupplyChainView(this)" data-product="Banana"
+                                class="text-primary hover:text-primary/80 transition-colors text-sm font-medium !rounded-button whitespace-nowrap">View
+                                Map</button>
                         </div>
                     </div>
                 </div>
             </div>
             <div id="view-all-container" class="text-center mt-8 hidden">
-                <button id="view-all-button" class="px-6 py-3 bg-primary text-white rounded-button hover:bg-primary/90 transition-colors font-medium !rounded-button whitespace-nowrap">
+                <button id="view-all-button"
+                    class="px-6 py-3 bg-primary text-white rounded-button hover:bg-primary/90 transition-colors font-medium !rounded-button whitespace-nowrap">
                     View all 15 Products
                 </button>
-                <button id="show-less-button" class="px-6 py-3 bg-gray-200 text-gray-700 rounded-button hover:bg-gray-300 transition-colors font-medium !rounded-button whitespace-nowrap hidden">
+                <button id="show-less-button"
+                    class="px-6 py-3 bg-gray-200 text-gray-700 rounded-button hover:bg-gray-300 transition-colors font-medium !rounded-button whitespace-nowrap hidden">
                     Show Less
                 </button>
             </div>
@@ -814,7 +976,8 @@
         <div class="container mx-auto px-4">
             <div class="text-center mb-10">
                 <h2 class="text-3xl font-bold text-gray-800 mb-4">Interactive Tools</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Customize your view of agricultural supply chains with our interactive filtering and analysis tools.</p>
+                <p class="text-gray-600 max-w-2xl mx-auto">Customize your view of agricultural supply chains with our
+                    interactive filtering and analysis tools.</p>
             </div>
             <div class="bg-gray-100 rounded-lg shadow-md p-6">
                 <div class="flex flex-row gap-6 overflow-x-auto">
@@ -824,9 +987,12 @@
                             <div>
                                 <label class="block text-sm text-gray-700 mb-1">Map Type</label>
                                 <div class="flex space-x-2">
-                                    <button class="px-3 py-2 bg-primary text-white rounded text-sm !rounded-button whitespace-nowrap">Geographic</button>
-                                    <button class="px-3 py-2 bg-gray-200 text-gray-700 rounded text-sm !rounded-button whitespace-nowrap">Schematic</button>
-                                    <button class="px-3 py-2 bg-gray-200 text-gray-700 rounded text-sm !rounded-button whitespace-nowrap">Hybrid</button>
+                                    <button
+                                        class="px-3 py-2 bg-primary text-white rounded text-sm !rounded-button whitespace-nowrap">Geographic</button>
+                                    <button
+                                        class="px-3 py-2 bg-gray-200 text-gray-700 rounded text-sm !rounded-button whitespace-nowrap">Schematic</button>
+                                    <button
+                                        class="px-3 py-2 bg-gray-200 text-gray-700 rounded text-sm !rounded-button whitespace-nowrap">Hybrid</button>
                                 </div>
                             </div>
                             <div>
@@ -849,7 +1015,8 @@
                             <div>
                                 <label class="block text-sm text-gray-700 mb-1">Export Format</label>
                                 <div class="relative">
-                                    <div class="flex items-center justify-between px-3 py-2 border border-gray-300 rounded cursor-pointer">
+                                    <div
+                                        class="flex items-center justify-between px-3 py-2 border border-gray-300 rounded cursor-pointer">
                                         <span class="text-gray-700">PDF Report</span>
                                         <div class="w-5 h-5 flex items-center justify-center text-gray-500">
                                             <i class="ri-arrow-down-s-line"></i>
@@ -890,15 +1057,18 @@
                             <div>
                                 <label class="block text-sm text-gray-700 mb-1">Year Range</label>
                                 <div class="flex items-center space-x-2">
-                                    <input type="number" min="2015" max="2025" value="2020" class="w-20 px-2 py-1 border border-gray-300 rounded text-center">
+                                    <input type="number" min="2015" max="2025" value="2020"
+                                        class="w-20 px-2 py-1 border border-gray-300 rounded text-center">
                                     <span class="text-gray-500">To</span>
-                                    <input type="number" min="2015" max="2025" value="2025" class="w-20 px-2 py-1 border border-gray-300 rounded text-center">
+                                    <input type="number" min="2015" max="2025" value="2025"
+                                        class="w-20 px-2 py-1 border border-gray-300 rounded text-center">
                                 </div>
                             </div>
                             <div>
                                 <label class="block text-sm text-gray-700 mb-1">Season</label>
                                 <div class="relative">
-                                    <div class="flex items-center justify-between px-3 py-2 border border-gray-300 rounded cursor-pointer">
+                                    <div
+                                        class="flex items-center justify-between px-3 py-2 border border-gray-300 rounded cursor-pointer">
                                         <span class="text-gray-700">All Seasons</span>
                                         <div class="w-5 h-5 flex items-center justify-center text-gray-500">
                                             <i class="ri-arrow-down-s-line"></i>
@@ -909,7 +1079,8 @@
                             <div>
                                 <label class="block text-sm text-gray-700 mb-1">Data Frequency</label>
                                 <div class="relative">
-                                    <div class="flex items-center justify-between px-3 py-2 border border-gray-300 rounded cursor-pointer">
+                                    <div
+                                        class="flex items-center justify-between px-3 py-2 border border-gray-300 rounded cursor-pointer">
                                         <span class="text-gray-700">Annual</span>
                                         <div class="w-5 h-5 flex items-center justify-center text-gray-500">
                                             <i class="ri-arrow-down-s-line"></i>
@@ -921,13 +1092,15 @@
                     </div>
                 </div>
                 <div class="mt-6 flex justify-center">
-                    <button class="px-6 py-3 bg-primary text-white rounded-button hover:bg-primary/90 transition-colors font-medium mr-4 !rounded-button whitespace-nowrap">
+                    <button
+                        class="px-6 py-3 bg-primary text-white rounded-button hover:bg-primary/90 transition-colors font-medium mr-4 !rounded-button whitespace-nowrap">
                         <div class="flex items-center">
                             <i class="ri-filter-3-line mr-2"></i>
                             Apply Filters
                         </div>
                     </button>
-                    <button class="px-6 py-3 bg-gray-200 text-gray-700 rounded-button hover:bg-gray-300 transition-colors font-medium !rounded-button whitespace-nowrap">
+                    <button
+                        class="px-6 py-3 bg-gray-200 text-gray-700 rounded-button hover:bg-gray-300 transition-colors font-medium !rounded-button whitespace-nowrap">
                         <div class="flex items-center">
                             <i class="ri-refresh-line mr-2"></i>
                             Reset
@@ -947,7 +1120,8 @@
                         </div>
                         <h3 class="text-xl font-bold text-white">Pakistan Agricultural Supply Chain Mapping</h3>
                     </div>
-                    <p class="text-gray-400 mb-4">Comprehensive visualization of agricultural supply chains to support policy decisions and market efficiency in Pakistan.</p>
+                    <p class="text-gray-400 mb-4">Comprehensive visualization of agricultural supply chains to support
+                        policy decisions and market efficiency in Pakistan.</p>
                     <div class="flex space-x-4">
                         <a href="#" class="text-gray-400 hover:text-white transition-colors">
                             <div class="w-8 h-8 flex items-center justify-center">
@@ -975,21 +1149,30 @@
                     <h3 class="font-bold text-lg text-white mb-4">Quick Links</h3>
                     <ul class="space-y-2">
                         <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Home</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Products</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Products</a>
+                        </li>
                         <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Maps</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Methodology</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Data Sources</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Methodology</a>
+                        </li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Data
+                                Sources</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">About Us</a>
+                        </li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="font-bold text-lg text-white mb-4">Partner Organizations</h3>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Ministry of Agriculture</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Pakistan Agricultural Research Network</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Food Security Agency</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">World Bank</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Provincial Agriculture Departments</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Ministry of
+                                Agriculture</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Pakistan
+                                Agricultural Research Network</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Food Security
+                                Agency</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">World Bank</a>
+                        </li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Provincial
+                                Agriculture Departments</a></li>
                     </ul>
                 </div>
                 <div>
@@ -1017,8 +1200,10 @@
                     <div class="mt-4">
                         <h4 class="text-sm font-medium text-gray-300 mb-2">Subscribe to Updates</h4>
                         <div class="flex">
-                            <input type="email" placeholder="Your email" class="px-3 py-2 bg-gray-700 text-white rounded-l-md w-full focus:outline-none focus:ring-2 focus:ring-blue-500 border-none text-sm">
-                            <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-r-md transition-colors">
+                            <input type="email" placeholder="Your email"
+                                class="px-3 py-2 bg-gray-700 text-white rounded-l-md w-full focus:outline-none focus:ring-2 focus:ring-blue-500 border-none text-sm">
+                            <button
+                                class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-r-md transition-colors">
                                 <div class="flex items-center">
                                     <i class="ri-send-plane-fill"></i>
                                 </div>
@@ -1029,11 +1214,13 @@
             </div>
             <div class="pt-8 border-t border-gray-700">
                 <div class="flex flex-col md:flex-row justify-between items-center">
-                    <div class="text-gray-400 text-sm mb-4 md:mb-0 text-center md:text-left">© 2025 Pakistan Agricultural Supply Chain Mapping Project. All Rights Reserved.</div>
+                    <div class="text-gray-400 text-sm mb-4 md:mb-0 text-center md:text-left">© 2025 Pakistan
+                        Agricultural Supply Chain Mapping Project. All Rights Reserved.</div>
                     <div class="flex flex-wrap justify-center md:justify-end gap-4">
                         <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Terms of Use</a>
                         <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Privacy Policy</a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Data Attribution</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Data
+                            Attribution</a>
                         <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Accessibility</a>
                     </div>
                 </div>
@@ -1042,7 +1229,8 @@
     </footer>
     <div id="supplyChainModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 overflow-y-auto">
         <div class="min-h-screen px-4 text-center">
-            <div class="inline-block w-full max-w-[95vw] h-[95vh] my-4 text-left align-middle bg-white rounded shadow-xl transform transition-all">
+            <div
+                class="inline-block w-full max-w-[95vw] h-[95vh] my-4 text-left align-middle bg-white rounded shadow-xl transform transition-all">
                 <div class="relative h-full flex flex-col">
                     <div class="flex items-center justify-between p-6 border-b bg-gray-50 flex-shrink-0">
                         <h3 class="text-2xl font-bold text-gray-800" id="modalTitle">Supply Chain Map</h3>
@@ -1061,346 +1249,434 @@
                                 <!-- 1. Raw Material Sourcing -->
                                 <div class="stage-node" style="top: 50px; left: 100px;">
                                     <div class="stage-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                         </svg>
                                         <div class="stage-number">1</div>
                                         <div class="warning-icon">⚠</div>
                                     </div>
                                     <div class="stage-title">Raw material</div>
-                                    <div class="stage-description">Choosing high-quality rice seeds, fertilizers, and pesticides</div>
-                                    
+                                    <div class="stage-description">Choosing high-quality rice seeds, fertilizers, and
+                                        pesticides</div>
+
                                     <!-- Normal tooltip -->
-                                    <div class="tooltip stage-tooltip" style="top: 100%; left: 50%; transform: translateX(-50%);">
+                                    <div class="tooltip stage-tooltip"
+                                        style="top: 100%; left: 50%; transform: translateX(-50%);">
                                         <div class="tooltip-title">Raw Material Sourcing Details</div>
                                         <div class="tooltip-content">
-                                            Rice varieties are carefully selected based on regional climate conditions and market demand. Premium seeds undergo rigorous quality testing with germination rates exceeding 95%. Organic fertilizers are increasingly preferred, comprising 35% of total fertilizer usage.
+                                            Rice varieties are carefully selected based on regional climate conditions
+                                            and market demand. Premium seeds undergo rigorous quality testing with
+                                            germination rates exceeding 95%. Organic fertilizers are increasingly
+                                            preferred, comprising 35% of total fertilizer usage.
                                         </div>
                                         <div class="tooltip-stats">
                                             <div>Seed Selection Time: 4-6 weeks</div>
                                             <div>Quality Testing: 12-point verification system</div>
                                             <div>Top Varieties: Basmati, Jasmine, Arborio</div>
-                                            <div>Critical Issues: Seed quality inconsistency, climate change impact, varying pesticide regulations</div>
+                                            <div>Critical Issues: Seed quality inconsistency, climate change impact,
+                                                varying pesticide regulations</div>
                                         </div>
                                     </div>
                                     <!-- Bottleneck tooltip -->
-                                    <div class="bottleneck-tooltip stage-tooltip" style="top: 100%; left: 50%; transform: translateX(-50%);">
+                                    <div class="bottleneck-tooltip stage-tooltip"
+                                        style="top: 100%; left: 50%; transform: translateX(-50%);">
                                         <div class="bottleneck-title">Raw Material Bottlenecks</div>
                                         <div class="bottleneck-content">
-                                            Seed quality inconsistency, climate change impact, varying pesticide regulations
+                                            Seed quality inconsistency, climate change impact, varying pesticide
+                                            regulations
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <!-- 2. Rice Cultivation -->
                                 <div class="stage-node" style="top: 50px; left: 300px;">
                                     <div class="stage-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
                                         </svg>
                                         <div class="stage-number">2</div>
                                         <div class="warning-icon">⚠</div>
                                     </div>
                                     <div class="stage-title">Rice cultivation</div>
-                                    <div class="stage-description">Land preparation, plantation, optimal temperature, water, and sunlight</div>
-                                    
+                                    <div class="stage-description">Land preparation, plantation, optimal temperature,
+                                        water, and sunlight</div>
+
                                     <!-- Normal tooltip -->
-                                    <div class="tooltip stage-tooltip" style="top: 100%; left: 50%; transform: translateX(-50%);">
+                                    <div class="tooltip stage-tooltip"
+                                        style="top: 100%; left: 50%; transform: translateX(-50%);">
                                         <div class="tooltip-title">Rice Cultivation Details</div>
                                         <div class="tooltip-content">
-                                            Modern rice cultivation employs precision agriculture techniques with GPS-guided equipment. Water management systems reduce consumption by 30% compared to traditional methods. Temperature monitoring ensures optimal growing conditions between 20-35°C.
+                                            Modern rice cultivation employs precision agriculture techniques with
+                                            GPS-guided equipment. Water management systems reduce consumption by 30%
+                                            compared to traditional methods. Temperature monitoring ensures optimal
+                                            growing conditions between 20-35°C.
                                         </div>
                                         <div class="tooltip-stats">
                                             <div>Growing Period: 100-150 days</div>
                                             <div>Water Usage: 3,000-5,000 liters per kg</div>
                                             <div>Yield Potential: 4-6 tons per hectare</div>
-                                            <div>Critical Issues: Water scarcity, labor shortages, extreme weather events</div>
+                                            <div>Critical Issues: Water scarcity, labor shortages, extreme weather
+                                                events</div>
                                         </div>
                                     </div>
                                     <!-- Bottleneck tooltip -->
-                                    <div class="bottleneck-tooltip stage-tooltip" style="top: 100%; left: 50%; transform: translateX(-50%);">
+                                    <div class="bottleneck-tooltip stage-tooltip"
+                                        style="top: 100%; left: 50%; transform: translateX(-50%);">
                                         <div class="bottleneck-title">Rice Cultivation Bottlenecks</div>
                                         <div class="bottleneck-content">
                                             Water scarcity, labor shortages, extreme weather events
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <!-- 3. Hulling/Husking -->
                                 <div class="stage-node" style="top: 50px; left: 500px;">
                                     <div class="stage-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                                         </svg>
                                         <div class="stage-number">3</div>
                                         <div class="warning-icon">⚠</div>
                                     </div>
                                     <div class="stage-title">Hulling/Husking</div>
-                                    <div class="stage-description">Removal of outer husk, can be used for construction material and as fertilizers</div>
-                                    
+                                    <div class="stage-description">Removal of outer husk, can be used for construction
+                                        material and as fertilizers</div>
+
                                     <!-- Normal tooltip -->
-                                    <div class="tooltip stage-tooltip" style="top: 100%; left: 50%; transform: translateX(-50%);">
+                                    <div class="tooltip stage-tooltip"
+                                        style="top: 100%; left: 50%; transform: translateX(-50%);">
                                         <div class="tooltip-title">Hulling/Husking Details</div>
                                         <div class="tooltip-content">
-                                            Modern hulling facilities process up to 10 tons per hour with 98% efficiency. Husks are increasingly used for sustainable packaging, biofuel production, and organic fertilizers. Automated optical sorting removes 99.5% of impurities during this stage.
+                                            Modern hulling facilities process up to 10 tons per hour with 98%
+                                            efficiency. Husks are increasingly used for sustainable packaging, biofuel
+                                            production, and organic fertilizers. Automated optical sorting removes 99.5%
+                                            of impurities during this stage.
                                         </div>
                                         <div class="tooltip-stats">
                                             <div>Processing Speed: 5-10 tons/hour</div>
                                             <div>Husk Byproduct: 20% of total weight</div>
                                             <div>Energy Consumption: 45 kWh per ton</div>
-                                            <div>Critical Issues: Equipment maintenance downtime, inconsistent grain size, rising energy costs</div>
+                                            <div>Critical Issues: Equipment maintenance downtime, inconsistent grain
+                                                size, rising energy costs</div>
                                         </div>
                                     </div>
                                     <!-- Bottleneck tooltip -->
-                                    <div class="bottleneck-tooltip stage-tooltip" style="top: 100%; left: 50%; transform: translateX(-50%);">
+                                    <div class="bottleneck-tooltip stage-tooltip"
+                                        style="top: 100%; left: 50%; transform: translateX(-50%);">
                                         <div class="bottleneck-title">Hulling/Husking Bottlenecks</div>
                                         <div class="bottleneck-content">
                                             Equipment maintenance downtime, inconsistent grain size, rising energy costs
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <!-- 4. Drying -->
                                 <div class="stage-node" style="top: 50px; left: 700px;">
                                     <div class="stage-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
                                         </svg>
                                         <div class="stage-number">4</div>
                                         <div class="warning-icon">⚠</div>
                                     </div>
                                     <div class="stage-title">Drying</div>
-                                    <div class="stage-description">To reduce moisture content. 45°C to avoid cracking grains.</div>
-                                    
+                                    <div class="stage-description">To reduce moisture content. 45°C to avoid cracking
+                                        grains.</div>
+
                                     <!-- Normal tooltip -->
-                                    <div class="tooltip stage-tooltip" style="top: 100%; left: 50%; transform: translateX(-50%);">
+                                    <div class="tooltip stage-tooltip"
+                                        style="top: 100%; left: 50%; transform: translateX(-50%);">
                                         <div class="tooltip-title">Drying Process Details</div>
                                         <div class="tooltip-content">
-                                            Controlled drying reduces moisture content from 25% to 14% for optimal storage. Solar drying technologies are increasingly adopted, reducing energy costs by 40%. Temperature monitoring systems prevent overheating and maintain grain quality.
+                                            Controlled drying reduces moisture content from 25% to 14% for optimal
+                                            storage. Solar drying technologies are increasingly adopted, reducing energy
+                                            costs by 40%. Temperature monitoring systems prevent overheating and
+                                            maintain grain quality.
                                         </div>
                                         <div class="tooltip-stats">
                                             <div>Optimal Moisture: 12-14%</div>
                                             <div>Drying Time: 8-24 hours</div>
                                             <div>Quality Retention: 95% with controlled drying</div>
-                                            <div>Critical Issues: Inconsistent drying leading to mold, rising energy costs, climate variability</div>
+                                            <div>Critical Issues: Inconsistent drying leading to mold, rising energy
+                                                costs, climate variability</div>
                                         </div>
                                     </div>
                                     <!-- Bottleneck tooltip -->
-                                    <div class="bottleneck-tooltip stage-tooltip" style="top: 100%; left: 50%; transform: translateX(-50%);">
+                                    <div class="bottleneck-tooltip stage-tooltip"
+                                        style="top: 100%; left: 50%; transform: translateX(-50%);">
                                         <div class="bottleneck-title">Drying Bottlenecks</div>
                                         <div class="bottleneck-content">
-                                            Inconsistent drying leading to mold, rising energy costs, climate variability
+                                            Inconsistent drying leading to mold, rising energy costs, climate
+                                            variability
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <!-- 5. Threshing -->
                                 <div class="stage-node" style="top: 180px; left: 850px;">
                                     <div class="stage-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
                                         </svg>
                                         <div class="stage-number">5</div>
                                         <div class="warning-icon">⚠</div>
                                     </div>
                                     <div class="stage-title">Threshing</div>
                                     <div class="stage-description">Rice grains are separated from the stalks</div>
-                                    
+
                                     <!-- Normal tooltip -->
-                                    <div class="tooltip stage-tooltip" style="top: 100%; left: 50%; transform: translateX(-50%);">
+                                    <div class="tooltip stage-tooltip"
+                                        style="top: 100%; left: 50%; transform: translateX(-50%);">
                                         <div class="tooltip-title">Threshing Process Details</div>
                                         <div class="tooltip-content">
-                                            Modern threshing machines achieve 99% grain recovery with minimal damage. Computerized systems adjust threshing speed based on stalk moisture content. Straw byproducts are increasingly collected for biomass energy production.
+                                            Modern threshing machines achieve 99% grain recovery with minimal damage.
+                                            Computerized systems adjust threshing speed based on stalk moisture content.
+                                            Straw byproducts are increasingly collected for biomass energy production.
                                         </div>
                                         <div class="tooltip-stats">
                                             <div>Processing Rate: 1-3 tons/hour</div>
                                             <div>Grain Loss: Less than 1% with modern equipment</div>
                                             <div>Straw-to-Grain Ratio: 1.5:1</div>
-                                            <div>Critical Issues: Grain breakage, equipment availability limitations, rising maintenance costs</div>
+                                            <div>Critical Issues: Grain breakage, equipment availability limitations,
+                                                rising maintenance costs</div>
                                         </div>
                                     </div>
                                     <!-- Bottleneck tooltip -->
-                                    <div class="bottleneck-tooltip stage-tooltip" style="top: 100%; left: 50%; transform: translateX(-50%);">
+                                    <div class="bottleneck-tooltip stage-tooltip"
+                                        style="top: 100%; left: 50%; transform: translateX(-50%);">
                                         <div class="bottleneck-title">Threshing Bottlenecks</div>
                                         <div class="bottleneck-content">
                                             Grain breakage, equipment availability limitations, rising maintenance costs
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <!-- 6. Harvesting -->
                                 <div class="stage-node" style="top: 350px; left: 850px;">
                                     <div class="stage-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11" />
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11" />
                                         </svg>
                                         <div class="stage-number">6</div>
                                         <div class="warning-icon">⚠</div>
                                     </div>
                                     <div class="stage-title">Harvesting</div>
                                     <div class="stage-description">Can be manual or mechanized</div>
-                                    
+
                                     <!-- Normal tooltip -->
-                                    <div class="tooltip stage-tooltip" style="top: 100%; left: 50%; transform: translateX(-50%);">
+                                    <div class="tooltip stage-tooltip"
+                                        style="top: 100%; left: 50%; transform: translateX(-50%);">
                                         <div class="tooltip-title">Harvesting Details</div>
                                         <div class="tooltip-content">
-                                            Mechanized harvesting has increased from 35% to 65% in the last decade. GPS-guided harvesters reduce waste by 12% compared to manual methods. Optimal harvest timing is determined using satellite imagery and moisture sensors.
+                                            Mechanized harvesting has increased from 35% to 65% in the last decade.
+                                            GPS-guided harvesters reduce waste by 12% compared to manual methods.
+                                            Optimal harvest timing is determined using satellite imagery and moisture
+                                            sensors.
                                         </div>
                                         <div class="tooltip-stats">
                                             <div>Harvesting Window: 7-10 days</div>
                                             <div>Labor Requirement: 25 person-hours per hectare (manual)</div>
                                             <div>Mechanized Efficiency: 2-3 hectares per hour</div>
-                                            <div>Critical Issues: Labor shortages, weather disruptions, equipment breakdowns</div>
+                                            <div>Critical Issues: Labor shortages, weather disruptions, equipment
+                                                breakdowns</div>
                                         </div>
                                     </div>
                                     <!-- Bottleneck tooltip -->
-                                    <div class="bottleneck-tooltip stage-tooltip" style="top: 100%; left: 50%; transform: translateX(-50%);">
+                                    <div class="bottleneck-tooltip stage-tooltip"
+                                        style="top: 100%; left: 50%; transform: translateX(-50%);">
                                         <div class="bottleneck-title">Harvesting Bottlenecks</div>
                                         <div class="bottleneck-content">
                                             Labor shortages, weather disruptions, equipment breakdowns
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <!-- 7. Milling -->
                                 <div class="stage-node" style="top: 470px; left: 700px;">
                                     <div class="stage-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                         </svg>
                                         <div class="stage-number">7</div>
                                         <div class="warning-icon">⚠</div>
                                     </div>
                                     <div class="stage-title">Milling</div>
-                                    <div class="stage-description">Polishing, colour sorting, and grading. Broken rice used for animal feed or rice flour</div>
-                                    
+                                    <div class="stage-description">Polishing, colour sorting, and grading. Broken rice
+                                        used for animal feed or rice flour</div>
+
                                     <!-- Normal tooltip -->
-                                    <div class="tooltip stage-tooltip" style="top: auto; bottom: 100%; left: 50%; transform: translateX(-50%);">
+                                    <div class="tooltip stage-tooltip"
+                                        style="top: auto; bottom: 100%; left: 50%; transform: translateX(-50%);">
                                         <div class="tooltip-title">Milling Process Details</div>
                                         <div class="tooltip-content">
-                                            Advanced optical sorting technology removes 99.9% of discolored grains. Milling degree is customized based on market preferences, with 5-7% bran removal for brown rice and 8-10% for white rice. Broken rice is repurposed for value-added products.
+                                            Advanced optical sorting technology removes 99.9% of discolored grains.
+                                            Milling degree is customized based on market preferences, with 5-7% bran
+                                            removal for brown rice and 8-10% for white rice. Broken rice is repurposed
+                                            for value-added products.
                                         </div>
                                         <div class="tooltip-stats">
                                             <div>Milling Recovery: 65-70%</div>
                                             <div>Processing Speed: 3-8 tons/hour</div>
                                             <div>Broken Rice Yield: 10-15% of total</div>
-                                            <div>Critical Issues: Power fluctuations, equipment calibration issues, skilled operator shortages</div>
+                                            <div>Critical Issues: Power fluctuations, equipment calibration issues,
+                                                skilled operator shortages</div>
                                         </div>
                                     </div>
                                     <!-- Bottleneck tooltip -->
-                                    <div class="bottleneck-tooltip stage-tooltip" style="top: auto; bottom: 100%; left: 50%; transform: translateX(-50%);">
+                                    <div class="bottleneck-tooltip stage-tooltip"
+                                        style="top: auto; bottom: 100%; left: 50%; transform: translateX(-50%);">
                                         <div class="bottleneck-title">Milling Bottlenecks</div>
                                         <div class="bottleneck-content">
                                             Power fluctuations, equipment calibration issues, skilled operator shortages
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <!-- 8. Packaging -->
                                 <div class="stage-node" style="top: 470px; left: 500px;">
                                     <div class="stage-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
                                         </svg>
                                         <div class="stage-number">8</div>
                                         <div class="warning-icon">⚠</div>
                                     </div>
                                     <div class="stage-title">Packaging</div>
                                     <div class="stage-description">Package the product</div>
-                                    
+
                                     <!-- Normal tooltip -->
-                                    <div class="tooltip stage-tooltip" style="top: auto; bottom: 100%; left: 50%; transform: translateX(-50%);">
+                                    <div class="tooltip stage-tooltip"
+                                        style="top: auto; bottom: 100%; left: 50%; transform: translateX(-50%);">
                                         <div class="tooltip-title">Packaging Details</div>
                                         <div class="tooltip-content">
-                                            Modern packaging uses modified atmosphere technology to extend shelf life by 40%. Sustainable packaging options have increased by 65% in the last five years. QR codes enable full traceability from farm to consumer.
+                                            Modern packaging uses modified atmosphere technology to extend shelf life by
+                                            40%. Sustainable packaging options have increased by 65% in the last five
+                                            years. QR codes enable full traceability from farm to consumer.
                                         </div>
                                         <div class="tooltip-stats">
                                             <div>Package Sizes: 1kg, 5kg, 10kg, 25kg</div>
                                             <div>Shelf Life: 12-24 months</div>
                                             <div>Packaging Materials: HDPE, paper, biodegradable films</div>
-                                            <div>Critical Issues: Material shortages, equipment malfunctions, higher costs for sustainable options</div>
+                                            <div>Critical Issues: Material shortages, equipment malfunctions, higher
+                                                costs for sustainable options</div>
                                         </div>
                                     </div>
                                     <!-- Bottleneck tooltip -->
-                                    <div class="bottleneck-tooltip stage-tooltip" style="top: auto; bottom: 100%; left: 50%; transform: translateX(-50%);">
+                                    <div class="bottleneck-tooltip stage-tooltip"
+                                        style="top: auto; bottom: 100%; left: 50%; transform: translateX(-50%);">
                                         <div class="bottleneck-title">Packaging Bottlenecks</div>
                                         <div class="bottleneck-content">
-                                            Material shortages, equipment malfunctions, higher costs for sustainable options
+                                            Material shortages, equipment malfunctions, higher costs for sustainable
+                                            options
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <!-- 9. Transportation -->
                                 <div class="stage-node" style="top: 470px; left: 300px;">
                                     <div class="stage-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
                                             <path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z" />
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0" />
                                         </svg>
                                         <div class="stage-number">9</div>
                                         <div class="warning-icon">⚠</div>
                                     </div>
                                     <div class="stage-title">Transportation</div>
                                     <div class="stage-description">Send it for transportation</div>
-                                    
+
                                     <!-- Normal tooltip -->
-                                    <div class="tooltip stage-tooltip" style="top: auto; bottom: 100%; left: 50%; transform: translateX(-50%);">
+                                    <div class="tooltip stage-tooltip"
+                                        style="top: auto; bottom: 100%; left: 50%; transform: translateX(-50%);">
                                         <div class="tooltip-title">Transportation Details</div>
                                         <div class="tooltip-content">
-                                            GPS tracking systems monitor 85% of rice shipments in real-time. Temperature-controlled containers maintain optimal conditions throughout transit. Blockchain technology is increasingly used for shipment verification and documentation.
+                                            GPS tracking systems monitor 85% of rice shipments in real-time.
+                                            Temperature-controlled containers maintain optimal conditions throughout
+                                            transit. Blockchain technology is increasingly used for shipment
+                                            verification and documentation.
                                         </div>
                                         <div class="tooltip-stats">
                                             <div>Average Distance: 1,500-3,000 km</div>
                                             <div>Transport Modes: Truck (65%), Rail (20%), Ship (15%)</div>
                                             <div>Transit Time: 3-21 days depending on destination</div>
-                                            <div>Critical Issues: Fuel price volatility, port congestion, cross-border documentation issues</div>
+                                            <div>Critical Issues: Fuel price volatility, port congestion, cross-border
+                                                documentation issues</div>
                                         </div>
                                     </div>
                                     <!-- Bottleneck tooltip -->
-                                    <div class="bottleneck-tooltip stage-tooltip" style="top: auto; bottom: 100%; left: 50%; transform: translateX(-50%);">
+                                    <div class="bottleneck-tooltip stage-tooltip"
+                                        style="top: auto; bottom: 100%; left: 50%; transform: translateX(-50%);">
                                         <div class="bottleneck-title">Transportation Bottlenecks</div>
                                         <div class="bottleneck-content">
                                             Fuel price volatility, port congestion, cross-border documentation issues
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <!-- 10. Wholesaler -->
                                 <div class="stage-node" style="top: 470px; left: 100px;">
                                     <div class="stage-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
                                         </svg>
                                         <div class="stage-number">10</div>
                                         <div class="warning-icon">⚠</div>
                                     </div>
                                     <div class="stage-title">Wholesaler</div>
                                     <div class="stage-description">Storage in warehouse</div>
-                                    
+
                                     <!-- Normal tooltip -->
-                                    <div class="tooltip stage-tooltip" style="top: auto; bottom: 100%; left: 50%; transform: translateX(-50%);">
+                                    <div class="tooltip stage-tooltip"
+                                        style="top: auto; bottom: 100%; left: 50%; transform: translateX(-50%);">
                                         <div class="tooltip-title">Wholesaler Operations Details</div>
                                         <div class="tooltip-content">
-                                            Modern warehouses utilize IoT sensors to monitor temperature, humidity, and pest activity. Inventory management systems optimize stock rotation with FIFO principles. Direct-to-retailer distribution models have reduced handling costs by 18%.
+                                            Modern warehouses utilize IoT sensors to monitor temperature, humidity, and
+                                            pest activity. Inventory management systems optimize stock rotation with
+                                            FIFO principles. Direct-to-retailer distribution models have reduced
+                                            handling costs by 18%.
                                         </div>
                                         <div class="tooltip-stats">
                                             <div>Average Storage Time: 2-6 months</div>
                                             <div>Optimal Storage Conditions: 15-18°C, 60-65% humidity</div>
                                             <div>Inventory Turnover: 6-8 times annually</div>
-                                            <div>Critical Issues: Market price volatility, warehouse capacity constraints, pest management challenges</div>
+                                            <div>Critical Issues: Market price volatility, warehouse capacity
+                                                constraints, pest management challenges</div>
                                         </div>
                                     </div>
                                     <!-- Bottleneck tooltip -->
-                                    <div class="bottleneck-tooltip stage-tooltip" style="top: auto; bottom: 100%; left: 50%; transform: translateX(-50%);">
+                                    <div class="bottleneck-tooltip stage-tooltip"
+                                        style="top: auto; bottom: 100%; left: 50%; transform: translateX(-50%);">
                                         <div class="bottleneck-title">Wholesaler Bottlenecks</div>
                                         <div class="bottleneck-content">
-                                            Market price volatility, warehouse capacity constraints, pest management challenges
+                                            Market price volatility, warehouse capacity constraints, pest management
+                                            challenges
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="bg-white p-6 rounded-lg shadow-lg border border-gray-200 mt-8">
                                 <h4 class="text-xl font-bold text-blue-800 mb-4">Agricultural Supply Chain Overview</h4>
                                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -1427,9 +1703,9 @@
             </div>
         </div>
     </div>
-    
+
     <script id="mobile-menu-toggle">
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const menuButton = document.querySelector('.ri-menu-line').parentNode;
             const mobileMenu = document.createElement('div');
             mobileMenu.className = 'fixed inset-0 bg-gray-800 bg-opacity-50 z-50 hidden';
@@ -1450,12 +1726,12 @@
                 </div>
             `;
             document.body.appendChild(mobileMenu);
-            menuButton.addEventListener('click', function() {
+            menuButton.addEventListener('click', function () {
                 mobileMenu.classList.remove('hidden');
                 mobileMenu.querySelector('div').classList.add('translate-x-0');
                 mobileMenu.querySelector('div').classList.remove('-translate-x-full');
             });
-            mobileMenu.querySelector('.close-menu').addEventListener('click', function() {
+            mobileMenu.querySelector('.close-menu').addEventListener('click', function () {
                 mobileMenu.classList.add('hidden');
                 mobileMenu.querySelector('div').classList.remove('translate-x-0');
                 mobileMenu.querySelector('div').classList.add('-translate-x-full');
@@ -1463,7 +1739,7 @@
         });
     </script>
     <script id="product-interactions">
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const productCards = document.querySelectorAll('.product-card');
             const categoryButtons = document.querySelectorAll('.category-button');
             const viewAllButton = document.getElementById('view-all-button');
@@ -1473,7 +1749,7 @@
             // Add click event listeners to product card buttons
             productCards.forEach(card => {
                 const viewButton = card.querySelector('button');
-                viewButton.addEventListener('click', function(e) {
+                viewButton.addEventListener('click', function (e) {
                     e.stopPropagation();
                     showSupplyChainView(viewButton);
                 });
@@ -1481,7 +1757,7 @@
 
             // Add click event listeners to category buttons
             categoryButtons.forEach(button => {
-                button.addEventListener('click', function() {
+                button.addEventListener('click', function () {
                     const category = this.getAttribute('data-category');
 
                     // Update button styles
@@ -1520,7 +1796,7 @@
             });
 
             // Handle "View all 15 Products" button click
-            viewAllButton.addEventListener('click', function() {
+            viewAllButton.addEventListener('click', function () {
                 productCards.forEach(card => {
                     card.classList.remove('hidden');
                 });
@@ -1529,7 +1805,7 @@
             });
 
             // Handle "Show Less" button click
-            showLessButton.addEventListener('click', function() {
+            showLessButton.addEventListener('click', function () {
                 productCards.forEach((card, index) => {
                     if (index >= 10) {
                         card.classList.add('hidden');
@@ -1571,7 +1847,7 @@
             // Reset to normal mode when modal opens
             toggleButton.textContent = 'Show Bottlenecks';
             toggleButton.classList.remove('active');
-            
+
             // Show normal tooltips, hide bottleneck tooltips and warning icons
             normalTooltips.forEach(tooltip => {
                 tooltip.style.display = 'block';
@@ -1606,7 +1882,7 @@
         }
     </script>
     <script id="charts-initialization">
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const productionChart = echarts.init(document.getElementById('productionChart'));
             const distributionChart = echarts.init(document.getElementById('distributionChart'));
             const productionOption = {
@@ -1739,89 +2015,90 @@
         });
     </script>
     <script>
-    const svgObject = document.getElementById("svgMap");
-    const hoverBox = document.getElementById("hoverBox");
-    const clickBox = document.getElementById("clickBox");
+        const svgObject = document.getElementById("svgMap");
+        const hoverBox = document.getElementById("hoverBox");
+        const clickBox = document.getElementById("clickBox");
 
-    const cropData = {
-      "punjab_south_irrigated_land": [{ crop: "Wheat", percent: "60%" }, { crop: "Sugarcane", percent: "25%" }, { crop: "Cotton", percent: "15%" }],
-      "punjab_northern_irrigated_land": [{ crop: "Wheat", percent: "55%" }, { crop: "Maize", percent: "30%" }, { crop: "Vegetables", percent: "15%" }],
-      "punjab_desert1": [{ crop: "Millet", percent: "50%" }, { crop: "Barley", percent: "30%" }, { crop: "Dates", percent: "20%" }],
-      "punjab_desert2": [{ crop: "Barley", percent: "40%" }, { crop: "Fodder", percent: "35%" }, { crop: "Millet", percent: "25%" }],
-      "punjab_suleman_piedmont": [{ crop: "Wheat", percent: "50%" }, { crop: "Maize", percent: "30%" }, { crop: "Barley", percent: "20%" }],
-      "punjab_west_mountains": [{ crop: "Wheat", percent: "40%" }, { crop: "Potato", percent: "35%" }, { crop: "Apples", percent: "25%" }],
-      "punjab_barani_land": [{ crop: "Chickpeas", percent: "45%" }, { crop: "Lentils", percent: "30%" }, { crop: "Barley", percent: "25%" }],
-      "punjab_wet_mountains": [{ crop: "Potato", percent: "50%" }, { crop: "Apples", percent: "30%" }, { crop: "Peas", percent: "20%" }],
-      "kpk_irrigated_plain_1": [{ crop: "Wheat", percent: "50%" }, { crop: "Sugarcane", percent: "30%" }, { crop: "Vegetables", percent: "20%" }],
-      "kpk_north_mountain_1": [{ crop: "Maize", percent: "40%" }, { crop: "Barley", percent: "35%" }, { crop: "Wheat", percent: "25%" }],
-      "kpk_north_mountain_2": [{ crop: "Barley", percent: "45%" }, { crop: "Wheat", percent: "35%" }, { crop: "Fruit", percent: "20%" }],
-      "kpk_north_mountain_3": [{ crop: "Apples", percent: "50%" }, { crop: "Potatoes", percent: "30%" }, { crop: "Wheat", percent: "20%" }],
-      "kpk_suleman_pledmont": [{ crop: "Wheat", percent: "60%" }, { crop: "Barley", percent: "25%" }, { crop: "Fruits", percent: "15%" }],
-      "kpk_west_mountains_1": [{ crop: "Barley", percent: "50%" }, { crop: "Maize", percent: "30%" }, { crop: "Chickpeas", percent: "20%" }],
-      "kpk_west_mountains_2": [{ crop: "Maize", percent: "40%" }, { crop: "Barley", percent: "35%" }, { crop: "Fodder", percent: "25%" }],
-      "kpk_wet_mountain": [{ crop: "Fruits", percent: "40%" }, { crop: "Vegetables", percent: "35%" }, { crop: "Wheat", percent: "25%" }],
-      "kpk_barani_land": [{ crop: "Chickpeas", percent: "50%" }, { crop: "Lentils", percent: "30%" }, { crop: "Maize", percent: "20%" }],
-      "sindh_desert": [{ crop: "Millet", percent: "60%" }, { crop: "Dates", percent: "25%" }, { crop: "Fodder", percent: "15%" }],
-      "sindh_dry_mountains": [{ crop: "Barley", percent: "40%" }, { crop: "Wheat", percent: "35%" }, { crop: "Maize", percent: "25%" }],
-      "sindh_irrigated_land": [{ crop: "Rice", percent: "50%" }, { crop: "Sugarcane", percent: "30%" }, { crop: "Wheat", percent: "20%" }],
-      "sindh_west_plateau": [{ crop: "Fodder", percent: "45%" }, { crop: "Barley", percent: "35%" }, { crop: "Dates", percent: "20%" }],
-      "balouchistan_suleman_pledmont": [{ crop: "Barley", percent: "50%" }, { crop: "Wheat", percent: "30%" }, { crop: "Chickpeas", percent: "20%" }],
-      "balouchistan_west_plateau": [{ crop: "Fodder", percent: "40%" }, { crop: "Dates", percent: "35%" }, { crop: "Millet", percent: "25%" }],
-      "balouchistan_west_mountains": [{ crop: "Wheat", percent: "45%" }, { crop: "Barley", percent: "30%" }, { crop: "Fruit", percent: "25%" }],
-      "gilgit_north_mountain": [{ crop: "Potato", percent: "50%" }, { crop: "Apricot", percent: "30%" }, { crop: "Wheat", percent: "20%" }],
-      "AJK_mountain_1": [{ crop: "Corn", percent: "40%" }, { crop: "Fruit", percent: "30%" }, { crop: "Vegetables", percent: "30%" }],
-      "islamabad_barani_land": [{ crop: "Wheat", percent: "50%" }, { crop: "Chickpeas", percent: "30%" }, { crop: "Lentils", percent: "20%" }]
-      
-    };
+        const cropData = {
+            "punjab_south_irrigated_land": [{ crop: "Wheat", percent: "60%" }, { crop: "Sugarcane", percent: "25%" }, { crop: "Cotton", percent: "15%" }],
+            "punjab_northern_irrigated_land": [{ crop: "Wheat", percent: "55%" }, { crop: "Maize", percent: "30%" }, { crop: "Vegetables", percent: "15%" }],
+            "punjab_desert1": [{ crop: "Millet", percent: "50%" }, { crop: "Barley", percent: "30%" }, { crop: "Dates", percent: "20%" }],
+            "punjab_desert2": [{ crop: "Barley", percent: "40%" }, { crop: "Fodder", percent: "35%" }, { crop: "Millet", percent: "25%" }],
+            "punjab_suleman_piedmont": [{ crop: "Wheat", percent: "50%" }, { crop: "Maize", percent: "30%" }, { crop: "Barley", percent: "20%" }],
+            "punjab_west_mountains": [{ crop: "Wheat", percent: "40%" }, { crop: "Potato", percent: "35%" }, { crop: "Apples", percent: "25%" }],
+            "punjab_barani_land": [{ crop: "Chickpeas", percent: "45%" }, { crop: "Lentils", percent: "30%" }, { crop: "Barley", percent: "25%" }],
+            "punjab_wet_mountains": [{ crop: "Potato", percent: "50%" }, { crop: "Apples", percent: "30%" }, { crop: "Peas", percent: "20%" }],
+            "kpk_irrigated_plain_1": [{ crop: "Wheat", percent: "50%" }, { crop: "Sugarcane", percent: "30%" }, { crop: "Vegetables", percent: "20%" }],
+            "kpk_north_mountain_1": [{ crop: "Maize", percent: "40%" }, { crop: "Barley", percent: "35%" }, { crop: "Wheat", percent: "25%" }],
+            "kpk_north_mountain_2": [{ crop: "Barley", percent: "45%" }, { crop: "Wheat", percent: "35%" }, { crop: "Fruit", percent: "20%" }],
+            "kpk_north_mountain_3": [{ crop: "Apples", percent: "50%" }, { crop: "Potatoes", percent: "30%" }, { crop: "Wheat", percent: "20%" }],
+            "kpk_suleman_pledmont": [{ crop: "Wheat", percent: "60%" }, { crop: "Barley", percent: "25%" }, { crop: "Fruits", percent: "15%" }],
+            "kpk_west_mountains_1": [{ crop: "Barley", percent: "50%" }, { crop: "Maize", percent: "30%" }, { crop: "Chickpeas", percent: "20%" }],
+            "kpk_west_mountains_2": [{ crop: "Maize", percent: "40%" }, { crop: "Barley", percent: "35%" }, { crop: "Fodder", percent: "25%" }],
+            "kpk_wet_mountain": [{ crop: "Fruits", percent: "40%" }, { crop: "Vegetables", percent: "35%" }, { crop: "Wheat", percent: "25%" }],
+            "kpk_barani_land": [{ crop: "Chickpeas", percent: "50%" }, { crop: "Lentils", percent: "30%" }, { crop: "Maize", percent: "20%" }],
+            "sindh_desert": [{ crop: "Millet", percent: "60%" }, { crop: "Dates", percent: "25%" }, { crop: "Fodder", percent: "15%" }],
+            "sindh_dry_mountains": [{ crop: "Barley", percent: "40%" }, { crop: "Wheat", percent: "35%" }, { crop: "Maize", percent: "25%" }],
+            "sindh_irrigated_land": [{ crop: "Rice", percent: "50%" }, { crop: "Sugarcane", percent: "30%" }, { crop: "Wheat", percent: "20%" }],
+            "sindh_west_plateau": [{ crop: "Fodder", percent: "45%" }, { crop: "Barley", percent: "35%" }, { crop: "Dates", percent: "20%" }],
+            "balouchistan_suleman_pledmont": [{ crop: "Barley", percent: "50%" }, { crop: "Wheat", percent: "30%" }, { crop: "Chickpeas", percent: "20%" }],
+            "balouchistan_west_plateau": [{ crop: "Fodder", percent: "40%" }, { crop: "Dates", percent: "35%" }, { crop: "Millet", percent: "25%" }],
+            "balouchistan_west_mountains": [{ crop: "Wheat", percent: "45%" }, { crop: "Barley", percent: "30%" }, { crop: "Fruit", percent: "25%" }],
+            "gilgit_north_mountain": [{ crop: "Potato", percent: "50%" }, { crop: "Apricot", percent: "30%" }, { crop: "Wheat", percent: "20%" }],
+            "AJK_mountain_1": [{ crop: "Corn", percent: "40%" }, { crop: "Fruit", percent: "30%" }, { crop: "Vegetables", percent: "30%" }],
+            "islamabad_barani_land": [{ crop: "Wheat", percent: "50%" }, { crop: "Chickpeas", percent: "30%" }, { crop: "Lentils", percent: "20%" }]
 
-    svgObject.addEventListener("load", () => {
-      const svgDoc = svgObject.contentDocument;
-      const regions = svgDoc.querySelectorAll("path");
+        };
 
-      regions.forEach(region => {
-        const id = region.id;
-        if (!id) return;
+        svgObject.addEventListener("load", () => {
+            const svgDoc = svgObject.contentDocument;
+            const regions = svgDoc.querySelectorAll("path");
 
-        region.style.cursor = "pointer";
+            regions.forEach(region => {
+                const id = region.id;
+                if (!id) return;
 
-        region.addEventListener("mouseover", (e) => {
-  hoverBox.innerText = `Region: ${id}`;
-  hoverBox.style.top = e.pageY + 10 + "px";
-  hoverBox.style.left = e.pageX + 10 + "px";
-  hoverBox.style.display = "block";
+                region.style.cursor = "pointer";
 
-  // Apply hover effect manually
-  region.style.filter = "brightness(1.25)";
-});
-region.addEventListener("mouseout", () => {
-  hoverBox.style.display = "none";
+                region.addEventListener("mouseover", (e) => {
+                    hoverBox.innerText = `Region: ${id}`;
+                    hoverBox.style.top = e.pageY + 10 + "px";
+                    hoverBox.style.left = e.pageX + 10 + "px";
+                    hoverBox.style.display = "block";
 
-  // Reset original stroke and brightness
-  region.style.filter = "";
-});
-        region.addEventListener("click", (e) => {
-          const data = cropData[id];
-          let table = `<strong>${id.replaceAll("_", " ")}</strong><table><tr><th>Crop</th><th>Percentage</th></tr>`;
-          if (data) {
-            data.forEach(row => {
-              table += `<tr><td>${row.crop}</td><td>${row.percent}</td></tr>`;
+                    // Apply hover effect manually
+                    region.style.filter = "brightness(1.25)";
+                });
+                region.addEventListener("mouseout", () => {
+                    hoverBox.style.display = "none";
+
+                    // Reset original stroke and brightness
+                    region.style.filter = "";
+                });
+                region.addEventListener("click", (e) => {
+                    const data = cropData[id];
+                    let table = `<strong>${id.replaceAll("_", " ")}</strong><table><tr><th>Crop</th><th>Percentage</th></tr>`;
+                    if (data) {
+                        data.forEach(row => {
+                            table += `<tr><td>${row.crop}</td><td>${row.percent}</td></tr>`;
+                        });
+                    } else {
+                        table += `<tr><td colspan='2'>No data available</td></tr>`;
+                    }
+                    table += `</table><button class='close-btn' onclick='clickBox.style.display=\"none\"'>Close</button>`;
+
+                    clickBox.innerHTML = table;
+                    clickBox.style.top = e.pageY + "px";
+                    clickBox.style.left = e.pageX + "px";
+                    clickBox.style.display = "block";
+                });
             });
-          } else {
-            table += `<tr><td colspan='2'>No data available</td></tr>`;
-          }
-          table += `</table><button class='close-btn' onclick='clickBox.style.display=\"none\"'>Close</button>`;
-
-          clickBox.innerHTML = table;
-          clickBox.style.top = e.pageY + "px";
-          clickBox.style.left = e.pageX + "px";
-          clickBox.style.display = "block";
         });
-      });
-    });
 
-    document.addEventListener("click", (e) => {
-      if (!clickBox.contains(e.target)) clickBox.style.display = "none";
-    });
-  </script>
+        document.addEventListener("click", (e) => {
+            if (!clickBox.contains(e.target)) clickBox.style.display = "none";
+        });
+    </script>
 </body>
+
 </html>
