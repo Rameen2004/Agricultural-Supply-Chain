@@ -519,6 +519,8 @@
             }
         }
 
+        
+
         /* Intro image animation */
         .intro-image {
             background-image: url('https://cdn.pixabay.com/photo/2020/03/15/13/19/lotus-flowers-4933604_1280.jpg');
@@ -556,6 +558,44 @@
 
     </style>
 </head>
+<header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+            <div class="w-12 h-12 flex items-center justify-center bg-olive-green rounded-full text-white relative">
+                <i class="ri-plant-line ri-lg"></i>
+                <div
+                    class="absolute -bottom-1 -right-1 w-6 h-6 bg-fresh-green rounded-full flex items-center justify-center">
+                    <div class="w-3 h-3 bg-white rounded-full"></div>
+                </div>
+            </div>
+            <div>
+                <h1 class="text-xl font-bold text-olive-green font-poppins">AGRI SUPPLY CHAIN</h1>
+                <p class="text-xs text-reseda-green font-nunito">Cultivating Knowledge</p>
+            </div>
+        </div>
+        <nav class="hidden md:flex items-center space-x-8">
+            <a href="index.html" class="text-olive-green font-medium font-nunito">Home</a>
+            <a href="products.html"
+                class="text-reseda-green hover:text-olive-green transition-colors font-nunito">Products</a>
+            <a href="maps.html" class="text-reseda-green hover:text-olive-green transition-colors font-nunito">Maps</a>
+            <a href="about.html"
+                class="text-reseda-green hover:text-olive-green transition-colors font-nunito">About</a>
+        </nav>
+        <div class="flex items-center space-x-4">
+            <div class="relative ml-4">
+                <input type="text" placeholder="Search products..."
+                    class="pl-10 pr-4 py-2 w-48 border border-dun rounded-button text-sm focus:outline-none focus:ring-2 focus:ring-olive-green/20 focus:border-olive-green bg-white font-nunito">
+                <div
+                    class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-reseda-green">
+                    <i class="ri-search-line"></i>
+                </div>
+            </div>
+            <div class="w-10 h-10 flex items-center justify-center md:hidden cursor-pointer">
+                <i class="ri-menu-line ri-lg text-olive-green"></i>
+            </div>
+        </div>
+    </div>
+</header>
 
 <body class="bg-alabaster font-open-sans text-dark-grey">
     <!-- Intro Image Section -->
@@ -566,43 +606,6 @@
             <p class="text-xl md:text-2xl font-open-sans">Cultivating Pakistan's Future</p>
         </div>
     </div>
-
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <div class="w-12 h-12 flex items-center justify-center bg-olive-green rounded-full text-white relative">
-                    <i class="ri-plant-line ri-lg"></i>
-                    <div
-                        class="absolute -bottom-1 -right-1 w-6 h-6 bg-fresh-green rounded-full flex items-center justify-center">
-                        <div class="w-3 h-3 bg-white rounded-full"></div>
-                    </div>
-                </div>
-                <div>
-                    <h1 class="text-xl font-bold text-olive-green font-poppins">AGRI SUPPLY CHAIN</h1>
-                    <p class="text-xs text-reseda-green font-nunito">Cultivating Knowledge</p>
-                </div>
-            </div>
-            <nav class="hidden md:flex items-center space-x-8">
-                <a href="index.html" class="text-olive-green font-medium font-nunito">Home</a>
-                <a href="products.html" class="text-reseda-green hover:text-olive-green transition-colors font-nunito">Products</a>
-                <a href="maps.html" class="text-reseda-green hover:text-olive-green transition-colors font-nunito">Maps</a>
-                <a href="about.html" class="text-reseda-green hover:text-olive-green transition-colors font-nunito">About</a>
-            </nav>
-            <div class="flex items-center space-x-4">
-                <div class="relative ml-4">
-                    <input type="text" placeholder="Search products..."
-                        class="pl-10 pr-4 py-2 w-48 border border-dun rounded-button text-sm focus:outline-none focus:ring-2 focus:ring-olive-green/20 focus:border-olive-green bg-white font-nunito">
-                    <div
-                        class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-reseda-green">
-                        <i class="ri-search-line"></i>
-                    </div>
-                </div>
-                <div class="w-10 h-10 flex items-center justify-center md:hidden cursor-pointer">
-                    <i class="ri-menu-line ri-lg text-olive-green"></i>
-                </div>
-            </div>
-        </div>
-    </header>
 
     <!-- Main Content with Animation -->
     <div class="content-reveal">
@@ -785,21 +788,7 @@
                     <p class="text-sm text-reseda-green max-w-2xl mx-auto font-open-sans leading-relaxed">Explore detailed
                         supply chain maps for key agricultural products in Pakistan, from production zones to market distribution networks.</p>
                 </div>
-                <div class="flex justify-center flex-wrap mb-8" id="category-buttons">
-                    <button data-category="all"
-                        class="category-button m-1 px-4 py-2 bg-olive-green text-white rounded-full text-sm hover:bg-olive-green hover:text-white transition-colors !rounded-button whitespace-nowrap font-nunito">All
-                        Products</button>
-                    <button data-category="grains"
-                        class="category-button m-1 px-4 py-2 bg-dun text-reseda-green rounded-full text-sm hover:bg-olive-green hover:text-white transition-colors !rounded-button whitespace-nowrap font-nunito">Grains</button>
-                    <button data-category="fruits"
-                        class="category-button m-1 px-4 py-2 bg-dun text-reseda-green rounded-full text-sm hover:bg-olive-green hover:text-white transition-colors !rounded-button whitespace-nowrap font-nunito">Fruits</button>
-                    <button data-category="vegetables"
-                        class="category-button m-1 px-4 py-2 bg-dun text-reseda-green rounded-full text-sm hover:bg-olive-green hover:text-white transition-colors !rounded-button whitespace-nowrap font-nunito">Vegetables</button>
-                    <button data-category="dairy"
-                        class="category-button m-1 px-4 py-2 bg-dun text-reseda-green rounded-full text-sm hover:bg-olive-green hover:text-white transition-colors !rounded-button whitespace-nowrap font-nunito">Dairy</button>
-                    <button data-category="others"
-                        class="category-button m-1 px-4 py-2 bg-dun text-reseda-green rounded-full text-sm hover:bg-olive-green hover:text-white transition-colors !rounded-button whitespace-nowrap font-nunito">Others</button>
-                </div>
+
                 <div id="product-grid" class="product-grid">
                     <!-- Product 1: Wheat -->
                     <div class="product-card bg-alabaster rounded shadow-md overflow-hidden transition-all duration-300 border border-dun"
