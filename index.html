@@ -473,21 +473,30 @@
             transform: scale(0.85);
             transform-origin: center top;
         }
-        .card-hover-olive:hover {
-            border-left-color: #45552C; /* olive-green */
+
+        /* Unified hover styles for all cards */
+        card-unified-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
         }
 
-        .card-hover-brown:hover {
-            border-left-color: #5C4033; /* dark-brown */
+        .card-unified-hover:hover {
+            transform: scale(1.02);
+            /* scale-up effect */
+            border-left-color: rgba(76, 129, 6, 0.6);
+            /* reseda green at 60% opacity */
+            box-shadow: 0 12px 24px rgba(117, 150, 75, 0.35);
+            /* stronger shadow */
         }
 
-        .card-hover-reseda:hover {
-            border-left-color: #747545; /* reseda-green */
+        /* Unified icon hover effect */
+        .card-unified-hover:hover .icon-hover-effect {
+            background-color: rgba(76, 129, 6, 0.6);
+            /* reseda green */
+            box-shadow: 0 6px 14px rgba(117, 150, 75, 0.4);
+            /* deeper glow */
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .card-hover-orange:hover {
-            border-left-color: #A65C2D; /* burnt-orange */
-        }
 
         /* Responsive adjustments for supply chain */
         @media (max-width: 1200px) {
@@ -519,7 +528,7 @@
             }
         }
 
-        
+
 
         /* Intro image animation */
         .intro-image {
@@ -535,6 +544,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -550,12 +560,12 @@
                 opacity: 0;
                 transform: translateY(50px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-
     </style>
 </head>
 <header class="bg-white shadow-sm sticky top-0 z-50">
@@ -612,19 +622,21 @@
         <!-- Key Insights Heading -->
         <section class="py-8 bg-white">
             <div class="container mx-auto px-4">
-                <h2 class="text-4xl font-bold text-olive-green text-center mb-8 font-poppins">Key Insights into the Agricultural Supply Chain</h2>
+                <h2 class="text-4xl font-bold text-olive-green text-center mb-8 font-poppins">Key Insights into the
+                    Agricultural Supply Chain</h2>
             </div>
         </section>
 
         <section class="bg-white pb-12">
             <div class="container mx-auto px-4">
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
-                    <div
-                        class="group bg-alabaster p-6 rounded-lg border-l-4 border-fresh-green card-hover-olive hover:-translate-y-2 transition-all duration-300 ease-in-out hover:shadow-lg cursor-pointer">
 
+                    <!-- Card 1 -->
+                    <div
+                        class="group card-unified-hover bg-alabaster p-6 rounded-lg border-l-4 border-olive-green hover:-translate-y-2 transition-all duration-300 ease-in-out cursor-pointer">
                         <div class="flex items-center justify-between mb-4">
                             <div
-                                class="w-12 h-12 flex items-center justify-center bg-fresh-green rounded-full text-white group-hover:bg-olive-green">
+                                class="w-12 h-12 flex items-center justify-center bg-olive-green rounded-full text-white icon-hover-effect">
                                 <i class="ri-plant-line ri-xl"></i>
                             </div>
                             <span
@@ -634,12 +646,13 @@
                         <h3 class="text-2xl font-bold text-olive-green mb-1 font-poppins">127.8M</h3>
                         <p class="text-reseda-green font-nunito">Total Production (Tons)</p>
                     </div>
-                    <div
-                        class="group bg-alabaster p-6 rounded-lg border-l-4 border-fresh-green card-hover-brown hover:-translate-y-2 transition-all duration-300 ease-in-out hover:shadow-lg cursor-pointer">
 
+                    <!-- Card 2 -->
+                    <div
+                        class="group card-unified-hover bg-alabaster p-6 rounded-lg border-l-4 border-olive-green hover:-translate-y-2 transition-all duration-300 ease-in-out cursor-pointer">
                         <div class="flex items-center justify-between mb-4">
                             <div
-                                class="w-12 h-12 flex items-center justify-center bg-fresh-green rounded-full text-white group-hover:bg-dark-brown">
+                                class="w-12 h-12 flex items-center justify-center bg-olive-green rounded-full text-white icon-hover-effect">
                                 <i class="ri-route-line ri-xl"></i>
                             </div>
                             <span
@@ -649,12 +662,13 @@
                         <h3 class="text-2xl font-bold text-olive-green mb-1 font-poppins">15,420</h3>
                         <p class="text-reseda-green font-nunito">Distribution Routes</p>
                     </div>
-                    <div
-                        class="group bg-alabaster p-6 rounded-lg border-l-4 border-fresh-green card-hover-reseda hover:-translate-y-2 transition-all duration-300 ease-in-out hover:shadow-lg cursor-pointer">
 
+                    <!-- Card 3 -->
+                    <div
+                        class="group card-unified-hover bg-alabaster p-6 rounded-lg border-l-4 border-olive-green hover:-translate-y-2 transition-all duration-300 ease-in-out cursor-pointer">
                         <div class="flex items-center justify-between mb-4">
                             <div
-                                class="w-12 h-12 flex items-center justify-center bg-fresh-green rounded-full text-white group-hover:bg-reseda-green">
+                                class="w-12 h-12 flex items-center justify-center bg-olive-green rounded-full text-white icon-hover-effect">
                                 <i class="ri-store-2-line ri-xl"></i>
                             </div>
                             <span
@@ -664,12 +678,13 @@
                         <h3 class="text-2xl font-bold text-olive-green mb-1 font-poppins">3,275</h3>
                         <p class="text-reseda-green font-nunito">Market Centers</p>
                     </div>
-                    <div
-                        class="group bg-alabaster p-6 rounded-lg border-l-4 border-fresh-green card-hover-orange hover:-translate-y-2 transition-all duration-300 ease-in-out hover:shadow-lg cursor-pointer">
 
+                    <!-- Card 4 -->
+                    <div
+                        class="group card-unified-hover bg-alabaster p-6 rounded-lg border-l-4 border-olive-green hover:-translate-y-2 transition-all duration-300 ease-in-out cursor-pointer">
                         <div class="flex items-center justify-between mb-4">
                             <div
-                                class="w-12 h-12 flex items-center justify-center bg-fresh-green rounded-full text-white group-hover:bg-burnt-orange">
+                                class="w-12 h-12 flex items-center justify-center bg-olive-green rounded-full text-white icon-hover-effect">
                                 <i class="ri-error-warning-line ri-xl"></i>
                             </div>
                             <span
@@ -679,360 +694,365 @@
                         <h3 class="text-2xl font-bold text-olive-green mb-1 font-poppins">142</h3>
                         <p class="text-reseda-green font-nunito">Supply Chain Bottlenecks</p>
                     </div>
-                </div>
 
-                <!-- Visual Data Representations Heading -->
-                <h2 class="text-4xl font-bold text-olive-green text-center mb-8 font-poppins">Visual Data Representations</h2>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-                    <div class="bg-white rounded-lg shadow-md p-6 border border-dun">
-                        <div class="flex items-center justify-between mb-6">
-                            <h3 class="text-lg text-reseda-green font-poppins">Production Trends</h3>
-                            <div class="flex items-center space-x-2">
-                                <button
-                                    class="text-sm text-reseda-green hover:text-olive-green transition-colors font-nunito">Monthly</button>
-                                <button
-                                    class="text-sm text-reseda-green hover:text-olive-green transition-colors font-nunito">Yearly</button>
-                            </div>
-                        </div>
-                        <div id="productionChart" class="w-full h-[400px]"></div>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-md p-6 border border-dun">
-                        <div class="flex items-center justify-between mb-6">
-                            <h3 class="text-lg text-reseda-green font-poppins">Distribution Efficiency</h3>
-                            <div class="flex items-center space-x-2">
-                                <button
-                                    class="text-sm text-reseda-green hover:text-olive-green transition-colors font-nunito">Routes</button>
-                                <button
-                                    class="text-sm text-reseda-green hover:text-olive-green transition-colors font-nunito">Regions</button>
-                            </div>
-                        </div>
-                        <div id="distributionChart" class="w-full h-[400px]"></div>
-                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="pakistan-crop-map" class="bg-dun py-8">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold text-olive-green mb-8 text-center font-poppins">Pakistan Crop Map</h2>
-                <div class="flex flex-col md:flex-row gap-4">
-                    <div class="w-full md:w-3/4 relative">
-                        <div class="bg-white rounded shadow-md overflow-hidden h-[500px] relative border border-dun">
-                            <object id="svgMap" type="image/svg+xml" data="pakistanHigh.svg"></object>
-                            <div id="hoverBox"></div>
-                            <div id="clickBox"></div>
-                        </div>
+
+        <!-- Visual Data Representations Heading -->
+        <h2 class="text-4xl font-bold text-olive-green text-center mb-8 font-poppins">Visual Data Representations</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            <div class="bg-white rounded-lg shadow-md p-6 border border-dun">
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="text-lg text-reseda-green font-poppins">Production Trends</h3>
+                    <div class="flex items-center space-x-2">
+                        <button
+                            class="text-sm text-reseda-green hover:text-olive-green transition-colors font-nunito">Monthly</button>
+                        <button
+                            class="text-sm text-reseda-green hover:text-olive-green transition-colors font-nunito">Yearly</button>
                     </div>
-                    <div class="w-full md:w-1/4">
-                        <div class="bg-white rounded shadow-md p-5 h-[500px] overflow-y-auto border border-dun">
-                            <h2 class="text-lg font-bold text-olive-green mb-4 font-poppins">Map Legend</h2>
-                            <div id="legend-table">
-                                <table style="border-collapse: collapse; width: 100%;">
-                                    <thead>
-                                        <tr>
-                                            <th style="border-bottom: 1px solid #DBC7B1; padding-bottom: 6px; text-align: left; color: #45552C; font-family: 'Poppins', sans-serif;"
-                                                colspan="2">Legend</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody style="font-family: 'Open Sans', sans-serif; color: #3D3D3D;">
-                                        <tr>
-                                            <td><span class="legend-swatch" style="background:#23822cff;"></span></td>
-                                            <td>Southern Irrigated Land</td>
-                                        </tr>
-                                        <tr>
-                                            <td><span class="legend-swatch" style="background:#125e0094;"></span></td>
-                                            <td>Northern Irrigated Land</td>
-                                        </tr>
-                                        <tr>
-                                            <td><span class="legend-swatch" style="background:#505325ff;"></span></td>
-                                            <td>Western Mountains</td>
-                                        </tr>
-                                        <tr>
-                                            <td><span class="legend-swatch" style="background:#64B5F6;"></span></td>
-                                            <td>Wet Mountains</td>
-                                        </tr>
-                                        <tr>
-                                            <td><span class="legend-swatch" style="background:#f6f4a2ff;"></span></td>
-                                            <td>Suleman Piedmont</td>
-                                        </tr>
-                                        <tr>
-                                            <td><span class="legend-swatch" style="background:#79660cff;"></span></td>
-                                            <td>Desert</td>
-                                        </tr>
-                                        <tr>
-                                            <td><span class="legend-swatch" style="background:#a85d31ff;"></span></td>
-                                            <td>Barani Land</td>
-                                        </tr>
-                                        <tr>
-                                            <td><span class="legend-swatch" style="background:#9ea449ff;"></span></td>
-                                            <td>Western Plateau</td>
-                                        </tr>
-                                        <tr>
-                                            <td><span class="legend-swatch" style="background:#000000;"></span></td>
-                                            <td>No Data</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                </div>
+                <div id="productionChart" class="w-full h-[400px]"></div>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6 border border-dun">
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="text-lg text-reseda-green font-poppins">Distribution Efficiency</h3>
+                    <div class="flex items-center space-x-2">
+                        <button
+                            class="text-sm text-reseda-green hover:text-olive-green transition-colors font-nunito">Routes</button>
+                        <button
+                            class="text-sm text-reseda-green hover:text-olive-green transition-colors font-nunito">Regions</button>
+                    </div>
+                </div>
+                <div id="distributionChart" class="w-full h-[400px]"></div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <section id="pakistan-crop-map" class="bg-dun py-8">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-olive-green mb-8 text-center font-poppins">Pakistan Crop Map</h2>
+            <div class="flex flex-col md:flex-row gap-4">
+                <div class="w-full md:w-3/4 relative">
+                    <div class="bg-white rounded shadow-md overflow-hidden h-[500px] relative border border-dun">
+                        <object id="svgMap" type="image/svg+xml" data="pakistanHigh.svg"></object>
+                        <div id="hoverBox"></div>
+                        <div id="clickBox"></div>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/4">
+                    <div class="bg-white rounded shadow-md p-5 h-[500px] overflow-y-auto border border-dun">
+                        <h2 class="text-lg font-bold text-olive-green mb-4 font-poppins">Map Legend</h2>
+                        <div id="legend-table">
+                            <table style="border-collapse: collapse; width: 100%;">
+                                <thead>
+                                    <tr>
+                                        <th style="border-bottom: 1px solid #DBC7B1; padding-bottom: 6px; text-align: left; color: #45552C; font-family: 'Poppins', sans-serif;"
+                                            colspan="2">Legend</th>
+                                    </tr>
+                                </thead>
+                                <tbody style="font-family: 'Open Sans', sans-serif; color: #3D3D3D;">
+                                    <tr>
+                                        <td><span class="legend-swatch" style="background:#23822cff;"></span></td>
+                                        <td>Southern Irrigated Land</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="legend-swatch" style="background:#125e0094;"></span></td>
+                                        <td>Northern Irrigated Land</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="legend-swatch" style="background:#505325ff;"></span></td>
+                                        <td>Western Mountains</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="legend-swatch" style="background:#64B5F6;"></span></td>
+                                        <td>Wet Mountains</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="legend-swatch" style="background:#f6f4a2ff;"></span></td>
+                                        <td>Suleman Piedmont</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="legend-swatch" style="background:#79660cff;"></span></td>
+                                        <td>Desert</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="legend-swatch" style="background:#a85d31ff;"></span></td>
+                                        <td>Barani Land</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="legend-swatch" style="background:#9ea449ff;"></span></td>
+                                        <td>Western Plateau</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="legend-swatch" style="background:#000000;"></span></td>
+                                        <td>No Data</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="py-12 bg-white">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-10">
-                    <h2 class="text-3xl font-bold text-olive-green mb-4 font-poppins">Agricultural Products</h2>
-                    <p class="text-sm text-reseda-green max-w-2xl mx-auto font-open-sans leading-relaxed">Explore detailed
-                        supply chain maps for key agricultural products in Pakistan, from production zones to market distribution networks.</p>
-                </div>
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-olive-green mb-4 font-poppins">Agricultural Products</h2>
+                <p class="text-sm text-reseda-green max-w-2xl mx-auto font-open-sans leading-relaxed">Explore detailed
+                    supply chain maps for key agricultural products in Pakistan, from production zones to market
+                    distribution networks.</p>
+            </div>
 
-                <div id="product-grid" class="product-grid">
-                    <!-- Product 1: Wheat -->
-                    <div class="product-card bg-alabaster rounded shadow-md overflow-hidden transition-all duration-300 border border-dun"
-                        data-category="grains">
-                        <div class="h-40 bg-gray-100 relative">
-                            <img src="https://cdn.pixabay.com/photo/2023/07/30/07/23/soft-wheat-8158264_1280.jpg"
-                                alt="Wheat" class="w-full h-full object-cover object-top">
-                        </div>
-                        <div class="p-4">
-                            <h3 class="font-bold text-olive-green mb-1 font-poppins">Wheat</h3>
-                            <p class="text-reseda-green text-sm mb-3 font-open-sans">Primary grain crop with nationwide
-                                cultivation</p>
-                            <div class="flex justify-between items-center">
-                                <span class="text-xs text-dark-grey font-nunito">Production: 25.2M tons</span>
-                                <button onclick="showSupplyChainView(this)" data-product="Wheat"
-                                    class="text-olive-green hover:text-reseda-green transition-colors text-sm font-medium !rounded-button whitespace-nowrap font-nunito">View
-                                    Map</button>
-                            </div>
-                        </div>
+            <div id="product-grid" class="product-grid">
+                <!-- Product 1: Wheat -->
+                <div class="product-card bg-alabaster rounded shadow-md overflow-hidden transition-all duration-300 border border-dun"
+                    data-category="grains">
+                    <div class="h-40 bg-gray-100 relative">
+                        <img src="https://cdn.pixabay.com/photo/2023/07/30/07/23/soft-wheat-8158264_1280.jpg"
+                            alt="Wheat" class="w-full h-full object-cover object-top">
                     </div>
-                    <!-- Product 2: Rice -->
-                    <div class="product-card bg-alabaster rounded shadow-md overflow-hidden transition-all duration-300 border border-dun"
-                        data-category="grains">
-                        <div class="h-40 bg-gray-100 relative">
-                            <img src="https://cdn.pixabay.com/photo/2016/08/15/06/35/rice-1594612_1280.jpg" alt="Rice"
-                                class="w-full h-full object-cover object-top">
-                        </div>
-                        <div class="p-4">
-                            <h3 class="font-bold text-olive-green mb-1 font-poppins">Rice</h3>
-                            <p class="text-reseda-green text-sm mb-3 font-open-sans">Key export crop grown in irrigated
-                                areas</p>
-                            <div class="flex justify-between items-center">
-                                <span class="text-xs text-dark-grey font-nunito">Production: 8.4M tons</span>
-                                <button onclick="showSupplyChainView(this)" data-product="Rice"
-                                    class="text-olive-green hover:text-reseda-green transition-colors text-sm font-medium !rounded-button whitespace-nowrap font-nunito">View
-                                    Map</button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Product 3: Sugarcane -->
-                    <div class="product-card bg-alabaster rounded shadow-md overflow-hidden transition-all duration-300 border border-dun"
-                        data-category="others">
-                        <div class="h-40 bg-gray-100 relative">
-                            <img src="https://cdn.pixabay.com/photo/2020/07/09/20/00/sugarcane-5388614_1280.jpg"
-                                alt="Sugarcane" class="w-full h-full object-cover object-top">
-                        </div>
-                        <div class="p-4">
-                            <h3 class="font-bold text-olive-green mb-1 font-poppins">Sugarcane</h3>
-                            <p class="text-reseda-green text-sm mb-3 font-open-sans">Cash crop for sugar production</p>
-                            <div class="flex justify-between items-center">
-                                <span class="text-xs text-dark-grey font-nunito">Production: 75.5M tons</span>
-                                <button onclick="showSupplyChainView(this)" data-product="Sugarcane"
-                                    class="text-olive-green hover:text-reseda-green transition-colors text-sm font-medium !rounded-button whitespace-nowrap font-nunito">View
-                                    Map</button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Product 4: Chili -->
-                    <div class="product-card bg-alabaster rounded shadow-md overflow-hidden transition-all duration-300 border border-dun"
-                        data-category="vegetables">
-                        <div class="h-40 bg-gray-100 relative">
-                            <img src="https://cdn.pixabay.com/photo/2019/06/25/18/53/pepperoni-4298825_1280.jpg" alt="Chili"
-                                class="w-full h-full object-cover object-top">
-                        </div>
-                        <div class="p-4">
-                            <h3 class="font-bold text-olive-green mb-1 font-poppins">Chili</h3>
-                            <p class="text-reseda-green text-sm mb-3 font-open-sans">Spice crop with export potential</p>
-                            <div class="flex justify-between items-center">
-                                <span class="text-xs text-dark-grey font-nunito">Production: 145K tons</span>
-                                <button onclick="showSupplyChainView(this)" data-product="Chili"
-                                    class="text-olive-green hover:text-reseda-green transition-colors text-sm font-medium !rounded-button whitespace-nowrap font-nunito">View
-                                    Map</button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Product 5: Garlic -->
-                    <div class="product-card bg-alabaster rounded shadow-md overflow-hidden transition-all duration-300 border border-dun"
-                        data-category="vegetables">
-                        <div class="h-40 bg-gray-100 relative">
-                            <img src="https://cdn.pixabay.com/photo/2017/02/25/13/24/garlic-2097759_1280.jpg" alt="Garlic"
-                                class="w-full h-full object-cover object-top">
-                        </div>
-                        <div class="p-4">
-                            <h3 class="font-bold text-olive-green mb-1 font-poppins">Garlic</h3>
-                            <p class="text-reseda-green text-sm mb-3 font-open-sans">Essential spice crop with domestic and
-                                export demand</p>
-                            <div class="flex justify-between items-center">
-                                <span class="text-xs text-dark-grey font-nunito">Production: 150K tons</span>
-                                <button onclick="showSupplyChainView(this)" data-product="Garlic"
-                                    class="text-olive-green hover:text-reseda-green transition-colors text-sm font-medium !rounded-button whitespace-nowrap font-nunito">View
-                                    Map</button>
-                            </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-olive-green mb-1 font-poppins">Wheat</h3>
+                        <p class="text-reseda-green text-sm mb-3 font-open-sans">Primary grain crop with nationwide
+                            cultivation</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-dark-grey font-nunito">Production: 25.2M tons</span>
+                            <button onclick="showSupplyChainView(this)" data-product="Wheat"
+                                class="text-olive-green hover:text-reseda-green transition-colors text-sm font-medium !rounded-button whitespace-nowrap font-nunito">View
+                                Map</button>
                         </div>
                     </div>
                 </div>
-                <div id="view-all-container" class="text-center mt-8">
-                    <button id="view-all-button"
-                        class="px-6 py-3 bg-olive-green text-white rounded-button hover:bg-reseda-green transition-colors font-medium !rounded-button whitespace-nowrap font-nunito">
-                        View all 15 Products
+                <!-- Product 2: Rice -->
+                <div class="product-card bg-alabaster rounded shadow-md overflow-hidden transition-all duration-300 border border-dun"
+                    data-category="grains">
+                    <div class="h-40 bg-gray-100 relative">
+                        <img src="https://cdn.pixabay.com/photo/2016/08/15/06/35/rice-1594612_1280.jpg" alt="Rice"
+                            class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-olive-green mb-1 font-poppins">Rice</h3>
+                        <p class="text-reseda-green text-sm mb-3 font-open-sans">Key export crop grown in irrigated
+                            areas</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-dark-grey font-nunito">Production: 8.4M tons</span>
+                            <button onclick="showSupplyChainView(this)" data-product="Rice"
+                                class="text-olive-green hover:text-reseda-green transition-colors text-sm font-medium !rounded-button whitespace-nowrap font-nunito">View
+                                Map</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 3: Sugarcane -->
+                <div class="product-card bg-alabaster rounded shadow-md overflow-hidden transition-all duration-300 border border-dun"
+                    data-category="others">
+                    <div class="h-40 bg-gray-100 relative">
+                        <img src="https://cdn.pixabay.com/photo/2020/07/09/20/00/sugarcane-5388614_1280.jpg"
+                            alt="Sugarcane" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-olive-green mb-1 font-poppins">Sugarcane</h3>
+                        <p class="text-reseda-green text-sm mb-3 font-open-sans">Cash crop for sugar production</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-dark-grey font-nunito">Production: 75.5M tons</span>
+                            <button onclick="showSupplyChainView(this)" data-product="Sugarcane"
+                                class="text-olive-green hover:text-reseda-green transition-colors text-sm font-medium !rounded-button whitespace-nowrap font-nunito">View
+                                Map</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 4: Chili -->
+                <div class="product-card bg-alabaster rounded shadow-md overflow-hidden transition-all duration-300 border border-dun"
+                    data-category="vegetables">
+                    <div class="h-40 bg-gray-100 relative">
+                        <img src="https://cdn.pixabay.com/photo/2019/06/25/18/53/pepperoni-4298825_1280.jpg" alt="Chili"
+                            class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-olive-green mb-1 font-poppins">Chili</h3>
+                        <p class="text-reseda-green text-sm mb-3 font-open-sans">Spice crop with export potential</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-dark-grey font-nunito">Production: 145K tons</span>
+                            <button onclick="showSupplyChainView(this)" data-product="Chili"
+                                class="text-olive-green hover:text-reseda-green transition-colors text-sm font-medium !rounded-button whitespace-nowrap font-nunito">View
+                                Map</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 5: Garlic -->
+                <div class="product-card bg-alabaster rounded shadow-md overflow-hidden transition-all duration-300 border border-dun"
+                    data-category="vegetables">
+                    <div class="h-40 bg-gray-100 relative">
+                        <img src="https://cdn.pixabay.com/photo/2017/02/25/13/24/garlic-2097759_1280.jpg" alt="Garlic"
+                            class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-olive-green mb-1 font-poppins">Garlic</h3>
+                        <p class="text-reseda-green text-sm mb-3 font-open-sans">Essential spice crop with domestic and
+                            export demand</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-dark-grey font-nunito">Production: 150K tons</span>
+                            <button onclick="showSupplyChainView(this)" data-product="Garlic"
+                                class="text-olive-green hover:text-reseda-green transition-colors text-sm font-medium !rounded-button whitespace-nowrap font-nunito">View
+                                Map</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="view-all-container" class="text-center mt-8">
+                <button id="view-all-button"
+                    class="px-6 py-3 bg-olive-green text-white rounded-button hover:bg-reseda-green transition-colors font-medium !rounded-button whitespace-nowrap font-nunito">
+                    View all 15 Products
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-olive-green mb-4 font-poppins">Interactive Tools</h2>
+                <p class="text-reseda-green max-w-2xl mx-auto font-open-sans leading-relaxed">Customize your view of
+                    agricultural supply chains with our
+                    interactive filtering and analysis tools.</p>
+            </div>
+            <div class="bg-dun rounded-lg shadow-md p-6 border border-olive-green/20">
+                <div class="flex flex-row gap-6 overflow-x-auto">
+                    <div class="flex-1 min-w-[200px]">
+                        <h3 class="font-bold text-olive-green mb-4 font-poppins">Display Options</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm text-reseda-green mb-1 font-nunito">Map Type</label>
+                                <div class="flex space-x-2">
+                                    <button
+                                        class="px-3 py-2 bg-olive-green text-white rounded text-sm !rounded-button whitespace-nowrap font-nunito">Geographic</button>
+                                    <button
+                                        class="px-3 py-2 bg-white text-reseda-green border border-dun rounded text-sm !rounded-button whitespace-nowrap font-nunito hover:bg-olive-green hover:text-white transition-colors">Schematic</button>
+                                    <button
+                                        class="px-3 py-2 bg-white text-reseda-green border border-dun rounded text-sm !rounded-button whitespace-nowrap font-nunito hover:bg-olive-green hover:text-white transition-colors">Hybrid</button>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm text-reseda-green mb-1 font-nunito">Data
+                                    Visualization</label>
+                                <div class="space-y-2">
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="checkbox" class="custom-checkbox mr-2" checked>
+                                        <span class="text-dark-grey font-open-sans">Show Statistics</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="checkbox" class="custom-checkbox mr-2" checked>
+                                        <span class="text-dark-grey font-open-sans">Show Flow Volumes</span>
+                                    </label>
+                                    <label class="flex items-center cursor-pointer">
+                                        <input type="checkbox" class="custom-checkbox mr-2" checked>
+                                        <span class="text-dark-grey font-open-sans">Show Bottlenecks</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm text-reseda-green mb-1 font-nunito">Export Format</label>
+                                <div class="relative">
+                                    <div
+                                        class="flex items-center justify-between px-3 py-2 border border-olive-green/30 rounded cursor-pointer bg-white">
+                                        <span class="text-dark-grey font-open-sans">PDF Report</span>
+                                        <div class="w-5 h-5 flex items-center justify-center text-reseda-green">
+                                            <i class="ri-arrow-down-s-line"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-1 min-w-[200px]">
+                        <h3 class="font-bold text-olive-green mb-4 font-poppins">Supply Chain Stage</h3>
+                        <div class="space-y-3">
+                            <label class="flex items-center cursor-pointer">
+                                <input type="radio" name="stage" class="custom-radio mr-2" checked>
+                                <span class="text-sm text-dark-grey font-open-sans">All Stages</span>
+                            </label>
+                            <label class="flex items-center cursor-pointer">
+                                <input type="radio" name="stage" class="custom-radio mr-2">
+                                <span class="text-sm text-dark-grey font-open-sans">Production Only</span>
+                            </label>
+                            <label class="flex items-center cursor-pointer">
+                                <input type="radio" name="stage" class="custom-radio mr-2">
+                                <span class="text-sm text-dark-grey font-open-sans">Processing Only</span>
+                            </label>
+                            <label class="flex items-center cursor-pointer">
+                                <input type="radio" name="stage" class="custom-radio mr-2">
+                                <span class="text-sm text-dark-grey font-open-sans">Distribution Only</span>
+                            </label>
+                            <label class="flex items-center cursor-pointer">
+                                <input type="radio" name="stage" class="custom-radio mr-2">
+                                <span class="text-sm text-dark-grey font-open-sans">Markets Only</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="flex-1 min-w-[200px]">
+                        <h3 class="font-bold text-olive-green mb-4 font-poppins">Time Period</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm text-reseda-green mb-1 font-nunito">Year Range</label>
+                                <div class="flex items-center space-x-2">
+                                    <input type="number" min="2015" max="2025" value="2020"
+                                        class="w-20 px-2 py-1 border border-olive-green/30 rounded text-center bg-white font-nunito">
+                                    <span class="text-reseda-green font-open-sans">To</span>
+                                    <input type="number" min="2015" max="2025" value="2025"
+                                        class="w-20 px-2 py-1 border border-olive-green/30 rounded text-center bg-white font-nunito">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm text-reseda-green mb-1 font-nunito">Season</label>
+                                <div class="relative">
+                                    <div
+                                        class="flex items-center justify-between px-3 py-2 border border-olive-green/30 rounded cursor-pointer bg-white">
+                                        <span class="text-dark-grey font-open-sans">All Seasons</span>
+                                        <div class="w-5 h-5 flex items-center justify-center text-reseda-green">
+                                            <i class="ri-arrow-down-s-line"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm text-reseda-green mb-1 font-nunito">Data Frequency</label>
+                                <div class="relative">
+                                    <div
+                                        class="flex items-center justify-between px-3 py-2 border border-olive-green/30 rounded cursor-pointer bg-white">
+                                        <span class="text-dark-grey font-open-sans">Annual</span>
+                                        <div class="w-5 h-5 flex items-center justify-center text-reseda-green">
+                                            <i class="ri-arrow-down-s-line"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 flex justify-center">
+                    <button
+                        class="px-6 py-3 bg-olive-green text-white rounded-button hover:bg-reseda-green transition-colors font-medium mr-4 !rounded-button whitespace-nowrap font-nunito">
+                        <div class="flex items-center">
+                            <i class="ri-filter-3-line mr-2"></i>
+                            Apply Filters
+                        </div>
+                    </button>
+                    <button
+                        class="px-6 py-3 bg-white text-reseda-green border border-dun rounded-button hover:bg-olive-green hover:text-white transition-colors font-medium !rounded-button whitespace-nowrap font-nunito">
+                        <div class="flex items-center">
+                            <i class="ri-refresh-line mr-2"></i>
+                            Reset
+                        </div>
                     </button>
                 </div>
             </div>
-        </section>
-
-        <section class="py-12 bg-white">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-10">
-                    <h2 class="text-3xl font-bold text-olive-green mb-4 font-poppins">Interactive Tools</h2>
-                    <p class="text-reseda-green max-w-2xl mx-auto font-open-sans leading-relaxed">Customize your view of
-                        agricultural supply chains with our
-                        interactive filtering and analysis tools.</p>
-                </div>
-                <div class="bg-dun rounded-lg shadow-md p-6 border border-olive-green/20">
-                    <div class="flex flex-row gap-6 overflow-x-auto">
-                        <div class="flex-1 min-w-[200px]">
-                            <h3 class="font-bold text-olive-green mb-4 font-poppins">Display Options</h3>
-                            <div class="space-y-4">
-                                <div>
-                                    <label class="block text-sm text-reseda-green mb-1 font-nunito">Map Type</label>
-                                    <div class="flex space-x-2">
-                                        <button
-                                            class="px-3 py-2 bg-olive-green text-white rounded text-sm !rounded-button whitespace-nowrap font-nunito">Geographic</button>
-                                        <button
-                                            class="px-3 py-2 bg-white text-reseda-green border border-dun rounded text-sm !rounded-button whitespace-nowrap font-nunito hover:bg-olive-green hover:text-white transition-colors">Schematic</button>
-                                        <button
-                                            class="px-3 py-2 bg-white text-reseda-green border border-dun rounded text-sm !rounded-button whitespace-nowrap font-nunito hover:bg-olive-green hover:text-white transition-colors">Hybrid</button>
-                                    </div>
-                                </div>
-                                <div>
-                                    <label class="block text-sm text-reseda-green mb-1 font-nunito">Data
-                                        Visualization</label>
-                                    <div class="space-y-2">
-                                        <label class="flex items-center cursor-pointer">
-                                            <input type="checkbox" class="custom-checkbox mr-2" checked>
-                                            <span class="text-dark-grey font-open-sans">Show Statistics</span>
-                                        </label>
-                                        <label class="flex items-center cursor-pointer">
-                                            <input type="checkbox" class="custom-checkbox mr-2" checked>
-                                            <span class="text-dark-grey font-open-sans">Show Flow Volumes</span>
-                                        </label>
-                                        <label class="flex items-center cursor-pointer">
-                                            <input type="checkbox" class="custom-checkbox mr-2" checked>
-                                            <span class="text-dark-grey font-open-sans">Show Bottlenecks</span>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div>
-                                    <label class="block text-sm text-reseda-green mb-1 font-nunito">Export Format</label>
-                                    <div class="relative">
-                                        <div
-                                            class="flex items-center justify-between px-3 py-2 border border-olive-green/30 rounded cursor-pointer bg-white">
-                                            <span class="text-dark-grey font-open-sans">PDF Report</span>
-                                            <div class="w-5 h-5 flex items-center justify-center text-reseda-green">
-                                                <i class="ri-arrow-down-s-line"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex-1 min-w-[200px]">
-                            <h3 class="font-bold text-olive-green mb-4 font-poppins">Supply Chain Stage</h3>
-                            <div class="space-y-3">
-                                <label class="flex items-center cursor-pointer">
-                                    <input type="radio" name="stage" class="custom-radio mr-2" checked>
-                                    <span class="text-sm text-dark-grey font-open-sans">All Stages</span>
-                                </label>
-                                <label class="flex items-center cursor-pointer">
-                                    <input type="radio" name="stage" class="custom-radio mr-2">
-                                    <span class="text-sm text-dark-grey font-open-sans">Production Only</span>
-                                </label>
-                                <label class="flex items-center cursor-pointer">
-                                    <input type="radio" name="stage" class="custom-radio mr-2">
-                                    <span class="text-sm text-dark-grey font-open-sans">Processing Only</span>
-                                </label>
-                                <label class="flex items-center cursor-pointer">
-                                    <input type="radio" name="stage" class="custom-radio mr-2">
-                                    <span class="text-sm text-dark-grey font-open-sans">Distribution Only</span>
-                                </label>
-                                <label class="flex items-center cursor-pointer">
-                                    <input type="radio" name="stage" class="custom-radio mr-2">
-                                    <span class="text-sm text-dark-grey font-open-sans">Markets Only</span>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="flex-1 min-w-[200px]">
-                            <h3 class="font-bold text-olive-green mb-4 font-poppins">Time Period</h3>
-                            <div class="space-y-4">
-                                <div>
-                                    <label class="block text-sm text-reseda-green mb-1 font-nunito">Year Range</label>
-                                    <div class="flex items-center space-x-2">
-                                        <input type="number" min="2015" max="2025" value="2020"
-                                            class="w-20 px-2 py-1 border border-olive-green/30 rounded text-center bg-white font-nunito">
-                                        <span class="text-reseda-green font-open-sans">To</span>
-                                        <input type="number" min="2015" max="2025" value="2025"
-                                            class="w-20 px-2 py-1 border border-olive-green/30 rounded text-center bg-white font-nunito">
-                                    </div>
-                                </div>
-                                <div>
-                                    <label class="block text-sm text-reseda-green mb-1 font-nunito">Season</label>
-                                    <div class="relative">
-                                        <div
-                                            class="flex items-center justify-between px-3 py-2 border border-olive-green/30 rounded cursor-pointer bg-white">
-                                            <span class="text-dark-grey font-open-sans">All Seasons</span>
-                                            <div class="w-5 h-5 flex items-center justify-center text-reseda-green">
-                                                <i class="ri-arrow-down-s-line"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <label class="block text-sm text-reseda-green mb-1 font-nunito">Data Frequency</label>
-                                    <div class="relative">
-                                        <div
-                                            class="flex items-center justify-between px-3 py-2 border border-olive-green/30 rounded cursor-pointer bg-white">
-                                            <span class="text-dark-grey font-open-sans">Annual</span>
-                                            <div class="w-5 h-5 flex items-center justify-center text-reseda-green">
-                                                <i class="ri-arrow-down-s-line"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-6 flex justify-center">
-                        <button
-                            class="px-6 py-3 bg-olive-green text-white rounded-button hover:bg-reseda-green transition-colors font-medium mr-4 !rounded-button whitespace-nowrap font-nunito">
-                            <div class="flex items-center">
-                                <i class="ri-filter-3-line mr-2"></i>
-                                Apply Filters
-                            </div>
-                        </button>
-                        <button
-                            class="px-6 py-3 bg-white text-reseda-green border border-dun rounded-button hover:bg-olive-green hover:text-white transition-colors font-medium !rounded-button whitespace-nowrap font-nunito">
-                            <div class="flex items-center">
-                                <i class="ri-refresh-line mr-2"></i>
-                                Reset
-                            </div>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
+        </div>
+    </section>
     </div>
 
     <footer class="bg-olive-green text-white py-12">
@@ -1094,7 +1114,8 @@
                         </li>
                         <li><a href="#" class="text-dun hover:text-white transition-colors text-sm font-open-sans">Data
                                 Sources</a></li>
-                        <li><a href="about.html" class="text-dun hover:text-white transition-colors text-sm font-open-sans">About
+                        <li><a href="about.html"
+                                class="text-dun hover:text-white transition-colors text-sm font-open-sans">About
                                 Us</a>
                         </li>
                     </ul>
@@ -1182,7 +1203,7 @@
             <div
                 class="inline-block w-full max-w-[95vw] h-[95vh] my-4 text-left align-middle bg-white rounded shadow-xl transform transition-all border border-dun">
                 <div class="relative h-full flex flex-col">
-                    <div class="flex items-center justify-between p-6 border-b bg-dun flex-shrink-0">
+                    <div class="flex items-center justify-between p-4 border-b bg-alabaster flex-shrink-0">
                         <h3 class="text-2xl font-bold text-olive-green font-poppins" id="modalTitle">Supply Chain Map
                         </h3>
                         <button onclick="closeSupplyChainView()" class="text-reseda-green hover:text-olive-green">
@@ -1200,7 +1221,7 @@
                                 <!-- Supply chain content will be dynamically generated here -->
                             </div>
 
-                            <div id="productOverview" class="bg-white p-6 rounded-lg shadow-lg border border-dun mt-8">
+                            <div id="productOverview" class="bg-white p-6 rounded-lg shadow-lg border border-dun mt-24">
                                 <!-- Product overview will be dynamically generated here -->
                             </div>
                         </div>
@@ -1250,52 +1271,43 @@
 
         // Product color schemes - each product gets unique background, icon border, and tooltip colors
         const productColors = {
-                'Wheat': {
-                    background: '#FFF5E1', // ICON BACKGROUND
-                    iconBorder: '#D4A574',  
-                    titleBackground: '#A0522D',  // STAGE BACKGROUND
-                    tooltipBackground: '#FFE6B3',
-                    tooltipText: '#3B2F2F',
-                    stageIconBg: '#A0522D',
-                    tooltipTitleColor: '#A0522D'
-                }, 
-                'Rice': {
-                    background: '#F9FBE7',
-                    iconBorder: '#C0CA33',
-                    titleBackground: '#827717',
-                    tooltipBackground: '#E6EE9C',
-                    tooltipText: '#2E2E2E',
-                    stageIconBg: '#827717',
-                    tooltipTitleColor: '#827717'
-                },
-                'Sugarcane': {
-                    background: '#E8F5E9',
-                    iconBorder: '#66BB6A',
-                    titleBackground: '#2E7D32',
-                    tooltipBackground: '#C8E6C9',
-                    tooltipText: '#1B1B1B',
-                    stageIconBg: '#2E7D32',
-                    tooltipTitleColor: '#2E7D32'
-                },
-                'Chili': {
-                    background: '#FFEBEE',
-                    iconBorder: '#EF5350',
-                    titleBackground: '#C62828',
-                    tooltipBackground: '#FFCDD2',
-                    tooltipText: '#2E2E2E',
-                    stageIconBg: '#C62828',
-                    tooltipTitleColor: '#C62828'
-                },
-                'Garlic': {
-                    background: '#FDFCF7',
-                    iconBorder: '#C0C0C0',
-                    titleBackground: '#8D6E63',
-                    tooltipBackground: '#E0DAD0',
-                    tooltipText: '#2E2E2E',
-                    stageIconBg: '#8D6E63',
-                    tooltipTitleColor: '#8D6E63'
-                }
-            };
+            'Wheat': {
+                background: '#FFF5E1', // ICON BACKGROUND
+                titleBackground: '#A0522D',  // STAGE BACKGROUND
+                tooltipBackground: '#FFF5E1',
+                tooltipText: '#3B2F2F',
+                stageIconBg: '#A0522D',     // STAGE NUMBER BACKGROUND
+            },
+            'Rice': {
+                background: '#F9FBE7',
+                titleBackground: '#827717',
+                tooltipBackground: '#F9FBE7',
+                tooltipText: '#3B2F2F',
+                stageIconBg: '#827717',
+            },
+            'Sugarcane': {
+                background: '#E8F5E9',
+                titleBackground: '#2E7D32',
+                tooltipBackground: '#E8F5E9',
+                tooltipText: '#3B2F2F',
+                stageIconBg: '#2E7D32',
+            },
+            'Chili': {
+                background: '#FFEBEE',
+                titleBackground: '#C62828',
+                tooltipBackground: '#FFEBEE',
+                tooltipText: '#3B2F2F',
+                stageIconBg: '#C62828',
+            },
+            'Garlic': {
+                background: '#FDFCF7',
+                titleBackground: '#8D6E63',
+                tooltipBackground: '#FDFCF7',
+                tooltipText: '#3B2F2F',
+                stageIconBg: '#8D6E63',
+            }
+
+        };
 
 
         // Complete supply chain data for all 15 products
@@ -1308,7 +1320,6 @@
                         icon: 'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z',
                         position: { top: 50, left: 100 },
                         tooltip: {
-                            title: 'Rice Seed Selection Details',
                             content: 'Premium rice varieties are selected based on regional climate conditions and market demand. Certified seeds undergo rigorous quality testing with germination rates exceeding 95%. Organic fertilizers are increasingly preferred.',
                             stats: [
                                 'Seed Selection Time: 4-6 weeks',
@@ -1325,7 +1336,6 @@
                         icon: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z',
                         position: { top: 50, left: 300 },
                         tooltip: {
-                            title: 'Land Preparation Details',
                             content: 'Proper field leveling ensures uniform water distribution. Puddling creates impermeable layer for water retention. Organic matter incorporation improves soil fertility.',
                             stats: [
                                 'Field Leveling: Critical for water management',
@@ -1342,7 +1352,6 @@
                         icon: 'M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10',
                         position: { top: 50, left: 500 },
                         tooltip: {
-                            title: 'Transplanting Details',
                             content: 'Seedlings are transplanted at 20-25 days old. Proper spacing ensures optimal plant population. Mechanical transplanters increase efficiency.',
                             stats: [
                                 'Seedling Age: 20-25 days',
@@ -1359,7 +1368,6 @@
                         icon: 'M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z',
                         position: { top: 50, left: 700 },
                         tooltip: {
-                            title: 'Crop Management Details',
                             content: 'Continuous flooding maintains anaerobic conditions. Integrated nutrient management optimizes fertilizer use. IPM controls major pests like stem borers.',
                             stats: [
                                 'Water Depth: 5-10 cm maintained',
@@ -1376,7 +1384,6 @@
                         icon: 'M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4',
                         position: { top: 180, left: 850 },
                         tooltip: {
-                            title: 'Harvesting Details',
                             content: 'Harvest timing is critical when 80% of grains are golden yellow. Combine harvesters reduce labor costs. Proper moisture content prevents quality loss.',
                             stats: [
                                 'Harvest Indicator: 80% golden grains',
@@ -1393,7 +1400,6 @@
                         icon: 'M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11',
                         position: { top: 350, left: 850 },
                         tooltip: {
-                            title: 'Drying Process Details',
                             content: 'Sun drying is most common but weather dependent. Mechanical dryers provide consistent results. Target moisture of 14% ensures safe storage.',
                             stats: [
                                 'Target Moisture: 14%',
@@ -1410,7 +1416,6 @@
                         icon: 'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z',
                         position: { top: 470, left: 700 },
                         tooltip: {
-                            title: 'Milling Process Details',
                             content: 'Modern mills achieve 65-70% head rice recovery. Parboiling improves nutritional value. By-products include bran and broken rice.',
                             stats: [
                                 'Head Rice Recovery: 65-70%',
@@ -1427,7 +1432,6 @@
                         icon: 'M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4',
                         position: { top: 470, left: 500 },
                         tooltip: {
-                            title: 'Packaging Details',
                             content: 'Various pack sizes cater to different markets. Vacuum packaging extends shelf life. Branding adds value for premium segments.',
                             stats: [
                                 'Pack Sizes: 1kg, 5kg, 25kg, 50kg',
@@ -1444,7 +1448,6 @@
                         icon: 'M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0',
                         position: { top: 470, left: 300 },
                         tooltip: {
-                            title: 'Distribution Details',
                             content: 'Multi-tier distribution system reaches rural and urban markets. Cold storage maintains quality. Export markets demand premium quality.',
                             stats: [
                                 'Distribution Channels: 4-5 tiers',
@@ -1461,7 +1464,6 @@
                         icon: 'M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z',
                         position: { top: 470, left: 100 },
                         tooltip: {
-                            title: 'Retail Sales Details',
                             content: 'Multiple retail channels serve different consumer segments. Brand loyalty drives premium pricing. Online sales growing rapidly.',
                             stats: [
                                 'Retail Channels: Traditional, modern trade',
@@ -1490,7 +1492,6 @@
                         icon: 'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z',
                         position: { top: 50, left: 100 },
                         tooltip: {
-                            title: 'Wheat Seed Selection Details',
                             content: 'Certified seeds ensure genetic purity and disease resistance. Different varieties suit different agro-climatic zones. Seed treatment prevents soil-borne diseases.',
                             stats: [
                                 'Seed Rate: 100-125 kg/hectare',
@@ -1507,7 +1508,6 @@
                         icon: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z',
                         position: { top: 50, left: 300 },
                         tooltip: {
-                            title: 'Land Preparation Details',
                             content: 'Deep plowing improves soil structure and water infiltration. Laser leveling ensures uniform irrigation. Organic matter incorporation enhances fertility.',
                             stats: [
                                 'Plowing Depth: 20-25 cm',
@@ -1524,7 +1524,6 @@
                         icon: 'M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10',
                         position: { top: 50, left: 500 },
                         tooltip: {
-                            title: 'Sowing Details',
                             content: 'Optimal sowing time is November 15-December 15. Drill sowing ensures proper depth and spacing. Row spacing affects plant population.',
                             stats: [
                                 'Sowing Time: Nov 15 - Dec 15',
@@ -1541,7 +1540,6 @@
                         icon: 'M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z',
                         position: { top: 50, left: 700 },
                         tooltip: {
-                            title: 'Crop Management Details',
                             content: 'Wheat requires 4-5 irrigations during growing season. Balanced fertilization ensures optimal yield. Integrated weed management controls major weeds.',
                             stats: [
                                 'Irrigations: 4-5 times',
@@ -1558,7 +1556,6 @@
                         icon: 'M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4',
                         position: { top: 180, left: 850 },
                         tooltip: {
-                            title: 'Harvesting Details',
                             content: 'Harvest when grain moisture is 12-14%. Combine harvesters increase efficiency. Timely harvest prevents yield losses.',
                             stats: [
                                 'Harvest Time: April-May',
@@ -1575,7 +1572,6 @@
                         icon: 'M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 113 0v1m0 0V11m0-5.5a1.5 1.5 0 113 0v3m0 0V11',
                         position: { top: 350, left: 850 },
                         tooltip: {
-                            title: 'Threshing Details',
                             content: 'Combine harvesters thresh while harvesting. Stationary threshers used for manual harvest. Proper adjustment prevents grain damage.',
                             stats: [
                                 'Threshing Efficiency: 98%+',
@@ -1592,7 +1588,6 @@
                         icon: 'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z',
                         position: { top: 470, left: 700 },
                         tooltip: {
-                            title: 'Storage Details',
                             content: 'Proper storage prevents pest damage and quality deterioration. Moisture control is critical. Modern silos provide better protection.',
                             stats: [
                                 'Storage Moisture: 12% maximum',
@@ -1609,7 +1604,6 @@
                         icon: 'M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4',
                         position: { top: 470, left: 500 },
                         tooltip: {
-                            title: 'Milling Details',
                             content: 'Modern roller mills extract 72-76% flour. Different grades serve various markets. By-products include bran and shorts.',
                             stats: [
                                 'Flour Extraction: 72-76%',
@@ -1626,7 +1620,6 @@
                         icon: 'M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0',
                         position: { top: 470, left: 300 },
                         tooltip: {
-                            title: 'Distribution Details',
                             content: 'Extensive distribution network covers urban and rural areas. Bulk transport reduces costs. Quality maintenance during transport is crucial.',
                             stats: [
                                 'Distribution Network: National coverage',
@@ -1643,7 +1636,6 @@
                         icon: 'M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z',
                         position: { top: 470, left: 100 },
                         tooltip: {
-                            title: 'Retail & Consumption Details',
                             content: 'Wheat flour is staple food for majority population. Various retail channels serve different segments. Brand loyalty varies by region.',
                             stats: [
                                 'Per Capita Consumption: 124 kg/year',
@@ -1672,7 +1664,6 @@
                         icon: 'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z',
                         position: { top: 50, left: 100 },
                         tooltip: {
-                            title: 'Seed Cane Selection Details',
                             content: 'Disease-free seed cane from 8-10 month old crop. Each seed piece contains 2-3 buds. Tissue culture provides disease-free material.',
                             stats: [
                                 'Seed Rate: 50,000-60,000 pieces/hectare',
@@ -1689,7 +1680,6 @@
                         icon: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z',
                         position: { top: 50, left: 300 },
                         tooltip: {
-                            title: 'Land Preparation Details',
                             content: 'Deep plowing to 30-40 cm improves root penetration. Furrows spaced 1.2-1.5 meters apart. Organic matter incorporation essential.',
                             stats: [
                                 'Plowing Depth: 30-40 cm',
@@ -1706,7 +1696,7 @@
                         icon: 'M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10',
                         position: { top: 50, left: 500 },
                         tooltip: {
-                            title: 'Planting Details',
+
                             content: 'Seed pieces placed end-to-end in furrows. Covered with 5-7 cm soil. Optimal planting time is October-December.',
                             stats: [
                                 'Planting Depth: 5-7 cm',
@@ -1791,7 +1781,7 @@
                         icon: 'M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4',
                         position: { top: 470, left: 500 },
                         tooltip: {
-                            title: 'Packaging Details',
+
                             content: 'Automated packaging lines handle multiple sizes. Moisture-proof packaging prevents caking. Brand differentiation important.',
                             stats: [
                                 'Pack Sizes: 1kg, 5kg, 50kg',
@@ -1808,7 +1798,7 @@
                         icon: 'M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0',
                         position: { top: 470, left: 300 },
                         tooltip: {
-                            title: 'Distribution Details',
+
                             content: 'National distribution network covers all major cities. Cold storage not required. Multiple distribution tiers.',
                             stats: [
                                 'Distribution Radius: 500-2000 km',
@@ -1825,7 +1815,7 @@
                         icon: 'M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z',
                         position: { top: 470, left: 100 },
                         tooltip: {
-                            title: 'Retail Sales Details',
+
                             content: 'Multiple retail channels serve different segments. Brand loyalty strong in urban areas. Price competition intense.',
                             stats: [
                                 'Retail Channels: 5+ types',
@@ -1849,140 +1839,131 @@
             'Chili': {
                 stages: [
                     {
-                        title: 'Seed Selection',
-                        description: 'Choosing high-quality chili varieties',
+                        title: 'Land Preparation',
+                        description: 'Levelling land and planning irrigation to prepare for sowing',
                         icon: 'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z',
                         position: { top: 50, left: 100 },
                         tooltip: {
-                            title: 'Chili Seed Selection Details',
-                            content: 'Premium varieties selected for heat level and disease resistance. Hybrid seeds offer better uniformity. Organic seeds command premium prices.',
+                            content: 'Fields are leveled and prepared before sowing. Farmers ensure proper irrigation access through nehr systems or pumps. Some use drip irrigation to manage water during droughts.',
                             stats: [
-                                'Seed Rate: 500-750 grams/hectare',
-                                'Germination: 80-90%',
-                                'Heat Range: 1000-100000 Scoville',
-                                'Varieties: 15+ commercial types'
+                                'Irrigation: Canal (nehr), pump, or drip system',
+                                'Water Frequency: Every 10–15 days during peak heat',
+                                'Govt Support: 60% subsidy on drip irrigation (Sindh)'
                             ]
                         },
-                        bottleneck: 'Seed quality, variety selection, disease resistance'
+                        bottleneck: 'Soil quality issues, insufficient water'
                     },
                     {
-                        title: 'Nursery Preparation',
-                        description: 'Growing seedlings in controlled environment',
+                        title: 'Seed Selection',
+                        description: 'Selecting hybrid or local seeds based on yield, taste, and disease resistance',
                         icon: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z',
                         position: { top: 50, left: 300 },
                         tooltip: {
-                            title: 'Nursery Details',
-                            content: 'Seedlings grown for 6-8 weeks in protected environment. Temperature control maintains 25-30°C. Disease prevention critical.',
+                            content: 'Farmers use hybrid seeds like Sanam for higher yield, while local Longi mirch is preferred for its strong flavor and market value. Seed choice depends on climate, disease resistance, and expected rates.',
                             stats: [
-                                'Nursery Period: 6-8 weeks',
-                                'Temperature: 25-30°C',
-                                'Transplant Size: 10-15 cm',
-                                'Survival Rate: 90-95%'
+                                'Common Varieties: Hybrid (Sanam) & Local (Longi)',
+                                'Fruit Maturity: ~120 days after transplant',
+                                'Seed Source: Mostly uncertified or local suppliers',
+                                'Selection Factors: Yield, taste, disease resistance'
                             ]
                         },
-                        bottleneck: 'Climate control costs, disease management, timing'
+                        bottleneck: 'Lack of certified seed access, lack of market data, inconsistent quality, overproduction'
                     },
                     {
-                        title: 'Transplanting',
-                        description: 'Moving seedlings to main field',
+                        title: 'Nursery & Transplantation',
+                        description: 'Seeds are first grown in nurseries, then transplanted to fields after 45 days',
                         icon: 'M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10',
                         position: { top: 50, left: 500 },
                         tooltip: {
-                            title: 'Transplanting Details',
-                            content: 'Seedlings transplanted at 45cm x 30cm spacing. Evening transplanting reduces shock. Immediate irrigation essential.',
+                            content: 'Chilli seeds are sown in nursery beds around February. After 45 days, once seedlings are established, they are transplanted into prepared fields. This stage is critical for setting a strong base for fruiting. Transplantation is followed by careful water and spray management to support plant health.',
                             stats: [
-                                'Plant Spacing: 45cm x 30cm',
-                                'Plants per hectare: 74,000',
-                                'Transplant Success: 95%+',
-                                'Best Time: Evening hours'
+                                'Nursery Duration: ~45 days',
+                                'Transplant Timing: Feb–March',
+                                'Fruiting Starts: ~120 days after transplant',
+                                'Key Input: Early fungicide & NPK sprays post-transplant'
                             ]
                         },
-                        bottleneck: 'Labor intensity, transplant shock, weather dependency'
+                        bottleneck: 'Unpredictable weather, transplant shock, water shortage'
                     },
                     {
                         title: 'Crop Management',
-                        description: 'Irrigation, fertilization, and pest control',
+                        description: 'Regular irrigation, fertilizers, and sprays are used to protect plants and ensure healthy fruiting.',
                         icon: 'M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z',
                         position: { top: 50, left: 700 },
                         tooltip: {
-                            title: 'Crop Management Details',
-                            content: 'Drip irrigation provides precise water management. IPM controls thrips, aphids, and borers. Calcium supplements enhance fruit quality.',
+                            content: 'After transplantation, chillies require careful management to ensure healthy growth and fruiting. Farmers apply fertilizers like NPK and urea at key stages. Sprays, especially fungicides, are applied every 7–10 days to prevent disease and pests. Watering is done every 10–15 days, but availability is often limited. The crop begins fruiting around 120 days after transplanting.',
                             stats: [
-                                'Water Requirement: 600-800 mm',
-                                'Growing Period: 120-150 days',
-                                'Harvest Frequency: 10-15 pickings',
-                                'Major Pests: Thrips, aphids, borers'
+                                'Spray Frequency: Every 7–10 days',
+                                'Fertilizers: NPK, Urea, DAP',
+                                'Watering: Every 10–15 days (or longer)',
+                                'Fruiting: ~120 days after transplant'
                             ]
                         },
-                        bottleneck: 'Pest resistance, water management, multiple harvests'
+                        bottleneck: 'Pest and disease prone, water scarcity, high input costs'
                     },
                     {
                         title: 'Harvesting',
-                        description: 'Multiple harvests of mature chilies',
+                        description: 'Chillies are harvested daily or every other day once fruit ripens.',
                         icon: 'M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4',
                         position: { top: 180, left: 850 },
                         tooltip: {
-                            title: 'Harvesting Details',
-                            content: 'Chilies harvested when fully red and mature. Multiple harvests over 2-3 months. Hand-picking ensures quality.',
+                            content: 'Harvesting begins approximately 120 days after transplanting and continues for several weeks. Farmers usually harvest every day or on alternate days, depending on the crop’s maturity. In many cases, harvesting is done manually by family members or hired labor, especially women and children. Timing is key as overripe chillies left too long on the plant can spoil or lose quality. In red chilli varieties, proper drying must follow immediately to preserve color and shelf life.',
                             stats: [
                                 'Harvest Period: 2-3 months',
-                                'Picking Frequency: Every 7-10 days',
-                                'Yield: 15-25 tons/hectare',
-                                'Quality Grade: Color, size, heat'
+                                'Picking Frequency: Daily or alternate days',
+                                'Labor: Family & hired workers',
+                                'Varieties: Green and red chillies harvested separately'
                             ]
                         },
-                        bottleneck: 'Labor availability, timing precision, handling care'
+                        bottleneck: 'Labor shortage, timing precision, weather disruptions'
                     },
                     {
-                        title: 'Drying',
-                        description: 'Sun or mechanical drying to reduce moisture',
-                        icon: 'M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 113 0v1m0 0V11m0-5.5a1.5 1.5 0 113 0v3m0 0V11',
+                        title: 'Drying & Post-Harvest Handling',
+                        description: 'Sun-dried on plastic or green net sheets to prevent contamination',
+                        icon: 'M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11',
                         position: { top: 350, left: 850 },
                         tooltip: {
-                            title: 'Drying Details',
-                            content: 'Sun drying reduces moisture from 80% to 8-10%. Mechanical dryers provide consistent quality. Color retention important.',
+                            content: 'After harvest, chillies, especially the red Longi variety, are dried in open sunlight. Farmers lay them on green net or plastic sheets to minimize contact with soil and prevent fungal contamination. Drying is a critical step to maintain quality and shelf life. In some areas, drying ovens (heaters) are available through NGOs or government programs, but their availability is very limited. Drying must be done promptly to avoid overripening and spoilage. Once dried, chillies are packed in jute bags for further storage or transport.',
                             stats: [
-                                'Drying Time: 7-15 days (sun)',
-                                'Final Moisture: 8-10%',
-                                'Weight Reduction: 85-90%',
-                                'Quality Factor: Color retention'
+                                'Drying Time: Varies by sun exposure',
+                                'Drying Method: Sun drying on sheets or heaters',
+                                'Tools Used: Green nets, plastic sheets, jute bags',
+                                'Advanced Drying: Heaters available via NGOs/government'
                             ]
                         },
-                        bottleneck: 'Weather dependency, energy costs, color preservation'
+                        bottleneck: 'Fungal contamination (aflatoxin), limited access to dryers, weather dependency.'
                     },
                     {
-                        title: 'Processing',
-                        description: 'Grinding and value addition',
+                        title: 'Storage and Transport',
+                        description: 'Dried chillies are stored in jute bags and transported to local markets and processing units through middlemen.',
                         icon: 'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z',
                         position: { top: 470, left: 700 },
                         tooltip: {
-                            title: 'Processing Details',
-                            content: 'Grinding produces various mesh sizes. Cryogenic grinding preserves heat and color. Value-added products include sauces and pastes.',
+                            content: 'After drying, chillies are stored in jute bags, which help prevent moisture and fungal contamination. Farmers prefer these bags because they allow ventilation and are more durable during transport. Chillies are then transported to the nearest local mandi or wholesale market, usually through middlemen (aarti). Transportation costs and fuel prices are passed onto the farmers. Storage facilities are basic, and most farmers lack access to modern or climate-controlled storage.',
                             stats: [
-                                'Grinding Capacity: 500-2000 kg/hour',
-                                'Mesh Sizes: 20-120 mesh',
-                                'Value Addition: 200-300%',
-                                'Products: Powder, flakes, sauce'
+                                'Storage Method: Jute bags',
+                                'Transport Mode: Manual or local vehicles',
+                                'Buyer Type: Middlemen (aarti), wholesalers',
+                                'Modern Storage: Rare at farm level'
                             ]
                         },
-                        bottleneck: 'Heat generation, quality standardization, contamination'
+                        bottleneck: 'Middleman dependency, lack of cold storage, transport cost burden'
                     },
                     {
-                        title: 'Packaging',
-                        description: 'Moisture-proof packaging for preservation',
+                        title: 'Market & Sales',
+                        description: 'Chillies are sold through middlemen at local mandis. Prices fluctuate and are outside farmers’ control.',
                         icon: 'M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4',
                         position: { top: 470, left: 500 },
                         tooltip: {
-                            title: 'Packaging Details',
-                            content: 'Moisture-proof packaging prevents deterioration. Nitrogen flushing extends shelf life. Various sizes for different markets.',
+                            content: 'Most chilli farmers rely on middlemen (aarti) to sell their produce at local mandis or wholesale markets. Direct selling to retailers or consumers is rare due to lack of resources and the volume of produce. Farmers have no control over prices, which are set by the middlemen without transparency. Payment delays are common, and smaller farmers are often forced to sell at lower rates to maintain cash flow. Although some farmers are interested in direct B2C models, they face challenges like market access, time, and logistics.',
                             stats: [
-                                'Pack Sizes: 50g, 100g, 500g, 1kg',
-                                'Shelf Life: 12-24 months',
-                                'Moisture Barrier: 99%+',
-                                'Packaging: Laminated pouches'
+                                'Sales Channel: Middlemen to wholesale markets',
+                                'Pricing: Controlled by middlemen,',
+                                'Payment Time: 30–60 days post-sale',
+                                'Direct Sales: Rare due to resource limitations'
                             ]
                         },
-                        bottleneck: 'Packaging costs, moisture control, material availability'
+                        bottleneck: 'Price volatility, no price transparency, lack of direct market access'
                     },
                     {
                         title: 'Distribution',
@@ -1990,8 +1971,7 @@
                         icon: 'M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0',
                         position: { top: 470, left: 300 },
                         tooltip: {
-                            title: 'Distribution Details',
-                            content: 'Export markets include Middle East, Europe, North America. Traceability systems ensure food safety. Cold chain for fresh chilies.',
+                            content: 'Export markets include the Middle East, Europe, and North America. Traceability systems are used to ensure food safety and compliance. Cold chain facilities are necessary for exporting fresh chillies.',
                             stats: [
                                 'Export Markets: 15+ countries',
                                 'Distribution: Global reach',
@@ -2007,8 +1987,7 @@
                         icon: 'M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z',
                         position: { top: 470, left: 100 },
                         tooltip: {
-                            title: 'Retail & Export Details',
-                            content: 'Premium positioning in international markets. Organic certification commands 30-50% premium. Brand development crucial.',
+                            content: 'Chillies are positioned as a premium product in international markets. Organic certification helps fetch 30–50% higher prices. Brand development and quality assurance are key to tapping specialty markets.',
                             stats: [
                                 'Export Value: $65 million annually',
                                 'Premium Markets: Organic, specialty',
@@ -2028,6 +2007,7 @@
                     ]
                 }
             },
+
             'Garlic': {
                 stages: [
                     {
@@ -2036,7 +2016,7 @@
                         icon: 'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z',
                         position: { top: 50, left: 100 },
                         tooltip: {
-                            title: 'Garlic Clove Selection Details',
+
                             content: 'Large, disease-free cloves from certified bulbs. Cold treatment improves bulb formation. Organic cloves command premium prices.',
                             stats: [
                                 'Clove Size: 3-5 grams each',
@@ -2053,7 +2033,7 @@
                         icon: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z',
                         position: { top: 50, left: 300 },
                         tooltip: {
-                            title: 'Land Preparation Details',
+
                             content: 'Well-drained soil with pH 6.0-7.0 optimal. Raised beds improve drainage. Organic matter incorporation enhances soil structure.',
                             stats: [
                                 'Optimal pH: 6.0-7.0',
@@ -2070,7 +2050,7 @@
                         icon: 'M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10',
                         position: { top: 50, left: 500 },
                         tooltip: {
-                            title: 'Planting Details',
+
                             content: 'Cloves planted 3-5 cm deep with pointed end up. Spacing of 10cm x 15cm optimizes bulb development. October-November planting ideal.',
                             stats: [
                                 'Planting Depth: 3-5 cm',
@@ -2087,7 +2067,6 @@
                         icon: 'M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z',
                         position: { top: 50, left: 700 },
                         tooltip: {
-                            title: 'Crop Management Details',
                             content: 'Moderate irrigation prevents bulb rot. Regular weeding crucial as garlic competes poorly. Sulfur application enhances bulb quality.',
                             stats: [
                                 'Water Requirement: 400-500 mm',
@@ -2104,7 +2083,7 @@
                         icon: 'M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4',
                         position: { top: 180, left: 850 },
                         tooltip: {
-                            title: 'Harvesting Details',
+
                             content: 'Harvest when 50-60% leaves turn brown. Careful lifting prevents bulb damage. Immediate curing begins preservation.',
                             stats: [
                                 'Harvest Indicator: 50-60% brown leaves',
@@ -2121,7 +2100,7 @@
                         icon: 'M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 113 0v1m0 0V11m0-5.5a1.5 1.5 0 113 0v3m0 0V11',
                         position: { top: 350, left: 850 },
                         tooltip: {
-                            title: 'Curing Details',
+
                             content: 'Proper curing reduces moisture from 80% to 65-70%. Ventilated storage with controlled temperature. Braiding facilitates air circulation.',
                             stats: [
                                 'Curing Period: 2-4 weeks',
@@ -2138,7 +2117,7 @@
                         icon: 'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z',
                         position: { top: 470, left: 700 },
                         tooltip: {
-                            title: 'Grading Details',
+
                             content: 'Size grading into small, medium, large categories. Quality sorting removes damaged bulbs. Premium grades command higher prices.',
                             stats: [
                                 'Size Categories: 3 main grades',
@@ -2155,7 +2134,7 @@
                         icon: 'M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4',
                         position: { top: 470, left: 500 },
                         tooltip: {
-                            title: 'Packaging Details',
+
                             content: 'Mesh bags allow air circulation. Various pack sizes for retail and wholesale. Branding adds value for premium markets.',
                             stats: [
                                 'Pack Sizes: 250g, 500g, 1kg, 10kg',
@@ -2172,7 +2151,7 @@
                         icon: 'M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0',
                         position: { top: 470, left: 300 },
                         tooltip: {
-                            title: 'Distribution Details',
+
                             content: 'Cold storage maintains quality. Regional markets prefer different sizes. Export markets require strict quality standards.',
                             stats: [
                                 'Storage Temperature: 0-2°C',
@@ -2189,7 +2168,7 @@
                         icon: 'M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z',
                         position: { top: 470, left: 100 },
                         tooltip: {
-                            title: 'Retail Sales Details',
+
                             content: 'Multiple retail channels serve different segments. Organic garlic commands premium. Value-added products include peeled and minced forms.',
                             stats: [
                                 'Retail Channels: 4+ types',
@@ -2319,7 +2298,6 @@
 
                         <!-- Normal tooltip -->
                         <div class="tooltip stage-tooltip" style="${tooltipPosition} left: 50%; transform: translateX(-50%); background-color: ${colors.tooltipBackground}; color: ${colors.tooltipText};">
-                            <div class="tooltip-title" style="color: ${colors.tooltipTitleColor};">${stage.tooltip.title}</div>
                             <div class="tooltip-content">${stage.tooltip.content}</div>
                             <div class="tooltip-stats">
                                 ${stage.tooltip.stats.map(stat => `<div>${stat}</div>`).join('')}
@@ -2339,9 +2317,9 @@
 
             // Generate overview section
             const colorClasses = {
-                'olive-green': 'bg-dun border-l-4 border-olive-green',
-                'fresh-green': 'bg-dun border-l-4 border-fresh-green',
-                'reseda-green': 'bg-dun border-l-4 border-reseda-green'
+                'olive-green': 'bg-alabaster border-l-4 border-olive-green',
+                'fresh-green': 'bg-alabaster border-l-4 border-olive-green',
+                'reseda-green': 'bg-alabaster border-l-4 border-olive-green'
             };
 
             const overviewHTML = `
