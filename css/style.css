@@ -155,11 +155,10 @@ path.shape:not(.highlighted):hover {
 
 #map-container {
   background: linear-gradient(to right, #f3f4ed, #e8f0da);
-  padding: 20px;
-  border-radius: 16px;
+  padding: 3px;
   box-shadow: 0 4px 20px rgba(50, 90, 50, 0.1);
   width: 100vw;               /* Full width of viewport */
-  height: 87.92vh;          /* At least full screen height, height=87.92vh with navbar */ 
+  height: 89.265vh;          /* At least full screen height with navbar */ 
   overflow-y: auto;           /* Scroll if content taller than screen */
   overflow-x: hidden;         /* Prevent horizontal scrolling */
   border: 1px solid #cce5bb;
@@ -336,8 +335,8 @@ path.shape:not(.highlighted):hover {
 
 #legend-container {
   position: absolute;
-    top: 42px;
-    right: 20px;
+    top: 19px;
+    right: 19px;
     z-index: 1000;
     background-color: #fff;
     padding: 6px 8px;
@@ -372,8 +371,8 @@ body {
 }
 #zoom-controls {
   position: absolute;
-  bottom: 42px;
-  right: 20px;
+  bottom: 19px;
+  right: 19px;
   z-index: 1000;
   background-color: #ffffffea;
   padding: 10px;
