@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple Supply Chain - Pakistan Agricultural Supply Chain Mapping</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;500;600&family=Nunito:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/tippy.js@6/dist/tippy.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com/3.4.6"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'olive-green': '#45552C',
+                        'reseda-green': '#747545',
+                        'fresh-green': '#6BBF59',
+                        'burnt-orange': '#A65C2D',
+                        'dun': '#DBC7B1',
+                        'alabaster': '#EAE3DB',
+                        'dark-grey': '#3D3D3D',
+                        'dark-brown': '#5C4033'
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'open-sans': ['Open Sans', 'sans-serif'],
+                        'nunito': ['Nunito', 'sans-serif']
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Supply Chain Styles */
+        .supply-chain-container {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            height: 600px;
+            margin: 0 auto;
+            overflow: visible;
+        }
+
+        .stage-node {
+            position: absolute;
+            width: 180px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            z-index: 5;
+        }
+
+        .stage-node:hover {
+            transform: scale(1.05);
+            z-index: 10;
+        }
+
+        .stage-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin: 0 auto 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            position: relative;
+        }
+
+        .stage-number {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 24px;
+            height: 24px;
+            border: 2px solid white;
+            border-radius: 50%;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        /* .warning-icon {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            width: 24px;
+            height: 24px;
+            background-color: #A65C2D;
+            border: 2px solid white;
+            border-radius: 50%;
+            color: white;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            cursor: pointer;
+        } */
+
+        .stage-title {
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 5px;
+            width: 160px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .stage-description {
+            font-size: 12px;
+            max-width: 160px;
+            margin: 0 auto;
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.5;
+        }
+
+        /* === BASE TOOLTIP STYLES === */
+        .stage-tooltip {
+            visibility: hidden;
+            position: absolute;
+            border-radius: 8px;
+            padding: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow-y: auto;
+            z-index: 100;
+            opacity: 0;
+            transition: opacity 0.3s;
+            text-align: left;
+        }
+
+        /* === NORMAL TOOLTIP STYLES === */
+        .tooltip {
+            background-color: white;
+            border: 1px solid #DBC7B1;
+            color: #3D3D3D;
+            font-family: 'Open Sans', sans-serif;
+            width: 500px;
+            height: 300px;
+        }
+
+        .tooltip-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-size: 14px;
+            font-family: 'Poppins', sans-serif;
+            color: #3D3D3D;
+        }
+
+        .tooltip-content {
+            font-size: 12px;
+            color: #3D3D3D;
+            line-height: 1.6;
+        }
+
+        .tooltip-stats {
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px dashed #DBC7B1;
+            font-size: 11px;
+            color: #646441;
+        }
+
+        /* === BOTTLENECK TOOLTIP STYLES === */
+        .bottleneck-tooltip {
+            background-color: #fafafa;
+            border: 1px solid #cc5500;
+            color: #c50;
+            font-family: 'Open Sans', sans-serif;
+            width: 240px;
+            height: 240px;
+        }
+
+        .bottleneck-title {
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-family: 'Poppins', sans-serif;
+            color: #cc5500;
+        }
+
+        .bottleneck-content {
+            font-size: 12px;
+            color: #cc5500;
+            line-height: 1.6;
+        }
+
+        /* === QUOTE TOOLTIP STYLES === */
+        .quote-tooltip {
+            background-color: #fafafa;
+            border: 1px solid #cc5500;
+            color: #cc5500;
+            font-family: 'Open Sans', sans-serif;
+            width: 240px;
+            height: 240px;
+        }
+
+        .quote-title {
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-family: 'Poppins', sans-serif;
+            color: #cc5500;
+        }
+
+        .quote-content {
+            font-size: 12px;
+            color: #cc5500;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .stage-node:hover .stage-tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .toggle-button {
+            background-color: white;
+            color: #45552C;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            border: 1px solid #45552C;
+            font-size: 14px;
+            font-family: 'Nunito', sans-serif;
+            margin-right: 10px;
+        }
+
+        .toggle-button:hover {
+            background-color: #EAE3DB;
+        }
+
+        .toggle-button.active {
+            background-color: #EAE3DB;
+            color: #45552C;
+            border: 1px solid #EAE3DB;
+        }
+
+        .toggle-button.active:hover {
+            background-color: #EAE3DB;
+            border: 1px solid #EAE3DB;
+        }
+
+        /* Scrollbar Styles for All Tooltips */
+        .stage-tooltip::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .stage-tooltip::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        .stage-tooltip::-webkit-scrollbar-thumb {
+            background: #c1c1c191;
+            border-radius: 4px;
+        }
+
+        .stage-tooltip::-webkit-scrollbar-thumb:hover {
+            background: #a0a0a0;
+        }
+
+        /* Responsive adjustments for supply chain */
+        @media (max-width: 1200px) {
+            .supply-chain-container {
+                transform: scale(0.9);
+                transform-origin: center top;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .supply-chain-container {
+                transform: scale(0.8);
+                transform-origin: center top;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .supply-chain-container {
+                transform: scale(0.7);
+                transform-origin: center top;
+            }
+
+            .tooltip,
+            .bottleneck-tooltip {
+                width: 200px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .supply-chain-container {
+                transform: scale(0.6);
+                transform-origin: center top;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-alabaster font-open-sans text-dark-grey">
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 flex items-center justify-center bg-olive-green rounded-full text-white relative">
+                    <i class="ri-plant-line ri-lg"></i>
+                    <div
+                        class="absolute -bottom-1 -right-1 w-6 h-6 bg-fresh-green rounded-full flex items-center justify-center">
+                        <div class="w-3 h-3 bg-white rounded-full"></div>
+                    </div>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold text-olive-green font-poppins">AGRI SUPPLY CHAIN</h1>
+                    <p class="text-xs text-reseda-green font-nunito">Cultivating Knowledge</p>
+                </div>
+            </div>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="index.html"
+                    class="text-reseda-green hover:text-olive-green transition-colors font-nunito">Home</a>
+                <a href="products.html"
+                    class="text-reseda-green hover:text-olive-green transition-colors font-nunito">Products</a>
+                <a href="maps.html"
+                    class="text-reseda-green hover:text-olive-green transition-colors font-nunito">Maps</a>
+                <a href="about.html"
+                    class="text-reseda-green hover:text-olive-green transition-colors font-nunito">About</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <!-- <div class="relative ml-4">
+                    <input type="text" placeholder="Search products..."
+                        class="pl-10 pr-4 py-2 w-48 border border-dun rounded-button text-sm focus:outline-none focus:ring-2 focus:ring-olive-green/20 focus:border-olive-green bg-white font-nunito">
+                    <div
+                        class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-reseda-green">
+                        <i class="ri-search-line"></i>
+                    </div>
+                </div> -->
+                <div class="w-10 h-10 flex items-center justify-center md:hidden cursor-pointer">
+                    <i class="ri-menu-line ri-lg text-olive-green"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-12 bg-white">
+        <div class="container mx-auto mb-10">
+            <!--     <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-olive-green mb-4 font-poppins">Apple Supply Chain</h2>
+                <p class="text-sm text-reseda-green max-w-2xl mx-auto font-open-sans leading-relaxed">
+                    Detailed visualization of Pakistan's apple supply chain from orchard establishment to retail markets
+                    in Northern Pakistan
+                </p>
+            </div> -->
+
+            <div class="bg-white rounded-lg shadow-lg border border-dun p-10">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-xl font-bold text-olive-green font-poppins">Interactive Supply Chain Map</h3>
+                    <div class="flex space-x-4">
+                        <button id="toggleBottlenecks" class="toggle-button">Show Bottlenecks</button>
+                        <button id="toggleQuotes" class="toggle-button">Show Quotes</button>
+                    </div>
+                </div>
+
+                <div id="supplyChainContainer" class="supply-chain-container">
+                    <!-- Supply chain stages will be generated here -->
+                </div>
+
+                <div class="text-center mt-12">
+                    <button onclick="window.location.href='products.html'"
+                        class="px-4 py-2.5 bg-olive-green text-white rounded-button hover:bg-reseda-green transition-colors font-medium font-nunito">
+                        View More Products
+                    </button>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <script id="mobile-menu-toggle">
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuButton = document.querySelector('.ri-menu-line').parentNode;
+            const mobileMenu = document.createElement('div');
+            mobileMenu.className = 'fixed inset-0 bg-gray-800 bg-opacity-50 z-50 hidden';
+            mobileMenu.innerHTML = `
+                <div class="bg-white h-full w-64 shadow-xl transform transition-transform p-6">
+                    <div class="flex justify-between items-center mb-8">
+                        <h3 class="font-bold text-xl text-olive-green font-poppins">Menu</h3>
+                        <div class="w-8 h-8 flex items-center justify-center cursor-pointer close-menu">
+                            <i class="ri-close-line ri-lg text-olive-green"></i>
+                        </div>
+                    </div>
+                    <nav class="space-y-4">
+                        <a href="index.html" class="block py-2 text-reseda-green font-nunito">Home</a>
+                        <a href="products.html" class="block py-2 text-reseda-green font-nunito">Products</a>
+                        <a href="maps.html" class="block py-2 text-reseda-green font-nunito">Maps</a>
+                        <a href="about.html" class="block py-2 text-reseda-green font-nunito">About</a>
+                    </nav>
+                </div>
+            `;
+            document.body.appendChild(mobileMenu);
+            menuButton.addEventListener('click', function () {
+                mobileMenu.classList.remove('hidden');
+                mobileMenu.querySelector('div').classList.add('translate-x-0');
+                mobileMenu.querySelector('div').classList.remove('-translate-x-full');
+            });
+            mobileMenu.querySelector('.close-menu').addEventListener('click', function () {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.querySelector('div').classList.remove('translate-x-0');
+                mobileMenu.querySelector('div').classList.add('-translate-x-full');
+            });
+        });
+    </script>
+
+    <script id="apple-supply-chain-data">
+        // Apple supply chain data
+        const appleSupplyChainData = {
+            stages: [
+                {
+                    title: 'Orchard Establishment',
+                    description: 'Planting apple trees in mountainous regions',
+                    icon: 'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z',
+                    position: { top: 50, left: 100 },
+                    tooltip: {
+                        content: 'In Pakistan, apple orchards are primarily established in high-altitude areas such as Balochistan (e.g., Ziarat, Kalat) and Gilgit-Baltistan, where the cold climate supports apple cultivation. The establishment phase involves selecting suitable apple varieties like Kala Kulu, Amri, Mashadi, and Golden Delicious, and preparing land through terracing, soil conditioning, and water management.',
+                        stats: [
+                            'Altitude: 1500-3000 meters',
+                            'Tree Spacing: 3m x 4m to 4m x 5m',
+                            'Productive Life: 25-30 years',
+                            'Initial Investment: High'
+                        ]
+                    },
+                    bottleneck: 'High establishment costs, limited suitable land, climate dependency, initial investment requirements'
+                },
+                {
+                    title: 'Orchard Management',
+                    description: 'Pruning, training, and canopy management',
+                    icon: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z',
+                    position: { top: 50, left: 300 },
+                    tooltip: {
+                        content: 'Pakistani apple orchards often face challenges like uneven rainfall and limited mechanization, making regular manual pruning and training essential. Farmers use traditional and modern methods to shape trees for better sunlight exposure and airflow, which helps prevent diseases such as scab and powdery mildew.',
+                        stats: [
+                            'Pruning Season: December-February',
+                            'Training Systems: Spindle bush, central leader',
+                            'Yield: 20-40 tons/hectare',
+                            'Pest Management: IPM approach'
+                        ]
+                    },
+                    bottleneck: 'Pest and disease management, weather changes, poor irrigation systems, limited mechanization'
+                },
+                {
+                    title: 'Flowering & Pollination',
+                    description: 'Managing bloom and ensuring cross-pollination',
+                    icon: 'M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10',
+                    position: { top: 50, left: 500 },
+                    tooltip: {
+                        content: 'Most apple varieties in Pakistan require cross-pollination, which occurs during the spring bloom season. Beekeeping is increasingly integrated into farms, especially in areas like Swat and Ziarat, to enhance pollination through natural agents.',
+                        stats: [
+                            'Flowering: April-May',
+                            'Cross-pollination: Essential',
+                            'Bee Colonies: 2-3 hives/hectare',
+                            'Weather Sensitivity: High'
+                        ]
+                    },
+                    bottleneck: 'Climate-sensitive flowers, frost damage, declining bee populations, pollination failure'
+                },
+                {
+                    title: 'Fruit Development',
+                    description: 'Thinning, bagging, and growth monitoring',
+                    icon: 'M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z',
+                    position: { top: 50, left: 700 },
+                    tooltip: {
+                        content: 'Once flowering is complete, early-stage fruit requires careful management. Farmers in Pakistan often manually thin excessive fruit to ensure optimal size and appearance. In areas with higher pest risks, protective fruit bagging is used to reduce sunburn and insect damage.',
+                        stats: [
+                            'Development: 4-6 months',
+                            'Thinning: 1-2 fruits per cluster',
+                            'Bagging: 80-90% for premium',
+                            'Labor Intensity: High'
+                        ]
+                    },
+                    bottleneck: 'Labor-intensive operations, timing precision, weather protection requirements'
+                },
+                {
+                    title: 'Harvesting',
+                    description: 'Hand-picking at optimal maturity',
+                    icon: 'M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4',
+                    position: { top: 180, left: 850 },
+                    tooltip: {
+                        content: 'Harvesting usually takes place between July and October, depending on the region and variety. Apples are hand-picked by local laborers, who have years of experience handling fruit without bruising it. Since mechanical harvesting is rare in Pakistan, skilled manual harvesting ensures quality.',
+                        stats: [
+                            'Harvest Period: August-October',
+                            'Harvest Rounds: 2-3 per variety',
+                            'Handling: Soft-catch systems',
+                            'Quality Factor: No bruising'
+                        ]
+                    },
+                    bottleneck: 'Lack of storage at farm level forces immediate sale at lower prices, labor shortage'
+                },
+                {
+                    title: 'Post-Harvest Handling',
+                    description: 'Washing, grading, and initial processing',
+                    icon: 'M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 113 0v1m0 0V11m0-5.5a1.5 1.5 0 113 0v3m0 0V11',
+                    position: { top: 350, left: 850 },
+                    tooltip: {
+                        content: 'Post-harvest handling begins at the farm or nearby collection centers, where apples are cleaned, graded manually or with basic machines, and sorted based on size, color, and quality. Modern export-focused farms apply food safety protocols and may also apply surface treatments like waxing.',
+                        stats: [
+                            'Cooling: Within 4-6 hours',
+                            'Washing: Chlorinated water',
+                            'Grading: 5-6 size categories',
+                            'Quality Control: Critical'
+                        ]
+                    },
+                    bottleneck: 'Limited post-harvest infrastructure, quality control challenges, handling damage'
+                },
+                {
+                    title: 'Cold Storage',
+                    description: 'Controlled atmosphere storage',
+                    icon: 'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z',
+                    position: { top: 470, left: 700 },
+                    tooltip: {
+                        content: 'Cold storage infrastructure is growing in Pakistan, especially in Quetta, Pishin, and Swat, helping extend the shelf life of apples for domestic and export markets. Controlled atmosphere (CA) storage is used by larger producers and exporters to maintain freshness and stabilize prices.',
+                        stats: [
+                            'Temperature: 0-2°C',
+                            'Oxygen Level: 1-3%',
+                            'Storage Life: 8-12 months',
+                            'Infrastructure: High investment'
+                        ]
+                    },
+                    bottleneck: 'High infrastructure costs, technical expertise requirements, energy costs'
+                },
+                {
+                    title: 'Packaging',
+                    description: 'Consumer packaging for retail and export',
+                    icon: 'M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4',
+                    position: { top: 470, left: 500 },
+                    tooltip: {
+                        content: 'Apples are packed into wooden crates, cardboard boxes, or plastic trays, depending on the target market. Export-quality apples are packed in ventilated, standardized packaging with branding, barcodes, and grading labels. Proper packaging prevents bruising during transport.',
+                        stats: [
+                            'Export: 18-20 kg boxes',
+                            'Retail: 1-5 kg units',
+                            'Individual Wrapping: Premium grades',
+                            'Branding: Value addition'
+                        ]
+                    },
+                    bottleneck: 'Packaging costs, quality standards, branding development challenges'
+                },
+                {
+                    title: 'Distribution',
+                    description: 'Transportation to domestic and export markets',
+                    icon: 'M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0',
+                    position: { top: 470, left: 300 },
+                    tooltip: {
+                        content: 'From farms in Balochistan and Gilgit-Baltistan, apples travel through wholesale markets in major cities. For exports, apples are routed via road or rail to port cities like Karachi, where they are shipped primarily to Middle Eastern countries.',
+                        stats: [
+                            'Transport: 0-4°C',
+                            'Distribution: 500-2000 km',
+                            'Export Markets: Middle East, Central Asia',
+                            'Documentation: Required'
+                        ]
+                    },
+                    bottleneck: 'Poor road connectivity, unrefrigerated transport, overloaded vehicles causing damage'
+                },
+                {
+                    title: 'Retail Sales',
+                    description: 'Premium positioning in markets',
+                    icon: 'M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z',
+                    position: { top: 470, left: 100 },
+                    tooltip: {
+                        content: 'Apples grown in Pakistan reach consumers through fruit mandis, retail vendors, supermarkets, and online platforms. Premium varieties like Kala Kulu from Ziarat or Golden Delicious from Hunza are marketed as high-quality local produce.',
+                        stats: [
+                            'Domestic Market: 70%',
+                            'Export Value: $15 million',
+                            'Premium Varieties: Red, Golden Delicious',
+                            'Competition: Import pressure'
+                        ]
+                    },
+                    bottleneck: 'Import competition, quality perception, limited brand recognition'
+                }
+            ]
+        };
+
+        // Apple color scheme
+        const appleColors = {
+            background: '#F9FBE7',
+            titleBackground: '#689F38',
+            tooltipBackground: '#F9FBE7',
+            tooltipText: '#1B1B1B',
+            stageIconBg: '#689F38',
+        };
+    </script>
+
+    <script id="apple-supply-chain-script">
+        document.addEventListener('DOMContentLoaded', function () {
+            generateAppleSupplyChain();
+            initializeSupplyChain();
+        });
+
+        function generateAppleSupplyChain() {
+            const container = document.getElementById('supplyChainContainer');
+
+            let stagesHTML = '';
+            appleSupplyChainData.stages.forEach((stage, index) => {
+                const tooltipPosition = stage.position.top > 300 ? 'top: auto; bottom: 100%;' : 'top: 100%;';
+
+                stagesHTML += `
+                    <div class="stage-node" style="top: ${stage.position.top}px; left: ${stage.position.left}px;">
+                        <div class="stage-icon" style="background-color: ${appleColors.background};">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="${stage.icon}" />
+                            </svg>
+                            <div class="stage-number" style="background-color: ${appleColors.stageIconBg};">${index + 1}</div>
+                        </div>
+                        <div class="stage-title" style="background-color: ${appleColors.titleBackground};">${stage.title}</div>
+                        <div class="stage-description">${stage.description}</div>
+    
+                        <!-- Normal tooltip -->
+                        <div class="tooltip stage-tooltip" style="${tooltipPosition} left: 50%; transform: translateX(-50%); background-color: ${appleColors.tooltipBackground}; color: ${appleColors.tooltipText};">
+                            <div class="tooltip-content">${stage.tooltip.content}</div>
+                            <div class="tooltip-stats">
+                                ${stage.tooltip.stats.map(stat => `<div>${stat}</div>`).join('')}
+                            </div>
+                        </div>
+    
+                        <!-- Bottleneck tooltip -->
+                        <div class="bottleneck-tooltip stage-tooltip" style="${tooltipPosition} left: 50%; transform: translateX(-50%); background-color: #fef2f2; color: ${appleColors.tooltipText}; display: none;">
+                            <div class="bottleneck-title">${stage.title} Bottlenecks</div>
+                            <div class="bottleneck-content">${stage.bottleneck}</div>
+                        </div>
+    
+                        <!-- Quote tooltip -->
+                        <div class="quote-tooltip stage-tooltip" style="${tooltipPosition} left: 50%; transform: translateX(-50%); background-color: #fef6e0; color: ${appleColors.tooltipText}; display: none;">
+                            <div class="quote-title">Quote</div>
+                            <div class="quote-content">"${stage.quote || '—'}"</div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = stagesHTML;
+        }
+
+        function initializeSupplyChain() {
+            const toggleBottlenecksButton = document.getElementById('toggleBottlenecks');
+            const toggleQuotesButton = document.getElementById('toggleQuotes');
+            const normalTooltips = document.querySelectorAll('.tooltip');
+            const bottleneckTooltips = document.querySelectorAll('.bottleneck-tooltip');
+            const quoteTooltips = document.querySelectorAll('.quote-tooltip');
+            const warningIcons = document.querySelectorAll('.warning-icon');
+
+            let currentMode = 'normal';
+
+            function setNormalMode() {
+                currentMode = 'normal';
+                normalTooltips.forEach(t => t.style.display = 'block');
+                bottleneckTooltips.forEach(t => t.style.display = 'none');
+                quoteTooltips.forEach(t => t.style.display = 'none');
+                warningIcons.forEach(i => i.style.display = 'none');
+
+                toggleBottlenecksButton.textContent = 'Show Bottlenecks';
+                toggleQuotesButton.textContent = 'Show Quotes';
+                toggleBottlenecksButton.classList.remove('active');
+                toggleQuotesButton.classList.remove('active');
+            }
+
+            function setBottleneckMode() {
+                currentMode = 'bottlenecks';
+                normalTooltips.forEach(t => t.style.display = 'none');
+                bottleneckTooltips.forEach(t => t.style.display = 'block');
+                quoteTooltips.forEach(t => t.style.display = 'none');
+                warningIcons.forEach(i => i.style.display = 'flex');
+
+                toggleBottlenecksButton.textContent = 'Hide Bottlenecks';
+                toggleQuotesButton.textContent = 'Show Quotes';
+                toggleBottlenecksButton.classList.add('active');
+                toggleQuotesButton.classList.remove('active');
+            }
+
+            function setQuoteMode() {
+                currentMode = 'quotes';
+                normalTooltips.forEach(t => t.style.display = 'none');
+                bottleneckTooltips.forEach(t => t.style.display = 'none');
+                quoteTooltips.forEach(t => t.style.display = 'block');
+                warningIcons.forEach(i => i.style.display = 'none');
+
+                toggleBottlenecksButton.textContent = 'Show Bottlenecks';
+                toggleQuotesButton.textContent = 'Hide Quotes';
+                toggleBottlenecksButton.classList.remove('active');
+                toggleQuotesButton.classList.add('active');
+            }
+
+            // Initial default view
+            setNormalMode();
+
+            toggleBottlenecksButton.addEventListener('click', () => {
+                if (currentMode === 'bottlenecks') {
+                    setNormalMode();
+                } else {
+                    setBottleneckMode();
+                }
+            });
+
+            toggleQuotesButton.addEventListener('click', () => {
+                if (currentMode === 'quotes') {
+                    setNormalMode();
+                } else {
+                    setQuoteMode();
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>
