@@ -126,7 +126,7 @@
             font-family: 'Nunito', sans-serif;
         }
 
-        .warning-icon {
+        /* .warning-icon {
             position: absolute;
             top: -10px;
             left: -10px;
@@ -141,7 +141,7 @@
             justify-content: center;
             font-size: 16px;
             cursor: pointer;
-        }
+        } */
 
         .stage-title {
             color: white;
@@ -165,51 +165,39 @@
             line-height: 1.5;
         }
 
-        .tooltip,
-        .bottleneck-tooltip {
+        /* === BASE TOOLTIP STYLES === */
+        .stage-tooltip {
             visibility: hidden;
             position: absolute;
             border-radius: 8px;
             padding: 12px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            width: 250px;
+            overflow-y: auto;
             z-index: 100;
             opacity: 0;
             transition: opacity 0.3s;
             text-align: left;
-            font-family: 'Open Sans', sans-serif;
         }
 
+        /* === NORMAL TOOLTIP STYLES === */
         .tooltip {
             background-color: white;
             border: 1px solid #DBC7B1;
+            color: #3D3D3D;
+            font-family: 'Open Sans', sans-serif;
+            width: 500px;
+            height: 300px;
         }
 
-        .bottleneck-tooltip {
-            background-color: #fef2f2;
-            border: 1px solid #A65C2D;
-            display: none;
-        }
-
-        .stage-node:hover .stage-tooltip {
-            visibility: visible;
-            opacity: 1;
-        }
-
-        .tooltip-title,
-        .bottleneck-title {
+        .tooltip-title {
             font-weight: bold;
             margin-bottom: 5px;
             font-size: 14px;
             font-family: 'Poppins', sans-serif;
+            color: #3D3D3D;
         }
 
-        .bottleneck-title {
-            color: #A65C2D;
-        }
-
-        .tooltip-content,
-        .bottleneck-content {
+        .tooltip-content {
             font-size: 12px;
             color: #3D3D3D;
             line-height: 1.6;
@@ -220,7 +208,61 @@
             padding-top: 8px;
             border-top: 1px dashed #DBC7B1;
             font-size: 11px;
-            color: #747545;
+            color: #646441;
+        }
+
+        /* === BOTTLENECK TOOLTIP STYLES === */
+        .bottleneck-tooltip {
+            background-color: #fafafa;
+            border: 1px solid #cc5500;
+            color: #c50;
+            font-family: 'Open Sans', sans-serif;
+            width: 240px;
+            height: 240px;
+        }
+
+        .bottleneck-title {
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-family: 'Poppins', sans-serif;
+            color: #cc5500;
+        }
+
+        .bottleneck-content {
+            font-size: 12px;
+            color: #cc5500;
+            line-height: 1.6;
+        }
+
+        /* === QUOTE TOOLTIP STYLES === */
+        .quote-tooltip {
+            background-color: #fafafa;
+            border: 1px solid #cc5500;
+            color: #cc5500;
+            font-family: 'Open Sans', sans-serif;
+            width: 240px;
+            height: 240px;
+        }
+
+        .quote-title {
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-family: 'Poppins', sans-serif;
+            color: #cc5500;
+        }
+
+        .quote-content {
+            font-size: 12px;
+            color: #cc5500;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .stage-node:hover .stage-tooltip {
+            visibility: visible;
+            opacity: 1;
         }
 
         .toggle-button {
@@ -234,6 +276,7 @@
             border: 1px solid #45552C;
             font-size: 14px;
             font-family: 'Nunito', sans-serif;
+            margin-right: 10px;
         }
 
         .toggle-button:hover {
@@ -241,15 +284,35 @@
         }
 
         .toggle-button.active {
-            background-color: #A65C2D;
-            color: white;
-            border: 1px solid #A65C2D;
+            background-color: #EAE3DB;
+            color: #45552C;
+            border: 1px solid #EAE3DB;
         }
 
         .toggle-button.active:hover {
-            background-color: #8B4513;
-            border: 1px solid #8B4513;
+            background-color: #EAE3DB;
+            border: 1px solid #EAE3DB;
         }
+
+        /* Scrollbar Styles for All Tooltips */
+        .stage-tooltip::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .stage-tooltip::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        .stage-tooltip::-webkit-scrollbar-thumb {
+            background: #c1c1c191;
+            border-radius: 4px;
+        }
+
+        .stage-tooltip::-webkit-scrollbar-thumb:hover {
+            background: #a0a0a0;
+        }
+
 
         /* Modal specific adjustments */
         .supply-chain-modal {
@@ -315,14 +378,14 @@
                     class="text-reseda-green hover:text-olive-green transition-colors font-nunito">About</a>
             </nav>
             <div class="flex items-center space-x-4">
-                <div class="relative ml-4">
+                <!-- <div class="relative ml-4">
                     <input type="text" placeholder="Search products..."
                         class="pl-10 pr-4 py-2 w-48 border border-dun rounded-button text-sm focus:outline-none focus:ring-2 focus:ring-olive-green/20 focus:border-olive-green bg-white font-nunito">
                     <div
                         class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-reseda-green">
                         <i class="ri-search-line"></i>
                     </div>
-                </div>
+                </div> -->
                 <div class="w-10 h-10 flex items-center justify-center md:hidden cursor-pointer">
                     <i class="ri-menu-line ri-lg text-olive-green"></i>
                 </div>
@@ -656,12 +719,13 @@
                         <div class="supply-chain-modal">
                             <div class="relative mb-6">
                                 <button id="toggleBottlenecks" class="toggle-button">Show Bottlenecks</button>
+                                <button id="toggleQuotes" class="toggle-button">Show Quotes</button>
                             </div>
                             <div id="supplyChainContainer" class="supply-chain-container">
                                 <!-- Supply chain content will be dynamically generated here -->
                             </div>
 
-                            <div id="productOverview" class="bg-white p-6 rounded-lg shadow-lg border border-dun mt-24">
+                            <div id="productOverview" class="bg-white p-6 rounded-lg shadow-lg border border-dun mt-32">
                                 <!-- Product overview will be dynamically generated here -->
                             </div>
                         </div>
@@ -1394,167 +1458,151 @@
                     ]
                 }
             },
-            
+
             'Chili': {
                 stages: [
                     {
-                        title: 'Land Preparation',
-                        description: 'Levelling land and planning irrigation to prepare for sowing',
-                        icon: 'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z',
-                        position: { top: 50, left: 100 },
-                        tooltip: {
-                            content: 'Fields are leveled and prepared before sowing. Farmers ensure proper irrigation access through nehr systems or pumps. Some use drip irrigation to manage water during droughts.',
-                            stats: [
-                                'Irrigation: Canal (nehr), pump, or drip system',
-                                'Water Frequency: Every 10–15 days during peak heat',
-                                'Govt Support: 60% subsidy on drip irrigation (Sindh)'
+                        "title": "Land Preparation",
+                        "description": "Levelling land and planning irrigation to prepare for sowing",
+                        "icon": "https://i.ibb.co/sJgxZJZK/Land-Preparation.png",
+                        "position": { "top": 50, "left": 100 },
+                        "tooltip": {
+                            "content": "<b>Land Levelling Methods</b><table><tr><th>Type</th><th>How it’s done</th><th>Notes</th></tr><tr><td>Manual</td><td>Ploughs or hand tools flatten small fields.</td><td>Low cost, labor‑intensive</td></tr><tr><td>Animal‑drawn</td><td>Bullocks pull levellers.</td><td>Traditional method</td></tr><tr><td>Tractor</td><td>Blade attachments level land quickly.</td><td>Common in larger farms</td></tr><tr><td>Laser</td><td>Laser‑guided leveling for precision.</td><td>Rare for smallholders</td></tr></table><br><b>Irrigation Planning Methods</b><table><tr><th>Type</th><th>How water is managed</th><th>Notes</th></tr><tr><td>Flood (Canal/Nehr)</td><td>Water floods rows via channels.</td><td>Traditional, high water use</td></tr><tr><td>Pump‑based</td><td>Pumped from tube wells into fields.</td><td>Where canals aren’t available</td></tr><tr><td>Furrow Design</td><td>Small channels guide water.</td><td>Improves uniformity</td></tr><tr><td>Drip Irrigation</td><td>Pipes deliver water directly to roots.</td><td>Efficient; subsidized in Sindh</td></tr></table>",
+                            "stats": [
+                                "Water Frequency: Every 10–15 days during peak heat",
+                                "Govt Support: 60% subsidy on drip irrigation (Sindh)"
                             ]
                         },
-                        bottleneck: 'Soil quality issues, insufficient water'
+                        "bottleneck": "Soil quality issues (salinity in some areas), high leveling costs, and insufficient water.",
+                        "quote": "“Zameen tayaar ki jati hai... pump lagay huay hain... choti choti nehri banai hoti hai.” — Nazir\n“The government... was offering a drip irrigation system... hum switch ho gaye to drip irrigation.” — Agri 5"
                     },
                     {
-                        title: 'Seed Selection',
-                        description: 'Selecting hybrid or local seeds based on yield, taste, and disease resistance',
-                        icon: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z',
-                        position: { top: 50, left: 300 },
-                        tooltip: {
-                            content: 'Farmers use hybrid seeds like Sanam for higher yield, while local Longi mirch is preferred for its strong flavor and market value. Seed choice depends on climate, disease resistance, and expected rates.',
-                            stats: [
-                                'Common Varieties: Hybrid (Sanam) & Local (Longi)',
-                                'Fruit Maturity: ~120 days after transplant',
-                                'Seed Source: Mostly uncertified or local suppliers',
-                                'Selection Factors: Yield, taste, disease resistance'
+                        "title": "Seed Selection",
+                        "description": "Selecting hybrid or local seeds based on yield, taste, and disease resistance",
+                        "icon": "https://i.ibb.co/LzrhY1Lk/Seed-Selection.png",
+                        "position": { "top": 50, "left": 350 },
+                        "tooltip": {
+                            "content": "<p>Seed choice depends on climate, disease resistance, and expected market rates. Farmers often select hybrid seeds like Sanam for higher yields, while Longi mirch is valued for its strong flavor and better price.</p><b>Seed Variety Comparison</b><table><tr><th>Characteristic</th><th>Sanam Mirch (Hybrid)</th><th>Longi Mirch (Local)</th></tr><tr><td>Shape & Size</td><td>Short (4–6 cm), thick</td><td>Long (8–12 cm), slender</td></tr><tr><td>Color (when ripe)</td><td>Bright red</td><td>Deep red to crimson</td></tr><tr><td>Pungency</td><td>Medium–high</td><td>Medium–low</td></tr><tr><td>Culinary Use</td><td>Powder; spicy dishes</td><td>Dried whole; pickles, tadka</td></tr><tr><td>Plant Type</td><td>Bushy, good yield</td><td>Taller, longer maturity</td></tr><tr><td>Farming Traits</td><td>Suited for powder production</td><td>Preferred for whole drying</td></tr><tr><td>Drying & Storage</td><td>Dries quickly</td><td>Takes longer to dry</td></tr></table>",
+                            "stats": [
+                                "Fruit Maturity: ~120 days after transplant",
+                                "Seed Source: Mostly uncertified/local suppliers",
+                                "Regions Grown: Punjab & Sindh (Sanam); Southern Punjab & Balochistan (Longi)"
                             ]
                         },
-                        bottleneck: 'Lack of certified seed access, lack of market data, inconsistent quality, overproduction'
+                        "bottleneck": "Lack of certified seed access, inconsistent quality, overproduction, limited extension support, and fluctuating hybrid seed prices.",
+                        "quote": "“Hybrid ki yield zyada hoti hai, but Longi ka taste market mein pasand kiya jata hai.” — Waseem\n“Seed ki certification pe buhat issues hain.” — Agri 5"
                     },
                     {
-                        title: 'Nursery & Transplantation',
-                        description: 'Seeds are first grown in nurseries, then transplanted to fields after 45 days',
-                        icon: 'M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10',
-                        position: { top: 50, left: 500 },
-                        tooltip: {
-                            content: 'Chilli seeds are sown in nursery beds around February. After 45 days, once seedlings are established, they are transplanted into prepared fields. This stage is critical for setting a strong base for fruiting. Transplantation is followed by careful water and spray management to support plant health.',
-                            stats: [
-                                'Nursery Duration: ~45 days',
-                                'Transplant Timing: Feb–March',
-                                'Fruiting Starts: ~120 days after transplant',
-                                'Key Input: Early fungicide & NPK sprays post-transplant'
+                        "title": "Nursery & Transplantation",
+                        "description": "Seeds are first grown in nurseries, then transplanted to fields after 45 days",
+                        "icon": "https://i.ibb.co/VpbjKzZL/Nursery-Transplantation.png",
+                        "position": { "top": 50, "left": 600 },
+                        "tooltip": {
+                            "content": "Seeds are first raised in nursery beds (around February). After about 45 days, they are transplanted into fields. This stage is vulnerable to monsoon damage, which can burn young plants.",
+                            "stats": [
+                                "Nursery Duration: ~45 days",
+                                "Transplant Timing: Feb–March",
+                                "Fruiting Starts: ~120 days after transplant",
+                                "Key Input: Early fungicide & NPK sprays"
                             ]
                         },
-                        bottleneck: 'Unpredictable weather, transplant shock, water shortage'
+                        "bottleneck": "Unpredictable weather, transplant shock, water shortage, and early pest attacks on seedlings.",
+                        "quote": "“Feb mein seed lag jata hai... 45 din baad land mein transplant kar detay hain.” — Waseem\n“July end se August ka monsoon time hota hai... burning bhi ho sakti hai.” — Waseem"
                     },
                     {
-                        title: 'Crop Management',
-                        description: 'Regular irrigation, fertilizers, and sprays are used to protect plants and ensure healthy fruiting.',
-                        icon: 'M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z',
-                        position: { top: 50, left: 700 },
-                        tooltip: {
-                            content: 'After transplantation, chillies require careful management to ensure healthy growth and fruiting. Farmers apply fertilizers like NPK and urea at key stages. Sprays, especially fungicides, are applied every 7–10 days to prevent disease and pests. Watering is done every 10–15 days, but availability is often limited. The crop begins fruiting around 120 days after transplanting.',
-                            stats: [
-                                'Spray Frequency: Every 7–10 days',
-                                'Fertilizers: NPK, Urea, DAP',
-                                'Watering: Every 10–15 days (or longer)',
-                                'Fruiting: ~120 days after transplant'
+                        "title": "Crop Management",
+                        "description": "Regular irrigation, fertilizers, and sprays are used to protect plants and ensure healthy fruiting.",
+                        "icon": "https://i.ibb.co/cXTtQn9M/Crop-Management.png",
+                        "position": { "top": 100, "left": 850 },
+                        "tooltip": {
+                            "content": "<b>Crop Management Activities</b><table><tr><th>Activity</th><th>Frequency</th><th>Notes</th></tr><tr><td>Spraying</td><td>Every 7–10 days</td><td>Fungicides to control disease</td></tr><tr><td>Fertilizers</td><td>NPK, Urea, DAP</td><td>Applied at key growth stages</td></tr><tr><td>Watering</td><td>Every 10–15 days</td><td>Often delayed due to scarcity</td></tr><tr><td>Fruiting</td><td>~120 days after transplant</td><td>Management affects yield</td></tr></table>",
+                            "stats": [
+                                "Spray Frequency: Every 7–10 days",
+                                "Fertilizers: NPK, Urea, DAP",
+                                "Watering: Every 10–15 days",
+                                "Fruiting: ~120 days after transplant"
                             ]
                         },
-                        bottleneck: 'Pest and disease prone, water scarcity, high input costs'
+                        "bottleneck": "Pest and disease pressure, water scarcity, high input costs, and irregular access to inputs.",
+                        "quote": "“Fungicide ka spray hum har 7 din baad repeat karte hain.” — Waseem\n“Pani humein 15 din baad ya 21 din baad milta hai... tough hota hai April se June main.” — Waseem\n“Time pay paani dena hota hai... khula paani nahi hota.” — Nazir"
                     },
                     {
-                        title: 'Harvesting',
-                        description: 'Chillies are harvested daily or every other day once fruit ripens.',
-                        icon: 'M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4',
-                        position: { top: 180, left: 850 },
-                        tooltip: {
-                            content: 'Harvesting begins approximately 120 days after transplanting and continues for several weeks. Farmers usually harvest every day or on alternate days, depending on the crop’s maturity. In many cases, harvesting is done manually by family members or hired labor, especially women and children. Timing is key as overripe chillies left too long on the plant can spoil or lose quality. In red chilli varieties, proper drying must follow immediately to preserve color and shelf life.',
-                            stats: [
-                                'Harvest Period: 2-3 months',
-                                'Picking Frequency: Daily or alternate days',
-                                'Labor: Family & hired workers',
-                                'Varieties: Green and red chillies harvested separately'
+                        "title": "Harvesting",
+                        "description": "Chillies are harvested daily or every other day once fruit ripens.",
+                        "icon": "https://i.ibb.co/7JpjP5NT/Harvesting.png",
+                        "position": { "top": 275, "left": 950 },
+                        "tooltip": {
+                            "content": "Harvesting starts ~120 days after transplant and continues for 2–3 months. Picking is done daily or every other day by family or hired labor. Delays can spoil fruit.",
+                            "stats": [
+                                "Harvest Period: 2–3 months",
+                                "Picking Frequency: Daily or alternate days",
+                                "Labor: Family & hired workers"
                             ]
                         },
-                        bottleneck: 'Labor shortage, timing precision, weather disruptions'
+                        "bottleneck": "Labor shortage (many shift to other seasonal crops), timing precision, and weather disruptions.",
+                        "quote": "“MashAllah say humaray khandan main hee aurtain aur bachay sab yeh kaam kartay hain... roz ki tori hoti hai.” — Nazir\n“Jaise hi fruit red ho gaya, agar delay hua toh pet kharab karegi.” — Waseem"
                     },
                     {
-                        title: 'Drying & Post-Harvest Handling',
-                        description: 'Sun-dried on plastic or green net sheets to prevent contamination',
-                        icon: 'M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11',
-                        position: { top: 350, left: 850 },
-                        tooltip: {
-                            content: 'After harvest, chillies, especially the red Longi variety, are dried in open sunlight. Farmers lay them on green net or plastic sheets to minimize contact with soil and prevent fungal contamination. Drying is a critical step to maintain quality and shelf life. In some areas, drying ovens (heaters) are available through NGOs or government programs, but their availability is very limited. Drying must be done promptly to avoid overripening and spoilage. Once dried, chillies are packed in jute bags for further storage or transport.',
-                            stats: [
-                                'Drying Time: Varies by sun exposure',
-                                'Drying Method: Sun drying on sheets or heaters',
-                                'Tools Used: Green nets, plastic sheets, jute bags',
-                                'Advanced Drying: Heaters available via NGOs/government'
+                        "title": "Drying & Post-Harvest Handling",
+                        "description": "Sun-dried on plastic or green net sheets to prevent contamination",
+                        "icon": "https://i.ibb.co/4R9pdZzz/Drying-Post-Harvest-Handling.png",
+                        "position": { "top": 450, "left": 850 },
+                        "tooltip": {
+                            "content": "<b>Drying Methods</b><table><tr><th>Method</th><th>Tool Used</th><th>Notes</th></tr><tr><td>Sun Drying</td><td>Green nets or plastic sheets</td><td>Prevents soil contamination</td></tr><tr><td>Heater Drying</td><td>NGO/government heaters</td><td>Limited access</td></tr></table><br><b>Post‑Harvest Handling</b><table><tr><th>Step</th><th>Purpose</th></tr><tr><td>Sorting</td><td>Damaged pods removed before market</td></tr><tr><td>Packing</td><td>Stored in jute bags for ventilation</td></tr></table>",
+                            "stats": [
+                                "Drying Time: Varies by sun exposure",
+                                "Drying Method: Sun drying on sheets or heaters",
+                                "Tools Used: Green nets, plastic sheets, jute bags"
                             ]
                         },
-                        bottleneck: 'Fungal contamination (aflatoxin), limited access to dryers, weather dependency.'
+                        "bottleneck": "Fungal contamination (aflatoxin), limited dryer access, weather dependency, and poor drying surface practices.",
+                        "quote": "“Green net ya plastic sheet use karte hain... mitti lagti hai toh fungal disease aata hai.” — Waseem\n“Kharab daana... market mein nahi jaata.” — Nazir\n“Large heaters aa gaye hain... lekin sirf ek ya do machines hain hamaray region mein.” — Waseem"
                     },
                     {
-                        title: 'Storage and Transport',
-                        description: 'Dried chillies are stored in jute bags and transported to local markets and processing units through middlemen.',
-                        icon: 'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z',
-                        position: { top: 470, left: 700 },
-                        tooltip: {
-                            content: 'After drying, chillies are stored in jute bags, which help prevent moisture and fungal contamination. Farmers prefer these bags because they allow ventilation and are more durable during transport. Chillies are then transported to the nearest local mandi or wholesale market, usually through middlemen (aarti). Transportation costs and fuel prices are passed onto the farmers. Storage facilities are basic, and most farmers lack access to modern or climate-controlled storage.',
-                            stats: [
-                                'Storage Method: Jute bags',
-                                'Transport Mode: Manual or local vehicles',
-                                'Buyer Type: Middlemen (aarti), wholesalers',
-                                'Modern Storage: Rare at farm level'
+                        "title": "Processing",
+                        "description": "Chillies can be sold dried or ground into powder if quality is low.",
+                        "icon": "https://i.ibb.co/YBfJtmvz/Processing.png",
+                        "position": { "top": 500, "left": 600 },
+                        "tooltip": {
+                            "content": "<b>Processing Options</b><table><tr><th>Option</th><th>When Used</th><th>Limitation</th></tr><tr><td>Sell Dried</td><td>When quality meets market</td><td>Requires buyers and storage</td></tr><tr><td>Grind to Powder</td><td>When quality is low</td><td>Time consuming</td></tr><tr><td>Bulk Supply</td><td>Processor demand</td><td>Smallholders can’t meet volume</td></tr></table>",
+                            "stats": [
+                                "Processing: Sold as dried or powder",
+                                "Constraint: Time & scale limitations"
                             ]
                         },
-                        bottleneck: 'Middleman dependency, lack of cold storage, transport cost burden'
+                        "bottleneck": "Time constraints, smallholder scale, and lack of local processing facilities.",
+                        "quote": "“Agar quality market ke mutabiq na ho... powder form mein bana lein.” — Waseem\n“Itna time farmer ke paas nahi hota... next crop ki preparation bhi karni hoti hai.” — Waseem\n“Unki requirement itni zyada hai ke main akela match nahi kar sakta.” — Agri 5"
                     },
                     {
-                        title: 'Market & Sales',
-                        description: 'Chillies are sold through middlemen at local mandis. Prices fluctuate and are outside farmers’ control.',
-                        icon: 'M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4',
-                        position: { top: 470, left: 500 },
-                        tooltip: {
-                            content: 'Most chilli farmers rely on middlemen (aarti) to sell their produce at local mandis or wholesale markets. Direct selling to retailers or consumers is rare due to lack of resources and the volume of produce. Farmers have no control over prices, which are set by the middlemen without transparency. Payment delays are common, and smaller farmers are often forced to sell at lower rates to maintain cash flow. Although some farmers are interested in direct B2C models, they face challenges like market access, time, and logistics.',
-                            stats: [
-                                'Sales Channel: Middlemen to wholesale markets',
-                                'Pricing: Controlled by middlemen,',
-                                'Payment Time: 30–60 days post-sale',
-                                'Direct Sales: Rare due to resource limitations'
+                        "title": "Storage and Transport",
+                        "description": "Dried chillies are stored in jute bags and transported to local markets and processing units through middlemen.",
+                        "icon": "https://i.ibb.co/JjHCNHzX/Storage-Transport.png",
+                        "position": { "top": 500, "left": 350 },
+                        "tooltip": {
+                            "content": "Dried chillies are stored in jute bags for ventilation and transported through middlemen. Limited storage facilities and fuel costs reduce farmer margins.",
+                            "stats": [
+                                "Storage Method: Jute bags",
+                                "Transport Mode: Manual or local vehicles",
+                                "Buyer Type: Middlemen (aarti), wholesalers"
                             ]
                         },
-                        bottleneck: 'Price volatility, no price transparency, lack of direct market access'
+                        "bottleneck": "Middleman dependency, lack of cold storage, high transport costs, and spoilage risks from poor storage bags",
+                        "quote": "“Jute bags mein transport karte hain... thodi quality sahi rehti hai.” — Waseem\n“Hum market ko dekhain ya apnay baagh ko?... aarti hotay hain woh lay letay hain.” — Nazir\n“Middleman... fuel cost bhi producer pe daal deta hai.” — Agri 5"
                     },
                     {
-                        title: 'Distribution',
-                        description: 'Domestic and export distribution',
-                        icon: 'M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0',
-                        position: { top: 470, left: 300 },
-                        tooltip: {
-                            content: 'Export markets include the Middle East, Europe, and North America. Traceability systems are used to ensure food safety and compliance. Cold chain facilities are necessary for exporting fresh chillies.',
-                            stats: [
-                                'Export Markets: 15+ countries',
-                                'Distribution: Global reach',
-                                'Quality Standards: International',
-                                'Traceability: Farm to fork'
+                        "title": "Market & Sales",
+                        "description": "Chillies are sold through middlemen at local mandis. Prices fluctuate and are outside farmers’ control.",
+                        "icon": "6",
+                        "position": { "top": 500, "left": 100 },
+                        "tooltip": {
+                            "content": "Farmers sell mainly through middlemen at local mandis. Middlemen control prices and payments are often delayed.",
+                            "stats": [
+                                "Sales Channel: Local mandis via aarti",
+                                "Payment: Delayed by 1–2 months"
                             ]
                         },
-                        bottleneck: 'Export compliance, quality certification, logistics'
-                    },
-                    {
-                        title: 'Retail & Export',
-                        description: 'Final sales through various channels',
-                        icon: 'M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z',
-                        position: { top: 470, left: 100 },
-                        tooltip: {
-                            content: 'Chillies are positioned as a premium product in international markets. Organic certification helps fetch 30–50% higher prices. Brand development and quality assurance are key to tapping specialty markets.',
-                            stats: [
-                                'Export Value: $65 million annually',
-                                'Premium Markets: Organic, specialty',
-                                'Brand Premium: 30-50%',
-                                'Market Growth: 8-10% annually'
-                            ]
-                        },
-                        bottleneck: 'International competition, certification costs, brand recognition'
+                        "bottleneck": "Price volatility, lack of direct market access, dependence on middlemen credit, and delayed grading disputes.",
+                        "quote": "“Aarti lay jatay hain... woh hi wholesale main bechta hai.” — Nazir\n“Middlemen rates dictate kartay hain... koi system nahi hai.” — Agri 5\n“Payment ke liye mahina do mahina wait karna parta hai.” — Waseem\n“Farmer ke paas itne resources nahi hote... packing aur logistics ke liye change chahiye.” — Waseem"
                     }
                 ],
                 overview: {
@@ -3564,54 +3612,8 @@
     </script>
 
     <script id="product-interactions">
-        document.addEventListener('DOMContentLoaded', function () {
-            const productCards = document.querySelectorAll('.product-card');
-            const categoryButtons = document.querySelectorAll('.category-button');
-
-            // Add click event listeners to product card buttons
-            productCards.forEach(card => {
-                const viewButton = card.querySelector('button');
-                viewButton.addEventListener('click', function (e) {
-                    e.stopPropagation();
-                    showSupplyChainView(viewButton);
-                });
-            });
-
-            // Add click event listeners to category buttons
-            categoryButtons.forEach(button => {
-                button.addEventListener('click', function () {
-                    const category = this.getAttribute('data-category');
-
-                    // Update button styles
-                    categoryButtons.forEach(btn => {
-                        btn.classList.remove('bg-olive-green', 'text-white');
-                        btn.classList.add('bg-dun', 'text-reseda-green');
-                    });
-                    this.classList.remove('bg-dun', 'text-reseda-green');
-                    this.classList.add('bg-olive-green', 'text-white');
-
-                    // Filter product cards
-                    productCards.forEach(card => {
-                        if (category === 'all') {
-                            card.classList.remove('hidden');
-                        } else {
-                            const cardCategory = card.getAttribute('data-category');
-                            if (cardCategory === category) {
-                                card.classList.remove('hidden');
-                            } else {
-                                card.classList.add('hidden');
-                            }
-                        }
-                    });
-                });
-            });
-
-            // Trigger click on "All Products" button to show all products initially
-            document.querySelector('.category-button[data-category="all"]').click();
-        });
-
         function showSupplyChainView(button) {
-            const productName = button.closest('.product-card').querySelector('h3').textContent;
+            const productName = button.getAttribute('data-product');
             const modal = document.getElementById('supplyChainModal');
             const modalTitle = document.getElementById('modalTitle');
             modalTitle.textContent = `${productName} Supply Chain Map`;
@@ -3629,69 +3631,119 @@
             const container = document.getElementById('supplyChainContainer');
             const overviewContainer = document.getElementById('productOverview');
             const productData = supplyChainData[productName];
-            const colors = productColors[productName] || productColors['Wheat']; // Fallback to wheat colors
+            const colors = productColors[productName] || productColors['Apple'];
 
             if (!productData) {
                 container.innerHTML = '<p class="text-reseda-green">Supply chain data not available for this product.</p>';
+                overviewContainer.innerHTML = '<p class="text-reseda-green">Overview data not available for this product.</p>';
                 return;
             }
-
-            // Generate supply chain stages
             let stagesHTML = '';
             productData.stages.forEach((stage, index) => {
                 const tooltipPosition = stage.position.top > 300 ? 'top: auto; bottom: 100%;' : 'top: 100%;';
 
                 stagesHTML += `
-                    <div class="stage-node" style="top: ${stage.position.top}px; left: ${stage.position.left}px;">
-                        <div class="stage-icon" style="background-color: ${colors.background}; border-color: ${colors.iconBorder};">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="${stage.icon}" />
-                            </svg>
-                            <div class="stage-number" style="background-color: ${colors.stageIconBg};">${index + 1}</div>
-                            <div class="warning-icon">⚠</div>
-                        </div>
-                        <div class="stage-title" style="background-color: ${colors.titleBackground};">${stage.title}</div>
-                        <div class="stage-description">${stage.description}</div>
+        <div class="stage-node" style="top: ${stage.position.top}px; left: ${stage.position.left}px;">
+            <div class="stage-icon" style="background-color: ${colors.background};">
+                ${stage.icon.endsWith(".png") || stage.icon.endsWith(".jpg")
+                        ? `<img src="${stage.icon}" alt="${stage.title} icon" class="h-12 w-12" />`
+                        : `<svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="${stage.icon}" />
+                    </svg>`}
+                <div class="stage-number" style="background-color: ${colors.stageIconBg};">${index + 1}</div>
+            </div>
+            <div class="stage-title" style="background-color: ${colors.titleBackground};">${stage.title}</div>
+            <div class="stage-description">${stage.description}</div>
 
-                        <!-- Normal tooltip -->
-                        <div class="tooltip stage-tooltip" style="${tooltipPosition} left: 50%; transform: translateX(-50%); background-color: ${colors.tooltipBackground}; color: ${colors.tooltipText};">
-                            <div class="tooltip-content">${stage.tooltip.content}</div>
-                            <div class="tooltip-stats">
-                                ${stage.tooltip.stats.map(stat => `<div>${stat}</div>`).join('')}
-                            </div>
-                        </div>
-                        
-                        <!-- Bottleneck tooltip -->
-                        <div class="bottleneck-tooltip stage-tooltip" style="${tooltipPosition} left: 50%; transform: translateX(-50%); background-color: ${colors.tooltipBackground}; color: ${colors.tooltipText};">
-                            <div class="bottleneck-title">${stage.title} Bottlenecks</div>
-                            <div class="bottleneck-content">${stage.bottleneck}</div>
-                        </div>
-                    </div>
-                `;
+            <!-- Tooltips must be inside stage-node -->
+            <div class="tooltip stage-tooltip" style="${tooltipPosition} left: 50%; transform: translateX(-50%); background-color: ${colors.tooltipBackground}; color: ${colors.tooltipText};">
+                <div class="tooltip-title">${stage.tooltip.title || stage.title + ' Details'}</div>
+                <div class="tooltip-content">${stage.tooltip.content}</div>
+                <div class="tooltip-stats">
+                    ${stage.tooltip.stats.map(stat => `<div>${stat}</div>`).join('')}
+                </div>
+            </div>
+
+            <div class="bottleneck-tooltip stage-tooltip" style="${tooltipPosition} left: 50%; transform: translateX(-50%);">
+                <div class="bottleneck-title">${stage.title} Bottlenecks</div>
+                <div class="bottleneck-content">${stage.bottleneck}</div>
+            </div>
+
+            <div class="quote-tooltip stage-tooltip" style="${tooltipPosition} left: 50%; transform: translateX(-50%);">
+                <div class="quote-title">Quote</div>
+                <div class="quote-content">"${stage.quote || '—'}"</div>
+            </div>
+        </div>
+    `;
             });
+
+
+            //         let stagesHTML = '';
+            //         productData.stages.forEach((stage, index) => {
+            //             const tooltipPosition = stage.position.top > 300 ? 'top: auto; bottom: 100%;' : 'top: 100%;';
+
+            //             stagesHTML += `
+            //                 <div class="stage-node" style="top: ${stage.position.top}px; left: ${stage.position.left}px;">
+            //     <div class="stage-icon" style="background-color: ${colors.background};">
+            //         ${stage.icon.endsWith(".png") || stage.icon.endsWith(".jpg")
+            //                     ? `<img src="${stage.icon}" alt="${stage.title} icon" class="h-12 w-12" />`
+            //                     : `<svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            //                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="${stage.icon}" />
+            //                    </svg>`
+            //                 }
+            //         <div class="stage-number" style="background-color: ${colors.stageIconBg};">${index + 1}</div>
+            //     </div>
+            //     <div class="stage-title" style="background-color: ${colors.titleBackground};">${stage.title}</div>
+            //     <div class="stage-description">${stage.description}</div>
+            // </div>
+
+
+            //                     <!-- Normal tooltip -->
+            //                     <div class="tooltip stage-tooltip" style="${tooltipPosition} left: 50%; transform: translateX(-50%); background-color: ${colors.tooltipBackground}; color: ${colors.tooltipText};">
+            //                         <div class="tooltip-title">${stage.tooltip.title || stage.title + ' Details'}</div>
+            //                         <div class="tooltip-content">${stage.tooltip.content}</div>
+            //                         <div class="tooltip-stats">
+            //                             ${stage.tooltip.stats.map(stat => `<div>${stat}</div>`).join('')}
+            //                         </div>
+            //                     </div>
+
+            //                     <!-- Bottleneck tooltip -->
+            //                     <div class="bottleneck-tooltip stage-tooltip" style="${tooltipPosition} left: 50%; transform: translateX(-50%);">
+            //                         <div class="bottleneck-title">${stage.title} Bottlenecks</div>
+            //                         <div class="bottleneck-content">${stage.bottleneck}</div>
+            //                     </div>
+
+            //                     <!-- Quote tooltip -->
+            //                     <div class="quote-toggle">
+            //                         <div class="quote-tooltip stage-tooltip" style="${tooltipPosition} left: 50%; transform: translateX(-50%);">
+            //                             <div class="quote-title">${stage.title} - Field Insights</div>
+            //                             <div class="quote-content">${stage.quote || 'No field insights available for this stage.'}</div>
+            //                         </div>
+            //                     </div>
+            //                 </div>
+            //             `;
+            //         });
 
             container.innerHTML = stagesHTML;
 
-
-            // Generate overview section
             const colorClasses = {
                 'olive-green': 'bg-alabaster border-l-4 border-olive-green',
-                'fresh-green': 'bg-alabaster border-l-4 border-oilve-green',
+                'fresh-green': 'bg-alabaster border-l-4 border-olive-green',
                 'reseda-green': 'bg-alabaster border-l-4 border-olive-green'
             };
 
             const overviewHTML = `
                 <h4 class="text-xl font-bold text-olive-green mb-4 font-poppins">${productData.overview.title}</h4>
-               <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                     ${productData.overview.stats.map(stat => `
-                       <div class="${colorClasses[stat.color]} p-4 rounded-md">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    ${productData.overview.stats.map(stat => `
+                        <div class="${colorClasses[stat.color]} p-4 rounded-md">
                             <h5 class="font-semibold text-olive-green font-poppins">${stat.title}</h5>
-                              <p class="text-xl font-bold text-olive-green font-poppins">${stat.value}</p>
-                             <p class="text-sm text-reseda-green font-open-sans">${stat.subtitle}</p>
-                         </div>
-                     `).join('')}
-                 </div>
-             `;
+                            <p class="text-xl font-bold text-olive-green font-poppins">${stat.value}</p>
+                            <p class="text-sm text-reseda-green font-open-sans">${stat.subtitle}</p>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
 
             overviewContainer.innerHTML = overviewHTML;
         }
@@ -3703,47 +3755,89 @@
         }
 
         function initializeSupplyChain() {
-            const toggleButton = document.getElementById('toggleBottlenecks');
+            const toggleBottlenecksButton = document.getElementById('toggleBottlenecks');
+            const toggleQuotesButton = document.getElementById('toggleQuotes');
             const normalTooltips = document.querySelectorAll('.tooltip');
             const bottleneckTooltips = document.querySelectorAll('.bottleneck-tooltip');
+            const quoteTooltips = document.querySelectorAll('.quote-tooltip');
             const warningIcons = document.querySelectorAll('.warning-icon');
-            let isBottleneckMode = false;
 
-            // Reset to normal mode when modal opens
-            toggleButton.textContent = 'Show Bottlenecks';
-            toggleButton.classList.remove('active');
+            let currentMode = 'normal';
 
-            // Show normal tooltips, hide bottleneck tooltips and warning icons
-            normalTooltips.forEach(tooltip => {
-                tooltip.style.display = 'block';
-            });
-            bottleneckTooltips.forEach(tooltip => {
-                tooltip.style.display = 'none';
-            });
-            warningIcons.forEach(icon => {
-                icon.style.display = 'none';
-            });
+            function setNormalMode() {
+                currentMode = 'normal';
+                normalTooltips.forEach(t => t.style.display = 'block');
+                bottleneckTooltips.forEach(t => t.style.display = 'none');
+                quoteTooltips.forEach(t => t.style.display = 'none');
+                warningIcons.forEach(i => i.style.display = 'none');
 
-            // Remove existing event listener and add new one
-            const newToggleButton = toggleButton.cloneNode(true);
-            toggleButton.parentNode.replaceChild(newToggleButton, toggleButton);
+                if (toggleBottlenecksButton) {
+                    toggleBottlenecksButton.textContent = 'Show Bottlenecks';
+                    toggleBottlenecksButton.classList.remove('active');
+                }
+                if (toggleQuotesButton) {
+                    toggleQuotesButton.textContent = 'Show Quotes';
+                    toggleQuotesButton.classList.remove('active');
+                }
+            }
 
-            newToggleButton.addEventListener('click', () => {
-                isBottleneckMode = !isBottleneckMode;
-                newToggleButton.textContent = isBottleneckMode ? 'Show Normal View' : 'Show Bottlenecks';
-                newToggleButton.classList.toggle('active', isBottleneckMode);
+            function setBottleneckMode() {
+                currentMode = 'bottlenecks';
+                normalTooltips.forEach(t => t.style.display = 'none');
+                bottleneckTooltips.forEach(t => t.style.display = 'block');
+                quoteTooltips.forEach(t => t.style.display = 'none');
+                warningIcons.forEach(i => i.style.display = 'flex');
 
-                // Toggle visibility of tooltips and warning icons
-                normalTooltips.forEach(tooltip => {
-                    tooltip.style.display = isBottleneckMode ? 'none' : 'block';
+                if (toggleBottlenecksButton) {
+                    toggleBottlenecksButton.textContent = 'Hide Bottlenecks'; // ✅ updated
+                    toggleBottlenecksButton.classList.add('active');
+                }
+                if (toggleQuotesButton) {
+                    toggleQuotesButton.textContent = 'Show Quotes';
+                    toggleQuotesButton.classList.remove('active');
+                }
+            }
+
+            function setQuoteMode() {
+                currentMode = 'quotes';
+                normalTooltips.forEach(t => t.style.display = 'none');
+                bottleneckTooltips.forEach(t => t.style.display = 'none');
+                quoteTooltips.forEach(t => t.style.display = 'block');
+                warningIcons.forEach(i => i.style.display = 'none');
+
+                if (toggleBottlenecksButton) {
+                    toggleBottlenecksButton.textContent = 'Show Bottlenecks';
+                    toggleBottlenecksButton.classList.remove('active');
+                }
+                if (toggleQuotesButton) {
+                    toggleQuotesButton.textContent = 'Hide Quotes'; // ✅ updated
+                    toggleQuotesButton.classList.add('active');
+                }
+            }
+
+            // initialize to normal
+            setNormalMode();
+
+            // ✅ attach listeners directly (no cloneNode)
+            if (toggleBottlenecksButton) {
+                toggleBottlenecksButton.addEventListener('click', () => {
+                    if (currentMode === 'bottlenecks') {
+                        setNormalMode();
+                    } else {
+                        setBottleneckMode();
+                    }
                 });
-                bottleneckTooltips.forEach(tooltip => {
-                    tooltip.style.display = isBottleneckMode ? 'block' : 'none';
+            }
+
+            if (toggleQuotesButton) {
+                toggleQuotesButton.addEventListener('click', () => {
+                    if (currentMode === 'quotes') {
+                        setNormalMode();
+                    } else {
+                        setQuoteMode();
+                    }
                 });
-                warningIcons.forEach(icon => {
-                    icon.style.display = isBottleneckMode ? 'flex' : 'none';
-                });
-            });
+            }
         }
     </script>
 </body>
