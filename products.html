@@ -1082,88 +1082,78 @@
                 stages: [
                     {
                         title: 'Seed Selection',
-                        description: 'Choosing certified wheat varieties for local conditions',
+                        description: 'Wheat seeds include both traditional and certified hybrids suited to different climates',
                         icon: 'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z',
                         position: { top: 50, left: 100 },
                         tooltip: {
                             title: 'Wheat Seed Selection Details',
-                            content: 'Certified seeds ensure genetic purity and disease resistance. Different varieties suit different agro-climatic zones. Seed treatment prevents soil-borne diseases.',
+                            content: 'Farmers use both saved traditional seeds and certified hybrids developed for climate adaptation and regional suitability.<br><br><b>Wheat Seed Types and Characteristics</b><table> <tr> <th>Seed Type</th> <th>Source</th> <th>Adaptation</th> <th>Pros</th> <th>Challenges</th> </tr> <tr> <td>Traditional</td> <td>Saved from previous harvests</td> <td>Locally adapted but not climate-resilient</td> <td>Cost-effective and accessible</td> <td>Low resistance to pests, vulnerable to climate change</td> </tr> <tr> <td>Certified Hybrids<br>(e.g., AZRC-Dera, Fakhar-e-Bhakkar)</td> <td>Ayub Research Center, Faisalabad</td> <td>Tailored for temperature zones and climate shifts</td> <td>High yield, climate adaptation</td> <td>Expensive, not widely available, less nutritious</td> </tr> </table>',
                             stats: [
-                                'Seed Rate: 100-125 kg/hectare',
-                                'Germination: 85%+ required',
-                                'Varieties: 20+ approved types',
-                                'Treatment: Fungicide + insecticide'
+                                "Traditional seeds are cheaper but vulnerable to pests and climate", "Hybrid seeds offer higher yield and climate adaptability", "Cost and availability limit hybrid use for small farmers"
                             ]
                         },
-                        bottleneck: 'Certified seed availability, variety adaptation, seed costs'
+                        bottleneck: 'Limited access to affordable, climate-resilient certified seeds, and vulnerability of traditional seeds to pests and environmental stress.',
+                        quote:"Government is working to change seed varieties that can handle new weather patterns, but such seeds or pesticides aren’t fully available yet.\" — Mr. Ghulam Yasin"  
                     },
                     {
                         title: 'Land Preparation',
-                        description: 'Deep plowing and seedbed preparation',
+                        description: 'Land is cleared and prepared for wheat',
                         icon: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z',
                         position: { top: 50, left: 300 },
                         tooltip: {
                             title: 'Land Preparation Details',
-                            content: 'Deep plowing improves soil structure and water infiltration. Laser leveling ensures uniform irrigation. Organic matter incorporation enhances fertility.',
+                            content: 'Preparing land based on water availability, soil type, and seasonal factors ensures better yield and resource efficiency. <br><br><b>Land Preparation & Crop Planning Factors</b><table> <tr> <th>Aspect</th> <th>Details</th> </tr> <tr> <td>Planning Parameters</td> <td>Water availability, temperature, soil crust condition, and crop rotation considerations</td> </tr> <tr> <td>Rotation Strategy</td> <td>Wheat is commonly rotated after kharif crops like cotton or rice to replenish soil nutrients</td> </tr> <tr> <td>Preparation Methods</td> <td>Traditional animal labor remains common; machinery is often unaffordable for smallholders</td> </tr> </table>',
                             stats: [
-                                'Plowing Depth: 20-25 cm',
-                                'Laser Leveling: 90% farms',
-                                'Organic Matter: 2-3% ideal',
-                                'Seedbed: Fine, firm, level'
+                                "Crop planning depends on water, soil, and season", "Rotation boosts soil fertility","Many use animal labor due to machinery costs"
                             ]
                         },
-                        bottleneck: 'Equipment availability, soil compaction, organic matter shortage'
+                        bottleneck: "Limited access to affordable modern equipment.<br>Poor water availability in certain regions.<br>Low awareness of soil testing and smart crop planning methods",
+                        quote: "Repeatedly growing the same crop lowers productivity. Each crop takes different nutrients.\" — Mr. Ghulam Yasin"
                     },
                     {
                         title: 'Sowing',
-                        description: 'Planting wheat at optimal time and depth',
+                        description: 'Sown as a Rabi crop from mid-October to November',
                         icon: 'M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10',
                         position: { top: 50, left: 500 },
                         tooltip: {
                             title: 'Sowing Details',
-                            content: 'Optimal sowing time is November 15-December 15. Drill sowing ensures proper depth and spacing. Row spacing affects plant population.',
+                            content: 'Wheat is a Rabi crop sown depending on winter moisture and ripens with summer heat. Climate shifts have affected its timing and yield.<br><br><b>Wheat Sowing Conditions</b><table> <tr> <th>Aspect</th> <th>Details</th> </tr> <tr> <td>Timing</td> <td>Mid-October to November (Rabi season)</td> </tr> <tr> <td>Moisture Dependence</td> <td>Relies on winter rainfall</td> </tr> <tr> <td>Climate Impact</td> <td>Rain and temperature shifts affect timing and yield</td> </tr></table><br><b>Regional Differences in Wheat Quality</b><table> <tr> <th>Region</th> <th>Gluten Level</th> <th>Quality</th> </tr> <tr> <td>Upper Sindh</td> <td>High</td> <td>Better quality</td> </tr> <tr> <td>Punjab / Lower Sindh</td> <td>Lower</td> <td>Standard quality</td> </tr> </table>',
                             stats: [
-                                'Sowing Time: Nov 15 - Dec 15',
-                                'Sowing Depth: 3-5 cm',
-                                'Row Spacing: 22.5 cm',
-                                'Plant Population: 400-450 plants/m²'
+                                "Sowing depends on winter rainfall", "Climate shifts disrupt timing and yield","Upper Sindh wheat has higher gluten content"
                             ]
                         },
-                        bottleneck: 'Timing precision, weather delays, equipment sharing'
+                        bottleneck: 'Changing climate patterns disrupt optimal sowing time and affect wheat quality in some regions.',
+                        quote:"Gluten depends on soil and climate. Upper Sindh has high-quality wheat; Punjab's is low.\" — Private mill"
                     },
                     {
                         title: 'Crop Management',
-                        description: 'Irrigation, fertilization, and weed control',
+                        description: 'Wheat crop requires regular watering, fertilization, and pest control.',
                         icon: 'M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z',
                         position: { top: 50, left: 700 },
                         tooltip: {
                             title: 'Crop Management Details',
-                            content: 'Wheat requires 4-5 irrigations during growing season. Balanced fertilization ensures optimal yield. Integrated weed management controls major weeds.',
+                            content: 'Wheat management includes timely irrigation, fertilization, and pest control. Solar pumps are increasingly adopted to address water scarcity.<br><br><b>Wheat Crop Management Practices</b><table> <tr> <th>Aspect</th> <th>Details</th> </tr> <tr> <td>Watering</td> <td>Every 10–15 days using canal and groundwater (can cause salinity)</td> </tr> <tr> <td>Fertilizers</td> <td>Chemical (Urea, DAP) and organic (cow dung)</td> </tr> <tr> <td>Pest Control</td> <td>Pesticides applied 2–3 times; flooding risks due to climate unpredictability</td> </tr> <tr> <td>Solar Pumps</td> <td>Used to reduce dependence on traditional water sources</td> </tr> </table>',
                             stats: [
-                                'Irrigations: 4-5 times',
-                                'Water Requirement: 450-600 mm',
-                                'Fertilizer: NPK 120:90:60',
-                                'Growing Period: 120-150 days'
+                                "Irrigated every 10–15 days", "Uses both chemical and organic fertilizers","Pesticides applied multiple times","Solar pumps help manage water shortages"
                             ]
                         },
-                        bottleneck: 'Water scarcity, fertilizer costs, weed resistance'
+                        bottleneck: 'Groundwater use causing soil salinity.<br>Climate unpredictability affecting irrigation.<br>High cost of solar pumps.',
+                        quote:"Even with canal water, we often rely on groundwater. Overuse raises soil salinity.\" — Mr. Ghulam Yasin"
                     },
                     {
                         title: 'Harvesting',
-                        description: 'Cutting wheat at physiological maturity',
+                        description: 'Harvest starts in Sindh, followed by Punjab.',
                         icon: 'M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4',
                         position: { top: 180, left: 850 },
                         tooltip: {
                             title: 'Harvesting Details',
-                            content: 'Harvest when grain moisture is 12-14%. Combine harvesters increase efficiency. Timely harvest prevents yield losses.',
+                            content: 'Harvesting begins in Sindh in April, moving to Punjab later. Seasonal shifts have led to yield drops of 3–5%.',
                             stats: [
-                                'Harvest Time: April-May',
-                                'Grain Moisture: 12-14%',
-                                'Yield: 3-6 tons/hectare',
-                                'Harvest Window: 10-15 days'
+                                "Begins in April; Sindh first, then Punjab", "Climate change has caused 3–5% yield decline"
                             ]
                         },
-                        bottleneck: 'Equipment availability, weather conditions, labor costs'
+                        bottleneck: 'Disrupted seasons impacting harvest timing and reducing overall yield.',
+                        quote: "We used to get 50 muns per acre. Now it’s 5% less due to climate change.\" — Mr. Ghulam Yasin"
                     },
                     {
                         title: 'Threshing',
@@ -1184,71 +1174,66 @@
                     },
                     {
                         title: 'Storage',
-                        description: 'Safe storage to maintain grain quality',
+                        description: 'Stored in sheds, covered spaces, or silos.',
                         icon: 'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z',
                         position: { top: 470, left: 700 },
                         tooltip: {
                             title: 'Storage Details',
-                            content: 'Proper storage prevents pest damage and quality deterioration. Moisture control is critical. Modern silos provide better protection.',
+                            content: 'Storage methods vary; poor airflow and pest resistance threaten quality.<br><br><b>Wheat Storage Practices</b><table> <tr> <th>Aspect</th> <th>Details</th> </tr> <tr> <td>Methods</td> <td>Sheds, open covered spaces, or silos (if wealthy)</td> </tr> <tr> <td>Risks</td> <td>Poor ventilation, moisture, and pests (Khapra beetle resists fumigation)</td> </tr> </table>',
                             stats: [
-                                'Storage Moisture: 12% maximum',
-                                'Storage Duration: 6-12 months',
-                                'Storage Losses: 2-5%',
-                                'Pest Control: Fumigation, monitoring'
+                                'Most farmers use basic sheds or open areas',
+                                'Khapra beetle infestation is hard to control',
+                                'Humid, poorly ventilated spaces degrade wheat'
                             ]
                         },
-                        bottleneck: 'Storage infrastructure, pest management, moisture control'
+                        bottleneck: 'Limited modern storage and pest resistance lead to post-harvest losses.',
+                        quote: "Even after fumigation, Khapra just goes to sleep. Wheat can’t be stored more than a year.\" — Umair Rafeeq"
                     },
                     {
                         title: 'Milling',
-                        description: 'Processing wheat into flour',
+                        description: 'Processed in small chakki or large private mills.',
                         icon: 'M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4',
                         position: { top: 470, left: 500 },
                         tooltip: {
                             title: 'Milling Details',
-                            content: 'Modern roller mills extract 72-76% flour. Different grades serve various markets. By-products include bran and shorts.',
+                            content: 'Wheat is milled into various food products by local and industrial setups, serving both community and commercial needs.<br><br><b>Types of Wheat Mills</b><table> <tr> <th>Mill Type</th> <th>Description</th> </tr> <tr> <td>Small Chakki Mills</td> <td>Serve local needs with basic grinding</td> </tr> <tr> <td>Large Private Mills</td> <td>Produce branded, higher-quality products for commercial markets</td> </tr> </table>',
                             stats: [
-                                'Flour Extraction: 72-76%',
-                                'Milling Capacity: 50-500 tons/day',
-                                'By-products: Bran (22%), Shorts (2%)',
-                                'Quality Grades: Multiple flour types'
+                                "Flour, bran, semolina, and suji are main products","Private mills offer more consistency in quality","Local mills support rural access and employment"
                             ]
                         },
-                        bottleneck: 'Milling capacity, energy costs, quality standards'
+                        bottleneck: 'Informal market practices lead to daily price fluctuations and delayed payments, creating instability for both suppliers and millers.',
+                        quote: "Brands offer premiums due to consistency. Lower-income groups buy Rs. 90 flour.\" — Umair Rafeeq"
                     },
                     {
                         title: 'Distribution',
-                        description: 'Transportation to markets and consumers',
+                        description: 'Transported via trucks and distributed across cities and villages.',
                         icon: 'M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0',
                         position: { top: 470, left: 300 },
                         tooltip: {
                             title: 'Distribution Details',
-                            content: 'Extensive distribution network covers urban and rural areas. Bulk transport reduces costs. Quality maintenance during transport is crucial.',
+                            content: 'Wheat and its products are transported in tarped trucks and distributed in bags or muns across both urban and rural areas. These units ensure wide reach from retailers to small vendors despite logistical constraints.',
                             stats: [
-                                'Distribution Network: National coverage',
-                                'Transport Modes: Road (95%), Rail (5%)',
-                                'Packaging: 20kg, 50kg bags',
-                                'Shelf Life: 6-12 months'
+                                'Tarped trucks protect against environmental exposure',
+                                'Serves both urban and rural supply chains'
                             ]
                         },
-                        bottleneck: 'Transport costs, quality maintenance, market access'
+                        bottleneck: 'Rising fuel costs, weak quality control, and minimal cold storage infrastructure disrupt efficient distribution.'
+
                     },
                     {
                         title: 'Retail & Consumption',
-                        description: 'Final sales to consumers',
+                        description: 'Purchased by households, bakeries, tandoors, and food companies.',
                         icon: 'M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z',
                         position: { top: 470, left: 100 },
                         tooltip: {
                             title: 'Retail & Consumption Details',
-                            content: 'Wheat flour is staple food for majority population. Various retail channels serve different segments. Brand loyalty varies by region.',
+                            content: 'Wheat consumption varies by buyer type and gluten preference, with demand peaking in winter.<br><br><b>Wheat Retail & Consumption</b><table> <tr> <th>Aspect</th> <th>Details</th> </tr> <tr> <td>Buyers</td> <td>Households, bakeries, tandoors, corporations</td> </tr> <tr> <td>Gluten Preferences</td> <td>High gluten for bread; low gluten for biscuits</td> </tr> <tr> <td>Peak Sales</td> <td>Winter season</td> </tr> </table>',
                             stats: [
-                                'Per Capita Consumption: 124 kg/year',
-                                'Retail Channels: Traditional, modern',
-                                'Market Segments: Premium, standard',
-                                'Price Sensitivity: High'
+                                "Different buyers demand varying wheat products.", "Gluten content influences usage: high for bread, low for biscuits.", "Winter sees a spike in overall wheat consumption."
                             ]
                         },
-                        bottleneck: 'Price volatility, quality consistency, consumer preferences'
+                        bottleneck: 'N/A',
+                        quote: "Refined wheat goes to bakeries; lower-income buy coarse flour.\" — Umair Rafeeq"
                     }
                 ],
                 overview: {
