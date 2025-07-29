@@ -1594,134 +1594,105 @@
         const productColors = {
             'Wheat': {
                 background: '#FFF5E1', // ICON BACKGROUND
-                iconBorder: '#D4A574',
                 titleBackground: '#A0522D',  // STAGE BACKGROUND
-                tooltipBackground: '#FFE6B3',
-                tooltipText: '#3B2F2F',
+                tooltipBackground: '#FFF5E1', // TOOLTIP BACKGROUND
                 stageIconBg: '#A0522D',     // STAGE NUMBER BACKGROUND
 
             },
             'Rice': {
                 background: '#F9FBE7',
-                iconBorder: '#C0CA33',
                 titleBackground: '#827717',
-                tooltipBackground: '#E6EE9C',
-                tooltipText: '#2E2E2E',
-                stageIconBg: '#A0522D',
+                tooltipBackground: '#F9FBE7',
+                stageIconBg: '#827717',
             },
             'Sugarcane': {
                 background: '#E8F5E9',
-                iconBorder: '#66BB6A',
                 titleBackground: '#2E7D32',
-                tooltipBackground: '#C8E6C9',
-                tooltipText: '#1B1B1B',
-                stageIconBg: '#A0522D',
+                tooltipBackground: '#E8F5E9',
+                stageIconBg: '#2E7D32',
             },
             'Chili': {
                 background: '#FFEBEE',
-                iconBorder: '#EF5350',
                 titleBackground: '#C62828',
                 tooltipBackground: '#FFEBEE',
-                tooltipText: '#2E2E2E',
                 stageIconBg: '#C62828',
 
             },
             'Garlic': {
                 background: '#FDFCF7',
-                iconBorder: '#C0C0C0',
                 titleBackground: '#8D6E63',
-                tooltipBackground: '#E0DAD0',
-                tooltipText: '#2E2E2E',
-                stageIconBg: '#A0522D',
+                tooltipBackground: '#FDFCF7',
+                stageIconBg: '#8D6E63',
 
             },
             'Potato': {
                 background: '#FBE9E7',
-                iconBorder: '#A1887F',
                 titleBackground: '#6D4C41',
-                tooltipBackground: '#EFEBE9',
-                tooltipText: '#2E2E2E',
-                stageIconBg: '#A0522D',
+                tooltipBackground: '#FBE9E7',
+                stageIconBg: '#6D4C41',
 
             },
             'Tomato': {
                 background: '#FFF3E0',
-                iconBorder: '#FF7043',
                 titleBackground: '#E64A19',
-                tooltipBackground: '#FFE0B2',
-                tooltipText: '#2E2E2E',
-                stageIconBg: '#A0522D',
+                tooltipBackground: '#FFF3E0',
+                stageIconBg: '#E64A19',
 
             },
             'Mango': {
                 background: '#FFF8E1',
-                iconBorder: '#FFD54F',
                 titleBackground: '#FFA000',
-                tooltipBackground: '#FFECB3',
-                tooltipText: '#2E2E2E',
-                stageIconBg: '#A0522D',
+                tooltipBackground: '#FFF8E1',
+                stageIconBg: '#FFA000',
 
             },
             'Apple': {
                 background: '#F9FBE7',
                 titleBackground: '#689F38',
                 tooltipBackground: '#F9FBE7',
-                tooltipText: '#1B1B1B',
                 stageIconBg: ' #689F38',
 
             },
             'Orange': {
                 background: '#FFF3E0',
-                iconBorder: '#FFB74D',
                 titleBackground: '#FB8C00',
-                tooltipBackground: '#FFE0B2',
-                tooltipText: '#2E2E2E',
-                stageIconBg: '#A0522D',
+                tooltipBackground: '#FFF3E0',
+                stageIconBg: '#FB8C00',
 
             },
             'Lentils': {
                 background: '#FBE9E7',
-                iconBorder: '#A1887F',
                 titleBackground: '#5D4037',
-                tooltipBackground: '#EFEBE9',
-                tooltipText: '#2E2E2E',
-                stageIconBg: '#A0522D',
+                tooltipBackground: '#FBE9E7',
+                stageIconBg: '#5D4037',
 
             },
             'Maize': {
                 background: '#FFFDE7',
-                iconBorder: '#FFEE58',
                 titleBackground: '#FBC02D',
-                tooltipBackground: '#FFF59D',
-                tooltipText: '#2E2E2E',
-                stageIconBg: '#A0522D',
+                tooltipBackground: '#FFFDE7',
+                stageIconBg: '#FBC02D',
 
             },
             'Milk': {
                 background: '#F0F4C3',
-                iconBorder: '#AED581',
                 titleBackground: '#689F38',
-                tooltipBackground: '#DCE775',
-                tooltipText: '#2E2E2E',
-                stageIconBg: '#A0522D',
+                tooltipBackground: '#F0F4C3',
+                stageIconBg: '#689F38',
 
             },
             'Mustard': {
                 background: '#FFF9C4',
-                iconBorder: '#FDD835',
                 titleBackground: '#FBC02D',
-                tooltipBackground: '#FFF59D',
-                tooltipText: '#2E2E2E',
-                stageIconBg: '#A0522D',
+                tooltipBackground: '#FFF9C4',
+                stageIconBg: '#FBC02D',
 
             },
             'Banana': {
                 background: '#FFFDE7',
-                iconBorder: '#FFEE58',
                 titleBackground: '#FBC02D',
-                tooltipBackground: '#FFF9C4',
-                tooltipText: '#2E2E2E',
-                stageIconBg: '#A0522D',
+                tooltipBackground: '#FFFDE7',
+                stageIconBg: '#FBC02D',
 
             }
         };
@@ -1745,7 +1716,8 @@
                                 'Germination Rate: 95%+'
                             ]
                         },
-                        bottleneck: 'Seed quality inconsistency, climate change impact, varying pesticide regulations'
+                        "bottleneck": 'Seed quality inconsistency, climate change impact, varying pesticide regulations',
+                        "quote": "5678"
                     },
                     {
                         title: 'Land Preparation',
@@ -1762,7 +1734,8 @@
                                 'Organic Matter: 5-10 tons/hectare'
                             ]
                         },
-                        bottleneck: 'Water scarcity, labor shortages for field preparation, equipment availability'
+                        "bottleneck": 'Water scarcity, labor shortages for field preparation, equipment availability',
+                        "quote": "5678"
                     },
                     {
                         title: 'Transplanting',
@@ -1796,7 +1769,8 @@
                                 'Major Pests: Stem borer, brown planthopper'
                             ]
                         },
-                        bottleneck: 'Water management challenges, pest resistance, nutrient imbalances'
+                        "bottleneck": 'Water management challenges, pest resistance, nutrient imbalances',
+                        "quote": "5678"
                     },
                     {
                         title: 'Harvesting',
@@ -1813,7 +1787,8 @@
                                 'Harvest Window: 10-15 days'
                             ]
                         },
-                        bottleneck: 'Weather dependency, equipment availability, labor shortages'
+                        "bottleneck": 'Weather dependency, equipment availability, labor shortages',
+                        "quote": "5678"
                     },
                     {
                         title: 'Drying',
@@ -1830,7 +1805,8 @@
                                 'Quality Loss: <2% with proper drying'
                             ]
                         },
-                        bottleneck: 'Weather dependency, drying infrastructure, energy costs'
+                        "bottleneck": 'Weather dependency, drying infrastructure, energy costs',
+                        "quote": "5678"
                     },
                     {
                         title: 'Milling',
@@ -1847,7 +1823,8 @@
                                 'Processing Cost: 5-8% of paddy value'
                             ]
                         },
-                        bottleneck: 'Milling efficiency, quality control, by-product utilization'
+                        "bottleneck": 'Milling efficiency, quality control, by-product utilization',
+                        "quote": "5678"
                     },
                     {
                         title: 'Packaging',
@@ -1864,7 +1841,8 @@
                                 'Value Addition: 10-30% through packaging'
                             ]
                         },
-                        bottleneck: 'Packaging costs, material availability, quality standards'
+                        " bottleneck": 'Packaging costs, material availability, quality standards',
+                        "quote": "5678"
                     },
                     {
                         title: 'Distribution',
@@ -1881,7 +1859,8 @@
                                 'Export Markets: 50+ countries'
                             ]
                         },
-                        bottleneck: 'Transport infrastructure, storage facilities, quality maintenance'
+                        "bottleneck": 'Transport infrastructure, storage facilities, quality maintenance',
+                        "quote": "5678"
                     },
                     {
                         title: 'Retail Sales',
@@ -1898,7 +1877,8 @@
                                 'Consumer Preference: Quality over price'
                             ]
                         },
-                        bottleneck: 'Market competition, consumer preferences, price volatility'
+                        "bottleneck": 'Market competition, consumer preferences, price volatility',
+                        "quote": "5678"
                     }
                 ],
                 overview: {
@@ -1927,7 +1907,8 @@
                                 'Treatment: Fungicide + insecticide'
                             ]
                         },
-                        bottleneck: 'Certified seed availability, variety adaptation, seed costs'
+                        "bottleneck": 'Certified seed availability, variety adaptation, seed costs',
+                        "quote": "5678"
                     },
                     {
                         title: 'Land Preparation',
@@ -1944,7 +1925,8 @@
                                 'Seedbed: Fine, firm, level'
                             ]
                         },
-                        bottleneck: 'Equipment availability, soil compaction, organic matter shortage'
+                        "bottleneck": 'Equipment availability, soil compaction, organic matter shortage',
+                        "quote": "5678"
                     },
                     {
                         title: 'Sowing',
@@ -1961,7 +1943,8 @@
                                 'Plant Population: 400-450 plants/m²'
                             ]
                         },
-                        bottleneck: 'Timing precision, weather delays, equipment sharing'
+                        "bottleneck": 'Timing precision, weather delays, equipment sharing',
+                        "quote": "5678"
                     },
                     {
                         title: 'Crop Management',
@@ -1978,7 +1961,8 @@
                                 'Growing Period: 120-150 days'
                             ]
                         },
-                        bottleneck: 'Water scarcity, fertilizer costs, weed resistance'
+                        "bottleneck": 'Water scarcity, fertilizer costs, weed resistance',
+                        "quote": "5678"
                     },
                     {
                         title: 'Harvesting',
@@ -1995,7 +1979,8 @@
                                 'Harvest Window: 10-15 days'
                             ]
                         },
-                        bottleneck: 'Equipment availability, weather conditions, labor costs'
+                        " bottleneck": 'Equipment availability, weather conditions, labor costs',
+                        "quote": "5678"
                     },
                     {
                         title: 'Threshing',
@@ -2012,7 +1997,8 @@
                                 'Processing Cost: 3-5% of grain value'
                             ]
                         },
-                        bottleneck: 'Equipment maintenance, grain quality, straw management'
+                        " bottleneck": 'Equipment maintenance, grain quality, straw management',
+                        "quote": "5678"
                     },
                     {
                         title: 'Storage',
@@ -2029,7 +2015,8 @@
                                 'Pest Control: Fumigation, monitoring'
                             ]
                         },
-                        bottleneck: 'Storage infrastructure, pest management, moisture control'
+                        "bottleneck": 'Storage infrastructure, pest management, moisture control',
+                        "quote": "5678"
                     },
                     {
                         title: 'Milling',
@@ -2046,7 +2033,8 @@
                                 'Quality Grades: Multiple flour types'
                             ]
                         },
-                        bottleneck: 'Milling capacity, energy costs, quality standards'
+                        "bottleneck": 'Milling capacity, energy costs, quality standards',
+                        "quote": "5678"
                     },
                     {
                         title: 'Distribution',
@@ -2063,7 +2051,8 @@
                                 'Shelf Life: 6-12 months'
                             ]
                         },
-                        bottleneck: 'Transport costs, quality maintenance, market access'
+                        "bottleneck": 'Transport costs, quality maintenance, market access',
+                        "quote": "5678"
                     },
                     {
                         title: 'Retail & Consumption',
@@ -2080,7 +2069,8 @@
                                 'Price Sensitivity: High'
                             ]
                         },
-                        bottleneck: 'Price volatility, quality consistency, consumer preferences'
+                        "bottleneck": 'Price volatility, quality consistency, consumer preferences',
+                        "quote": "5678"
                     }
                 ],
                 overview: {
@@ -2109,7 +2099,9 @@
                                 'Bud Viability: 2-3 buds per piece'
                             ]
                         },
-                        bottleneck: 'Disease transmission, seed quality, availability of healthy material'
+                        "bottleneck": 'Disease transmission, seed quality, availability of healthy material',
+                        "quote": "5678"
+
                     },
                     {
                         title: 'Land Preparation',
@@ -2126,7 +2118,8 @@
                                 'Field Preparation: 2-3 weeks'
                             ]
                         },
-                        bottleneck: 'Heavy machinery costs, soil compaction, drainage issues'
+                        "bottleneck": 'Heavy machinery costs, soil compaction, drainage issues',
+                        "quote": "5678"
                     },
                     {
                         title: 'Planting',
@@ -2143,7 +2136,8 @@
                                 'Plant Population: 100,000-120,000/hectare'
                             ]
                         },
-                        bottleneck: 'Seasonal timing, soil moisture, seed placement accuracy'
+                        " bottleneck": 'Seasonal timing, soil moisture, seed placement accuracy',
+                        "quote": "5678"
                     },
                     {
                         title: 'Crop Management',
@@ -2160,7 +2154,8 @@
                                 'Major Pest: Sugarcane borer'
                             ]
                         },
-                        bottleneck: 'High water demand, pest management, fertilizer costs'
+                        "bottleneck": 'High water demand, pest management, fertilizer costs',
+                        "quote": "5678"
                     },
                     {
                         title: 'Harvesting',
@@ -2177,7 +2172,8 @@
                                 'Transport Time: Within 24 hours'
                             ]
                         },
-                        bottleneck: 'Labor shortage, transport coordination, mill capacity'
+                        "bottleneck": 'Labor shortage, transport coordination, mill capacity',
+                        "quote": "5678"
                     },
                     {
                         title: 'Transportation',
@@ -2194,7 +2190,8 @@
                                 'Sucrose Loss: 0.1% per day delay'
                             ]
                         },
-                        bottleneck: 'Vehicle availability, road conditions, fuel costs'
+                        "bottleneck": 'Vehicle availability, road conditions, fuel costs',
+                        "quote": "5678"
                     },
                     {
                         title: 'Sugar Processing',
@@ -2211,7 +2208,8 @@
                                 'By-products: Bagasse, molasses'
                             ]
                         },
-                        bottleneck: 'Energy costs, equipment maintenance, environmental compliance'
+                        "bottleneck": 'Energy costs, equipment maintenance, environmental compliance',
+                        "quote": "5678"
                     },
                     {
                         title: 'Packaging',
@@ -2228,7 +2226,8 @@
                                 'Moisture Control: Critical'
                             ]
                         },
-                        bottleneck: 'Packaging material costs, automation, quality control'
+                        "bottleneck": 'Packaging material costs, automation, quality control',
+                        "quote": "5678"
                     },
                     {
                         title: 'Distribution',
@@ -2245,7 +2244,8 @@
                                 'Distribution Tiers: 3-4 levels'
                             ]
                         },
-                        bottleneck: 'Transport costs, storage infrastructure, market competition'
+                        "bottleneck": 'Transport costs, storage infrastructure, market competition',
+                        "quote": "5678"
                     },
                     {
                         title: 'Retail Sales',
@@ -2262,7 +2262,8 @@
                                 'Market Segments: Premium, standard'
                             ]
                         },
-                        bottleneck: 'Brand competition, price sensitivity, quality perception'
+                        "bottleneck": 'Brand competition, price sensitivity, quality perception',
+                        "quote": "5678"
                     }
                 ],
                 overview: {
@@ -2447,7 +2448,8 @@
                                 'Cold Treatment: 4-6 weeks'
                             ]
                         },
-                        bottleneck: 'Disease-free seed availability, storage infrastructure'
+                        "bottleneck": 'Disease-free seed availability, storage infrastructure',
+                        "quote": "5678"
                     },
                     {
                         title: 'Land Preparation',
@@ -2464,7 +2466,8 @@
                                 'Drainage: Critical requirement'
                             ]
                         },
-                        bottleneck: 'Poor drainage, soil pH management, organic matter costs'
+                        "bottleneck": 'Poor drainage, soil pH management, organic matter costs',
+                        "quote": "5678"
                     },
                     {
                         title: 'Planting',
@@ -2481,7 +2484,8 @@
                                 'Orientation: Pointed end up'
                             ]
                         },
-                        bottleneck: 'Seasonal timing, labor-intensive planting, orientation accuracy'
+                        "bottleneck": 'Seasonal timing, labor-intensive planting, orientation accuracy',
+                        "quote": "5678"
                     },
                     {
                         title: 'Crop Management',
@@ -2498,7 +2502,8 @@
                                 'Sulfur Application: Critical'
                             ]
                         },
-                        bottleneck: 'Weed competition, precise irrigation, sulfur availability'
+                        "bottleneck": 'Weed competition, precise irrigation, sulfur availability',
+                        "quote": "5678"
                     },
                     {
                         title: 'Harvesting',
@@ -2515,7 +2520,8 @@
                                 'Handling: Very careful required'
                             ]
                         },
-                        bottleneck: 'Narrow harvest window, weather dependency, careful handling'
+                        " bottleneck": 'Narrow harvest window, weather dependency, careful handling',
+                        "quote": "5678"
                     },
                     {
                         title: 'Curing',
@@ -2532,7 +2538,8 @@
                                 'Method: Braiding or bundling'
                             ]
                         },
-                        bottleneck: 'Humidity control, adequate ventilation, infrastructure'
+                        "bottleneck": 'Humidity control, adequate ventilation, infrastructure',
+                        "quote": "5678"
                     },
                     {
                         title: 'Grading & Sorting',
@@ -2549,7 +2556,8 @@
                                 'Grading Criteria: Size, quality, appearance'
                             ]
                         },
-                        bottleneck: 'Quality standardization, grading equipment, market specifications'
+                        "bottleneck": 'Quality standardization, grading equipment, market specifications',
+                        "quote": "5678"
                     },
                     {
                         title: 'Packaging',
@@ -2566,7 +2574,8 @@
                                 'Ventilation: Critical requirement'
                             ]
                         },
-                        bottleneck: 'Packaging costs, ventilation requirements, material availability'
+                        "bottleneck": 'Packaging costs, ventilation requirements, material availability',
+                        "quote": "5678"
                     },
                     {
                         title: 'Distribution',
@@ -2583,7 +2592,8 @@
                                 'Quality Maintenance: Critical'
                             ]
                         },
-                        bottleneck: 'Cold storage infrastructure, quality maintenance, market access'
+                        "bottleneck": 'Cold storage infrastructure, quality maintenance, market access',
+                        "quote": "5678"
                     },
                     {
                         title: 'Retail Sales',
@@ -2600,7 +2610,8 @@
                                 'Products: Fresh, peeled, minced, powder'
                             ]
                         },
-                        bottleneck: 'Price competition, quality perception, shelf life management'
+                        "bottleneck": 'Price competition, quality perception, shelf life management',
+                        "quote": "5678"
                     }
                 ],
                 overview: {
@@ -2629,7 +2640,8 @@
                                 'Disease-free: Critical requirement'
                             ]
                         },
-                        bottleneck: 'Limited certified seed availability, high seed costs'
+                        "bottleneck": 'Limited certified seed availability, high seed costs',
+                        "quote": "5678"
                     },
                     {
                         title: 'Land Preparation',
@@ -2646,7 +2658,8 @@
                                 'Field Preparation: 2-3 weeks'
                             ]
                         },
-                        bottleneck: 'Soil compaction, drainage issues, equipment costs'
+                        "bottleneck": 'Soil compaction, drainage issues, equipment costs',
+                        "quote": "5678"
                     },
                     {
                         title: 'Planting',
@@ -2663,7 +2676,8 @@
                                 'Pre-sprouting: Reduces duration 10-15 days'
                             ]
                         },
-                        bottleneck: 'Planting precision, seasonal timing, equipment availability'
+                        "bottleneck": 'Planting precision, seasonal timing, equipment availability',
+                        "quote": "5678"
                     },
                     {
                         title: 'Crop Management',
@@ -2680,7 +2694,8 @@
                                 'Major Diseases: Late blight, early blight'
                             ]
                         },
-                        bottleneck: 'Disease pressure, water management, nutrient timing'
+                        "bottleneck": 'Disease pressure, water management, nutrient timing',
+                        "quote": "5678"
                     },
                     {
                         title: 'Harvesting',
@@ -2697,7 +2712,8 @@
                                 'Quality Factor: Minimal damage'
                             ]
                         },
-                        bottleneck: 'Weather dependency, tuber damage, equipment availability'
+                        "bottleneck": 'Weather dependency, tuber damage, equipment availability',
+                        "quote": "5678"
                     },
                     {
                         title: 'Curing',
@@ -2714,7 +2730,8 @@
                                 'Loss Reduction: 50%'
                             ]
                         },
-                        bottleneck: 'Climate control infrastructure, energy costs'
+                        "bottleneck": 'Climate control infrastructure, energy costs',
+                        "quote": "5678"
                     },
                     {
                         title: 'Grading & Sorting',
@@ -2731,7 +2748,8 @@
                                 'Automation: Optical sorting'
                             ]
                         },
-                        bottleneck: 'Grading equipment costs, quality standardization'
+                        "bottleneck": 'Grading equipment costs, quality standardization',
+                        "quote": "5678"
                     },
                     {
                         title: 'Storage',
@@ -2748,7 +2766,8 @@
                                 'Controlled Atmosphere: Further improvement'
                             ]
                         },
-                        bottleneck: 'Cold storage infrastructure, energy costs, capacity limitations'
+                        "bottleneck": 'Cold storage infrastructure, energy costs, capacity limitations',
+                        "quote": "5678"
                     },
                     {
                         title: 'Distribution',
@@ -2765,7 +2784,8 @@
                                 'Cold Chain: Critical requirement'
                             ]
                         },
-                        bottleneck: 'Cold chain infrastructure, transport costs, quality maintenance'
+                        "bottleneck": 'Cold chain infrastructure, transport costs, quality maintenance',
+                        "quote": "5678"
                     },
                     {
                         title: 'Processing & Retail',
@@ -2782,7 +2802,8 @@
                                 'Products: Chips, fries, frozen'
                             ]
                         },
-                        bottleneck: 'Processing capacity, quality standards, market competition'
+                        "bottleneck": 'Processing capacity, quality standards, market competition',
+                        "quote": "5678"
                     }
                 ],
                 overview: {
@@ -2811,7 +2832,8 @@
                                 'Hybrid Advantage: Disease resistance'
                             ]
                         },
-                        bottleneck: 'Limited heat-tolerant varieties, disease resistance breakdown'
+                        "bottleneck": 'Limited heat-tolerant varieties, disease resistance breakdown',
+                        "quote": "5678"
                     },
                     {
                         title: 'Nursery Management',
@@ -2828,7 +2850,8 @@
                                 'Disease Prevention: Critical'
                             ]
                         },
-                        bottleneck: 'Climate control costs, disease management, timing coordination'
+                        "bottleneck": 'Climate control costs, disease management, timing coordination',
+                        "quote": "5678"
                     },
                     {
                         title: 'Transplanting',
@@ -2845,7 +2868,8 @@
                                 'Mulching: Recommended'
                             ]
                         },
-                        bottleneck: 'Labor intensity, transplant shock, irrigation infrastructure'
+                        "bottleneck": 'Labor intensity, transplant shock, irrigation infrastructure',
+                        "quote": "5678"
                     },
                     {
                         title: 'Crop Management',
@@ -2862,7 +2886,8 @@
                                 'Major Pests: Whitefly, aphids, borers'
                             ]
                         },
-                        bottleneck: 'High disease pressure, labor-intensive management, pest resistance'
+                        "bottleneck": 'High disease pressure, labor-intensive management, pest resistance',
+                        "quote": "5678"
                     },
                     {
                         title: 'Harvesting',
@@ -2879,7 +2904,8 @@
                                 'Maturity Stages: Green, pink, red'
                             ]
                         },
-                        bottleneck: 'Labor-intensive harvesting, timing precision, handling care'
+                        "bottleneck": 'Labor-intensive harvesting, timing precision, handling care',
+                        "quote": "5678"
                     },
                     {
                         title: 'Post-Harvest Handling',
@@ -2896,7 +2922,8 @@
                                 'Quality Factor: Minimal bruising'
                             ]
                         },
-                        bottleneck: 'Bruising during handling, cooling infrastructure, contamination control'
+                        "bottleneck": 'Bruising during handling, cooling infrastructure, contamination control',
+                        "quote": "5678"
                     },
                     {
                         title: 'Processing',
@@ -2913,7 +2940,8 @@
                                 'Products: Paste, sauce, puree'
                             ]
                         },
-                        bottleneck: 'Processing capacity, quality standardization, energy costs'
+                        "bottleneck": 'Processing capacity, quality standardization, energy costs',
+                        "quote": "5678"
                     },
                     {
                         title: 'Cold Storage',
@@ -2930,7 +2958,8 @@
                                 'Controlled Atmosphere: Further improvement'
                             ]
                         },
-                        bottleneck: 'Cold storage infrastructure, energy costs, temperature control'
+                        "bottleneck": 'Cold storage infrastructure, energy costs, temperature control',
+                        "quote": "5678"
                     },
                     {
                         title: 'Distribution',
@@ -2947,7 +2976,8 @@
                                 'Distribution Tiers: 3-4 levels'
                             ]
                         },
-                        bottleneck: 'Cold chain infrastructure, transport costs, timing coordination'
+                        "bottleneck": 'Cold chain infrastructure, transport costs, timing coordination',
+                        "quote": "5678"
                     },
                     {
                         title: 'Retail Sales',
@@ -2964,7 +2994,8 @@
                                 'Retail Channels: 5+ types'
                             ]
                         },
-                        bottleneck: 'Price volatility, quality perception, shelf life limitations'
+                        "bottleneck": 'Price volatility, quality perception, shelf life limitations',
+                        "quote": "5678"
                     }
                 ],
                 overview: {
@@ -2993,7 +3024,8 @@
                                 'Pruning: Annual requirement'
                             ]
                         },
-                        bottleneck: 'Irregular bearing patterns, pest pressure, climate variability'
+                        bottleneck: 'Irregular bearing patterns, pest pressure, climate variability',
+                        "quote": "5678"
                     },
                     {
                         title: 'Flowering & Fruit Set',
@@ -3010,7 +3042,8 @@
                                 'Weather Sensitivity: High'
                             ]
                         },
-                        bottleneck: 'Weather dependency, low fruit set percentage, pollination issues'
+                        bottleneck: 'Weather dependency, low fruit set percentage, pollination issues',
+                        "quote": "5678"
                     },
                     {
                         title: 'Fruit Development',
@@ -3027,7 +3060,8 @@
                                 'Thinning: Improves size'
                             ]
                         },
-                        bottleneck: 'Labor-intensive bagging, fruit drop, pest management'
+                        bottleneck: 'Labor-intensive bagging, fruit drop, pest management',
+                        "quote": "5678"
                     },
                     {
                         title: 'Maturity Assessment',
@@ -3044,7 +3078,8 @@
                                 'Quality Indicators: Shoulder, color'
                             ]
                         },
-                        bottleneck: 'Maturity assessment accuracy, timing coordination, quality standards'
+                        bottleneck: 'Maturity assessment accuracy, timing coordination, quality standards',
+                        "quote": "5678"
                     },
                     {
                         title: 'Harvesting',
@@ -3061,7 +3096,8 @@
                                 'Quality Factor: No sap burn'
                             ]
                         },
-                        bottleneck: 'Labor-intensive process, sap burn prevention, careful handling'
+                        bottleneck: 'Labor-intensive process, sap burn prevention, careful handling',
+                        "quote": "5678"
                     },
                     {
                         title: 'Post-Harvest Treatment',
@@ -3078,7 +3114,8 @@
                                 'Quality Control: Critical'
                             ]
                         },
-                        bottleneck: 'Treatment infrastructure, ripening control, quality standardization'
+                        bottleneck: 'Treatment infrastructure, ripening control, quality standardization',
+                        "quote": "5678"
                     },
                     {
                         title: 'Grading & Packaging',
@@ -3095,7 +3132,8 @@
                                 'Quality Standards: International'
                             ]
                         },
-                        bottleneck: 'Grading precision, packaging costs, quality standardization'
+                        bottleneck: 'Grading precision, packaging costs, quality standardization',
+                        "quote": "5678"
                     },
                     {
                         title: 'Cold Storage',
@@ -3112,7 +3150,8 @@
                                 'Controlled Atmosphere: Available'
                             ]
                         },
-                        bottleneck: 'Cold storage infrastructure, energy costs, temperature precision'
+                        bottleneck: 'Cold storage infrastructure, energy costs, temperature precision',
+                        "quote": "5678"
                     },
                     {
                         title: 'Export & Distribution',
@@ -3129,7 +3168,8 @@
                                 'Documentation: Phytosanitary required'
                             ]
                         },
-                        bottleneck: 'High logistics costs, documentation complexity, quality maintenance'
+                        bottleneck: 'High logistics costs, documentation complexity, quality maintenance',
+                        "quote": "5678"
                     },
                     {
                         title: 'Retail Markets',
@@ -3146,7 +3186,8 @@
                                 'Brand Recognition: Growing'
                             ]
                         },
-                        bottleneck: 'Brand recognition, quality consistency, international competition'
+                        bottleneck: 'Brand recognition, quality consistency, international competition',
+                        "quote": "5678"
                     }
                 ],
                 overview: {
@@ -3161,172 +3202,110 @@
             'Apple': {
                 stages: [
                     {
-                        title: 'Orchard Establishment',
-                        description: 'Planting apple trees in mountainous regions',
-                        icon: 'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z',
-                        position: { top: 50, left: 100 },
-                        tooltip: {
-                            content: 'In Pakistan, apple orchards are primarily established in high-altitude areas such as Balochistan (e.g., Ziarat, Kalat) and Gilgit-Baltistan, where the cold climate supports apple cultivation. The establishment phase involves selecting suitable apple varieties like Kala Kulu, Amri, Mashadi, and Golden Delicious, and preparing land through terracing, soil conditioning, and water management. Grafted saplings are planted during the dormant season (usually late winter) to ensure healthy root development and long-term productivity.',
-                            stats: [
-                                'Altitude: 1500-3000 meters',
-                                'Tree Spacing: 3m x 4m to 4m x 5m',
-                                'Productive Life: 25-30 years',
-                                'Initial Investment: High'
+                        "title": "Land Selection and Seeding",
+                        "description": "Selecting suitable land and planting grafted apple saplings during winter",
+                        "icon": "https://i.ibb.co/LzrhY1Lk/Seed-Selection.png",
+                        "position": { "top": 50, "left": 200 },
+                        "tooltip": {
+                            "content": "Apple orchards thrive in specific cold-climate zones with well-prepared soil and careful planting. Farmers level the land and space trees to optimize irrigation access.<br><br><b>Ideal Conditions for Apple Orchards</b><table><tr><th>Factor</th><th>Ideal Condition</th></tr><tr><td>Altitude</td><td>High-altitude, semi-dry</td></tr><tr><td>Climate</td><td>Cold winters, mild summers</td></tr><tr><td>Soil</td><td>Loamy, well-drained</td></tr><tr><td>Chill Hours</td><td>Required for dormancy</td></tr></table><br><b>Planting Practices</b><table><tr><th>Aspect</th><th>Details</th></tr><tr><td>Sapling Type</td><td>Grafted, disease-resistant</td></tr><tr><td>Season</td><td>Winter (Dec–Feb)</td></tr><tr><td>Spacing</td><td>Arranged for irrigation access</td></tr></table>",
+                            "stats": [
+                                "Chill Hours: Critical for flower bud formation",
+                                "Soil Preparation: Land is leveled before planting",
+                                "Irrigation Planning: Trees spaced to allow water flow"
                             ]
                         },
-                        bottleneck: ''
+                        "bottleneck": "Soil quality inconsistencies and limited water availability in some areas.",
+                        "quote": "“Aam tor pe sardiyon mien beech lagan shuroon kar dethe hai... garmiyon ke start mien he hum channa shurron kar dethe hai.” — Ahmed\n“Shaakhe hothi hai na, hum usko kaat dethe hai... naye shakhe asake jin pe saib ug sakhe... fertilizer ko badalthe rehthe hai.”"
                     },
                     {
-                        title: 'Orchard Management',
-                        description: 'Pruning, training, and canopy management in local contexts',
-                        icon: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z',
-                        position: { top: 50, left: 300 },
-                        tooltip: {
-                            content: 'Pakistani apple orchards often face challenges like uneven rainfall and limited mechanization, making regular manual pruning and training essential. Farmers use traditional and modern methods to shape trees for better sunlight exposure and airflow, which helps prevent diseases such as scab and powdery mildew. Canopy management is also key to improving fruit quality and simplifying harvesting in sloped terrains.',
-                            stats: [
-                                'Pruning Season: December-February',
-                                'Training Systems: Spindle bush, central leader',
-                                'Yield: 20-40 tons/hectare',
-                                'Pest Management: IPM approach'
+                        "title": "Orchard Management and Maintenance",
+                        "description": "Irrigation, pruning, fertilization, and pest control to support healthy growth",
+                        "icon": "https://i.ibb.co/sJgxZJZK/Land-Preparation.png",
+                        "position": { "top": 50, "left": 475 },
+                        "tooltip": {
+                            "content": "Ongoing care of the apple orchard involves seasonal irrigation, careful pruning, and environmentally conscious pest control. Pipe-fed sprinklers and biological methods are used to sustain health and yield.<br><br><b>Routine Orchard Tasks</b><table><tr><th>Task</th><th>Method</th></tr><tr><td>Irrigation</td><td>Sprinklers (pipe-fed systems)</td></tr><tr><td>Pruning</td><td>Manual, to improve fruiting</td></tr><tr><td>Fertilization</td><td>Seasonally adjusted inputs</td></tr><tr><td>Pest Control</td><td>Organic pesticides + predator insects</td></tr></table><br><b>Technologies Used</b><table><tr><th>Technology</th><th>Purpose</th></tr><tr><td>Sprinklers</td><td>Efficient water distribution</td></tr><tr><td>Beneficial Insects</td><td>Biological pest management</td></tr></table>",
+                            "stats": [
+                                "Water Source: Declining groundwater table",
+                                "Pest Control: Uses organic methods and beneficial insects",
+                                "Fertilizer Use: Changes seasonally based on soil condition"
                             ]
                         },
-                        bottleneck: 'Pest and disease management, such as codling moth, apple scab ,Weather changes: droughts, floods, extreme weather conditions,Poor irrigation due to the Karez system.'
+                        "bottleneck": "Water scarcity due to falling groundwater, heat stress, and recurring pest outbreaks.",
+                        "quote": "“Organic khaas tor pe pesticides ke zarye hum use control karthe hai... keerain daal dethe hai jo saib khane wale keeron ko dhur rakhthe.” — Ahmed\n“Pipes ke through sprinklers nikle huwe we hai jis ke through pani jatha hai in saibo taraf.” — Ahmed\n“Sab se bara masla pani ka hai... keerain bohoth ajathe hai... mausam ke tabdeeli ke waja se bohoth farq partha hai.” — Ahmed"
                     },
                     {
-                        title: 'Flowering & Pollination',
-                        description: 'Managing bloom and ensuring cross-pollination',
-                        icon: 'M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10',
-                        position: { top: 50, left: 500 },
-                        tooltip: {
-                            content: 'Most apple varieties in Pakistan require cross-pollination, which occurs during the spring bloom season. Beekeeping is increasingly integrated into farms, especially in areas like Swat and Ziarat, to enhance pollination through natural agents. Farmers monitor blooming periods and manage orchard biodiversity to support pollinator activity, critical for setting a healthy crop.',
-                            stats: [
-                                'Flowering: April-May',
-                                'Cross-pollination: Essential',
-                                'Bee Colonies: 2-3 hives/hectare',
-                                'Weather Sensitivity: High'
+                        "title": "Fruit Ripening and Harvesting",
+                        "description": "Apples mature from July to October depending on variety; picking is done by hand to avoid bruising",
+                        "icon": "https://i.ibb.co/7JpjP5NT/Harvesting.png",
+                        "position": { "top": 150, "left": 750 },
+                        "tooltip": {
+                            "content": "Different apple varieties ripen across the summer and early fall months. Skilled labor is required to harvest them at the right time without damaging the fruit.<br><br><b>Ripening Timeline</b><table><tr><th>Variety</th><th>Ripens</th></tr><tr><td>Kamla, Kala Kullu</td><td>July – Early August</td></tr><tr><td>Red Delicious</td><td>September</td></tr><tr><td>Golden Delicious</td><td>Late Sept – October</td></tr></table><br><b>Harvest Practices</b><table><tr><th>Aspect</th><th>Details</th></tr><tr><td>Method</td><td>Manual picking by trained labor</td></tr><tr><td>Timing</td><td>Based on fruit color and texture</td></tr><tr><td>Risk</td><td>Damage lowers value and shelf life</td></tr></table>",
+                            "stats": [
+                                "Peak Labor Demand: July–October",
+                                "Visual Indicators: Used to judge ripeness (color, texture)",
+                                "Risk: Delayed harvest reduces shelf life and price"
                             ]
                         },
-                        bottleneck: 'pest and disease management such as codling moth, apple scrab ,Flowers are highly climate-sensitive: frost or temperature swings damage them,Pollination failure due to declining bee populations and poor biodiversity'
+                        "bottleneck": "Lack of skilled labor at peak season and risk of bruising during manual harvest.",
+                        "quote": ""
                     },
                     {
-                        title: 'Fruit Development',
-                        description: 'Thinning, bagging, and growth monitoring',
-                        icon: 'M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z',
-                        position: { top: 50, left: 700 },
-                        tooltip: {
-                            content: 'Once flowering is complete, early-stage fruit requires careful management. Farmers in Pakistan often manually thin excessive fruit to ensure optimal size and appearance. In areas with higher pest risks, like in Balochistan, protective fruit bagging is used to reduce sunburn and insect damage. Growth progress is tracked through field visits, and nutrient management is done using regionally adapted fertilization schedules.',
-                            stats: [
-                                'Development: 4-6 months',
-                                'Thinning: 1-2 fruits per cluster',
-                                'Bagging: 80-90% for premium',
-                                'Labor Intensity: High'
+                        "title": "Sorting, Grading and On-Farm Storage",
+                        "description": "Post-harvest apples are sorted by quality and stored in cold units if available",
+                        "icon": "https://i.ibb.co/cXTtQn9M/Crop-Management.png",
+                        "position": { "top": 375, "left": 750 },
+                        "tooltip": {
+                            "content": "After picking, apples are visually sorted and graded based on size, color, and quality. Storage in cold rooms can help preserve freshness, though many farms lack access.<br><br><b>Sorting & Grading Criteria</b><table><tr><th>Aspect</th><th>Details</th></tr><tr><td>Size</td><td>Large apples preferred for premium sale</td></tr><tr><td>Appearance</td><td>Uniform color, no blemishes</td></tr><tr><td>Damage</td><td>Bruised or insect-bitten apples separated</td></tr></table><br><b>Storage Practices</b><table><tr><th>Type</th><th>Details</th></tr><tr><td>Cold Storage</td><td>Used to extend shelf life and reduce spoilage</td></tr><tr><td>Availability</td><td>Not accessible on all farms</td></tr></table>",
+                            "stats": [
+                                "Heat Risk: Spoilage rises during warmer months",
+                                "Storage Type: Cold storage used if available on-site",
+                                "Spoilage Control: Sorting helps reduce losses"
                             ]
                         },
-                        bottleneck: 'Labor-intensive operations, timing precision, weather protection'
+                        "bottleneck": "Limited access to on-farm cold storage units results in faster spoilage, especially during warm months.",
+                        "quote": ""
                     },
                     {
-                        title: 'Harvesting',
-                        description: 'Hand-picking at optimal maturity',
-                        icon: 'M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4',
-                        position: { top: 180, left: 850 },
-                        tooltip: {
-                            content: 'Harvesting usually takes place between July and October, depending on the region and variety. Apples are hand-picked by local laborers, who have years of experience handling fruit without bruising it. Since mechanical harvesting is rare in Pakistan, skilled manual harvesting ensures that only fully mature, high-quality fruit is selected for the market.',
-                            stats: [
-                                'Harvest Period: August-October',
-                                'Harvest Rounds: 2-3 per variety',
-                                'Handling: Soft-catch systems',
-                                'Quality Factor: No bruising'
+                        "title": "Transportation to Mandis and Distribution",
+                        "description": "Apples are transported to markets via hired vehicles or sold on-farm; cold chain is rare",
+                        "icon": "https://i.ibb.co/JjHCNHzX/Storage-Transport.png",
+                        "position": { "top": 500, "left": 475 },
+                        "tooltip": {
+                            "content": "<b>Transport Modes</b><table><tr><th>Method</th><th>Details</th></tr><tr><td>Hired Vehicles</td><td>Used by most smallholders</td></tr><tr><td>Own Transport</td><td>Rare due to cost</td></tr><tr><td>Cold Trucks</td><td>Occasionally rented, not common</td></tr></table><br><b>Distribution Challenges</b><table><tr><th>Issue</th><th>Impact</th></tr><tr><td>Poor Roads</td><td>Delays and damage to fruit</td></tr><tr><td>No Cold Chain</td><td>Spoilage during heatwaves</td></tr><tr><td>Traffic</td><td>Missed market timing</td></tr></table>",
+
+                            "stats": [
+                                "Farmer Transport: Most rely on rented vehicles",
+                                "Cold Trucks: Only some farms can afford them",
+                                "Road Quality: Poor, leading to delays and damage"
                             ]
                         },
-                        bottleneck: 'Lack of storage at farm level forces immediate sale at lower prices'
+                        "bottleneck": "No access to refrigerated transport, poor rural roads, and timing delays that reduce price margins.",
+                        "quote": "“Hamare pass hamari apni gariyan nahi hothi...cold storage wali gariyaan karwani padthi hai...roads kharab hain...market ke rates uppar neeche horahe hothe hai...deal karna padta hai.” — Ahmed"
                     },
                     {
-                        title: 'Post-Harvest Handling',
-                        description: 'Washing, grading, and initial processing',
-                        icon: 'M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11',
-                        position: { top: 350, left: 850 },
-                        tooltip: {
-                            content: 'Post-harvest handling begins at the farm or nearby collection centers, where apples are cleaned, graded manually or with basic machines, and sorted based on size, color, and quality. Though some small farms use traditional packaging, modern export-focused farms apply food safety protocols and may also apply surface treatments like waxing.',
-                            stats: [
-                                'Cooling: Within 4-6 hours',
-                                'Washing: Chlorinated water',
-                                'Grading: 5-6 size categories',
-                                'Quality Control: Critical'
+                        "title": "Market Access and Sale to Vendors",
+                        "description": "Apples are sold in mandis through middlemen or from cold storage when market prices rise",
+                        "icon": " ",
+                        "position": { "top": 500, "left": 200 },
+                        "tooltip": {
+                            "content": "Farmers mostly depend on wholesale markets and middlemen to sell apples. Cold storage offers some flexibility, but direct access to urban or export markets is lacking.<br><br><b>Sales Channels</b><table><tr><th>Method</th><th>Details</th></tr><tr><td>Mandis</td><td>Main selling point via middlemen</td></tr><tr><td>Cold Storage</td><td>Allows delayed sale during off-season</td></tr><tr><td>Direct Sale</td><td>Rare due to lack of buyer links</td></tr></table><br><b>Pricing Issues</b><table><tr><th>Limitation</th><th>Effect</th></tr><tr><td>Middlemen Dependence</td><td>Price manipulation, delayed payment</td></tr><tr><td>Volatile Market Rates</td><td>Unpredictable earnings</td></tr><tr><td>No Bulk Infrastructure</td><td>Can't leverage high prices at peak</td></tr></table>",
+                            "stats": [
+                                "Buyer Dependence: Farmers rely heavily on middlemen",
+                                "Sales Timing: Cold storage enables delayed sales",
+                                "Price Sensitivity: Market rates change frequently"
                             ]
                         },
-                        bottleneck: ''
-                    },
-                    {
-                        title: 'Cold Storage',
-                        description: 'Controlled atmosphere storage',
-                        icon: 'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z',
-                        position: { top: 470, left: 700 },
-                        tooltip: {
-                            content: 'Cold storage infrastructure is growing in Pakistan, especially in Quetta, Pishin, and Swat, helping extend the shelf life of apples for domestic and export markets. Controlled atmosphere (CA) storage is used by larger producers and exporters to maintain freshness, reduce spoilage, and stabilize prices by distributing fruit over time instead of flooding the market at harvest.',
-                            stats: [
-                                'Temperature: 0-2°C',
-                                'Oxygen Level: 1-3%',
-                                'Storage Life: 8-12 months',
-                                'Infrastructure: High investment'
-                            ]
-                        },
-                        bottleneck: 'High infrastructure costs, technical expertise, energy requirements'
-                    },
-                    {
-                        title: 'Packaging',
-                        description: 'Consumer packaging for retail and export',
-                        icon: 'M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4',
-                        position: { top: 470, left: 500 },
-                        tooltip: {
-                            content: 'Apples are packed into wooden crates, cardboard boxes, or plastic trays, depending on the target market. Domestic markets often use traditional open crates, while export-quality apples are packed in ventilated, standardized packaging with branding, barcodes, and grading labels. Proper packaging is essential to prevent bruising during long-distance transport and appeal to quality-conscious consumers.',
-                            stats: [
-                                'Export: 18-20 kg boxes',
-                                'Retail: 1-5 kg units',
-                                'Individual Wrapping: Premium grades',
-                                'Branding: Value addition'
-                            ]
-                        },
-                        bottleneck: 'Packaging costs, quality standards, branding development'
-                    },
-                    {
-                        title: 'Distribution',
-                        description: 'Transportation to domestic and export markets',
-                        icon: 'M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0',
-                        position: { top: 470, left: 300 },
-                        tooltip: {
-                            content: 'From farms in Balochistan and Gilgit-Baltistan, apples travel through wholesale markets in Lahore, Karachi, Islamabad, and Peshawar. For exports, apples are routed via road or rail to port cities like Karachi, where they\'re shipped primarily to Middle Eastern countries. Cold-chain logistics are still developing, and efforts are being made to reduce post-harvest losses during transportation.',
-                            stats: [
-                                'Transport: 0-4°C',
-                                'Distribution: 500-2000 km',
-                                'Export Markets: Middle East, Central Asia',
-                                'Documentation: Required'
-                            ]
-                        },
-                        bottleneck: 'Poor road connectivity (especially in mountainous areas),Overloaded vehicles cause damage in transit,Unrefrigerated transport leads to spoilage'
-                    },
-                    {
-                        title: 'Retail Sales',
-                        description: 'Premium positioning in markets',
-                        icon: 'M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z',
-                        position: { top: 470, left: 100 },
-                        tooltip: {
-                            content: 'Apples grown in Pakistan reach consumers through fruit mandis (wholesale markets), retail fruit vendors, supermarkets, and increasingly via online grocery platforms. Premium varieties like Kala Kulu from Ziarat or Golden Delicious from Hunza are marketed as high-quality local produce. As awareness of hygiene and branding grows, demand for properly packaged, traceable apples is also increasing among urban consumers.',
-                            stats: [
-                                'Domestic Market: 70%',
-                                'Export Value: $15 million',
-                                'Premium Varieties: Red, Golden Delicious',
-                                'Competition: Import pressure'
-                            ]
-                        },
-                        bottleneck: 'Import competition, quality perception, limited brand recognition'
+                        "bottleneck": "Farmers face price exploitation, lack direct urban/export links, and have limited options during peak season due to infrastructure gaps.",
+                        "quote": "“Hamare pass coldstorage hai tho hum rakh dethe hai saib ko... market mein demand hothi hai tho hum bhaij dethe hai.” — Ahmed\n“Hum alag alag aqsam ke saib ugathe rehthe hai.”"
                     }
                 ],
+
                 overview: {
                     title: 'Apple Supply Chain Overview',
                     stats: [
-                        { title: 'Pakistan Production', value: '600 Thousand', subtitle: 'Metric tons annually', color: 'olive-green' },
-                        { title: 'Growing Regions', value: 'Northern Areas', subtitle: 'High-altitude orchards', color: 'fresh-green' },
-                        { title: 'Storage Potential', value: '8-12 Months', subtitle: 'With controlled atmosphere', color: 'reseda-green' }
+                        { title: 'Pakistan Production', value: '-', subtitle: 'Metric tons annually', color: 'olive-green' },
+                        { title: 'Growing Regions', value: '-', subtitle: 'High-altitude orchards', color: 'fresh-green' },
+                        { title: 'Storage Potential', value: '-', subtitle: 'With controlled atmosphere', color: 'reseda-green' }
                     ]
                 }
             },
@@ -3348,7 +3327,8 @@
                                 'Soil Requirement: Well-drained'
                             ]
                         },
-                        bottleneck: 'Disease pressure, water management, soil salinity issues'
+                        bottleneck: 'Disease pressure, water management, soil salinity issues',
+                        "quote": "5678"
                     },
                     {
                         title: 'Flowering & Fruit Set',
@@ -3365,7 +3345,8 @@
                                 'Weather Sensitivity: High'
                             ]
                         },
-                        bottleneck: 'Weather dependency, natural fruit drop, pollination challenges'
+                        bottleneck: 'Weather dependency, natural fruit drop, pollination challenges',
+                        "quote": "5678"
                     },
                     {
                         title: 'Crop Management',
@@ -3382,7 +3363,8 @@
                                 'Micronutrients: Critical'
                             ]
                         },
-                        bottleneck: 'Water quality issues, micronutrient deficiencies, emerging pests'
+                        bottleneck: 'Water quality issues, micronutrient deficiencies, emerging pests',
+                        "quote": "5678"
                     },
                     {
                         title: 'Maturity Assessment',
@@ -3399,7 +3381,8 @@
                                 'Color Development: Critical'
                             ]
                         },
-                        bottleneck: 'Maturity assessment accuracy, varying market standards'
+                        bottleneck: 'Maturity assessment accuracy, varying market standards',
+                        "quote": "5678"
                     },
                     {
                         title: 'Harvesting',
@@ -3416,7 +3399,8 @@
                                 'Quality Factor: No stem damage'
                             ]
                         },
-                        bottleneck: 'Labor-intensive process, careful handling requirements'
+                        bottleneck: 'Labor-intensive process, careful handling requirements',
+                        "quote": "5678"
                     },
                     {
                         title: 'Post-Harvest Processing',
@@ -3433,7 +3417,8 @@
                                 'Quality Control: Critical'
                             ]
                         },
-                        bottleneck: 'Processing infrastructure, quality control, grading precision'
+                        bottleneck: 'Processing infrastructure, quality control, grading precision',
+                        "quote": "5678"
                     },
                     {
                         title: 'Juice Processing',
@@ -3450,7 +3435,8 @@
                                 'Value Addition: 150-250%'
                             ]
                         },
-                        bottleneck: 'Processing capacity, quality preservation, energy requirements'
+                        bottleneck: 'Processing capacity, quality preservation, energy requirements',
+                        "quote": "5678"
                     },
                     {
                         title: 'Packaging',
@@ -3467,7 +3453,8 @@
                                 'Aseptic: 12 months (juice)'
                             ]
                         },
-                        bottleneck: 'Packaging costs, shelf life optimization, brand development'
+                        bottleneck: 'Packaging costs, shelf life optimization, brand development',
+                        "quote": "5678"
                     },
                     {
                         title: 'Distribution',
@@ -3484,7 +3471,8 @@
                                 'Cold Chain: Critical'
                             ]
                         },
-                        bottleneck: 'Cold chain infrastructure, quality consistency, export compliance'
+                        bottleneck: 'Cold chain infrastructure, quality consistency, export compliance',
+                        "quote": "5678"
                     },
                     {
                         title: 'Retail & Processing',
@@ -3501,7 +3489,8 @@
                                 'Export Potential: $80 million'
                             ]
                         },
-                        bottleneck: 'Import competition, limited processing capacity'
+                        bottleneck: 'Import competition, limited processing capacity',
+                        "quote": "5678"
                     }
                 ],
                 overview: {
@@ -3530,7 +3519,8 @@
                                 'Certification: Required'
                             ]
                         },
-                        bottleneck: 'Limited certified seed availability, variety-specific demands'
+                        bottleneck: 'Limited certified seed availability, variety-specific demands',
+                        "quote": "5678"
                     },
                     {
                         title: 'Land Preparation',
@@ -3547,7 +3537,8 @@
                                 'Drainage: Critical'
                             ]
                         },
-                        bottleneck: 'Poor drainage, soil pH issues, inoculant availability'
+                        bottleneck: 'Poor drainage, soil pH issues, inoculant availability',
+                        "quote": "5678"
                     },
                     {
                         title: 'Sowing',
@@ -3564,7 +3555,8 @@
                                 'Seed Treatment: Recommended'
                             ]
                         },
-                        bottleneck: 'Timing precision, seed placement accuracy, weather dependency'
+                        bottleneck: 'Timing precision, seed placement accuracy, weather dependency',
+                        "quote": "5678"
                     },
                     {
                         title: 'Crop Management',
@@ -3581,7 +3573,8 @@
                                 'Major Pests: Aphids, pod borers'
                             ]
                         },
-                        bottleneck: 'Weed competition, pest outbreaks, drought stress'
+                        bottleneck: 'Weed competition, pest outbreaks, drought stress',
+                        "quote": "5678"
                     },
                     {
                         title: 'Harvesting',
@@ -3598,7 +3591,8 @@
                                 'Shattering Loss: Minimize'
                             ]
                         },
-                        bottleneck: 'Shattering losses, narrow harvest window, weather dependency'
+                        bottleneck: 'Shattering losses, narrow harvest window, weather dependency',
+                        "quote": "5678"
                     },
                     {
                         title: 'Threshing',
@@ -3615,7 +3609,8 @@
                                 'Quality Factor: Minimal damage'
                             ]
                         },
-                        bottleneck: 'Seed damage, cleaning efficiency, equipment availability'
+                        bottleneck: 'Seed damage, cleaning efficiency, equipment availability',
+                        "quote": "5678"
                     },
                     {
                         title: 'Cleaning & Grading',
@@ -3632,7 +3627,8 @@
                                 'Color Sorting: Available'
                             ]
                         },
-                        bottleneck: 'Cleaning equipment costs, grading precision, quality standards'
+                        bottleneck: 'Cleaning equipment costs, grading precision, quality standards',
+                        "quote": "5678"
                     },
                     {
                         title: 'Storage',
@@ -3649,7 +3645,8 @@
                                 'Pest Control: Hermetic storage'
                             ]
                         },
-                        bottleneck: 'Moisture control, pest management, storage infrastructure'
+                        bottleneck: 'Moisture control, pest management, storage infrastructure',
+                        "quote": "5678"
                     },
                     {
                         title: 'Processing',
@@ -3666,7 +3663,8 @@
                                 'Processing Capacity: Variable'
                             ]
                         },
-                        bottleneck: 'Processing capacity, quality control, market segmentation'
+                        bottleneck: 'Processing capacity, quality control, market segmentation',
+                        "quote": "5678"
                     },
                     {
                         title: 'Marketing',
@@ -3683,7 +3681,8 @@
                                 'Protein Content: 24-26%'
                             ]
                         },
-                        bottleneck: 'Price volatility, quality certification, limited export markets'
+                        bottleneck: 'Price volatility, quality certification, limited export markets',
+                        "quote": "5678"
                     }
                 ],
                 overview: {
@@ -3712,7 +3711,8 @@
                                 'Varieties: Multiple hybrids'
                             ]
                         },
-                        bottleneck: 'High seed costs, variety-specific requirements, seed availability'
+                        bottleneck: 'High seed costs, variety-specific requirements, seed availability',
+                        "quote": "5678"
                     },
                     {
                         title: 'Land Preparation',
@@ -3729,7 +3729,8 @@
                                 'Field Preparation: 2-3 weeks'
                             ]
                         },
-                        bottleneck: 'Soil compaction, drainage issues, equipment costs'
+                        bottleneck: 'Soil compaction, drainage issues, equipment costs',
+                        "quote": "5678"
                     },
                     {
                         title: 'Sowing',
@@ -3746,7 +3747,8 @@
                                 'Plant Population: 65,000-75,000/hectare'
                             ]
                         },
-                        bottleneck: 'Planting precision, equipment availability, seasonal timing'
+                        bottleneck: 'Planting precision, equipment availability, seasonal timing',
+                        "quote": "5678"
                     },
                     {
                         title: 'Crop Management',
@@ -3763,7 +3765,8 @@
                                 'Major Pests: Stem borer, fall armyworm'
                             ]
                         },
-                        bottleneck: 'Water stress during critical stages, pest management, nutrient timing'
+                        bottleneck: 'Water stress during critical stages, pest management, nutrient timing',
+                        "quote": "5678"
                     },
                     {
                         title: 'Harvesting',
@@ -3780,7 +3783,8 @@
                                 'Harvest Window: 10-15 days'
                             ]
                         },
-                        bottleneck: 'Moisture timing, equipment availability, weather dependency'
+                        bottleneck: 'Moisture timing, equipment availability, weather dependency',
+                        "quote": "5678"
                     },
                     {
                         title: 'Drying',
@@ -3797,7 +3801,8 @@
                                 'Quality Factor: Mold prevention'
                             ]
                         },
-                        bottleneck: 'High drying costs, weather dependency, quality control'
+                        bottleneck: 'High drying costs, weather dependency, quality control',
+                        "quote": "5678"
                     },
                     {
                         title: 'Storage',
@@ -3814,7 +3819,8 @@
                                 'Pest Control: Hermetic systems'
                             ]
                         },
-                        bottleneck: 'Storage infrastructure, pest management, moisture control'
+                        bottleneck: 'Storage infrastructure, pest management, moisture control',
+                        "quote": "5678"
                     },
                     {
                         title: 'Processing',
@@ -3831,7 +3837,8 @@
                                 'Feed Industry: Major buyer'
                             ]
                         },
-                        bottleneck: 'Processing capacity, quality standardization, market segmentation'
+                        bottleneck: 'Processing capacity, quality standardization, market segmentation',
+                        "quote": "5678"
                     },
                     {
                         title: 'Distribution',
@@ -3848,7 +3855,8 @@
                                 'Transport: Bulk systems'
                             ]
                         },
-                        bottleneck: 'Transport infrastructure, quality maintenance, market concentration'
+                        bottleneck: 'Transport infrastructure, quality maintenance, market concentration',
+                        "quote": "5678"
                     },
                     {
                         title: 'End Use Markets',
@@ -3865,7 +3873,8 @@
                                 'Export: Growing market'
                             ]
                         },
-                        bottleneck: 'Feed industry concentration, processing limitations, export competitiveness'
+                        bottleneck: 'Feed industry concentration, processing limitations, export competitiveness',
+                        "quote": "5678"
                     }
                 ],
                 overview: {
@@ -3894,7 +3903,8 @@
                                 'Breeding Programs: Genetic improvement'
                             ]
                         },
-                        bottleneck: 'Feed quality and availability, disease outbreaks, genetic improvement'
+                        bottleneck: 'Feed quality and availability, disease outbreaks, genetic improvement',
+                        "quote": "5678"
                     },
                     {
                         title: 'Feed Management',
@@ -3911,7 +3921,8 @@
                                 'Silage: Preservation method'
                             ]
                         },
-                        bottleneck: 'Seasonal fodder shortage, high feed costs, nutritional imbalances'
+                        bottleneck: 'Seasonal fodder shortage, high feed costs, nutritional imbalances',
+                        "quote": "5678"
                     },
                     {
                         title: 'Milking',
@@ -3928,7 +3939,8 @@
                                 'Udder Health: Regular monitoring'
                             ]
                         },
-                        bottleneck: 'Hygiene practices, equipment costs, skilled labor shortage'
+                        bottleneck: 'Hygiene practices, equipment costs, skilled labor shortage',
+                        "quote": "5678"
                     },
                     {
                         title: 'Cooling & Storage',
@@ -3945,7 +3957,8 @@
                                 'Cold Chain: Critical'
                             ]
                         },
-                        bottleneck: 'Power supply reliability, cooling infrastructure, energy costs'
+                        bottleneck: 'Power supply reliability, cooling infrastructure, energy costs',
+                        "quote": "5678"
                     },
                     {
                         title: 'Collection',
@@ -3962,7 +3975,8 @@
                                 'Route Optimization: Critical'
                             ]
                         },
-                        bottleneck: 'Route efficiency, quality control, transport infrastructure'
+                        bottleneck: 'Route efficiency, quality control, transport infrastructure',
+                        "quote": "5678"
                     },
                     {
                         title: 'Quality Testing',
@@ -3979,7 +3993,8 @@
                                 'Quality Pricing: Incentive system'
                             ]
                         },
-                        bottleneck: 'Testing infrastructure, equipment costs, standardization'
+                        bottleneck: 'Testing infrastructure, equipment costs, standardization',
+                        "quote": "5678"
                     },
                     {
                         title: 'Processing',
@@ -3996,7 +4011,8 @@
                                 'Value Addition: 200-300%'
                             ]
                         },
-                        bottleneck: 'Processing capacity, energy costs, quality control'
+                        bottleneck: 'Processing capacity, energy costs, quality control',
+                        "quote": "5678"
                     },
                     {
                         title: 'Packaging',
@@ -4013,7 +4029,8 @@
                                 'Eco-friendly: Growing trend'
                             ]
                         },
-                        bottleneck: 'Packaging costs, environmental concerns, consumer preferences'
+                        bottleneck: 'Packaging costs, environmental concerns, consumer preferences',
+                        "quote": "5678"
                     },
                     {
                         title: 'Distribution',
@@ -4030,7 +4047,8 @@
                                 'Direct Delivery: Growing'
                             ]
                         },
-                        bottleneck: 'Cold chain infrastructure, distribution costs, rural access'
+                        bottleneck: 'Cold chain infrastructure, distribution costs, rural access',
+                        "quote": "5678"
                     },
                     {
                         title: 'Retail Sales',
@@ -4047,7 +4065,8 @@
                                 'Brand Loyalty: Strong'
                             ]
                         },
-                        bottleneck: 'Intense brand competition, price sensitivity, quality consistency'
+                        bottleneck: 'Intense brand competition, price sensitivity, quality consistency',
+                        "quote": "5678"
                     }
                 ],
                 overview: {
@@ -4076,7 +4095,8 @@
                                 'Varieties: Multiple types'
                             ]
                         },
-                        bottleneck: 'Limited high-oil varieties, seed availability, quality assurance'
+                        bottleneck: 'Limited high-oil varieties, seed availability, quality assurance',
+                        "quote": "5678"
                     },
                     {
                         title: 'Land Preparation',
@@ -4093,7 +4113,8 @@
                                 'Drainage: Important'
                             ]
                         },
-                        bottleneck: 'Poor drainage, soil pH issues, organic matter costs'
+                        bottleneck: 'Poor drainage, soil pH issues, organic matter costs',
+                        "quote": "5678"
                     },
                     {
                         title: 'Sowing',
@@ -4110,7 +4131,8 @@
                                 'Method: Line sowing preferred'
                             ]
                         },
-                        bottleneck: 'Timing precision, sowing method, weather dependency'
+                        bottleneck: 'Timing precision, sowing method, weather dependency',
+                        "quote": "5678"
                     },
                     {
                         title: 'Crop Management',
@@ -4127,7 +4149,8 @@
                                 'Major Pest: Aphids'
                             ]
                         },
-                        bottleneck: 'Aphid outbreaks, water management, nutrient deficiencies'
+                        bottleneck: 'Aphid outbreaks, water management, nutrient deficiencies',
+                        "quote": "5678"
                     },
                     {
                         title: 'Harvesting',
@@ -4144,7 +4167,8 @@
                                 'Shattering Loss: Minimize'
                             ]
                         },
-                        bottleneck: 'Shattering losses, narrow harvest window, weather dependency'
+                        bottleneck: 'Shattering losses, narrow harvest window, weather dependency',
+                        "quote": "5678"
                     },
                     {
                         title: 'Threshing',
@@ -4161,7 +4185,8 @@
                                 'Quality Factor: Minimal damage'
                             ]
                         },
-                        bottleneck: 'Seed damage, cleaning efficiency, equipment availability'
+                        bottleneck: 'Seed damage, cleaning efficiency, equipment availability',
+                        "quote": "5678"
                     },
                     {
                         title: 'Oil Extraction',
@@ -4178,7 +4203,8 @@
                                 'Value Addition: 300-400%'
                             ]
                         },
-                        bottleneck: 'Extraction efficiency, processing capacity, quality control'
+                        bottleneck: 'Extraction efficiency, processing capacity, quality control',
+                        "quote": "5678"
                     },
                     {
                         title: 'Oil Refining',
@@ -4195,7 +4221,8 @@
                                 'Quality Standards: Food grade'
                             ]
                         },
-                        bottleneck: 'Processing costs, quality standardization, energy requirements'
+                        bottleneck: 'Processing costs, quality standardization, energy requirements',
+                        "quote": "5678"
                     },
                     {
                         title: 'Packaging',
@@ -4212,7 +4239,8 @@
                                 'Oxidation Prevention: Critical'
                             ]
                         },
-                        bottleneck: 'Packaging costs, oxidation control, market segmentation'
+                        bottleneck: 'Packaging costs, oxidation control, market segmentation',
+                        "quote": "5678"
                     },
                     {
                         title: 'Marketing',
@@ -4229,7 +4257,8 @@
                                 'Cold-pressed: Premium segment'
                             ]
                         },
-                        bottleneck: 'Competition from other oils, health regulations, price competitiveness'
+                        bottleneck: 'Competition from other oils, health regulations, price competitiveness',
+                        "quote": "5678"
                     }
                 ],
                 overview: {
@@ -4258,7 +4287,8 @@
                                 'Tissue Culture: Disease-free'
                             ]
                         },
-                        bottleneck: 'High-quality planting material, variety selection, establishment costs'
+                        bottleneck: 'High-quality planting material, variety selection, establishment costs',
+                        "quote": "5678"
                     },
                     {
                         title: 'Crop Management',
@@ -4275,7 +4305,8 @@
                                 'Mulching: Recommended'
                             ]
                         },
-                        bottleneck: 'High water requirements, disease pressure, nutrient management'
+                        bottleneck: 'High water requirements, disease pressure, nutrient management',
+                        "quote": "5678"
                     },
                     {
                         title: 'Bunch Development',
@@ -4292,7 +4323,8 @@
                                 'Bunch Covers: Protection'
                             ]
                         },
-                        bottleneck: 'Weather protection, uniform development, labor for management'
+                        bottleneck: 'Weather protection, uniform development, labor for management',
+                        "quote": "5678"
                     },
                     {
                         title: 'Harvesting',
@@ -4309,7 +4341,8 @@
                                 'Handling: Very careful'
                             ]
                         },
-                        bottleneck: 'Maturity assessment, handling care, market timing'
+                        bottleneck: 'Maturity assessment, handling care, market timing',
+                        "quote": "5678"
                     },
                     {
                         title: 'Post-Harvest Handling',
@@ -4326,7 +4359,8 @@
                                 'Latex Removal: Critical'
                             ]
                         },
-                        bottleneck: 'Latex removal, grading precision, damage prevention'
+                        bottleneck: 'Latex removal, grading precision, damage prevention',
+                        "quote": "5678"
                     },
                     {
                         title: 'Ripening Control',
@@ -4343,7 +4377,8 @@
                                 'Uniform Ripening: Critical'
                             ]
                         },
-                        bottleneck: 'Ripening infrastructure, temperature control, timing coordination'
+                        bottleneck: 'Ripening infrastructure, temperature control, timing coordination',
+                        "quote": "5678"
                     },
                     {
                         title: 'Packaging',
@@ -4360,7 +4395,8 @@
                                 'Branding: Value addition'
                             ]
                         },
-                        bottleneck: 'Packaging costs, damage prevention, brand development'
+                        bottleneck: 'Packaging costs, damage prevention, brand development',
+                        "quote": "5678"
                     },
                     {
                         title: 'Cold Storage',
@@ -4377,7 +4413,8 @@
                                 'Chilling Injury: Avoid'
                             ]
                         },
-                        bottleneck: 'Temperature precision, humidity control, chilling injury prevention'
+                        bottleneck: 'Temperature precision, humidity control, chilling injury prevention',
+                        "quote": "5678"
                     },
                     {
                         title: 'Distribution',
@@ -4394,7 +4431,8 @@
                                 'Documentation: Required'
                             ]
                         },
-                        bottleneck: 'Cold chain infrastructure, transport costs, export documentation'
+                        bottleneck: 'Cold chain infrastructure, transport costs, export documentation',
+                        "quote": "5678"
                     },
                     {
                         title: 'Retail Sales',
@@ -4411,7 +4449,8 @@
                                 'Value Addition: Chips, puree'
                             ]
                         },
-                        bottleneck: 'Quality perception, price competition, limited processing'
+                        bottleneck: 'Quality perception, price competition, limited processing',
+                        "quote": "5678"
                     }
                 ],
                 overview: {
@@ -4472,7 +4511,7 @@
     </div>
     <div class="stage-title" style="background-color: ${colors.titleBackground};">${stage.title}</div>
     <div class="stage-description">${stage.description}</div>
-</div>
+
 
 
                     <!-- Normal tooltip -->
