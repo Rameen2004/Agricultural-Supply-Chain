@@ -11,11 +11,10 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;500;600&family=Nunito:wght@400;600;700&display=swap"
         rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css" rel="stylesheet">
-    <link href="https://unpkg.com/tippy.js@6/dist/tippy.css" rel="stylesheet">
+
     <script src="https://cdn.tailwindcss.com/3.4.6"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
-    <script src="https://unpkg.com/@popperjs/core@2"></script>
-    <script src="https://unpkg.com/tippy.js@6"></script>
+
     <script>
         tailwind.config = {
             theme: {
@@ -261,18 +260,7 @@
             border-bottom: 2px solid #45552C;
         }
 
-        .tippy-box[data-theme~='custom'] {
-            background-color: #ffffff;
-            color: #3D3D3D;
-            border: 1px solid #e5e7eb;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
 
-
-        .tippy-box[data-theme~='custom'] .tippy-arrow {
-            color: #ffffff;
-            border-color: #e5e7eb;
-        }
 
         .product-grid {
             display: grid;
@@ -304,15 +292,11 @@
 
         .stage-node {
             position: absolute;
-            width: 180px;
+            width: 200px;
+            /* Increased width to prevent text cutoff */
             text-align: center;
             transition: transform 0.3s ease;
             z-index: 5;
-        }
-
-        .stage-node:hover {
-            transform: scale(1.05);
-            z-index: 10;
         }
 
         .stage-icon {
@@ -361,14 +345,76 @@
             cursor: pointer;
         } */
 
+        /* .dropdown-arrow {
+            display: inline-flex;
+            margin-left: 8px;
+            width: 20px;
+            height: 20px;
+            background-color: #45552C;
+            border: 1px solid white;
+            border-radius: 50%;
+            color: white;
+            text-align: center;
+            line-height: 20px;
+            font-size: 10px;
+            cursor: pointer;
+            vertical-align: middle;
+            transition: transform 0.2s ease;
+        } */
+        .dropdown-arrow {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            background-color: #93948f;
+            border: 1px solid white;
+            border-radius: 50%;
+            color: white;
+            font-size: 12px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            flex-shrink: 0;
+        }
+
+
+        .dropdown-arrow i {
+            font-size: 14px;
+            line-height: 1;
+            pointer-events: none;
+        }
+
+
+        .dropdown-arrow:hover {
+            transform: scale(1.1);
+        }
+
+        /* .dropdown-arrow.active {
+            transform: rotate(180deg);
+        } */
+
+        /* .stage-title-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 5px;
+        } */
+        .stage-title-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 5px;
+            gap: 5px;
+            /* ← this adds clean spacing between title and arrow */
+        }
+
+
         .stage-title {
             color: white;
             padding: 5px 10px;
             border-radius: 15px;
             font-weight: bold;
-            display: inline-block;
-            margin-bottom: 5px;
-            width: 160px;
+            max-width: 240px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -377,7 +423,7 @@
 
         .stage-description {
             font-size: 12px;
-            max-width: 160px;
+            max-width: 260px;
             margin: 0 auto;
             font-family: 'Open Sans', sans-serif;
             line-height: 1.5;
@@ -391,7 +437,7 @@
             padding: 12px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             overflow-y: auto;
-            z-index: 100;
+            z-index: 9999;
             opacity: 0;
             transition: opacity 0.3s;
             text-align: left;
@@ -478,9 +524,60 @@
             font-style: italic;
         }
 
-        .stage-node:hover .stage-tooltip {
+        .stage-tooltip.visible {
             visibility: visible;
             opacity: 1;
+        }
+
+        .tooltip-buttons {
+            margin-top: 12px;
+            display: flex;
+            gap: 8px;
+        }
+
+        .tooltip-btn {
+            padding: 6px 12px;
+            background: #45552C;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            font-family: 'Nunito', sans-serif;
+            transition: background-color 0.2s;
+        }
+
+        .tooltip-btn:hover {
+            background: #3a4624;
+        }
+
+        .bottleneck-tooltip {
+            z-index: 150;
+        }
+
+        .quote-tooltip {
+            z-index: 150;
+        }
+
+        .close-nested-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: none;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            color: #cc5500;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close-nested-btn:hover {
+            background-color: rgba(204, 85, 0, 0.1);
+            border-radius: 50%;
         }
 
         .toggle-button {
@@ -747,6 +844,7 @@
             height: auto;
             border-radius: 12px;
         }
+
     </style>
 </head>
 
@@ -1284,8 +1382,10 @@
             <div
                 class="inline-block w-full max-w-[95vw] h-[95vh] my-4 text-left align-middle bg-white rounded shadow-xl transform transition-all border border-dun">
                 <div class="relative h-full flex flex-col">
-                    <div class="flex items-center justify-between p-4 border-b bg-alabaster flex-shrink-0">
-                        <h3 class="text-2xl font-bold text-olive-green font-poppins" id="modalTitle">Supply Chain Map
+                    <div class="flex items-center justify-between p-2 border-b bg-alabaster flex-shrink-0">
+                        <div id="modalTitle" class="flex items-center justify-between space-x-3">
+                            <!-- Dynamic image + title inserted by JS -->
+                        </div>
                         </h3>
                         <button onclick="closeSupplyChainView()" class="text-reseda-green hover:text-olive-green">
                             <div class="w-8 h-8 flex items-center justify-center">
@@ -1295,10 +1395,6 @@
                     </div>
                     <div class="flex-1 p-6 overflow-y-auto">
                         <div class="supply-chain-modal">
-                            <div class="relative mb-6">
-                                <button id="toggleBottlenecks" class="toggle-button">Show Bottlenecks</button>
-                                <button id="toggleQuotes" class="toggle-button">Show Quotes</button>
-                            </div>
                             <div id="supplyChainContainer" class="supply-chain-container">
                                 <!-- Supply chain content will be dynamically generated here -->
                             </div>
@@ -1594,9 +1690,9 @@
         const productColors = {
             'Wheat': {
                 background: '#FFF5E1', // ICON BACKGROUND
-                titleBackground: '#A0522D',  // STAGE BACKGROUND
+                titleBackground: '#987654',  // STAGE BACKGROUND
                 tooltipBackground: '#FFF5E1', // TOOLTIP BACKGROUND
-                stageIconBg: '#A0522D',     // STAGE NUMBER BACKGROUND
+                stageIconBg: '#987654',     // STAGE NUMBER BACKGROUND
 
             },
             'Rice': {
@@ -1634,9 +1730,9 @@
             },
             'Tomato': {
                 background: '#FFF3E0',
-                titleBackground: '#E64A19',
+                titleBackground: '#C62828',
                 tooltipBackground: '#FFF3E0',
-                stageIconBg: '#E64A19',
+                stageIconBg: '#C62828',
 
             },
             'Mango': {
@@ -1648,9 +1744,9 @@
             },
             'Apple': {
                 background: '#F9FBE7',
-                titleBackground: '#689F38',
+                titleBackground: '#C62828',
                 tooltipBackground: '#F9FBE7',
-                stageIconBg: ' #689F38',
+                stageIconBg: ' #C62828',
 
             },
             'Orange': {
@@ -1702,538 +1798,572 @@
             'Rice': {
                 stages: [
                     {
-                        title: 'Seed Selection',
-                        description: 'Choosing high-quality rice seeds, fertilizers, and pesticides',
-                        icon: 'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z',
-                        position: { top: 50, left: 100 },
-                        tooltip: {
-                            title: 'Rice Seed Selection Details',
-                            content: 'Premium rice varieties are selected based on regional climate conditions and market demand. Certified seeds undergo rigorous quality testing with germination rates exceeding 95%. Organic fertilizers are increasingly preferred.',
-                            stats: [
-                                'Seed Selection Time: 4-6 weeks',
-                                'Quality Testing: 12-point verification',
-                                'Top Varieties: Basmati, Jasmine, Arborio',
-                                'Germination Rate: 95%+'
+                        "title": "Pre-Sowing: Laying the Groundwork",
+                        "description": "Initial field preparation using organic mixtures and timing alignment",
+                        "icon": "https://i.ibb.co/sJgxZJZK/Land-Preparation.png",
+                        "position": { "top": 50, "left": 50 },
+                        "tooltip": {
+                            "content": "<p>In the pre-sowing phase, seeds arrive in large jute sacks. Farmers begin by loosening the soil and enriching it with a soft organic mixture—typically a combination of buffalo dung and soil. Water is added to create a moist environment suitable for sprouting. The timing of nursery preparation and transplantation varies between Punjab and Sindh based on their agricultural cycles.</p><b>Seasonal Activity Timings</b><table><tr><th>Activity</th><th>Punjab Timing</th><th>Sindh Timing</th><th>Notes</th></tr><tr><td>Nursery Preparation</td><td>May – June</td><td>December – January</td><td>Sindh follows winter cycle</td></tr><tr><td>Transplantation</td><td>June – July</td><td>January – February</td><td>Timed to monsoon or irrigation</td></tr><tr><td>Crop Management</td><td>July – October</td><td>February – April</td><td>Includes watering, spraying</td></tr><tr><td>Harvesting</td><td>October – November</td><td>May – June</td><td>Delays can lead to post-harvest losses</td></tr></table><b>Inputs & Local Practices</b><table><tr><th>Stage</th><th>Common Inputs</th><th>Local Practices or Notes</th></tr><tr><td>Nursery & Sowing</td><td>Seeds, compost, water</td><td>Organic compost: “gobar + soil” mix</td></tr><tr><td>Transplantation</td><td>Manual labor</td><td>Bunching seedlings</td></tr><tr><td>Crop Management</td><td>Fertilizers (DAP, Urea), pesticides</td><td>Water timing is key; tube wells common</td></tr><tr><td>Post-Harvest</td><td>Sunlight, threshing drum</td><td>Often communal effort; informal rate setting</td></tr></table>",
+                            "stats": [
+                                "Common Organic Input: Gobar (buffalo dung) + soil blend",
+                                "Moisture Management: Water added manually to form sprouting bed",
+                                "Seed Arrival Format: Typically bulk sacks made of jute"
                             ]
                         },
-                        "bottleneck": 'Seed quality inconsistency, climate change impact, varying pesticide regulations',
-                        "quote": "5678"
+                        "bottleneck": "Variability in seasonal cycles between Punjab and Sindh complicates timely nursery preparation. Dependence on manual soil preparation and locally made organic mixtures limits efficiency.",
+                        "quote": "Zameen khod ke naram kartay hain... uspe par hum organic mixture daaltay hain. — Grower"
                     },
+
                     {
-                        title: 'Land Preparation',
-                        description: 'Field preparation, leveling, and water management setup',
-                        icon: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z',
-                        position: { top: 50, left: 300 },
-                        tooltip: {
-                            title: 'Land Preparation Details',
-                            content: 'Proper field leveling ensures uniform water distribution. Puddling creates impermeable layer for water retention. Organic matter incorporation improves soil fertility.',
-                            stats: [
-                                'Field Leveling: Critical for water management',
-                                'Puddling Depth: 15-20 cm',
-                                'Water Requirement: 1200-1500 mm',
-                                'Organic Matter: 5-10 tons/hectare'
+                        "title": "Sowing: Germination & Growth",
+                        "description": "Seed placement in prepared beds and early seedling development",
+                        "icon": "https://i.ibb.co/LzrhY1Lk/Seed-Selection.png",
+                        "position": { "top": 50, "left": 270 },
+                        "tooltip": {
+                            "content": "<p>In this stage, seeds are sown into moist, prepared beds. Farmers water the beds right after sowing. Germination begins after 15 days, and the seedlings continue to grow for another 2 to 4 weeks. This nursery period is crucial to ensure that plants are healthy and strong enough for transplantation.</p>",
+                            "stats": [
+                                "Germination Time: 15 days",
+                                "Seedling Growth Duration: 2–4 weeks"
                             ]
                         },
-                        "bottleneck": 'Water scarcity, labor shortages for field preparation, equipment availability',
-                        "quote": "5678"
+                        "bottleneck": "Improper water management and uneven seed distribution lead to inconsistent germination. Moist seedbeds increase risk of fungal infections, especially without formal guidance.",
+                        "quote": "Beej daal ke usmein paani daltay hain... 15 din ke baad ugtay hain. — Grower"
                     },
+
                     {
-                        title: 'Transplanting',
-                        description: 'Moving seedlings from nursery to main field',
-                        icon: 'M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10',
-                        position: { top: 50, left: 500 },
-                        tooltip: {
-                            title: 'Transplanting Details',
-                            content: 'Seedlings are transplanted at 20-25 days old. Proper spacing ensures optimal plant population. Mechanical transplanters increase efficiency.',
-                            stats: [
-                                'Seedling Age: 20-25 days',
-                                'Plant Spacing: 20cm x 15cm',
-                                'Plants per hectare: 330,000-400,000',
-                                'Transplanting Window: 15-20 days'
+                        "title": "Transplanting: The Hands-On Stage",
+                        "description": "Manual bundling and planting of seedlings into softened fields",
+                        "icon": "https://i.ibb.co/VpbjKzZL/Nursery-Transplantation.png",
+                        "position": { "top": 50, "left": 480 },
+                        "tooltip": {
+                            "content": "<p>Once seedlings mature, they are carefully uprooted and bundled by hand using a traditional method known as <i>teniya</i>. Farmers flood a separate field and soften the soil before manually planting each seedling one by one. This stage is labor-intensive and relies on the growers’ experience and skill.</p>",
+                            "stats": [
+                                "Bundling Method: Manual (teniya)",
+                                "Field Prep: Flooded and softened before planting"
                             ]
                         },
-                        bottleneck: 'Labor intensive process, weather dependency, seedling quality'
+                        "bottleneck": "High labor requirements and physical strain slow down transplanting during peak season. Limited mechanization results in bottlenecks when labor is unavailable or delayed.",
+                        "quote": "Jaise ke aap log gift banate hain, waise hum log is ko teniya aik haath mein le ke banate hain. — Grower"
                     },
+
                     {
-                        title: 'Crop Management',
-                        description: 'Water management, fertilization, and pest control',
-                        icon: 'M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z',
-                        position: { top: 50, left: 700 },
-                        tooltip: {
-                            title: 'Crop Management Details',
-                            content: 'Continuous flooding maintains anaerobic conditions. Integrated nutrient management optimizes fertilizer use. IPM controls major pests like stem borers.',
-                            stats: [
-                                'Water Depth: 5-10 cm maintained',
-                                'Growing Period: 120-150 days',
-                                'Fertilizer Applications: 3-4 splits',
-                                'Major Pests: Stem borer, brown planthopper'
+                        "title": "Crop Management: Sustaining Growth",
+                        "description": "Watering and care throughout the crop’s growing period",
+                        "icon": "https://i.ibb.co/cXTtQn9M/Crop-Management.png",
+                        "position": { "top": 50, "left": 700 },
+                        "tooltip": {
+                            "content": "<p>This stage spans approximately five to six months until the rice crop reaches maturity. Farmers must monitor watering closely—rainfall is ideal, but tube wells are frequently used due to uncertain weather. However, tube well irrigation raises costs significantly, especially with rising fuel and electricity prices. Managing this phase efficiently is critical to achieving a successful harvest.</p>",
+                            "stats": [
+                                "Crop Duration: ~5–6 months to maturity",
+                                "Primary Water Sources: Rainfall and tube wells"
                             ]
                         },
-                        "bottleneck": 'Water management challenges, pest resistance, nutrient imbalances',
-                        "quote": "5678"
+                        "bottleneck": "Rising irrigation costs due to fuel and electricity prices strain farmer budgets. Climate variability affects rainfall reliability, forcing greater dependence on expensive tube wells.",
+                        "quote": "Aik acre mein do ghante tak paani lagta hai… bijli ya petrol pe paisay bohot lagte hain. — Grower"
                     },
+
                     {
-                        title: 'Harvesting',
-                        description: 'Cutting mature rice crop at optimal moisture',
-                        icon: 'M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4',
-                        position: { top: 180, left: 850 },
-                        tooltip: {
-                            title: 'Harvesting Details',
-                            content: 'Harvest timing is critical when 80% of grains are golden yellow. Combine harvesters reduce labor costs. Proper moisture content prevents quality loss.',
-                            stats: [
-                                'Harvest Indicator: 80% golden grains',
-                                'Moisture Content: 20-25%',
-                                'Yield: 4-8 tons/hectare',
-                                'Harvest Window: 10-15 days'
+                        "title": "Harvesting: The Final Manual Push",
+                        "description": "Manual cutting of mature rice plants using traditional methods",
+                        "icon": "https://i.ibb.co/7JpjP5NT/Harvesting.png",
+                        "position": { "top": 180, "left": 850 },
+                        "tooltip": {
+                            "content": "<p>Harvesting is performed entirely by hand, with farmers relying on traditional tools and years of personal experience rather than formal training. Precision and timing during this stage help minimize grain loss and preserve quality.</p>",
+                            "stats": [
+                                "Harvest Tool: Traditional sickle",
+                                "Skill Source: Based on personal experience",
                             ]
                         },
-                        "bottleneck": 'Weather dependency, equipment availability, labor shortages',
-                        "quote": "5678"
+                        "bottleneck": "Harvesting relies entirely on personal experience and manual tools like sickles. Lack of access to modern harvesting equipment increases labor burden and post-harvest risks.",
+                        "quote": "Apne tajurbe se hi karte hain, kisi se training nahi lete is kaam k liye. — Grower"
                     },
+
                     {
-                        title: 'Drying',
-                        description: 'Reducing moisture content for safe storage',
-                        icon: 'M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11',
-                        position: { top: 350, left: 850 },
-                        tooltip: {
-                            title: 'Drying Process Details',
-                            content: 'Sun drying is most common but weather dependent. Mechanical dryers provide consistent results. Target moisture of 14% ensures safe storage.',
-                            stats: [
-                                'Target Moisture: 14%',
-                                'Drying Time: 2-5 days (sun)',
-                                'Mechanical Drying: 8-12 hours',
-                                'Quality Loss: <2% with proper drying'
+                        "title": "Post-Harvest: Drying, Threshing & Negotiation",
+                        "description": "Sun-drying, threshing by hand, and group-based price setting",
+                        "icon": "https://i.ibb.co/4R9pdZzz/Drying-Post-Harvest-Handling.png",
+                        "position": { "top": 350, "left": 850 },
+                        "tooltip": {
+                            "content": "<p>After harvesting, pricing is often negotiated collectively within the community. Drying and threshing remain largely manual, requiring significant effort before rice reaches storage or market.</p><b>Post-Harvest Risk Management</b><table><tr><th>Stage</th><th>Risk Factor</th><th>Loss Type</th><th>Mitigation Strategy</th></tr><tr><td>Drying</td><td>Rain, dust contamination</td><td>Mold, fungal rot</td><td>Net sheets, raised platforms</td></tr><tr><td>Threshing</td><td>Over-handling</td><td>Broken grains</td><td>Mechanical threshers</td></tr><tr><td>Storage</td><td>Poor bags, pests</td><td>Quality deterioration</td><td>Airtight jute/poly bags</td></tr><tr><td>Transport</td><td>Delays, road damage</td><td>Spoilage, theft</td><td>Cold chain, route planning</td></tr></table>",
+                            "stats": [
+                                "Drying Duration: 1–2 days under sunlight",
+                                "Threshing Method: Manual using drums",
+                                "Pricing System: Negotiated collectively in community"
                             ]
                         },
-                        "bottleneck": 'Weather dependency, drying infrastructure, energy costs',
-                        "quote": "5678"
+                        "bottleneck": "Exposure to unpredictable weather during drying leads to mold and spoilage. Manual threshing is labor-intensive, and informal price negotiation lacks transparency. Inadequate storage bags and infrastructure reduce grain quality before sale.",
+                        "quote": "Chawal nikalna haathon se hota hai… bohot mehnat lagti hai.\nFasal aik ghar ki nahi hoti… saath mil ke rate decide karte hain k kya lagana hai. — Growers"
                     },
+
                     {
-                        title: 'Milling',
-                        description: 'Processing paddy into white rice',
-                        icon: 'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z',
-                        position: { top: 470, left: 700 },
-                        tooltip: {
-                            title: 'Milling Process Details',
-                            content: 'Modern mills achieve 65-70% head rice recovery. Parboiling improves nutritional value. By-products include bran and broken rice.',
-                            stats: [
-                                'Head Rice Recovery: 65-70%',
-                                'Milling Capacity: 1-10 tons/hour',
-                                'By-products: Bran (8%), Broken (15%)',
-                                'Processing Cost: 5-8% of paddy value'
+                        "title": "Milling: Turning Harvest into Market-Ready Rice",
+                        "description": "Multi-step process including drying, cleaning, husking, and sorting",
+                        "icon": "https://i.ibb.co/YBfJtmvz/Processing.png",
+                        "position": { "top": 470, "left": 700 },
+                        "tooltip": {
+                            "content": "<p>During milling, harvested rice is processed into consumer-grade product through a sequence of operations. Rice polish, a milling by-product, is commonly repurposed as buffalo feed. Pakistan mills several distinct rice varieties, each with unique qualities and market roles.</p><b>Common Rice Varieties in Pakistan</b><table><tr><th>Variety</th><th>Grain Type</th><th>Aroma</th><th>Cooking Quality</th><th>Market Use</th><th>Key Regions</th></tr><tr><td>Super Basmati</td><td>Extra-long & slender</td><td>Strong</td><td>Fluffy, aromatic, elongates after cooking</td><td>High-end export, formal retail</td><td>Punjab (Gujranwala, Sialkot)</td></tr><tr><td>Kainat 1121</td><td>Extra-long</td><td>Strong</td><td>Very fluffy, widely preferred</td><td>Premium export, fine dining</td><td>Punjab</td></tr><tr><td>Sela</td><td>Parboiled long grain</td><td>Mild</td><td>Firm, non-sticky, holds shape well</td><td>Mass market, restaurant use</td><td>Punjab, Sindh</td></tr><tr><td>Steam</td><td>Steamed version of Basmati</td><td>Mild</td><td>Dry, fluffy, less sticky</td><td>Retail bulk, middle-income buyers</td><td>Punjab, parts of Sindh</td></tr><tr><td>Aroma</td><td>Medium grain</td><td>Strong</td><td>Soft and fragrant</td><td>Niche, traditional uses</td><td>Sindh (locally preferred)</td></tr><tr><td>IRRI-6</td><td>Medium-long</td><td>None</td><td>Slightly sticky, soft</td><td>Domestic consumption, low-end export</td><td>Sindh (Badin, Thatta), South Punjab</td></tr><tr><td>IRRI-9</td><td>Long grain</td><td>None</td><td>Less sticky than IRRI-6</td><td>Local markets</td><td>Sindh</td></tr><tr><td>Hybrid Varieties</td><td>Varies</td><td>None to mild</td><td>High yield, variable quality</td><td>Grown for yield, not flavor</td><td>Experimental plots in Sindh and Punjab</td></tr></table>",
+                            "stats": [
+                                "Processing Steps: Drying → Cleaning → Husking → Polishing → Grading → Sorting",
+                                "By-product: Rice polish used as buffalo feed",
+                                "Main Milled Types: Basmati, Sela, Steam, IRRI-6/9, Aroma"
                             ]
                         },
-                        "bottleneck": 'Milling efficiency, quality control, by-product utilization',
-                        "quote": "5678"
+                        "bottleneck": "Many mills use outdated machinery, causing inefficiencies and grain loss. Quality inconsistencies between rice varieties and stages affect export competitiveness. Excessive polishing can reduce overall yield and create by-product management issues.",
+                        "quote": "Khushbu wala aroma rice hota hai… plain bhi hota hai. — Seller"
                     },
+
                     {
-                        title: 'Packaging',
-                        description: 'Packaging rice for different market segments',
-                        icon: 'M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4',
-                        position: { top: 470, left: 500 },
-                        tooltip: {
-                            title: 'Packaging Details',
-                            content: 'Various pack sizes cater to different markets. Vacuum packaging extends shelf life. Branding adds value for premium segments.',
-                            stats: [
-                                'Pack Sizes: 1kg, 5kg, 25kg, 50kg',
-                                'Packaging Materials: PP bags, vacuum packs',
-                                'Shelf Life: 12-24 months',
-                                'Value Addition: 10-30% through packaging'
+                        "title": "Procurement & Transport",
+                        "description": "Sourcing rice from key regions and coordinating logistics",
+                        "icon": "https://i.ibb.co/JjHCNHzX/Storage-Transport.png",
+                        "position": { "top": 470, "left": 480 },
+                        "tooltip": {
+                            "content": "<p>Traders and distributors procure rice primarily from Punjab, followed by Sindh. Factory outlets are often preferred for bulk purchases. Transport is typically handled by trucks or cars, and digital tools like WhatsApp are widely used for coordination. However, the journey is not without obstacles—issues like tolls, theft, and occasional bribe demands complicate logistics.</p>",
+                            "stats": [
+                                "Primary Source Region: Punjab",
+                                "Secondary Source: Sindh",
+                                "Preferred Suppliers: Factories",
+                                "Transport Modes: Trucks, private vehicles",
+                                "Coordination Tool: WhatsApp"
                             ]
                         },
-                        " bottleneck": 'Packaging costs, material availability, quality standards',
-                        "quote": "5678"
+                        "bottleneck": "Transport faces risks including tolls, bribe demands, theft, and road damage. Lack of formal tracking systems hinders logistics efficiency, especially across provinces.",
+                        "quote": "Asal chawalon ka markaz Punjab hi hai… Sindh ka hissa kam hai. — Seller"
                     },
+
                     {
-                        title: 'Distribution',
-                        description: 'Transportation to wholesale and retail markets',
-                        icon: 'M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0',
-                        position: { top: 470, left: 300 },
-                        tooltip: {
-                            title: 'Distribution Details',
-                            content: 'Multi-tier distribution system reaches rural and urban markets. Cold storage maintains quality. Export markets demand premium quality.',
-                            stats: [
-                                'Distribution Channels: 4-5 tiers',
-                                'Transport Cost: 3-5% of value',
-                                'Storage Duration: 3-12 months',
-                                'Export Markets: 50+ countries'
+                        "title": "Storage & Inventory",
+                        "description": "Storing rice in bulk and preparing smaller retail units",
+                        "icon": "https://i.ibb.co/JjHCNHzX/Storage-Transport.png",
+                        "position": { "top": 470, "left": 270 },
+                        "tooltip": {
+                            "content": "<p>Retailers and wholesalers store rice in bulk, typically using 50kg boris (sacks). These are later repackaged into smaller 2 to 10kg portions for sale. Before packaging, rice is cleaned using sieves to remove impurities locally referred to as 'jala'. Aged rice is especially valued in the market for its texture and cooking quality.</p>",
+                            "stats": [
+                                "Preferred Product: Older rice over freshly milled",
+                                "Bulk Storage Unit: 50kg boris",
+                                "Retail Sale Range: 2–10kg portions",
+                                "Cleaning Method: Manual sieving to remove jala"
                             ]
                         },
-                        "bottleneck": 'Transport infrastructure, storage facilities, quality maintenance',
-                        "quote": "5678"
+                        "bottleneck": "Reliance on jute sacks and manual cleaning methods limits shelf-life and hygiene. No standardized inventory systems lead to inconsistencies in retail quality and supply planning.",
+                        "quote": "Jitna purana ho, utna acha hota hai chawal. — Retailer"
                     },
+
                     {
-                        title: 'Retail Sales',
-                        description: 'Final consumer sales through various channels',
-                        icon: 'M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z',
-                        position: { top: 470, left: 100 },
-                        tooltip: {
-                            title: 'Retail Sales Details',
-                            content: 'Multiple retail channels serve different consumer segments. Brand loyalty drives premium pricing. Online sales growing rapidly.',
-                            stats: [
-                                'Retail Channels: Traditional, modern trade',
-                                'Brand Premium: 15-25%',
-                                'Online Sales: 5-10% and growing',
-                                'Consumer Preference: Quality over price'
+                        "title": "Retail & Distribution",
+                        "description": "Selling rice through markets and supermarkets with fluctuating prices",
+                        "icon": "",
+                        "position": { "top": 470, "left": 50 },
+                        "tooltip": {
+                            "content": "<p>Rice reaches consumers through a range of distribution points including open markets and large supermarket chains like Imtiaz and Chase. Sela rice is especially favored for its long grain and quality when cooked. Price fluctuations are common and often change on a daily basis depending on supply, demand, and export trends.</p>",
+                            "stats": [
+                                "Popular Retail Type: Sela rice",
+                                "Sales Channels: Open markets, supermarkets",
+                                "Price Volatility: Daily rate changes"
                             ]
                         },
-                        "bottleneck": 'Market competition, consumer preferences, price volatility',
-                        "quote": "5678"
+                        "bottleneck": "Daily price fluctuations make it hard for retailers to maintain steady margins. Export-focused demand pushes local prices up, making affordability a challenge for domestic buyers. Changing consumer preferences add pressure to maintain varied stock types.",
+                        "quote": "Sela chawal bara hota hai, lamba hota hai, paknay mein acha hota hai. — Retailer"
                     }
+
                 ],
                 overview: {
                     title: 'Rice Supply Chain Overview',
                     stats: [
-                        { title: 'Pakistan Production', value: '8.4 Million', subtitle: 'Metric tons annually', color: 'olive-green' },
-                        { title: 'Export Value', value: '$2.1 Billion', subtitle: 'Annual export earnings', color: 'fresh-green' },
-                        { title: 'Milling Recovery', value: '65-70%', subtitle: 'Head rice from paddy', color: 'reseda-green' }
+                        { title: 'Pakistan Production', value: '-', subtitle: 'Metric tons annually', color: 'olive-green' },
+                        { title: 'Export Value', value: '-', subtitle: 'Annual export earnings', color: 'fresh-green' },
+                        { title: 'Milling Recovery', value: '-', subtitle: 'Head rice from paddy', color: 'reseda-green' }
                     ]
                 }
             },
+
             'Wheat': {
                 stages: [
                     {
-                        title: 'Seed Selection',
-                        description: 'Wheat seeds include both traditional and certified hybrids suited to different climates',
-                        icon: 'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z',
-                        position: { top: 50, left: 100 },
-                        tooltip: {
-                            title: 'Wheat Seed Selection Details',
-                            content: 'Farmers use both saved traditional seeds and certified hybrids developed for climate adaptation and regional suitability.<br><br><b>Wheat Seed Types and Characteristics</b><table> <tr> <th>Seed Type</th> <th>Source</th> <th>Adaptation</th> <th>Pros</th> <th>Challenges</th> </tr> <tr> <td>Traditional</td> <td>Saved from previous harvests</td> <td>Locally adapted but not climate-resilient</td> <td>Cost-effective and accessible</td> <td>Low resistance to pests, vulnerable to climate change</td> </tr> <tr> <td>Certified Hybrids<br>(e.g., AZRC-Dera, Fakhar-e-Bhakkar)</td> <td>Ayub Research Center, Faisalabad</td> <td>Tailored for temperature zones and climate shifts</td> <td>High yield, climate adaptation</td> <td>Expensive, not widely available, less nutritious</td> </tr> </table>',
-                            stats: [
-                                "Traditional seeds are cheaper but vulnerable to pests and climate", "Hybrid seeds offer higher yield and climate adaptability", "Cost and availability limit hybrid use for small farmers"
+                        "title": "Seed Selection",
+                        "description": "Choosing between traditional seeds and expensive but resilient certified hybrids.",
+                        "icon": "https://i.ibb.co/LzrhY1Lk/Seed-Selection.png",
+                        "position": { "top": 50, "left": 40 },
+                        "tooltip": {
+                            "content": "<p>Farmers decide between traditional seeds and newer certified hybrids depending on affordability, climate needs, and availability.</p><table><tr><th>Seed Type</th><th>Examples</th><th>Pros</th><th>Cons</th></tr><tr><td>Traditional</td><td>Farmer-saved varieties</td><td>Low cost, locally adapted</td><td>Pest-prone, climate-vulnerable</td></tr><tr><td>Certified Hybrids</td><td>AZRC-Dera, Fakhar-e-Bhakkar<br>(Developed by Ayub Research Centre, Faisalabad)</small></td><td>High yield, climate-smart</td><td>Expensive, less nutritious, limited availability</td></tr></table>",
+                            "stats": [
+                                "Traditional seeds are cheap but climate-vulnerable.",
+                                "Certified seeds improve yield but cost more.",
+                                "Seed access varies with region and affordability."
                             ]
                         },
-                        bottleneck: 'Limited access to affordable, climate-resilient certified seeds, and vulnerability of traditional seeds to pests and environmental stress.',
-                        quote:"Government is working to change seed varieties that can handle new weather patterns, but such seeds or pesticides aren’t fully available yet.\" — Mr. Ghulam Yasin"  
+                        "bottleneck": "Certified seeds are expensive and not widely available, limiting adoption.",
+                        "quote": "Government is working to change seed varieties that can handle new weather patterns, but such seeds or pesticides aren’t fully available yet. — Mr. Ghulam Yasin"
                     },
                     {
-                        title: 'Land Preparation',
-                        description: 'Land is cleared and prepared for wheat',
-                        icon: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z',
-                        position: { top: 50, left: 300 },
-                        tooltip: {
-                            title: 'Land Preparation Details',
-                            content: 'Preparing land based on water availability, soil type, and seasonal factors ensures better yield and resource efficiency. <br><br><b>Land Preparation & Crop Planning Factors</b><table> <tr> <th>Aspect</th> <th>Details</th> </tr> <tr> <td>Planning Parameters</td> <td>Water availability, temperature, soil crust condition, and crop rotation considerations</td> </tr> <tr> <td>Rotation Strategy</td> <td>Wheat is commonly rotated after kharif crops like cotton or rice to replenish soil nutrients</td> </tr> <tr> <td>Preparation Methods</td> <td>Traditional animal labor remains common; machinery is often unaffordable for smallholders</td> </tr> </table>',
-                            stats: [
-                                "Crop planning depends on water, soil, and season", "Rotation boosts soil fertility","Many use animal labor due to machinery costs"
+                        "title": "Land Preparation & Crop Planning",
+                        "description": "Preparing soil and choosing crop layout based on water, soil, and rotation logic.",
+                        "icon": "https://i.ibb.co/sJgxZJZK/Land-Preparation.png",
+                        "position": { "top": 50, "left": 270 },
+                        "tooltip": {
+                            "content": "<p>Crop planning is influenced by factors like water, temperature, and crop rotation history. Traditional tools remain common due to machinery costs.</p><table><tr><th>Aspect</th><th>Details</th></tr><tr><td>Planning Criteria</td><td>Water availability, temperature, soil condition, previous crop</td></tr><tr><td>Rotation Practice</td><td>Wheat follows cotton or rice to restore soil nutrients</td></tr><tr><td>Land Prep Method</td><td>Animal-drawn ploughs used where machinery is unaffordable</td></tr></table>",
+                            "stats": [
+                                "Crop rotation helps balance soil nutrients.",
+                                "Soil preparation depends on prior crop and crust conditions.",
+                                "Machinery is out of reach for many smallholders."
                             ]
                         },
-                        bottleneck: "Limited access to affordable modern equipment.<br>Poor water availability in certain regions.<br>Low awareness of soil testing and smart crop planning methods",
-                        quote: "Repeatedly growing the same crop lowers productivity. Each crop takes different nutrients.\" — Mr. Ghulam Yasin"
+                        "bottleneck": "High cost of machinery forces dependence on slow, manual methods.",
+                        "quote": "Repeatedly growing the same crop lowers productivity. Each crop takes different nutrients. — Mr. Ghulam Yasin"
                     },
                     {
-                        title: 'Sowing',
-                        description: 'Sown as a Rabi crop from mid-October to November',
-                        icon: 'M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10',
-                        position: { top: 50, left: 500 },
-                        tooltip: {
-                            title: 'Sowing Details',
-                            content: 'Wheat is a Rabi crop sown depending on winter moisture and ripens with summer heat. Climate shifts have affected its timing and yield.<br><br><b>Wheat Sowing Conditions</b><table> <tr> <th>Aspect</th> <th>Details</th> </tr> <tr> <td>Timing</td> <td>Mid-October to November (Rabi season)</td> </tr> <tr> <td>Moisture Dependence</td> <td>Relies on winter rainfall</td> </tr> <tr> <td>Climate Impact</td> <td>Rain and temperature shifts affect timing and yield</td> </tr></table><br><b>Regional Differences in Wheat Quality</b><table> <tr> <th>Region</th> <th>Gluten Level</th> <th>Quality</th> </tr> <tr> <td>Upper Sindh</td> <td>High</td> <td>Better quality</td> </tr> <tr> <td>Punjab / Lower Sindh</td> <td>Lower</td> <td>Standard quality</td> </tr> </table>',
-                            stats: [
-                                "Sowing depends on winter rainfall", "Climate shifts disrupt timing and yield","Upper Sindh wheat has higher gluten content"
+                        "title": "Sowing",
+                        "description": "Sowing wheat during the Rabi season, influenced by shifting climate and regional differences.",
+                        "icon": "",
+                        "position": { "top": 50, "left": 480 },
+                        "tooltip": {
+                            "content": "<p>Sowing begins mid-October to November, relying on winter moisture. Regional soil and climate differences affect wheat quality.</p><table><tr><th>Aspect</th><th>Details</th></tr><tr><td>Timing</td><td>Mid-October to November (Rabi season)</td></tr><tr><td>Climate Impact</td><td>Shifting rain and temperature patterns affect timing and yield</td></tr><tr><td>Regional Gluten Quality</td><td>Upper Sindh: high gluten; Punjab/Lower Sindh: lower gluten</td></tr></table>",
+                            "stats": [
+                                "Sowing relies on winter rains and cool temperatures.",
+                                "Gluten quality varies by soil and regional climate.",
+                                "Climate change is disrupting traditional sowing cycles."
                             ]
                         },
-                        bottleneck: 'Changing climate patterns disrupt optimal sowing time and affect wheat quality in some regions.',
-                        quote:"Gluten depends on soil and climate. Upper Sindh has high-quality wheat; Punjab's is low.\" — Private mill"
+                        "bottleneck": "Unpredictable rainfall and rising temperatures reduce yield and quality.",
+                        "quote": "Gluten depends on soil and climate. Upper Sindh has high-quality wheat; Punjab's is low. — Private mill"
                     },
                     {
-                        title: 'Crop Management',
-                        description: 'Wheat crop requires regular watering, fertilization, and pest control.',
-                        icon: 'M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z',
-                        position: { top: 50, left: 700 },
-                        tooltip: {
-                            title: 'Crop Management Details',
-                            content: 'Wheat management includes timely irrigation, fertilization, and pest control. Solar pumps are increasingly adopted to address water scarcity.<br><br><b>Wheat Crop Management Practices</b><table> <tr> <th>Aspect</th> <th>Details</th> </tr> <tr> <td>Watering</td> <td>Every 10–15 days using canal and groundwater (can cause salinity)</td> </tr> <tr> <td>Fertilizers</td> <td>Chemical (Urea, DAP) and organic (cow dung)</td> </tr> <tr> <td>Pest Control</td> <td>Pesticides applied 2–3 times; flooding risks due to climate unpredictability</td> </tr> <tr> <td>Solar Pumps</td> <td>Used to reduce dependence on traditional water sources</td> </tr> </table>',
-                            stats: [
-                                "Irrigated every 10–15 days", "Uses both chemical and organic fertilizers","Pesticides applied multiple times","Solar pumps help manage water shortages"
+                        "title": "Crop Management",
+                        "description": "Managing water, soil fertility, and pests through combined traditional and modern practices.",
+                        "icon": "https://i.ibb.co/cXTtQn9M/Crop-Management.png",
+                        "position": { "top": 50, "left": 700 },
+                        "tooltip": {
+                            "content": "<p>Wheat crop requires regular irrigation and pest control. Farmers combine traditional and chemical inputs to sustain productivity.</p><table><tr><th>Aspect</th><th>Details</th></tr><tr><td>Irrigation</td><td>Every 10–15 days; canal and groundwater used</td></tr><tr><td>Salinity Concern</td><td>Groundwater overuse increases soil salinity</td></tr><tr><td>Fertilizers</td><td>Chemical (Urea, DAP) and organic (cow dung)</td></tr><tr><td>Pest Control</td><td>Pesticides applied 2–3 times</td></tr><tr><td>Technology Use</td><td>Solar pumps increasingly adopted to address water shortages</td></tr></table>",
+                            "stats": [
+                                "Wheat fields are watered roughly every 10–15 days.",
+                                "Both organic and chemical fertilizers are applied.",
+                                "Groundwater overuse is salinizing soil in many areas."
                             ]
                         },
-                        bottleneck: 'Groundwater use causing soil salinity.<br>Climate unpredictability affecting irrigation.<br>High cost of solar pumps.',
-                        quote:"Even with canal water, we often rely on groundwater. Overuse raises soil salinity.\" — Mr. Ghulam Yasin"
+                        "bottleneck": "Groundwater dependence is raising salinity levels, reducing long-term soil fertility.",
+                        "quote": "Even with canal water, we often rely on groundwater. Overuse raises soil salinity. — Mr. Ghulam Yasin"
                     },
                     {
-                        title: 'Harvesting',
-                        description: 'Harvest starts in Sindh, followed by Punjab.',
-                        icon: 'M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4',
-                        position: { top: 180, left: 850 },
-                        tooltip: {
-                            title: 'Harvesting Details',
-                            content: 'Harvesting begins in Sindh in April, moving to Punjab later. Seasonal shifts have led to yield drops of 3–5%.',
-                            stats: [
-                                "Begins in April; Sindh first, then Punjab", "Climate change has caused 3–5% yield decline"
+                        "title": "Harvesting",
+                        "description": "Harvesting begins in April, with regional variation in timing and climate-driven yield changes.",
+                        "icon": "https://i.ibb.co/7JpjP5NT/Harvesting.png",
+                        "position": { "top": 50, "left": 920 },
+                        "tooltip": {
+                            "content": "<p>Harvesting starts in April, beginning from Sindh and moving north to Punjab. Recent climate shifts have caused yield reductions across regions.</p>",
+                            "stats": [
+                                "Harvesting begins earlier in Sindh and later in Punjab.",
+                                "Climate-related yield drops of 3–5% have been reported.",
+                                "Farmers used to harvest 50 muns/acre, now it's lower."
                             ]
                         },
-                        bottleneck: 'Disrupted seasons impacting harvest timing and reducing overall yield.',
-                        quote: "We used to get 50 muns per acre. Now it’s 5% less due to climate change.\" — Mr. Ghulam Yasin"
+                        "bottleneck": "Changing climate patterns are lowering yields and making harvesting periods less predictable.",
+                        "quote": "We used to get 50 muns per acre. Now it’s 5% less due to climate change. — Mr. Ghulam Yasin"
                     },
                     {
-                        title: 'Threshing',
-                        description: 'Separating grain from straw',
-                        icon: 'M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11',
-                        position: { top: 350, left: 850 },
-                        tooltip: {
-                            title: 'Threshing Details',
-                            content: 'Combine harvesters thresh while harvesting. Stationary threshers used for manual harvest. Proper adjustment prevents grain damage.',
-                            stats: [
-                                'Threshing Efficiency: 98%+',
-                                'Grain Damage: <2%',
-                                'Straw Utilization: Animal feed, fuel',
-                                'Processing Cost: 3-5% of grain value'
+                        "title": "Storage",
+                        "description": "Wheat is stored using basic methods with significant risk of pest infestation and moisture damage.",
+                        "icon": "https://i.ibb.co/JjHCNHzX/Storage-Transport.png",
+                        "position": { "top": 185, "left": 1070 },
+                        "tooltip": {
+                            "content": "<p>Wheat is stored in sheds, open covered areas, or silos (for affluent farmers). Storage faces challenges like poor ventilation, moisture, and pest attacks — especially the resistant Khapra beetle.</p>",
+                            "stats": [
+                                "Most farmers lack access to silos.",
+                                "Khapra beetle resists standard fumigation methods.",
+                                "Safe storage rarely exceeds 12 months."
                             ]
                         },
-                        bottleneck: 'Equipment maintenance, grain quality, straw management'
+                        "bottleneck": "Inadequate storage infrastructure and ineffective pest control shorten wheat shelf life.",
+                        "quote": "Even after fumigation, Khapra just goes to sleep. Wheat can’t be stored more than a year. — Umair Rafeeq"
                     },
                     {
-                        title: 'Storage',
-                        description: 'Stored in sheds, covered spaces, or silos.',
-                        icon: 'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z',
-                        position: { top: 470, left: 700 },
-                        tooltip: {
-                            title: 'Storage Details',
-                            content: 'Storage methods vary; poor airflow and pest resistance threaten quality.<br><br><b>Wheat Storage Practices</b><table> <tr> <th>Aspect</th> <th>Details</th> </tr> <tr> <td>Methods</td> <td>Sheds, open covered spaces, or silos (if wealthy)</td> </tr> <tr> <td>Risks</td> <td>Poor ventilation, moisture, and pests (Khapra beetle resists fumigation)</td> </tr> </table>',
-                            stats: [
-                                'Most farmers use basic sheds or open areas',
-                                'Khapra beetle infestation is hard to control',
-                                'Humid, poorly ventilated spaces degrade wheat'
+                        "title": "Market Intermediaries",
+                        "description": "Farmers navigate between government buyers and local brokers based on ease and pricing.",
+                        "icon": "",
+                        "position": { "top": 385, "left": 1070 },
+                        "tooltip": {
+                            "content": "<p>Farmers sell wheat either to the government (offering higher but delayed payments) or through brokers and open markets (lower price but faster transactions). Rural Sindh farmers maintain trust with Hindu Banya brokers due to long-term ties.</p>",
+                            "stats": [
+                                "Govt. support prices are higher but not always accessible.",
+                                "Brokers dominate rural market dynamics.",
+                                "Prices dropped significantly when govt. didn’t buy."
                             ]
                         },
-                        bottleneck: 'Limited modern storage and pest resistance lead to post-harvest losses.',
-                        quote: "Even after fumigation, Khapra just goes to sleep. Wheat can’t be stored more than a year.\" — Umair Rafeeq"
+                        "bottleneck": "Limited and unreliable government procurement forces dependency on lower-paying brokers.",
+                        "quote": "Government didn't buy this year, so we sold in the open market. The price dropped. — Mr. Ghulam Yasin"
                     },
-                    {
-                        title: 'Milling',
-                        description: 'Processed in small chakki or large private mills.',
-                        icon: 'M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4',
-                        position: { top: 470, left: 500 },
-                        tooltip: {
-                            title: 'Milling Details',
-                            content: 'Wheat is milled into various food products by local and industrial setups, serving both community and commercial needs.<br><br><b>Types of Wheat Mills</b><table> <tr> <th>Mill Type</th> <th>Description</th> </tr> <tr> <td>Small Chakki Mills</td> <td>Serve local needs with basic grinding</td> </tr> <tr> <td>Large Private Mills</td> <td>Produce branded, higher-quality products for commercial markets</td> </tr> </table>',
-                            stats: [
-                                "Flour, bran, semolina, and suji are main products","Private mills offer more consistency in quality","Local mills support rural access and employment"
-                            ]
-                        },
-                        bottleneck: 'Informal market practices lead to daily price fluctuations and delayed payments, creating instability for both suppliers and millers.',
-                        quote: "Brands offer premiums due to consistency. Lower-income groups buy Rs. 90 flour.\" — Umair Rafeeq"
-                    },
-                    {
-                        title: 'Distribution',
-                        description: 'Transported via trucks and distributed across cities and villages.',
-                        icon: 'M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0',
-                        position: { top: 470, left: 300 },
-                        tooltip: {
-                            title: 'Distribution Details',
-                            content: 'Wheat and its products are transported in tarped trucks and distributed in bags or muns across both urban and rural areas. These units ensure wide reach from retailers to small vendors despite logistical constraints.',
-                            stats: [
-                                'Tarped trucks protect against environmental exposure',
-                                'Serves both urban and rural supply chains'
-                            ]
-                        },
-                        bottleneck: 'Rising fuel costs, weak quality control, and minimal cold storage infrastructure disrupt efficient distribution.'
 
-                    },
                     {
-                        title: 'Retail & Consumption',
-                        description: 'Purchased by households, bakeries, tandoors, and food companies.',
-                        icon: 'M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z',
-                        position: { top: 470, left: 100 },
-                        tooltip: {
-                            title: 'Retail & Consumption Details',
-                            content: 'Wheat consumption varies by buyer type and gluten preference, with demand peaking in winter.<br><br><b>Wheat Retail & Consumption</b><table> <tr> <th>Aspect</th> <th>Details</th> </tr> <tr> <td>Buyers</td> <td>Households, bakeries, tandoors, corporations</td> </tr> <tr> <td>Gluten Preferences</td> <td>High gluten for bread; low gluten for biscuits</td> </tr> <tr> <td>Peak Sales</td> <td>Winter season</td> </tr> </table>',
-                            stats: [
-                                "Different buyers demand varying wheat products.", "Gluten content influences usage: high for bread, low for biscuits.", "Winter sees a spike in overall wheat consumption."
+                        "title": "Government Role",
+                        "description": "Government sets wheat prices and buys from farmers, but poor planning and sudden changes reduce trust.",
+                        "icon": "",
+                        "position": { "top": 490, "left": 880 },
+                        "tooltip": {
+                            "content": "<p>Government involvement in wheat procurement is marked by policy shifts and mismanagement. It sets official prices and buys from registered farmers, but erratic decisions—like sudden imports—create uncertainty.</p><table><tr><th>Aspect</th><th>Details</th></tr><tr><td>Procurement</td><td>Buys from registered farmers but often cancels plans unexpectedly</td></tr><tr><td>Pricing</td><td>Sets minimum support price (MSP) each year</td></tr><tr><td>Management</td><td>Stock records often inflated; red tape delays procurement</td></tr></table>",
+                            "stats": [
+
                             ]
                         },
-                        bottleneck: 'N/A',
-                        quote: "Refined wheat goes to bakeries; lower-income buy coarse flour.\" — Umair Rafeeq"
+                        "bottlenecks": "Unpredictable buying plans; inflated stock records; delays due to bureaucracy.",
+                        "quote": "“Government records may show 1,000 bags but only 200 actually exist. That hits food security later.” — Private mill"
+                    },
+                    {
+                        "title": "Milling",
+                        "description": "Wheat is processed in chakkis or mills to make flour and other products.",
+                        "icon": "",
+                        "position": { "top": 490, "left": 670 },
+                        "tooltip": {
+                            "content": "<p>Milling in Pakistan ranges from small-scale chakkis to large branded mills. Chakkis serve local needs, while private mills ensure quality and consistency for broader markets. Products include flour, bran, suji, and semolina.</p><table><tr><th>Aspect</th><th>Details</th></tr><tr><td>Types</td><td>Small chakkis (local), private mills (branded, quality-focused)</td></tr><tr><td>Products</td><td>Flour, bran, suji, semolina</td></tr><tr><td>Issues</td><td>Daily price changes, delayed payments (2–4 months), informal cycles</td></tr></table>",
+                            "stats": [
+
+                            ]
+                        },
+
+                        "bottleneck": "Delayed payments and informal market structures create instability in the milling sector.",
+                        "quote": "Brands offer premiums due to consistency. Lower-income groups buy Rs. 90 flour. — Umair Rafeeq"
+                    },
+                    {
+                        "title": "Distribution",
+                        "description": "Wheat is moved in trucks and sold in bags across cities and villages.",
+                        "icon": "",
+                        "position": { "top": 490, "left": 465 },
+                        "tooltip": {
+                            "content": "<p>Wheat is transported in tarped trucks and sold in bags or muns across urban and rural areas. Distribution faces challenges like rising fuel costs, weak quality control, and lack of cold storage.</p>",
+                            "stats": [
+
+                            ]
+                        },
+
+                        "bottleneck": "High transport costs and weak quality control limit efficient distribution.",
+                        "quote": ""
+                    },
+
+                    {
+                        "title": "Retail & Consumption",
+                        "description": "Flour is sold to households, bakeries, tandoors, and companies, with demand and type based on gluten needs.",
+                        "icon": "",
+                        "position": { "top": 490, "left": 230 },
+                        "tooltip": {
+                            "content": "<p>Wheat flour reaches end users through a range of buyers, with gluten preferences shaping its final use. Winter sees the highest demand.</p><table><tr><th>Buyer Type</th><th>Preference</th></tr><tr><td>Households</td><td>Buy coarse or affordable flour</td></tr><tr><td>Bakeries</td><td>Prefer refined, high-gluten flour</td></tr><tr><td>Tandoors</td><td>Buy in bulk for daily bread</td></tr><tr><td>Corporations</td><td>Use flour for processed food products</td></tr></table><p>Sales peak during winter months.</p>",
+                            "stats": [
+                                "High-gluten flour is used for bread and bakery products.",
+                                "Lower-income groups purchase coarse flour.",
+                                "Winter months drive higher sales."
+                            ]
+                        },
+                        "bottleneck": "Price sensitivity and quality inconsistency affect consumption choices.",
+                        "quote": "“Refined wheat goes to bakeries; lower-income buy coarse flour.” — Umair Rafeeq"
+                    },
+
+                    {
+                        "title": "Export",
+                        "description": "Only bran is allowed for export despite claims of surplus wheat production.",
+                        "icon": "",
+                        "position": { "top": 490, "left": 0 },
+                        "tooltip": {
+                            "content": "<p>Export of wheat is restricted to bran only, with the government citing food security concerns. Millers argue there’s enough wheat to allow broader exports. The debate continues amid fluctuating local availability.</p>",
+                            "stats": [
+                                "Only bran exports are currently permitted.",
+                                "Millers claim wheat production exceeds national demand.",
+                                "Govt. limits exports to ensure domestic food security."
+                            ]
+                        },
+                        "bottleneck": "Export restrictions affect profitability and limit market access for millers.",
+                        "quote": "Our wheat output is higher than consumption, but only bran is allowed for export. — Private mill"
                     }
+
                 ],
                 overview: {
                     title: 'Wheat Supply Chain Overview',
                     stats: [
-                        { title: 'Pakistan Production', value: '25.2 Million', subtitle: 'Metric tons annually', color: 'olive-green' },
-                        { title: 'Cultivated Area', value: '9.2 Million', subtitle: 'Hectares nationwide', color: 'fresh-green' },
-                        { title: 'Food Security', value: '36%', subtitle: 'Of total calorie intake', color: 'reseda-green' }
+                        { title: 'Pakistan Production', value: '-', subtitle: 'Metric tons annually', color: 'olive-green' },
+                        { title: 'Cultivated Area', value: '-', subtitle: 'Hectares nationwide', color: 'fresh-green' },
+                        { title: 'Food Security', value: '-', subtitle: 'Of total calorie intake', color: 'reseda-green' }
                     ]
                 }
             },
+
             'Sugarcane': {
                 stages: [
                     {
-                        title: 'Seed Cane Selection',
-                        description: 'Selecting the right sugarcane variety ensures optimal yield and regional suitability.',
-                        "icon": "https://i.ibb.co/LzrhY1Lk/Seed-Selection.png",
-                        position: { top: 50, left: 100 },
+                        title: 'Seed Selection',
+                        description: "Choosing sugarcane varieties based on local suitability and mill recommendations.",
+                        icon: 'https://i.ibb.co/LzrhY1Lk/Seed-Selection.png',
+                        position: { top: 50, left: 50 },
                         tooltip: {
-                            title: 'Seed Cane Selection Details',
-                            content: 'Different sugarcane varieties are recommended by institutes based on yield and climate suitability. Each has specific benefits and target areas.<br><br><b>Sugarcane Seed Varieties</b><table> <tr> <th>Variety</th> <th>Recommended by</th> <th>Expected Yield</th> <th>Suitability</th> </tr> <tr> <td>SS12</td><td>Habib Sugar Mill</td><td>High (~1800 muns)</td><td>Lower Sindh</td></tr><tr><td>B46</td><td>NIA, Tandojam</td><td>High (~1700 muns)</td><td>Lower Sindh</td></tr><tr><td>370</td><td>Mill recommendation</td><td>Moderate (~1200 muns)</td><td>General</td></tr><tr><td>SPF-234</td><td>Punjab Agriculture Dept.</td> <td>High (~1700–1800 muns)</td><td>South & Central Punjab</td></tr><tr> <td>CPF-237</td><td>Punjab Sugar Mills</td><td>High (~1600–1700 muns)</td> <td>Punjab (widely grown)</td></tr><tr><td>HSF-240</td><td>PARC</td><td>Moderate (~1400 muns)</td><td>Punjab & Khyber Pakhtunkhwa</td></table>',
+
+                            content: "Sugarcane seeds are sourced from NIA, Tandojam, or mills. Selection directly influences yield and regional adaptability.<br><br><b>Popular Sugarcane Varieties</b><table> <tr><th>Variety</th><th>Recommended by</th><th>Yield</th><th>Region</th></tr> <tr><td>SS12</td><td>Habib Sugar Mill</td><td>~1800 muns</td><td>Lower Sindh</td></tr> <tr><td>B46</td><td>NIA, Tandojam</td><td>~1700 muns</td><td>Lower Sindh</td></tr> <tr><td>370</td><td>Mill rec.</td><td>~1200 muns</td><td>General</td></tr> <tr><td>SPF‑234</td><td>Punjab Agri. Dept.</td><td>~1700‑1800 muns</td><td>South &amp; Central Punjab</td></tr> <tr><td>CPF‑237</td><td>Punjab Sugar Mills</td><td>~1600‑1700 muns</td><td>Punjab</td></tr> <tr><td>HSF‑240</td><td>PARC</td><td>~1400 muns</td><td>Punjab &amp; KP</td></tr></table>",
                             stats: [
-                                'SS12 and SPF-234 have the highest expected yield among all',
-                                'Recommended for both Punjab and Sindh, making it broadly suitable.',
+                                'Mills strongly influence variety choices.',
+                                'Certified seeds often limited to medium‑large growers.',
+                                'Regional differences drive seed preference.'
                             ]
                         },
-                        bottleneck: 'The expansion of sugarcane cultivation in Punjab and Sindh is adding pressure to already limited water resources.',
-                        quote: "SS12 hai B46 hai 370 hai ye lower sindh ki varieties hain... Habib sugar mill... unka dawa hai ke 1800 muns per acre degi.\", Pir Ameer Rashidi"
+                        bottleneck: 'Over‑dependence on mill or institutional recommendations limits diversity and farmer access.',
+                        quote: 'SS12 hai B46 hai 370 hai ye lower sindh ki varieties hain... Habib sugar mill... unka dawa hai ke 1800 muns per acre degi. — Pir Ameer Rashidi'
                     },
                     {
                         title: 'Land Preparation',
-                        description: 'Preparing fields through plowing and leveling for optimal sugarcane growth.',
-                        "icon": "https://i.ibb.co/sJgxZJZK/Land-Preparation.png",
-                        position: { top: 50, left: 300 },
+                        description: "Getting the land ready for planting through leveling and plowing.",
+                        icon: 'https://i.ibb.co/sJgxZJZK/Land-Preparation.png',
+                        position: { top: 50, left: 270 },
                         tooltip: {
-                            title: 'Land Preparation Details',
-                            content: 'Farmers plow and level their fields—often with input and credit support from local suppliers—to ensure ideal conditions for planting.<br><br><b>Land Preparation Practices</b><table> <tr> <th>Practice</th> <th>Description</th> <th>Purpose/Benefit</th> </tr> <tr> <td>Deep Plowing</td> <td>Use of tractors to plow land thoroughly</td> <td>Improves soil structure and root growth</td> </tr> <tr> <td>Laser Leveling</td> <td>Leveling fields using laser equipment</td> <td>Ensures even water distribution</td> </tr> <tr> <td>Low-Lying Land Selection</td> <td>Choosing fields that can tolerate waterlogging</td> <td>Sugarcane can withstand standing water</td> </tr> <tr> <td>Input Supply via Credit</td> <td>Seeds, diesel, fertilizer from suppliers on credit</td> <td>Eases initial investment, deducted at harvest</td> </tr> </table>',
+
+                            content: 'Deep tractor plowing and laser leveling enable uniform irrigation. Low‑lying land is selected as sugarcane tolerates standing water. Input suppliers (dukaandars/aartis) provide seed, fertilizer,pesticides and diesel on credit.',
                             stats: [
-                                'Deep plowing with tractors improves soil.',
-                                'Laser leveling ensures even water flow.',
-                                'Inputs often taken on credit from suppliers.'
+                                'Laser leveling improves water efficiency.',
+                                'Input suppliers double as lenders.',
+                                'Crop tolerates up to one month of standing water.'
                             ]
                         },
-                        bottleneck: "Groundwater overuse and environmental degradation raise questions about the long-term sustainability of sugarcane farming.",
-                        quote: "pehlay to hum land prepare kartay hain deep plowing ke sath... laser leveler ana shuru hogay to usse jo hai achi leveling hojati hai speedily.\", Pir Ameer Rashidi"
+                        bottleneck: 'Farmers face credit dependency and unequal access to modern leveling tools.',
+                        quote: '“Pehlay to hum land prepare kartay hain deep plowing ke sath... laser leveler ana shuru hogay to usse jo hai achi leveling hojati hai speedily.” — Pir Ameer Rashidi'
                     },
                     {
                         title: 'Sowing',
-                        description: 'Done using budded stem cuttings placed in soil furrows.',
-                        icon: 'M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10',
-                        position: { top: 50, left: 500 },
+                        description: "Planting sugarcane using traditional or emerging methods.",
+                        icon: '',
+                        position: { top: 50, left: 480 },
                         tooltip: {
-                            title: 'Sowing Details',
-                            content: 'Farmers mostly rely on traditional trench-based sowing, but YouTube and peer-to-peer sharing are gradually introducing modern methods.<br><br><table><tr><th>Method</th> <th>Current Trend</th></tr><tr><td>Trench-Based Planting</td><td>Dominant, passed through generations</td></tr><tr><td>Circular/Modern Methods</td><td>Slowly gaining popularity</td></tr></table>',
+
+                            content: 'Setts with visible buds are laid in furrows using trench sowing. Circular and pattern-based layouts are slow to emerge via peer learning or digital platforms.<br><br><b>Sowing Methods Comparison</b><table><tr><th>Method</th><th>Description</th><th>Adoption</th></tr><tr><td>Trench</td><td>Setts in long furrows</td><td>Widespread</td></tr><tr><td>Circular/Patterned</td><td>Improved spacing</td><td>Emerging</td></tr></table>',
                             stats: [
-                                "Trench-based planting is traditional and widespread.",
-                                "Digital media is helping spread awareness of modern sowing styles."
+                                'Trenched furrows remain standard planting.',
+                                'Modern layouts are gaining traction via informal channels.',
+                                'Farmers rely on traditional knowledge.'
                             ]
                         },
-                        bottleneck: 'Pakistan is a water-stressed country, with per capita water availability below 1,000 cubic meters.',
-                        quote:"stem cutting basically aesay kuch... usko number of pieces mein kaat ke... uski aik eye hoti hai usko hum chortay hain phir usko hum aik bed pe ferrors create kartay hain.”, Pir Ameer Rashidi. ““aaj kal new technologies... round laga ke uske andar laga... traditional method chal raha hai, wo inke paas bhi hai.\", primary research"
+                        bottleneck: 'Low uptake of innovative methods due to limited training and awareness.',
+                        quote: '“Stem cutting basically aesay kuch... usko number of pieces mein kaat ke... uski aik eye hoti hai... ” — Pir Ameer Rashidi<br>“Aaj kal new technologies... traditional method chal raha hai...” — Primary Research'
                     },
+
                     {
                         title: 'Crop Management',
-                        description: 'Managing water, nutrients, and pests is critical to sugarcane growth and yield.',
-                        "icon": "https://i.ibb.co/cXTtQn9M/Crop-Management.png",
+                        description: "Managing irrigation, fertilization, and pest control during growth.",
+                        icon: 'https://i.ibb.co/cXTtQn9M/Crop-Management.png',
                         position: { top: 50, left: 700 },
                         tooltip: {
-                            title: 'Crop Management Details',
-                            content: 'Farmers must juggle strict irrigation schedules, fluctuating input costs, and pest invasions — all while adapting to climate constraints and limited technological support.<br><br><b>Practices and Government Support Table</b><table><tr><th>Practice Area</th><th>Description</th></tr><tr><td>Irrigation System</td><td>22+ irrigations per cycle; water delivered via timed government rotations.</td></tr><tr><td>Fertilizer Usage</td><td>Urea, DAP, and zinc applied based on soil condition and affordability.</td></tr><tr><td>Pest Management</td><td>Natural pest control supported by mills; pests spread via wind/water.</td></tr><tr><td>Government Aid</td><td>Leased solar tube wells help reduce diesel costs.</td></tr></table>',
+                            content: "<p>Effective crop management requires timely inputs and external support. Farmers manage irrigation, fertilizers, and pest control across a long crop cycle, with help from mills and government programs.</p><table><tr><th>Component</th><th>Details</th></tr><tr><td>Irrigation</td><td>22+ rounds per cycle; water allocated via 1R/2R rotation system (e.g., 20 hours per turn)</td></tr><tr><td>Fertilization</td><td>Use of Urea, DAP, Zinc Sulfate depending on soil health and affordability</td></tr><tr><td>Pest Control</td><td>Mill-supported biocontrol methods; seasonal pest risks</td></tr><tr><td>Gov. Support</td><td>Leased solar tube wells reduce diesel use and irrigation cost</td></tr></table>",
                             stats: [
-                                'Sugarcane needs over 22 irrigations with tightly scheduled government rotations.',
-                                'Pest control is evolving with the help of mill-backed biological methods.',
-                                'Irrigations: 15-25 times',
-                                'Major Pest: Sugarcane borer'
+                                'Crop demands 22+ watering cycles.',
+                                'Pest biocontrol methods supported by mills.',
+                                'Solar wells reduce reliance on fuel.'
                             ]
                         },
-                        bottleneck: 'Severe water shortages due to climate change are threatening crop sustainability.<br>Modern tools like drones are banned, leaving farmers dependent on outdated manual equipment.',
-                        quote:"ek kilo ganah paida karne ke liye aap ko kam az kam pandrah so se teen hazaar litre paani chahiye\", value chain expert"
+                        bottleneck: 'Water scarcity, rising input costs, and technology bans limit yield optimization.',
+                        quote: '“Ek kilo ganah paida karne ke liye aap ko kam az kam pandrah so se teen hazaar litre paani chahiye.” — Value Chain Expert'
                     },
                     {
                         title: 'Harvesting',
-                        description: 'When and how sugarcane is harvested greatly affects yield and labor use.',
-                        "icon": "https://i.ibb.co/7JpjP5NT/Harvesting.png",
+                        description: "Cutting mature sugarcane using manual tools.",
+                        icon: 'https://i.ibb.co/7JpjP5NT/Harvesting.png',
                         position: { top: 180, left: 850 },
                         tooltip: {
-                            title: 'Harvesting Details',
-                            content: 'Sugarcane sown in different months results in varying maturity periods and yields. Harvesting is done manually with sickles, often by both men and women. Collected leaves are used as livestock fodder.<br><br><b>Yield by Sowing Time</b><table> <tr> <th><b>Sowing Time</b></th> <th><b>Maturity Period</b></th> <th><b>Expected Yield</b></th> </tr> <tr> <td>October</td> <td>12 months</td> <td>Higher yield</td> </tr> <tr> <td>February–March</td> <td>8 months</td> <td>Lower yield</td> </tr> </table>',
+
+                            content: "<p>Crop planted in October gives higher yield after 12 months; Feb–March sowing matures in 8 months with lower yield. Manual harvesting using sickles is standard. Both men and women participate, collecting leaves for livestock fodder.</p>",
                             stats: [
-                                'October sowing maximizes yield.',
-                                'Harvesting is done manually with sickles'
+                                'Long-cycle crops yield higher.',
+                                'Manual sickle harvest remains standard.',
+                                'Harvest residues used as livestock fodder.'
                             ]
                         },
-                        bottleneck: 'Sugarcane is one of the most water-intensive crops, needing approximately 1,500–2,500 mm of water per growing cycle.',
-                        quote:"traditional methods hi use hotay hain... harvester nahi use hota.\", Pir Ameer Rashidi"
+                        bottleneck: 'Mechanization is scarce, making harvest labor‑intensive and slow.',
+                        quote: 'Traditional methods hi use hotay hain... harvester nahi use hota. — Pir Ameer Rashidi'
                     },
                     {
                         title: 'Post-Harvest',
-                        description: 'Cane is moved to mills and sold via middlemen in most cases.',
-                        "icon": "https://i.ibb.co/JjHCNHzX/Storage-Transport.png",
-                        position: { top: 362, left: 850 },
+                        description: "Moving harvested cane to mills and settling farmer payments.",
+                        icon: 'https://i.ibb.co/4R9pdZzz/Drying-Post-Harvest-Handling.png',
+                        position: { top: 350, left: 850 },
                         tooltip: {
-                            title: 'Post-Harvest Details',
-                            content: 'After harvest, sugarcane is moved to mills using tractor trolleys. While direct sales to mills are possible, payment delays and banking requirements lead most small and mid-sized farmers to sell through middlemen for convenience and immediate cash.<br><br><b>Post-Harvest Process Overview</b><table> <tr> <th><b>Step</b></th> <th><b>Process</b></th> </tr> <tr> <td>1</td> <td>Sugarcane is transported to mills via tractor trolleys.</td> </tr> <tr> <td>2</td> <td>Sold through middlemen (veopari), who resell to mills.</td> </tr> <tr> <td>3</td> <td>Revenue split 50/50: landowner covers inputs, farmer provides labor.</td> </tr> </table>',
+
+                            content: "<p>After harvesting, sugarcane is transported to mills via tractor trolleys. Farmers choose between middlemen and direct mill sales, depending on payment timing and banking access.</p><table><tr><th>Aspect</th><th>Details</th></tr><tr><td>Revenue Sharing</td><td>50/50 contract: landowner pays inputs, farmer provides labor</td></tr><tr><td>Sales Option</td><td>Middlemen buy from farmers, sell to mills</td></tr><tr><td>Payment</td><td>Middlemen offer upfront cash; mills often delay payment</td></tr><tr><td>Banking Barrier</td><td>Mills require bank accounts; many farmers lack these</td></tr></table>",
                             stats: [
-                                'Many farmers lack bank accounts required by mills.',
-                                'Small and mid-tier farmers prioritize ease and fast transactions, making middle-men a popular choice.'
+                                '50/50 labor-input profit sharing is common.',
+                                'Middlemen are preferred for timely cash.',
+                                'Lack of bank accounts limits direct mill access.'
                             ]
                         },
-                        bottleneck: 'Delayed payments and bank account requirements at mills, small farmers lack formal banking access. <br>Reliance on middlemen reduces farmer profit margins.',
-                        quote: "jo sara kharcha jo hai woh mera hoga baqi jo mehnat hogi woh kisan ki hogi is mein aap keh lein 50 50 percent.\", Pir Ameer Rashidi"
+                        bottleneck: 'Limited banking access forces reliance on middlemen, reducing earnings.',
+                        quote: 'Jo sara kharcha jo hai woh mera hoga baqi jo mehnat hogi woh kisan ki hogi... 50 50 percent. — Pir Ameer Rashidi'
                     },
+
                     {
                         title: 'Market',
-                        description: 'Sugarcane is sold to mills under a regulated but often manipulated system.',
-                        icon: 'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z',
+                        description: "Selling sugarcane to mills under a regulated and brokered system.",
+                        icon: '',
                         position: { top: 470, left: 700 },
                         tooltip: {
-                            title: 'Market Details',
-                            content: 'Sugarcane is delivered to mills through brokers under a system dominated by mill owners, with weighed deliveries, payment delays, and price manipulation shaping the market dynamics.<br><br><b>Market Structure</b><table><tr><th><b>Action</b></th><th><b>Details</b></th></tr><tr><td>Delivery to Mill</td><td>Trucks are weighed empty and full to determine cane weight.</td></tr><tr><td>Price Negotiation</td><td>Brokers visit farms to offer spot prices and arrange transport.</td></tr><tr><td>Payment Handling</td><td>Passengers disembark for weight accuracy; accounts are used for payments.</td></tr><tr><td>Market Manipulation</td><td>Mills delay crushing to reduce moisture and lower prices.</td></tr><tr><td>Policy Impact</td><td>Government sets official price, but enforcement is weak.</td></tr><tr><td>Market Control</td><td>Export subsidies and mill stockpiling distort market dynamics.</td></tr></table>',
+                            content: "<p>Farmers transport sugarcane to mills, where weighing and pricing occur. Middlemen arrange spot deals at the farm. Mills may delay processing to reduce moisture content and payout. Enforcement of official prices is weak.</p><table><tr><th>Aspect</th><th>Details</th></tr><tr><td>Mill System</td><td>Accounts track deliveries and payments</td></tr><tr><td>Weighing</td><td>Trucks weighed empty and full</td></tr><tr><td>Pricing</td><td>Often reduced due to delays and moisture loss</td></tr><tr><td>Brokers</td><td>Negotiate rates and arrange transport</td></tr></table>",
                             stats: [
-                                'Mill owners and brokers control pricing and market access.',
-                                'Payments to farmers are often delayed and non-transparent.',
-                                'Government price policies exist but lack strong enforcement.'
+                                'Weight‑based payments are standard.',
+                                'Crushing delays reduce returns.',
+                                'Spot deals arranged by brokers.'
                             ]
                         },
-                        bottleneck: 'Lack of open market restricts farmer leverage.<br>Official prices are often not honored.<br>Growth is driven by government support pricing and consistent demand from sugar mills.',
-                        quote:"government decide karti hai... lekin millers jo hain woh politicize karte hain... subsidy khud lete hain."
+                        bottleneck: 'Mill dominance limits farmer negotiation; pricing policies poorly enforced.',
+                        quote: 'Government decide karti hai... lekin millers jo hain woh politicize karte hain... subsidy khud lete hain.'
                     },
+
                     {
                         title: 'Processing',
-                        description: 'Extracting and refining sugar through multi-step processing.',
-                        "icon": "https://i.ibb.co/YBfJtmvz/Processing.png",
-                        position: { top: 470, left: 500 },
+                        description: "Crushing, boiling, and crystallizing sugarcane into sugar.",
+                        icon: 'https://i.ibb.co/YBfJtmvz/Processing.png',
+                        position: { top: 470, left: 480 },
                         tooltip: {
-                            title: 'Processing Details',
-                            content: 'Sugarcane is processed through crushing, boiling, crystallization, and drying—yielding sugar and various byproducts like jaggery and bagasse.<br><br><b>Processing Details</b><table> <tr> <th>Process</th> <th>Process Method</th> </tr> <tr> <td>Cutting & Crushing</td> <td>For maximum juice extraction</td> </tr> <tr> <td>Clarification</td> <td>Chemicals (like lime) added for whitening</td> </tr> <tr> <td>Boiling</td> <td>Water removed through heating</td> </tr> <tr> <td>Crystallization</td> <td>Crystals formed and filtered by size</td> </tr> <tr> <td>Centrifugation</td> <td>Spun at ~1600 RPM to separate crystals</td> </tr> <tr> <td>Drying & Packing</td> <td>Final product packed for distribution</td> </tr> </table><br><b>Additional Aspects of Processing</b><table> <tr> <th>Category</th> <th>Details</th> </tr> <tr> <td>Byproducts</td> <td>Jaggery (gur), juice, bagasse (used for energy), filter cake (for fodder)</td> </tr> <tr> <td>Traditional Gur Making</td> <td>Still practiced in Sindh, Punjab, and Charsadda using animal-driven crushers and fire-heated pans</td> </tr> <tr> <td>Mill Infrastructure</td> <td>Mostly in South Punjab, Sindh, and a few in KP</td> </tr> <tr> <td>Crushing Capacity</td> <td>~3.5 to 3.75 lakh tons/day</td> </tr> <tr> <td>Sugar Production</td> <td>~31,000–32,000 tons/day</td> </tr> <tr> <td>Crushing Season</td> <td>Lasts 3–4 months; mills run continuously during this period</td> </tr> <tr> <td>Power Generation</td> <td>Mills use bagasse for power generation</td> </tr> </table>',
+                            content: "<p>Sugar processing involves industrial steps to extract, clarify, and crystallize sugar from cane. While mills use high-speed centrifuges and modern dryers, traditional methods like gur-making still persist in rural areas.</p><table><tr><th>Stage</th><th>Description</th></tr><tr><td>Cutting & Crushing</td><td>Mechanical rollers extract juice from cane</td></tr><tr><td>Clarification</td><td>Lime and chemicals added to whiten and purify juice</td></tr><tr><td>Boiling</td><td>Juice heated to evaporate water content</td></tr><tr><td>Crystallization</td><td>Sugar crystals formed and filtered by size</td></tr><tr><td>Centrifugation</td><td>Spun at ~1600 RPM to separate crystals</td></tr><tr><td>Drying & Packing</td><td>Final sugar dried and packed for sale</td></tr><tr><td>Byproducts</td><td>Jaggery (gur), bagasse (fuel), juice, filter cake (fodder)</td></tr><tr><td>Traditional Gur Making</td><td>Animal-driven crushers and fire-heated pans still used in Sindh, Punjab, Charsadda</td></tr><tr><td>Mill Infrastructure</td><td>Concentrated in South Punjab and Sindh; few in KP</td></tr></table>",
                             stats: [
-                                'Crushing capacity is ~3.5–3.75 lakh tons/day',
-                                'Sugar production is ~31,000–32,000 tons/day.',
-                                'Mills use bagasse for power generation.'
-                               
+                                'Crushing capacity: 3.5–3.75 lakh tons/day.',
+                                'Sugar output: ~31,000–32,000 tons/day.',
+                                ' Crushing season runtime: ~3–4 months.'
                             ]
                         },
-                        bottleneck: 'Power Generation: tax evasion and sales fraud remain issues.<br>Environmental Impact: Improper waste management is a concern.'
+                        bottleneck: 'Tax evasion, unregulated waste, and unstandardized gur production reduce transparency.',
+                        quote: ''
                     },
+
                     {
-                        title: 'Retailers and Consumption',
-                        description: 'Sugar sold to corporations, vendors, and households across Pakistan.',
-                        icon: 'M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0',
-                        position: { top: 470, left: 300 },
+                        title: 'Retailers & Consumption',
+                        description: "How sugar is distributed and consumed by various buyers.",
+                        icon: ' ',
+                        position: { top: 470, left: 270 },
                         tooltip: {
-                            title: 'Retailers and Cosumption Details',
-                            content: 'Retailers supply sugar to various users based on preferences, personal supply relationships, and national consumption patterns.<br><br><b>Retail and User Preferences</b><table> <tr> <th>Aspect</th> <th>Details</th> </tr> <tr> <td>Users</td> <td>Multinational corporations (Pepsi, Cocola), bakeries, juice vendors, households</td> </tr> <tr> <td>Product Preferences</td> <td>Corporations prefer Grade A sugar with fine crystals; some import from Saudi Arabia</td> </tr> <tr> <td>Price Impact</td> <td>Retailers claim sugar price fluctuations don’t majorly affect product prices</td> </tr> <tr> <td>Supply Relationships</td> <td>Often based on long-standing personal connections</td> </tr> </table><br><b>Sugar Consumption Data</b><table> <tr> <th>Metric</th> <th>Details</th> </tr> <tr> <td>Annual Consumption (2024–25)</td> <td>Approximately 6.6 to 6.7 million tonnes</td> </tr> <tr> <td>Annual Production</td> <td>Roughly 6.8 million tonnes</td> </tr> <tr> <td>Exportable Surplus</td> <td>Minimal, around 0.1 to 0.2 million tonnes per year</td> </tr> <tr> <td>Per Capita Consumption (2021)</td> <td>About 25.6 kg/year</td> </tr> <tr> <td>Peak Per Capita Consumption</td> <td>26.0 kg/year in 2020</td> </tr> <tr> <td>Global Comparison</td> <td>Above the global average of ~22 kg/year</td> </tr> </table>',
+                            content: "<p>Refined sugar reaches end users through wholesalers and retail networks. Buyers include multinational corporations, bakeries, vendors, and households. Corporations prefer consistent Grade A sugar and may even import to maintain quality. Supply chains often rely on trust-based relationships rather than formal contracts. Despite price fluctuations at the mill or farm level, retail prices tend to stay stable in finished products.</p><table><tr><th>Aspect</th><th>Details</th></tr><tr><td>Users</td><td>Corporations (Pepsi, Cocola), bakeries, juice vendors, households</td></tr><tr><td>Preferences</td><td>Corporations demand fine-crystal Grade A sugar; occasional imports from Saudi Arabia</td></tr><tr><td>Pricing Impact</td><td>Retailers say sugar price swings don’t strongly affect end-product pricing</td></tr><tr><td>Supply Links</td><td>Informal, long-term supplier-buyer relationships dominate</td></tr></table>",
                             stats: [
-                                'Pakistan consumes ~6.6 to 6.7 million tonnes of sugar annually (2024–25)',
-                                'Corporations prefer Grade A sugar; some import from Saudi Arabia.',
-                                'Per capita consumption (25.6 kg/year) is higher than the global average.'
+                                "2024–25 consumption: ~6.6–6.7 million tons",
+                                "Annual production: ~6.8 million tons",
+                                "Exportable surplus: ~0.1–0.2 million tons/year",
+                                "Per capita consumption (2021): ~25.6 kg/year (peak: 26.0 kg in 2020)",
+                                "Above global average: ~22 kg/year"
                             ]
                         },
-                        bottleneck: 'Exportable surplus is minimal, around 0.1 to 0.2 million tonnes per year.<br>Supply relationships often depend on long-standing personal connections.'
-                        
+                        bottleneck: 'Limited export surplus reduces trade leverage.',
+                        quote: ''
                     },
                     {
                         title: 'Export',
-                        description: 'Sugar export regulated with certification and limits.',
-                        icon: 'M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z',
-                        position: { top: 470, left: 100 },
+                        description: "Exporting sugar based on surplus, demand, and regulation.",
+                        icon: '',
+                        position: { top: 470, left: 50 },
                         tooltip: {
-                            title: 'Export Details',
-                            content: 'Exports are controlled based on domestic needs, mainly to Afghanistan, with mandatory certification and subsidies due to high production costs.<br><br><b>Export Regulations & Market</b><table> <tr> <th>Aspect</th> <th>Details</th> </tr> <tr> <td>Certification</td> <td>Mandatory and renewed every three years</td> </tr> <tr> <td>Primary Export Market</td> <td>Afghanistan</td> </tr> <tr> <td>Subsidies</td> <td>Given due to higher domestic production costs</td> </tr> </table>',
+                            content: "<p>Pakistan exports sugar when there’s surplus, mainly to Afghanistan. Export requires valid certification and quotas. Due to higher domestic costs, subsidies are essential to stay competitive.</p><table><tr><th>Aspect</th><th>Details</th></tr><tr><td>Conditions</td><td>Only after domestic demand is met</td></tr><tr><td>Market</td><td>Primarily Afghanistan</td></tr><tr><td>Requirements</td><td>3-year certification + government quota</td></tr><tr><td>Subsidies</td><td>Needed due to high local production costs</td></tr></table>",
                             stats: [
-                                'Certification is mandatory and renewed every three years.',
-                                
-                                'Afghanistan is the main export market'
-                                
+                                'Certification must be renewed every 3 years.',
+                                'Strict export quotas based on surplus.',
+                                'Primary buyer: Afghanistan.',
+                                'Production cost subsidies required.'
                             ]
                         },
-                        bottleneck: 'Higher domestic production costs requiring subsidies.<br>Government-imposed export restrictions based on domestic needs.',
-                        quote:"hamara sirf jaata hai Afghanistan mein, woh us ko dekhte hain ke aya agar hum support kartay hain to kya hamare ghar ke liye bachay gi, hamaray mulk ke liye bachay gi. Agar woh bachti hai, aisa hoti hai to phir export ki ijazat di jaati hai aur ek limit di jaati hai\", cane development officer "
+                        bottleneck: 'Stringent export controls and subsidy dependency limit external market access.',
+                        quote: '“hamara sirf jaata hai Afghanistan mein... agar bachti hai... to phir export ki ijazat di jaati hai...” — Cane Development Officer'
                     }
                 ],
+
                 overview: {
                     title: 'Sugarcane Supply Chain Overview',
                     stats: [
-                        { title: 'Pakistan Production', value: '75.5 Million', subtitle: 'Metric tons annually', color: 'olive-green' },
-                        { title: 'Sugar Recovery', value: '10-12%', subtitle: 'From cane to sugar', color: 'fresh-green' },
-                        { title: 'Mill Capacity', value: '84 Mills', subtitle: 'Processing facilities', color: 'reseda-green' }
+                        { title: 'Pakistan Production', value: '-', subtitle: 'Metric tons annually', color: 'olive-green' },
+                        { title: 'Sugar Recovery', value: '-', subtitle: 'From cane to sugar', color: 'fresh-green' },
+                        { title: 'Mill Capacity', value: '-', subtitle: 'Processing facilities', color: 'reseda-green' }
                     ]
                 }
             },
@@ -2391,7 +2521,7 @@
                         { "title": "Export Value", "value": "-", "subtitle": "Annual export earnings", "color": "fresh-green" },
                         { "title": "Processing Recovery", "value": "-", "subtitle": "Dried from fresh weight", "color": "reseda-green" }
                     ]
-                }
+                },
             },
             'Garlic': {
                 stages: [
@@ -2780,190 +2910,190 @@
             'Tomato': {
                 stages: [
                     {
-                        title: 'Seed Selection',
-                        description: 'Selecting hybrid seeds for yield, shelf life, and market appeal.',
+                        "title": "Seed Selection",
+                        "description": "Selecting hybrid seeds for yield, shelf life, and market appeal.",
                         "icon": "https://i.ibb.co/LzrhY1Lk/Seed-Selection.png",
-                        position: { top: 50, left: 100 },
-                        tooltip: {
-                            title: 'Tomato Seed Selection Details',
-                            content: 'Tomato growers choose hybrid seeds—often from global companies—based on traits like shelf life and transportability, though smallholders face challenges accessing quality seed.<br><br><b>Seed Types</b><table> <tr> <th>Type</th> <th>Description</th> </tr> <tr> <td>Hybrid Seeds</td> <td>Commonly used; sourced from private companies</td> </tr> <tr> <td>Local Seed Saving</td> <td>Rarely practiced due to poor performance in later cycles</td> </tr> </table><br><b>Brand & Variety Preferences</b><table> <tr> <th>Brand</th> <th>Preferred Traits</th> <th>Used By</th> </tr> <tr> <td>Sakata (Japan)</td> <td>Better shelf life, uniform appearance</td> <td>Companies</td> </tr> <tr> <td>Syngenta</td> <td>Shiny tomatoes, good for long-distance transport</td> <td>Retailers</td> </tr></table><br><b>Selection Criteria</b><br>Farmers prioritize shelf life, yield, and visual appeal.<br>Choices are often guided by company agents or past experience.',
-                            stats: [
-                                'Hybrid seeds dominate and are sourced from global companies like Sakata and Syngenta.',
-                                'Variety selection focuses on shelf life, yield, and market appearance.',
-                                'Farmers often rely on company agents or past experience for seed choices.'
-                                
+                        "position": { "top": 50, "left": 50 },
+                        "tooltip": {
+
+                            "content": "Tomato growers primarily rely on hybrid seeds sourced from private companies such as Sakata (Japan), Syngenta, and Chinese suppliers. These seeds are favored for traits like shelf life, visual appeal, and transport durability.<br><br><b>Types of Seeds</b><table> <tr> <th>Type</th> <th>Description</th> </tr> <tr> <td>Hybrid Seeds</td> <td>Commonly used; sourced from Sakata, Syngenta, China</td> </tr> <tr> <td>Local Seed Saving</td> <td>Rarely practiced; hybrids lose vigor when reused</td> </tr> </table><br><b>Brand & Variety Preferences</b><table> <tr> <th>Brand</th> <th>Preferred Traits</th> <th>Used By</th> </tr> <tr> <td>Sakata (Japan)</td> <td>Better shelf life, uniform appearance</td> <td>Companies</td> </tr> <tr> <td>Syngenta</td> <td>Shiny tomatoes, good for long-distance transport</td> <td>Retailers</td> </tr> </table><br><b>Selection Criteria</b><br>Farmers focus on selecting seeds that ensure good shelf life, high yield, and strong market appeal. Choices are often influenced by recommendations from company agents or their own previous experiences.",
+                            "stats": [
+                                "Hybrid seeds dominate the market and are mostly imported.",
+                                "Local seed saving is minimal due to hybrid degeneration.",
+                                "Farmers base decisions on yield, shelf life, and appearance."
                             ]
                         },
-                        "bottleneck": 'Hybrid seeds are costly and not always adapted to local conditions.<br>Uneven access to high-quality seed, especially for smallholders.',
-                        "quote": "Area wise konsi variety kis ilaqay main ab o hawa main survive karti hai phir woh variety uss area main.\" [Aarti Interview Summaiya Zuberi]<br>\"Local hybrid banta hee nahi hai, hybrid beej saaray baahir say hee atay hain. Pakistan main toh iss kay upar working nahi hai.\" [Aarti Interview Summaiya Zuberi]<br>\"Hum apna koi seed bana hee nahi rahay khaas tor par, makhsoos seed, hum import kar rahay hain, hum hybrid pay kaam kar rahay hain. Toh farmer kay paas high quality seed ki accessibility nahi hai.\" [Research Institution Alina]"
+                        "bottleneck": "Hybrid seeds are costly, not always adapted to local climates, and access remains unequal—especially disadvantaging smallholders compared to contract growers.",
+                        "quote": "\"Area wise konsi variety kis ilaqay main ab o hawa main survive karti hai phir woh variety uss area main.\" [Aarti Interview Summaiya Zuberi]<br>\"Local hybrid banta hee nahi hai, hybrid beej saaray baahir say hee atay hain. Pakistan main toh iss kay upar working nahi hai.\" [Aarti Interview Summaiya Zuberi]<br>\"Hum apna koi seed bana hee nahi rahay khaas tor par, makhsoos seed, hum import kar rahay hain, hum hybrid pay kaam kar rahay hain. Toh farmer kay paas high quality seed ki accessibility nahi hai.\" [Research Institution Alina]"
                     },
+
                     {
-                        title: 'Land Preparation & Crop Planning',
-                        description: 'Preparing land and planning crop cycles for healthy tomato cultivation.',
+                        "title": "Land Preparation & Crop Planning",
+                        "description": "Preparing land and planning crop cycles around weather, water, and labor availability.",
                         "icon": "https://i.ibb.co/sJgxZJZK/Land-Preparation.png",
-                        position: { top: 50, left: 300 },
-                        tooltip: {
-                            title: 'Land Preparation & Crop Planning Details',
-                            content: 'Farmers prepare soil through ploughing and leveling, and plan tomato cycles based on previous crops, weather, and labor—though challenges remain with rainfall and limited mechanization.<br><br><b>Land Preparation & Crop Planning Details</b><table><tr><th>Aspect</th><th>Details</th></tr><tr><td>Techniques Used</td><td>Deep ploughing, laser leveling, bed shaping</td></tr><tr><td>Crop Rotation</td><td>Often grown after rice or cotton</td></tr><tr><td>Fertilizers Applied</td><td>Cow dung, DAP, lime</td></tr><tr><td>Water Management</td><td>Critical in waterlogged zones (e.g., Thatta)</td></tr><tr><td>Timing Strategy</td><td>Based on rainfall, labor, and market prices</td></tr></table>',
-                            stats: [
-                                'Deep ploughing and raised beds are vital for disease prevention and drainage.',
-                                'Farmers align planting with weather, water, and labor conditions.',
-                                'Soil enrichment is done using organic and chemical inputs.'
-                                
+                        "position": { "top": 50, "left": 270 },
+                        "tooltip": {
+
+                            "content": "Tomato cultivation begins with deep ploughing and bed preparation, crucial for effective drainage and disease control. While wealthier farmers use tractors and laser leveling, many smallholders still rely on manual methods due to cost constraints.<br><br><b>Land Preparation & Inputs</b><table> <tr> <th>Technique/Input</th> <th>Details</th> </tr> <tr> <td>Land Techniques</td> <td>Deep ploughing, laser leveling, bed shaping</td> </tr> <tr> <td>Fertilizers</td> <td>Cow dung, DAP, lime</td> </tr> </table><br><b>Crop Planning</b><br>Tomatoes are usually planted after rice or cotton. Farmers align sowing schedules with weather forecasts, labor availability, and anticipated market prices.<br><br><b>Water & Soil Considerations</b><br>Water management is vital in waterlogged regions like Thatta and Badin, where drainage must be ensured before transplanting. Soil fertility is improved with organic and chemical amendments, including cow dung, DAP, and lime.",
+                            "stats": [
+                                "Tomatoes are often planted after rice or cotton as part of crop rotation.",
+                                "Laser leveling and tractors improve efficiency but remain unaffordable for many.",
+                                "Drainage is critical in waterlogged areas like Thatta and Badin."
                             ]
                         },
-                        "bottleneck": 'Unpredictable rainfall delays land prep, shrinking transplanting windows.<br>Smallholders often lack access to tractors and laser-leveling equipment.',
-                        "quote": "·Zameen tayar karne mein hum pehlay hal chalatay hain, phir laser leveler use karte hain. Magar sab log afford nahi karte.\" — Farmer from Badin"
+                        "bottleneck": "Delayed rains disrupt timely land preparation, narrowing transplanting windows. Access to mechanized tools remains limited for smallholders, increasing dependence on labor-intensive traditional methods.",
+                        "quote": "\"Zameen tayar karne mein hum pehlay hal chalatay hain, phir laser leveler use karte hain. Magar sab log afford nahi karte.\" — Farmer from Badin"
                     },
                     {
-                        title: 'Transplanting & Sowing',
-                        description: 'Tomato saplings are raised in nurseries and manually transplanted into fields.',
+                        "title": "Transplanting & Sowing",
+                        "description": "Timing and labor-intensive processes involved in sowing and transplanting tomato seedlings.",
                         "icon": "https://i.ibb.co/VpbjKzZL/Nursery-Transplantation.png",
-                        position: { top: 50, left: 500 },
-                        tooltip: {
-                            title: 'Transplanting & Sowing Details',
-                            content: 'Farmers grow tomato saplings in homegrown nurseries, transplanting them after 25–30 days. Transplanting is done seasonally and mostly by hand, with timing influenced by weather and market timing—especially in regions like Sindh.<br><br><b>Transplanting & Sowing Details</b><table><tr><th>Aspect</th><th>Details</th></tr><tr><td>Nursery Use</td><td>Common; transplant at 25–30 days</td></tr><tr><td>Sowing Season</td><td>October–December (varies by region)</td></tr><tr><td>Labor</td><td>Manual, labor-intensive; both men and women involved</td></tr></table>',
-                            stats: [
-                                'Hybrid saplings are transplanted ~25–30 days after nursery sowing.',
-                                'Timing is market- and weather-dependent, especially in Sindh.',
-                                'Labor-intensive process typically done by hand.'
-                                
+                        "position": { "top": 50, "left": 480 },
+                        "tooltip": {
+
+                            "content": "Tomato cultivation begins with nursery-based sapling preparation. Farmers commonly grow seedlings at home using hybrid seeds and transplant them into the field after 25–30 days.<br><br><b>Nursery & Sowing Practices</b><table> <tr> <th>Stage</th> <th>Details</th> </tr> <tr> <td>Nursery Use</td> <td>Common; transplanting after 25–30 days</td> </tr> <tr> <td>Sowing Season</td> <td>October–December, depending on regional climate</td> </tr> </table><br><b>Labor Use</b><br>Transplanting is a manual and labor-intensive activity, involving both men and women. Areas like Sindh often aim for early sowing to benefit from higher prices in the off-season.<br><br><b>Challenges</b><br>Extreme weather conditions during transplanting (heat or cold) can stress seedlings and reduce survival rates. Additionally, labor shortages during the peak sowing window can delay operations.",
+                            "stats": [
+                                "Transplanting typically happens 25–30 days after nursery sowing.",
+                                "Sowing season spans October to December, varying by region.",
+                                "Labor-intensive transplanting is mostly manual and involves both men and women."
                             ]
                         },
-                        "bottleneck": 'Extreme weather reduces sapling survival during transplanting.<br>Trained labor shortage during peak season delays operations.',
+                        "bottleneck": "Seedling losses due to heat or cold during transplanting are common. Labor shortages—especially of skilled workers—during peak sowing periods create delays and inefficiencies.",
                         "quote": ""
                     },
                     {
-                        title: 'Crop Maintenance',
-                        description: 'Crops are irrigated, fertilized, and sprayed to maintain health and productivity.',
+                        "title": "Crop Maintenance (Irrigation, Fertilization & Pesticides)",
+                        "description": "Managing irrigation, nutrients, and pest control to ensure healthy tomato growth.",
                         "icon": "https://i.ibb.co/cXTtQn9M/Crop-Management.png",
-                        position: { top: 50, left: 700 },
-                        tooltip: {
-                            title: 'Crop Maintenance Details',
-                            content: 'Tomato crop maintenance involves flood irrigation every few days, stage-specific fertilizer use, and chemical pest control to protect against major threats like whitefly and leaf curl virus.<br><br><b>Crop Maintenance Details</b><table><tr><th>Aspect</th><th>Details</th></tr><tr><td>Irrigation</td><td>Mostly flood irrigation; drip is rare</td></tr><tr><td>Fertilizers</td><td>DAP, urea, potash, chicken manure</td></tr><tr><td>Pest Management</td><td>Whitefly, thrips, leaf curl virus; frequent chemical sprays</td></tr><tr><td>Brands Used</td><td>Syngenta, FMC</td></tr></table>',
-                            stats: [
-                                'Flood irrigation every 5–7 days is standard due to low drip adoption.',
-                                'Fertilizer type and timing are aligned with the crop’s growth stage.',
-                                'Sprays every 10–15 days are essential for managing persistent pests.'
+                        "position": { "top": 50, "left": 700 },
+                        "tooltip": {
+
+                            "content": "Tomato farmers primarily use flood irrigation, with water application every 5–7 days depending on soil and weather conditions. Drip irrigation is rare due to higher installation costs.<br><br><b>Irrigation & Fertilization</b><table> <tr> <th>Input</th> <th>Details</th> </tr> <tr> <td>Irrigation</td> <td>Mostly flood; drip systems are uncommon</td> </tr> <tr> <td>Fertilizers</td> <td>DAP, urea, potash, chicken manure or compost</td> </tr> </table><br>Fertilizer application is growth-stage specific: root-enhancing inputs are used early, while fruit-enhancing nutrients follow later in the cycle.<br><br><b>Pest & Disease Management</b><br>Common threats include whitefly, thrips, and leaf curl virus. Farmers apply chemical sprays every 10–15 days, using products from companies like Syngenta and FMC. While these protect crops, over-reliance on chemicals raises concerns about resistance and environmental impact.",
+                            "stats": [
+                                "Flood irrigation is standard; water applied every 5–7 days.",
+                                "Fertilizers are growth-stage specific—root first, fruit later.",
+                                "Chemical pest sprays are applied every 10–15 days using Syngenta and FMC products."
                             ]
                         },
-                        "bottleneck": 'Rising pesticide resistance increases chemical costs for farmers.<br>Overuse of sprays affects tomato quality and consumer health.',
-                        "quote": "Climate change kay hisaab say pest activities change ho rahi hain. Humari jo crops hain unn ki jo varieties hain, unn ka jo genetic make up hai, its become more and more vulnerable to different diseases. High risk pay aa gaya hai, sahi hai. Climate change activities ki wajah say.\" [Research Institution Alina]"
+                        "bottleneck": "Increasing pesticide resistance, rising input costs, and overuse of chemicals raise both environmental and food safety concerns. Adoption of sustainable alternatives remains limited due to cost and awareness barriers.",
+                        "quote": "\"Climate change kay hisaab say pest activities change ho rahi hain. Humari jo crops hain unn ki jo varieties hain, unn ka jo genetic make up hai, its become more and more vulnerable to different diseases. High risk pay aa gaya hai, sahi hai. Climate change activities ki wajah say.\" [Research Institution Alina]"
                     },
+
                     {
-                        title: 'Harvesting',
-                        description: 'Manual picking of tomatoes done frequently over several weeks.',
+                        "title": "Harvesting",
+                        "description": "Manual tomato harvesting and its challenges related to perishability, labor, and post-harvest handling.",
                         "icon": "https://i.ibb.co/7JpjP5NT/Harvesting.png",
-                        position: { top: 180, left: 850 },
-                        tooltip: {
-                            title: 'Harvesting Details',
-                            content: 'Tomatoes are hand-harvested every few days, sorted by size/ripeness, and packed with minimal protection—posing major handling and storage challenges.<br><br><b>Harvesting</b><table><tr><th>Aspect</th><th>Details</th></tr><tr><td>Harvest Method</td><td>Manual picking (often by women/children)</td></tr><tr><td>Timing</td><td>Every 3–5 days for 6–8 weeks</td></tr><tr><td>Sorting</td><td>Basic (size, ripeness)</td></tr><tr><td>Packaging</td><td>Open crates, no cushioning</td></tr></table>',
-                            stats: [
-                                'Harvesting is done manually every 3–5 days for 6–8 weeks.',
-                                'Tomatoes are sorted by size and ripeness.',
-                               
-                                'Packaging in open crates causes bruising due to lack of cushioning.'
+                        "position": { "top": 180, "left": 850 },
+                        "tooltip": {
+
+                            "content": "Tomatoes are harvested entirely by hand, usually in the early morning or late evening to avoid heat stress. Women and children often participate in picking.<br><br><b>Harvest Schedule & Handling</b><table> <tr> <th>Stage</th> <th>Details</th> </tr> <tr> <td>Harvesting Frequency</td> <td>Every 3–5 days for 6–8 weeks</td> </tr> <tr> <td>Sorting</td> <td>Basic; done by size and ripeness</td> </tr> <tr> <td>Packaging</td> <td>Open crates without cushioning</td> </tr> </table><br>Tomatoes destined for distant markets are picked semi-ripe, while those for local sales are harvested riper. Inadequate post-harvest handling—especially lack of cushioning and field-level cold storage—leads to high bruising and spoilage rates.",
+                            "stats": [
+                                "Tomatoes are handpicked every 3–5 days over 6–8 weeks.",
+                                "Post-harvest losses reported between 40–60%.",
+                                "No cold storage is available at the farm level; open crates cause bruising."
                             ]
                         },
-                        "bottleneck": 'High perishability worsened by heat or transit delays.<br>No access to cold storage at the farm level.',
-                        "quote": "Aksar baarishon main keeray lag jaatay hain\" [Sahar Sabzi Mandi]<br>\"Infrastructure inefficiencies buhat zyada hain, uss main challenges humaray paas buhat zyada hain.\" [Research Institution]<br>\"Post-harvest losses kam az kam 40% yah 60% reported hain.\" [Research Institution Alina]"
+                        "bottleneck": "High perishability and lack of cold storage facilities lead to significant post-harvest losses. Manual harvesting and poor packaging result in bruising, while labor shortages can delay harvest rounds during peak periods.",
+                        "quote": "\"Aksar baarishon main keeray lag jaatay hain\" [Sahar Sabzi Mandi]<br>\"Infrastructure inefficiencies buhat zyada hain, uss main challenges humaray paas buhat zyada hain.\" [Research Institution]<br>\"Post-harvest losses kam az kam 40% yah 60% reported hain.\" [Research Institution Alina]"
                     },
+
+
                     {
-                        title: 'Transport & Initial Market Handling',
-                        description: 'Transport of tomatoes in crates, usually at night.',
+                        "title": "Transport & Initial Market Handling",
+                        "description": "Movement of tomatoes from farms to markets, and associated risks due to poor handling and infrastructure.",
                         "icon": "https://i.ibb.co/JjHCNHzX/Storage-Transport.png",
-                        position: { top: 360, left: 850 },
-                        tooltip: {
-                            title: 'Transport & Initial Market Handling Details',
-                            content: 'Tomatoes are loaded into crates, transported by pickups or trucks—typically at night—often facing damage due to poor handling and road conditions.<br><br><b>Transport & Initial Market Handling Details</b><table><tr><th>Aspect</th><th>Details</th></tr><tr><td>Loading and Packaging</td><td>Packed into wooden or plastic crates, often without proper cushioning</td></tr><tr><td>Mode of Transport</td><td>Small-scale farmers use pickups (Suzuki, Shehzore); large suppliers use mazda trucks or rented carriers</td></tr><tr><td>Transport Arranged By</td><td>Usually arranged by the commission agent or contractor</td></tr><tr><td>Transit Timing</td><td>During the night to reach wholesale markets early morning</td></tr></table>',
-                            stats: [
-                                'Overloading causes damage before market arrival.',
-                                'Transport is arranged by commission agents or contractors.',
-                                'Tomatoes are transported at night '
+                        "position": { "top": 350, "left": 850 },
+                        "tooltip": {
+
+                            "content": "After harvesting, tomatoes are packed into wooden or plastic crates, often without any protective cushioning. Overloading and stacking during transport contribute to bruising and spoilage.<br><br><b>Packaging & Loading</b><table> <tr> <th>Aspect</th> <th>Details</th> </tr> <tr> <td>Packaging</td> <td>Wooden/plastic crates; no cushioning</td> </tr> <tr> <td>Loading Practice</td> <td>Often overloaded and stacked, causing bruises</td> </tr> </table><br><b>Transport</b><br>Small-scale farmers typically use pickups like Suzuki or Shehzore, while larger suppliers opt for mazda trucks or hired carriers. Transport is often arranged by commission agents or contractors.<br><br><b>Transit Timing</b><br>Transport is mostly done at night to ensure early morning arrival at wholesale markets, aligning with peak demand hours.",
+                            "stats": [
+                                "Tomatoes are transported overnight to reach markets by morning.",
+                                "Pickups are used by smallholders; large growers rely on rented trucks.",
+                                "Lack of cold chain and overloading cause early spoilage."
                             ]
                         },
-                        "bottleneck": 'High perishability and lack of cold chain during transit.<br>Poor rural roads delay delivery and reduce quality.',
-                        "quote": "Agar tamatar purana ho yah halka ho toh kharab ho jata hai\" [Sahar Sabzi Mandi]<br>\"Tamatar ka jo box hota hai uss main upar kuch hota hai aur neechay kuch.\" [Pakwaan Wala Interview Sumaiya]"
+                        "bottleneck": "Tomatoes remain highly vulnerable during transit due to the absence of cold chain facilities, poor packaging, and rough rural roads. These factors contribute to physical damage, delays, and post-harvest losses.",
+                        "quote": "\"Agar tamatar purana ho yah halka ho toh kharab ho jata hai\" [Sahar Sabzi Mandi]<br>\"Tamatar ka jo box hota hai uss main upar kuch hota hai aur neechay kuch.\" [Pakwaan Wala Interview Sumaiya]"
+                    },
+
+                    {
+                        "title": "Wholesale Markets & Commission Agents",
+                        "description": "Auctioning of tomatoes through agents in major mandi hubs and the challenges farmers face.",
+                        "icon": " ",
+                        "position": { "top": 470, "left": 700 },
+                        "tooltip": {
+
+                            "content": "Tomatoes are sold in key mandi hubs such as Karachi’s New Sabzi Mandi, Hyderabad, and Badin. Farmers or their contractors hand over produce to commission agents (aadatiyas), who manage auctioning.<br><br><b>Mandi System</b><table> <tr> <th>Aspect</th> <th>Details</th> </tr> <tr> <td>Major Mandis</td> <td>Karachi, Hyderabad, Badin</td> </tr> <tr> <td>Role of Agent</td> <td>Handles auction; sets price; communicates sale outcome</td> </tr> <tr> <td>Commission</td> <td>6–8% plus cuts for transport, loading, losses</td> </tr> </table><br><b>Market Dynamics</b><br>Prices fluctuate daily based on supply volumes and product quality. Farmers rarely receive real-time price updates and are expected to trust the agent’s final settlement. This dynamic limits farmers’ agency and transparency in the market process.",
+                            "stats": [
+                                "Commission agents take 6–8% plus additional deductions.",
+                                "Prices change daily; farmers often lack access to final rates.",
+                                "Power in the mandi system is centralized with middlemen."
+                            ]
+                        },
+                        "bottleneck": "Farmers lack direct access to wholesale markets and price-setting mechanisms. Commission agents hold disproportionate control, leading to non-transparent pricing and exploitation—especially for small or first-time growers.",
+                        "quote": "\"Jaisay aaj agar yeh 10 rupay kilo khareed kay laya hoon, toh kal yeh 50 rupay bhi ho sakta hai.\" [Tomato Seller Alina]<br>\"Rate fixed nahi hota, rate changing hota hai iss liye buhat saari mushqilat hoti hain, denay walon ko bhi aur khareednay walon ko bhi.\" [Tomato Seller Alina]<br>\"Farmer major market ko access nahi kar paa raha hota hai, iss ki buhat zyada reasons hotay hain jaisay kay aarti.\" [Research Institution Alina]<br>\"Middlemen exploitation buhat zyada hai, he is actually controling the price mechanism.\" [Research Institution Alina]"
                     },
                     {
-                        title: 'Wholesale Markets & Commission Agents',
-                        description: 'Tomato sale through mandi agents with little farmer control.',
-                        icon: 'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z',
-                        position: { top: 470, left: 700 },
-                        tooltip: {
-                            title: 'Wholesale Markets & Commission Agents Details',
-                            content: 'Tomatoes are handed to commission agents in major wholesale markets, where they’re auctioned. Farmers face price uncertainty and multiple deductions.<br><br><b>Wholesale Markets & Commission Agents Details</b><table><tr><th>Aspect</th><th>Details</th></tr><tr><td>Major Mandis</td><td>Karachi (New Sabzi Mandi), Hyderabad, Badin</td></tr><tr><td>Role of Agent</td><td>Receives produce, conducts auction</td></tr><tr><td>Price Pattern</td><td>Varies daily by volume, quality</td></tr><tr><td>Farmer Access</td><td>No direct price updates; depends on agent\'s word</td></tr><tr><td>Agent\'s Commission</td><td>6–8% plus other deductions (i.e transport, loading, and sometimes even losses.)</td></tr></table>',
-                            stats: [
-                                'Major mandis include Karachi, Hyderabad, and Badin.',
-                                'Agents control auctions and pricing communication.',
-                                
-                                'PFarmers receive reduced earnings after multiple deductions.'
+                        "title": "Retail & Consumer End",
+                        "description": "Tomatoes reach consumers via local retailers and hawkers, with significant price hikes and cultural consumption patterns.",
+                        "icon": " ",
+                        "position": { "top": 470, "left": 480 },
+                        "tooltip": {
+
+                            "content": "Retailers and hawkers collect tomatoes early morning from mandis and sell them in local markets by noon. Transportation is done via small vans or on foot, especially for hawkers. Tomatoes are further sorted—premium quality is sent to upscale urban markets while lower grades are sold by roadside vendors or in rural areas.<br><br><b>Retail Dynamics</b><table> <tr> <th>Aspect</th> <th>Details</th> </tr> <tr> <td>Retail Channels</td> <td>Small vendors, hawkers, and markets</td> </tr> <tr> <td>Sorting</td> <td>Best quality for cities, others sold locally</td> </tr> <tr> <td>Price Multipliers</td> <td>Retail prices are often 2–3x mandi rates</td> </tr> </table><br><b>Occasion-Driven Spikes</b><br>Prices rise during high-demand seasons like Eid and Ramadan. Cultural preferences also influence demand—Punjabi families traditionally use more tomatoes, while Urdu-speaking households may use more yogurt (dahi).",
+                            "stats": [
+                                "Retail prices are often 2–3 times higher than mandi rates.",
+                                "Retailers sort tomatoes again for quality targeting urban vs rural buyers.",
+                                "Occasions like Eid and Ramadan cause sharp price surges."
                             ]
                         },
-                        "bottleneck": 'Farmers have little control over pricing.<br>Exploitation common for first-time or small-scale growers.',
-                        "quote": "Jaisay aaj agar yeh 10 rupay kilo khareed kay laya hoon, toh kal yeh 50 rupay bhi ho sakta hai.\" [Tomato Seller Alina]<br>\"Rate fixed nahi hota, rate changing hota hai iss liye buhat saari mushqilat hoti hain, denay walon ko bhi aur khareednay walon ko bhi.\" [Tomato Seller Alina]<br>\"Farmer major market ko access nahi kar paa raha hota hai, iss ki buhat zyada reasons hotay hain jaisay kay aarti.\" [Research Institution Alina]<br>\"Middlemen exploitation buhat zyada hai, he is actually controling the price mechanism.\" [Research Institution Alina]"
+                        "bottleneck": "Consumers bear high and fluctuating prices with limited knowledge of true supply chain costs. Retailers face spoilage risks, while quality inconsistencies persist due to poor handling upstream.",
+                        "quote": "\"Humara Pakistani saaf sutra hai.\" [Sahar Sabzi Mandi]<br>\"Hum sirf aur sirf satisfy hotay hain fresh tomato say.\" [Research Institution Alina]<br>\"Tamatar is a taste enhancer.\" [Research Institution Alina]<br>\"Punjabi families used to use more tomatoes and urdu-speaking families used to use more dahi.\" [Research Institution Alina]<br>\"Tamatar ki price eik jaisi nahi rehti hai, kisi waqt humay buhat zyada, zaroorat say zyada pay karna hota hai, bakra eid waghera, ramzan waghera kay waqt.\""
                     },
+
                     {
-                        title: 'Retail & Consumer End',
-                        description: 'Tomatoes sold by retailers after buying from mandis early morning.',
-                        icon: 'M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4',
-                        position: { top: 470, left: 500 },
-                        tooltip: {
-                            title: 'Retail & Consumer End Details',
-                            content: 'Retailers and hawkers purchase from wholesale markets, sort by quality, and sell locally—often at significantly higher prices than mandi rates.<br><br><b>Retail & Consumer End Details</b><table><tr><th>Aspect</th><th>Details</th></tr><tr><td>Distribution</td><td>Retailers/hawkers buy early, sell by noon</td></tr><tr><td>Transport</td><td>Small vans or on foot</td></tr><tr><td>Sorting</td><td>High quality for urban markets; rest to roadside/rural</td></tr><tr><td>Pricing</td><td>2–3x mandi price; spikes during Eid, Ramadan</td></tr></table>',
-                            stats: [
-                              
-                                'Tomatoes are sorted again for different market levels.',
-                                'Retail prices often double or triple from mandi rates.',
-                               
+                        "title": "Spoilage, Waste & End-of-Life",
+                        "description": "A significant portion of the tomato supply is lost to spoilage across harvesting, transport, and retail, with minimal systems for waste recovery or processing.",
+                        "icon": " ",
+                        "position": { "top": 470, "left": 270 },
+                        "tooltip": {
+
+                            "content": "Tomatoes are highly perishable. Spoilage begins as early as the field—overripe or damaged tomatoes are often not harvested due to low market prices. During transport, poor packaging and overloading result in 15–25% losses. At the retail level, unsold tomatoes degrade rapidly without cold storage. Some vendors offload these at low prices to pulp makers, but most is dumped.<br><br><b>Stages of Waste</b><table> <tr><th>Stage</th><th>Cause</th><th>Loss (%)</th></tr><tr><td>Harvest</td><td>Unpicked due to low price</td><td>Variable</td></tr><tr><td>Transit</td><td>Bruising, heat, overloading</td><td>15–25%</td></tr><tr><td>Retail</td><td>No storage, perishability</td><td>Daily waste if unsold</td></tr></table>",
+                            "stats": [
+                                "15–25% of tomatoes spoil before reaching retail.",
+                                "Unsold tomatoes at retail are often dumped within 1–2 days.",
+                                "Many tomatoes are not even harvested due to low market value."
                             ]
                         },
-                        "bottleneck": 'Sudden price hikes during Eid and Ramadan affect affordability.',
-                        "quote": "Humara Pakistani saaf sutra hai.\" [Sahar Sabzi Mandi]<br>\"Hum sirf aur sirf satisfy hotay hain fresh tomato say.\" [Research Institution Alina]<br>\"Tamatar is a taste enhancer\" [Research Institution Alina]\"Punjabi families used to use more tomatoes and urdu-speaking families used to use more dahi\" [Research Institution Alina]"
+                        "bottleneck": "High spoilage due to lack of cold chain and price volatility results in financial loss and food waste. Farmers may leave produce to rot if harvesting costs exceed returns.",
+                        "quote": "\"Humara wastage warehouse main chala jaata hai.\" [Retail Store Interview Zehra Tejani]<br>\"Jab aap kay paas tamatar grow kar raha hota hai... uss ki itni queemat bhi nahi hoti kay uss ko pick kia jaye... toh woh kehtay hain main uss ko wahi sarnay deta hoon...\" [Research Institution Alina]"
                     },
+
                     {
-                        title: 'Spoilage, Waste & End-of-Life',
-                        description: 'Significant tomato spoilage from field to final sale.',
-                        icon: 'M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0',
-                        position: { top: 470, left: 300 },
-                        tooltip: {
-                            title: 'Spoilage, Waste & End-of-Life Details',
-                            content: 'Tomatoes face 15–25% spoilage due to poor handling and lack of storage, with unsold or overripe stock quickly going to waste or sold cheaply.<br><br><b>Spoilage & Waste Details</b><table><tr><th>Waste</th><th>Details</th></tr><tr><td>During Harvest & Transit</td><td>15–25% spoilage from poor handling, overripe stock, and transit damage</td></tr><tr><td>At Retail Level</td><td>Unsold tomatoes dumped or sold cheaply; no storage, spoil in 1–2 days</td></tr></table>',
-                            stats: [
-                                '15–25% spoilage before reaching retail.',
-                                'Vendors lack storage for unsold stock.',
-                                'Overripe tomatoes spoil within 1–2 days.'
-                                
+                        "title": "Export / Import Dynamics",
+                        "description": "Tomato trade across borders plays a key role in stabilizing supply, but fluctuates due to political and seasonal pressures.",
+                        "icon": " ",
+                        "position": { "top": 470, "left": 50 },
+                        "tooltip": {
+
+                            "content": "Pakistan imports tomatoes primarily from Iran and Afghanistan during off-seasons to manage local supply shortfalls. These imports often saturate border markets, influencing prices especially in Sindh and Balochistan.<br><br><b>Exports</b> remain limited due to quality inconsistencies, lack of cold chain infrastructure, and poor packaging standards. Government decisions on trade are frequently reactive, shaped more by crises than coordinated agricultural planning.",
+                            "stats": [
+                                "Main import sources: Iran, Afghanistan.",
+                                "Exports are low due to poor packaging and certification.",
+                                "Policy decisions on imports/exports are reactive, not strategic."
                             ]
                         },
-                        "bottleneck": 'Poor handling and transit cause early losses.<br>No storage leads to rapid spoilage at retail.',
-                        "quote": "Humara wastage warehouse main chala jaata hai.\" [Retail Store Interview Zehra Tejani]<br>\"Jab aap kay paas tamatar grow kar raha hota hai, kahi dafa uss ki itni queemat bhi nahi hoti kay uss ko pick kia jaye, uss ko harvest kia jaye. Toh woh kehtay hain main uss ko wahi sarnay deta hoon, toh woh uss ko wahi sarnay detay hain. Woh uss ki turayi bhi nahi kartay, harvest bhi nahi kareingay kyun kay yeh humay aur mehengi par jayegi, hum iss kay liye labour kahan say kayen, toh wahin pay lagay lagay sar jaata hai.\" [Research Institution Alina]"
-                    },
-                    {
-                        title: 'Export / Import Dynamics',
-                        description: 'Tomato imports offset shortages; exports face major quality hurdles.',
-                        icon: 'M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z',
-                        position: { top: 470, left: 100 },
-                        tooltip: {
-                            title: 'Export / Import Dynamics Details',
-                            content: 'Tomatoes are imported during shortages, impacting local markets. Exports remain limited due to quality, storage, and policy challenges<br><br><b>Export / Import Dynamics Details</b><table><tr><th>Aspect</th><th>Details</th></tr><tr><td>Imports</td><td>From Iran and Afghanistan during shortages; impact prices in Balochistan and Sindh.</td></tr><tr><td>Exports</td><td>Limited due to inconsistent quality, lack of certification, poor packaging<br>High perishability and poor cold storage facilities</td></tr></table>',
-                            stats: [
-                                'Tomatoes are imported from Iran and Afghanistan',
-                                'Imports affect price stability in Balochistan and Sindh.',
-                                'Export volumes remain low due to poor quality and packaging.'
-                                
-                            ]
-                        },
-                        "bottleneck": 'Quick spoilage and not enough cold storage facilities limit export potential.<br>Import-export decisions often respond to political and seasonal pressures, not structured planning.',
-                        "quote": "Companies jo hain woh baahir say hee import karti hain, kuch jo hain Korean hotay hain, kuch Thailand kay hotay hain, kuch Indian hotay hain.\" [Aarti Interview Sumaiya Zuberi]<br>\"Abhi filhal Iran ka bhi aa raha hai, Sindh ka bhi aa raha hai, Quetta ka bhi aa raha hai.\" [Sahar Sabzi Mandi]<br>\"Jab yahan par kam hojata hai phir wahan say mangwatay hain, aisay nahi aata.\" [Sahar Sabzi Mandi]<br>\"Sometimes Iran or Afghanistan say import kartay hain\" [Retail Store Interview Zehra Tejani]"
+                        "bottleneck": "Volatile trade flows and weak export infrastructure prevent stable income for farmers and exporters. Imports during local harvest periods also undermine local prices.",
+                        "quote": "\"Companies jo hain woh baahir say hee import karti hain, kuch jo hain Korean hotay hain, kuch Thailand kay hotay hain, kuch Indian hotay hain.\" [Aarti Interview Sumaiya Zuberi]<br>\"Jab yahan par kam hojata hai phir wahan say mangwatay hain, aisay nahi aata.\" [Sahar Sabzi Mandi]<br>\"Sometimes Iran or Afghanistan say import kartay hain.\" [Retail Store Interview Zehra Tejani]"
                     }
+
                 ],
                 overview: {
                     title: 'Tomato Supply Chain Overview',
                     stats: [
-                        { title: 'Pakistan Production', value: '575 Thousand', subtitle: 'Metric tons annually', color: 'olive-green' },
-                        { title: 'Processing Potential', value: '30%', subtitle: 'Of total production', color: 'fresh-green' },
-                        { title: 'Value Addition', value: '300-500%', subtitle: 'Through processing', color: 'reseda-green' }
+                        { title: 'Pakistan Production', value: '-', subtitle: '-', color: 'olive-green' },
+                        { title: 'Processing Potential', value: '-', subtitle: 'Of total production', color: 'fresh-green' },
+                        { title: 'Value Addition', value: '-', subtitle: 'Through processing', color: 'reseda-green' }
                     ]
                 }
             },
@@ -3167,15 +3297,15 @@
                         "icon": "https://i.ibb.co/LzrhY1Lk/Seed-Selection.png",
                         "position": { "top": 50, "left": 200 },
                         "tooltip": {
-                            "content": "Apple orchards thrive in specific cold-climate zones with well-prepared soil and careful planting. Farmers level the land and space trees to optimize irrigation access.<br><br><b>Ideal Conditions for Apple Orchards</b><table><tr><th>Factor</th><th>Ideal Condition</th></tr><tr><td>Altitude</td><td>High-altitude, semi-dry</td></tr><tr><td>Climate</td><td>Cold winters, mild summers</td></tr><tr><td>Soil</td><td>Loamy, well-drained</td></tr><tr><td>Chill Hours</td><td>Required for dormancy</td></tr></table><br><b>Planting Practices</b><table><tr><th>Aspect</th><th>Details</th></tr><tr><td>Sapling Type</td><td>Grafted, disease-resistant</td></tr><tr><td>Season</td><td>Winter (Dec–Feb)</td></tr><tr><td>Spacing</td><td>Arranged for irrigation access</td></tr></table>",
+                            "content": "<p>Apple orchards are established in regions with cold winters, mild summers, and loamy, well-drained soils. Farmers level the land and space the trees to ensure proper irrigation. Grafted saplings are planted during the winter season for optimal establishment.</p><b>Ideal Conditions for Apple Orchards</b><table><tr><th>Factor</th><th>Ideal Condition</th></tr><tr><td>Altitude</td><td>High-altitude, semi-dry</td></tr><tr><td>Climate</td><td>Cold winters, mild summers</td></tr><tr><td>Soil</td><td>Loamy, well-drained</td></tr><tr><td>Chill Hours</td><td>Required for dormancy</td></tr></table>",
                             "stats": [
-                                "Chill Hours: Critical for flower bud formation",
-                                "Soil Preparation: Land is leveled before planting",
-                                "Irrigation Planning: Trees spaced to allow water flow"
+                                "Planting Season: Winter (Dec–Feb)",
+                                "Sapling Type: Grafted and disease-resistant",
+                                "Spacing Purpose: Facilitates irrigation access"
                             ]
                         },
                         "bottleneck": "Soil quality inconsistencies and limited water availability in some areas.",
-                        "quote": "“Aam tor pe sardiyon mien beech lagan shuroon kar dethe hai... garmiyon ke start mien he hum channa shurron kar dethe hai.” — Ahmed\n“Shaakhe hothi hai na, hum usko kaat dethe hai... naye shakhe asake jin pe saib ug sakhe... fertilizer ko badalthe rehthe hai.”"
+                        "quote": "\u201cAam tor pe sardiyon mien beech lagan shuroon kar dethe hai... garmiyon ke start mien he hum channa shurron kar dethe hai.\u201d \u2014 Ahmed\n\u201cShaakhe hothi hai na, hum usko kaat dethe hai... naye shakhe asake jin pe saib ug sakhe... fertilizer ko badalthe rehthe hai.\u201d"
                     },
                     {
                         "title": "Orchard Management and Maintenance",
@@ -3183,15 +3313,15 @@
                         "icon": "https://i.ibb.co/sJgxZJZK/Land-Preparation.png",
                         "position": { "top": 50, "left": 475 },
                         "tooltip": {
-                            "content": "Ongoing care of the apple orchard involves seasonal irrigation, careful pruning, and environmentally conscious pest control. Pipe-fed sprinklers and biological methods are used to sustain health and yield.<br><br><b>Routine Orchard Tasks</b><table><tr><th>Task</th><th>Method</th></tr><tr><td>Irrigation</td><td>Sprinklers (pipe-fed systems)</td></tr><tr><td>Pruning</td><td>Manual, to improve fruiting</td></tr><tr><td>Fertilization</td><td>Seasonally adjusted inputs</td></tr><tr><td>Pest Control</td><td>Organic pesticides + predator insects</td></tr></table><br><b>Technologies Used</b><table><tr><th>Technology</th><th>Purpose</th></tr><tr><td>Sprinklers</td><td>Efficient water distribution</td></tr><tr><td>Beneficial Insects</td><td>Biological pest management</td></tr></table>",
+                            "content": "<p>Apple orchard upkeep includes irrigation through pipe-fed sprinklers, regular pruning, and organic pest control supported by beneficial insects. Seasonal fertilization ensures nutrient balance in the soil.</p><b>Routine Orchard Tasks</b><table><tr><th>Task</th><th>Method</th></tr><tr><td>Irrigation</td><td>Sprinklers (pipe-fed systems)</td></tr><tr><td>Pruning</td><td>Manual, to improve fruiting</td></tr><tr><td>Fertilization</td><td>Seasonally adjusted inputs</td></tr><tr><td>Pest Control</td><td>Organic pesticides + predator insects</td></tr></table>",
                             "stats": [
-                                "Water Source: Declining groundwater table",
-                                "Pest Control: Uses organic methods and beneficial insects",
-                                "Fertilizer Use: Changes seasonally based on soil condition"
+                                "Technology: Beneficial insects for pest control",
+                                "Groundwater Issue: Declining water tables impact irrigation",
+                                "Fertilizer Schedule: Adjusted per seasonal soil conditions"
                             ]
                         },
                         "bottleneck": "Water scarcity due to falling groundwater, heat stress, and recurring pest outbreaks.",
-                        "quote": "“Organic khaas tor pe pesticides ke zarye hum use control karthe hai... keerain daal dethe hai jo saib khane wale keeron ko dhur rakhthe.” — Ahmed\n“Pipes ke through sprinklers nikle huwe we hai jis ke through pani jatha hai in saibo taraf.” — Ahmed\n“Sab se bara masla pani ka hai... keerain bohoth ajathe hai... mausam ke tabdeeli ke waja se bohoth farq partha hai.” — Ahmed"
+                        "quote": "\u201cOrganic khaas tor pe pesticides ke zarye hum use control karthe hai... keerain daal dethe hai jo saib khane wale keeron ko dhur rakhthe.\u201d \u2014 Ahmed\n\u201cPipes ke through sprinklers nikle huwe we hai jis ke through pani jatha hai in saibo taraf.\u201d \u2014 Ahmed\n\u201cSab se bara masla pani ka hai... keerain bohoth ajathe hai... mausam ke tabdeeli ke waja se bohoth farq partha hai.\u201d \u2014 Ahmed"
                     },
                     {
                         "title": "Fruit Ripening and Harvesting",
@@ -3199,11 +3329,11 @@
                         "icon": "https://i.ibb.co/7JpjP5NT/Harvesting.png",
                         "position": { "top": 150, "left": 750 },
                         "tooltip": {
-                            "content": "Different apple varieties ripen across the summer and early fall months. Skilled labor is required to harvest them at the right time without damaging the fruit.<br><br><b>Ripening Timeline</b><table><tr><th>Variety</th><th>Ripens</th></tr><tr><td>Kamla, Kala Kullu</td><td>July – Early August</td></tr><tr><td>Red Delicious</td><td>September</td></tr><tr><td>Golden Delicious</td><td>Late Sept – October</td></tr></table><br><b>Harvest Practices</b><table><tr><th>Aspect</th><th>Details</th></tr><tr><td>Method</td><td>Manual picking by trained labor</td></tr><tr><td>Timing</td><td>Based on fruit color and texture</td></tr><tr><td>Risk</td><td>Damage lowers value and shelf life</td></tr></table>",
+                            "content": "<p>Apples ripen between July and October depending on the variety. Harvesting is carried out manually using skilled labor to avoid bruising and preserve shelf life.</p><b>Ripening Timeline</b><table><tr><th>Variety</th><th>Ripens</th></tr><tr><td>Kamla, Kala Kullu</td><td>July – Early August</td></tr><tr><td>Red Delicious</td><td>September</td></tr><tr><td>Golden Delicious</td><td>Late Sept – October</td></tr></table>",
                             "stats": [
-                                "Peak Labor Demand: July–October",
-                                "Visual Indicators: Used to judge ripeness (color, texture)",
-                                "Risk: Delayed harvest reduces shelf life and price"
+                                "Harvest Method: Manual picking by trained labor",
+                                "Timing Criteria: Based on color and texture",
+                                "Harvest Risk: Delays reduce shelf life and market value"
                             ]
                         },
                         "bottleneck": "Lack of skilled labor at peak season and risk of bruising during manual harvest.",
@@ -3215,11 +3345,11 @@
                         "icon": "https://i.ibb.co/cXTtQn9M/Crop-Management.png",
                         "position": { "top": 375, "left": 750 },
                         "tooltip": {
-                            "content": "After picking, apples are visually sorted and graded based on size, color, and quality. Storage in cold rooms can help preserve freshness, though many farms lack access.<br><br><b>Sorting & Grading Criteria</b><table><tr><th>Aspect</th><th>Details</th></tr><tr><td>Size</td><td>Large apples preferred for premium sale</td></tr><tr><td>Appearance</td><td>Uniform color, no blemishes</td></tr><tr><td>Damage</td><td>Bruised or insect-bitten apples separated</td></tr></table><br><b>Storage Practices</b><table><tr><th>Type</th><th>Details</th></tr><tr><td>Cold Storage</td><td>Used to extend shelf life and reduce spoilage</td></tr><tr><td>Availability</td><td>Not accessible on all farms</td></tr></table>",
+                            "content": "<p>After harvest, apples are sorted based on size, appearance, and quality. Cold storage units help reduce spoilage, though access remains limited for many growers.</p><b>Sorting & Grading Criteria</b><table><tr><th>Aspect</th><th>Details</th></tr><tr><td>Size</td><td>Large apples preferred for premium sale</td></tr><tr><td>Appearance</td><td>Uniform color, no blemishes</td></tr><tr><td>Damage</td><td>Bruised or insect-bitten apples separated</td></tr></table>",
                             "stats": [
-                                "Heat Risk: Spoilage rises during warmer months",
-                                "Storage Type: Cold storage used if available on-site",
-                                "Spoilage Control: Sorting helps reduce losses"
+                                "Spoilage Factor: Higher during warm months without storage",
+                                "Storage Type: On-farm cold rooms where available",
+                                "Grading Benefit: Reduces losses before market"
                             ]
                         },
                         "bottleneck": "Limited access to on-farm cold storage units results in faster spoilage, especially during warm months.",
@@ -3231,16 +3361,15 @@
                         "icon": "https://i.ibb.co/JjHCNHzX/Storage-Transport.png",
                         "position": { "top": 500, "left": 475 },
                         "tooltip": {
-                            "content": "<b>Transport Modes</b><table><tr><th>Method</th><th>Details</th></tr><tr><td>Hired Vehicles</td><td>Used by most smallholders</td></tr><tr><td>Own Transport</td><td>Rare due to cost</td></tr><tr><td>Cold Trucks</td><td>Occasionally rented, not common</td></tr></table><br><b>Distribution Challenges</b><table><tr><th>Issue</th><th>Impact</th></tr><tr><td>Poor Roads</td><td>Delays and damage to fruit</td></tr><tr><td>No Cold Chain</td><td>Spoilage during heatwaves</td></tr><tr><td>Traffic</td><td>Missed market timing</td></tr></table>",
-
+                            "content": "<p>Apples are sent to mandis using rented vehicles. Cold trucks are occasionally used but are not affordable for most. Poor road conditions and traffic cause delays and spoilage during peak summer transport.</p><b>Transport Modes</b><table><tr><th>Method</th><th>Details</th></tr><tr><td>Hired Vehicles</td><td>Used by most smallholders</td></tr><tr><td>Cold Trucks</td><td>Occasionally rented, not common</td></tr></table>",
                             "stats": [
-                                "Farmer Transport: Most rely on rented vehicles",
-                                "Cold Trucks: Only some farms can afford them",
-                                "Road Quality: Poor, leading to delays and damage"
+                                "Primary Mode: Rented vehicles for most farms",
+                                "Cold Chain: Rare and costly",
+                                "Transport Issues: Poor roads, spoilage risk during delays"
                             ]
                         },
                         "bottleneck": "No access to refrigerated transport, poor rural roads, and timing delays that reduce price margins.",
-                        "quote": "“Hamare pass hamari apni gariyan nahi hothi...cold storage wali gariyaan karwani padthi hai...roads kharab hain...market ke rates uppar neeche horahe hothe hai...deal karna padta hai.” — Ahmed"
+                        "quote": "\u201cHamare pass hamari apni gariyan nahi hothi...cold storage wali gariyaan karwani padthi hai...roads kharab hain...market ke rates uppar neeche horahe hothe hai...deal karna padta hai.\u201d \u2014 Ahmed"
                     },
                     {
                         "title": "Market Access and Sale to Vendors",
@@ -3248,18 +3377,17 @@
                         "icon": " ",
                         "position": { "top": 500, "left": 200 },
                         "tooltip": {
-                            "content": "Farmers mostly depend on wholesale markets and middlemen to sell apples. Cold storage offers some flexibility, but direct access to urban or export markets is lacking.<br><br><b>Sales Channels</b><table><tr><th>Method</th><th>Details</th></tr><tr><td>Mandis</td><td>Main selling point via middlemen</td></tr><tr><td>Cold Storage</td><td>Allows delayed sale during off-season</td></tr><tr><td>Direct Sale</td><td>Rare due to lack of buyer links</td></tr></table><br><b>Pricing Issues</b><table><tr><th>Limitation</th><th>Effect</th></tr><tr><td>Middlemen Dependence</td><td>Price manipulation, delayed payment</td></tr><tr><td>Volatile Market Rates</td><td>Unpredictable earnings</td></tr><tr><td>No Bulk Infrastructure</td><td>Can't leverage high prices at peak</td></tr></table>",
+                            "content": "<p>Farmers sell primarily through wholesale mandis, with middlemen controlling price and access. Cold storage enables some to delay selling and benefit from price spikes, but direct access to urban or export buyers remains rare.</p><b>Sales Channels</b><table><tr><th>Method</th><th>Details</th></tr><tr><td>Mandis</td><td>Main selling point via middlemen</td></tr><tr><td>Cold Storage</td><td>Allows delayed sale during off-season</td></tr><tr><td>Direct Sale</td><td>Rare due to lack of buyer links</td></tr></table>",
                             "stats": [
-                                "Buyer Dependence: Farmers rely heavily on middlemen",
-                                "Sales Timing: Cold storage enables delayed sales",
-                                "Price Sensitivity: Market rates change frequently"
+                                "Buyer Access: Mostly through middlemen",
+                                "Price Advantage: Cold storage allows strategic sale",
+                                "Infrastructure Limitation: Lack of direct market channels"
                             ]
                         },
                         "bottleneck": "Farmers face price exploitation, lack direct urban/export links, and have limited options during peak season due to infrastructure gaps.",
-                        "quote": "“Hamare pass coldstorage hai tho hum rakh dethe hai saib ko... market mein demand hothi hai tho hum bhaij dethe hai.” — Ahmed\n“Hum alag alag aqsam ke saib ugathe rehthe hai.”"
+                        "quote": "\u201cHamare pass coldstorage hai tho hum rakh dethe hai saib ko... market mein demand hothi hai tho hum bhaij dethe hai.\u201d \u2014 Ahmed\n\u201cHum alag alag aqsam ke saib ugathe rehthe hai.\u201d"
                     }
                 ],
-
                 overview: {
                     title: 'Apple Supply Chain Overview',
                     stats: [
@@ -3269,6 +3397,7 @@
                     ]
                 }
             },
+
 
             'Orange': {
                 stages: [
@@ -4427,20 +4556,43 @@
     </script>
 
     <script id="product-interactions">
+        const productImageLinks = {
+            'Apple': 'https://i.postimg.cc/RFwp62gh/apple.png',
+            'Banana': 'https://i.postimg.cc/hvgy9MYr/banana.png',
+            'Chili': 'https://i.postimg.cc/0jftZDRq/chilli.png',
+            'Garlic': 'https://i.postimg.cc/bYHFzcGF/garlic.png',
+            'Lentils': 'https://i.postimg.cc/5N4Ky7L9/lentils.png',
+            'Maize': 'https://i.postimg.cc/8PZK6RmR/maize.png',
+            'Mango': 'https://i.postimg.cc/Bnthcjmd/mango.png',
+            'Milk': 'https://i.postimg.cc/wjPwW9P3/milk.png',
+            'Mustard': 'https://i.postimg.cc/1X9BgXg7/mustard.png',
+            'Orange': 'https://i.postimg.cc/jj7ZmG0c/orange.png',
+            'Potato': 'https://i.postimg.cc/fLQBNBMN/potato.png',
+            'Rice': 'https://i.postimg.cc/k4NwXK5t/rice.png',
+            'Sugarcane': 'https://i.postimg.cc/wM0VDzLq/sugarcane.png',
+            'Tomato': 'https://i.postimg.cc/8kHw2R32/tomato.png',
+            'Wheat': 'https://i.postimg.cc/8PzwNFgj/wheat.png'
+        };
+
         function showSupplyChainView(button) {
             const productName = button.getAttribute('data-product');
             const modal = document.getElementById('supplyChainModal');
             const modalTitle = document.getElementById('modalTitle');
-            modalTitle.textContent = `${productName} Supply Chain Map`;
+            const productImage = productImageLinks[productName] || '';
+
+            modalTitle.innerHTML = `
+            <span class="text-2xl font-bold text-olive-green font-poppins">${productName} Supply Chain Map</span>
+            <img src="${productImage}" alt="${productName}" class="w-14 h-14 object-contain rounded-md border border-alabaster">
+        `;
+
             modal.classList.remove('hidden');
             document.body.style.overflow = 'hidden';
 
-            // Generate supply chain content for the specific product
             generateSupplyChainContent(productName);
-
-            // Initialize the supply chain functionality
             initializeSupplyChain();
         }
+
+
 
         function generateSupplyChainContent(productName) {
             const container = document.getElementById('supplyChainContainer');
@@ -4455,53 +4607,121 @@
             }
 
             let stagesHTML = '';
+            let tooltipsHTML = '';
+
             productData.stages.forEach((stage, index) => {
-                const tooltipPosition = stage.position.top > 300 ? 'top: auto; bottom: 100%;' : 'top: 100%;';
+                const top = stage.position.top;
+                const left = stage.position.left;
 
                 stagesHTML += `
-                <div class="stage-node" style="top: ${stage.position.top}px; left: ${stage.position.left}px;">
-    <div class="stage-icon" style="background-color: ${colors.background};">
-        ${stage.icon.endsWith(".png") || stage.icon.endsWith(".jpg")
+            <div class="stage-node" style="top: ${top}px; left: ${left}px;" data-stage-id="${index}">
+                <div class="stage-icon" style="background-color: ${colors.background};">
+                    ${stage.icon.endsWith(".png") || stage.icon.endsWith(".jpg")
                         ? `<img src="${stage.icon}" alt="${stage.title} icon" class="h-12 w-12" />`
                         : `<svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="${stage.icon}" />
-                   </svg>`
-                    }
-        <div class="stage-number" style="background-color: ${colors.stageIconBg};">${index + 1}</div>
-    </div>
-    <div class="stage-title" style="background-color: ${colors.titleBackground};">${stage.title}</div>
-    <div class="stage-description">${stage.description}</div>
-
-
-
-                    <!-- Normal tooltip -->
-                    <div class="tooltip stage-tooltip" style="${tooltipPosition} left: 50%; transform: translateX(-50%); background-color: ${colors.tooltipBackground}; color: ${colors.tooltipText};">
-                        <div class="tooltip-title">${stage.tooltip.title || stage.title + ' Details'}</div>
-                        <div class="tooltip-content">${stage.tooltip.content}</div>
-                        <div class="tooltip-stats">
-                            ${stage.tooltip.stats.map(stat => `<div>${stat}</div>`).join('')}
-                        </div>
-                    </div>
-                    
-                    <!-- Bottleneck tooltip -->
-                    <div class="bottleneck-tooltip stage-tooltip" style="${tooltipPosition} left: 50%; transform: translateX(-50%);">
-                        <div class="bottleneck-title">${stage.title} Bottlenecks</div>
-                        <div class="bottleneck-content">${stage.bottleneck}</div>
-                    </div>
-
-                    <!-- Quote tooltip -->
-                    <div class="quote-toggle">
-                        <div class="quote-tooltip stage-tooltip" style="${tooltipPosition} left: 50%; transform: translateX(-50%);">
-                            <div class="quote-title">${stage.title} - Field Insights</div>
-                            <div class="quote-content">${stage.quote || 'No field insights available for this stage.'}</div>
-                        </div>
-                    </div>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="${stage.icon}" />
+                           </svg>`}
+                    <div class="stage-number" style="background-color: ${colors.stageIconBg};">${index + 1}</div>
                 </div>
-            `;
+                <div class="stage-title-container">
+                    <div class="stage-title" style="background-color: ${colors.titleBackground};">${stage.title}</div>
+                    <div class="dropdown-arrow" onclick="toggleStageTooltip(${index})">▼</div>
+                </div>
+                <div class="stage-description">${stage.description}</div>
+            </div>
+        `;
+
+                // Main Tooltip
+                tooltipsHTML += `
+            <div class="tooltip stage-tooltip" id="tooltip-${index}" data-index="${index}"
+                 style="top: ${top + 120}px; left: ${left}px; transform: translateX(-50%); background-color: ${colors.tooltipBackground}; color: ${colors.tooltipText};">
+                <button class="close-nested-btn" onclick="hideStageTooltip(${index})">&times;</button>
+                <div class="tooltip-title">${stage.tooltip.title || stage.title + ' Details'}</div>
+                <div class="tooltip-content">${stage.tooltip.content}</div>
+                <div class="tooltip-stats">
+                    ${stage.tooltip.stats.map(stat => `<div>${stat}</div>`).join('')}
+                </div>
+                <div class="tooltip-buttons">
+                    <button class="tooltip-btn" onclick="showBottleneckTooltip(${index})">View Bottlenecks</button>
+                    <button class="tooltip-btn" onclick="showQuoteTooltip(${index})">View Quotes</button>
+                </div>
+            </div>
+        `;
+
+                // Bottleneck Tooltip
+                tooltipsHTML += `
+            <div class="bottleneck-tooltip stage-tooltip" id="bottleneck-${index}" style="top: ${top + 120}px; left: ${left}px; transform: translateX(-50%);">
+                <button class="close-nested-btn" onclick="hideNestedTooltip(${index})">&times;</button>
+                <div class="bottleneck-title">Bottlenecks</div>
+                <div class="bottleneck-content">${stage.bottleneck}</div>
+            </div>
+        `;
+
+                // Quote Tooltip
+                tooltipsHTML += `
+            <div class="quote-tooltip stage-tooltip" id="quote-${index}" style="top: ${top + 120}px; left: ${left}px; transform: translateX(-50%);">
+                <button class="close-nested-btn" onclick="hideNestedTooltip(${index})">&times;</button>
+                <div class="quote-title">Field Insights</div>
+                <div class="quote-content">${stage.quote}</div>
+            </div>
+        `;
             });
 
-            container.innerHTML = stagesHTML;
+            container.innerHTML = stagesHTML + tooltipsHTML;
 
+            const modal = document.querySelector('.supply-chain-modal') || container;
+
+            // Position main tooltips safely
+            document.querySelectorAll('.stage-tooltip').forEach(tooltip => {
+                const index = parseInt(tooltip.getAttribute('data-index'));
+                if (isNaN(index)) return;
+
+                const stage = productData.stages[index];
+                const tooltipWidth = tooltip.offsetWidth;
+                const tooltipHeight = tooltip.offsetHeight;
+
+                let newTop = stage.position.top + 120;
+                let newLeft = stage.position.left;
+
+                if (newTop + tooltipHeight > modal.offsetHeight) {
+                    newTop = stage.position.top - tooltipHeight - 10;
+                }
+                if (newLeft - tooltipWidth / 2 < 0) {
+                    newLeft = tooltipWidth / 2 + 10;
+                } else if (newLeft + tooltipWidth / 2 > modal.offsetWidth) {
+                    newLeft = modal.offsetWidth - tooltipWidth / 2 - 10;
+                }
+
+                tooltip.style.top = `${newTop}px`;
+                tooltip.style.left = `${newLeft}px`;
+            });
+
+            // Position bottleneck and quote tooltips safely
+            ['.bottleneck-tooltip', '.quote-tooltip'].forEach(selector => {
+                document.querySelectorAll(selector).forEach(tooltip => {
+                    const id = tooltip.id.split('-')[1];
+                    const stage = productData.stages[id];
+                    const tooltipWidth = tooltip.offsetWidth;
+                    const tooltipHeight = tooltip.offsetHeight;
+
+                    let newTop = stage.position.top + 120;
+                    let newLeft = stage.position.left;
+
+                    if (newTop + tooltipHeight > modal.offsetHeight) {
+                        newTop = stage.position.top - tooltipHeight - 10;
+                    }
+                    if (newLeft - tooltipWidth / 2 < 0) {
+                        newLeft = tooltipWidth / 2 + 10;
+                    } else if (newLeft + tooltipWidth / 2 > modal.offsetWidth) {
+                        newLeft = modal.offsetWidth - tooltipWidth / 2 - 10;
+                    }
+
+                    tooltip.style.top = `${newTop}px`;
+                    tooltip.style.left = `${newLeft}px`;
+                });
+            });
+
+            // Render Overview Section
             const colorClasses = {
                 'olive-green': 'bg-alabaster border-l-4 border-olive-green',
                 'fresh-green': 'bg-alabaster border-l-4 border-olive-green',
@@ -4509,20 +4729,32 @@
             };
 
             const overviewHTML = `
-            <h4 class="text-xl font-bold text-olive-green mb-4 font-poppins">${productData.overview.title}</h4>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                ${productData.overview.stats.map(stat => `
-                    <div class="${colorClasses[stat.color]} p-4 rounded-md">
-                        <h5 class="font-semibold text-olive-green font-poppins">${stat.title}</h5>
-                        <p class="text-xl font-bold text-olive-green font-poppins">${stat.value}</p>
-                        <p class="text-sm text-reseda-green font-open-sans">${stat.subtitle}</p>
-                    </div>
-                `).join('')}
-            </div>
-        `;
+        <h4 class="text-xl font-bold text-olive-green mb-4 font-poppins">${productData.overview.title}</h4>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            ${productData.overview.stats.map(stat => `
+                <div class="${colorClasses[stat.color]} p-4 rounded-md">
+                    <h5 class="font-semibold text-olive-green font-poppins">${stat.title}</h5>
+                    <p class="text-xl font-bold text-olive-green font-poppins">${stat.value}</p>
+                    <p class="text-sm text-reseda-green font-open-sans">${stat.subtitle}</p>
+                </div>
+            `).join('')}
+        </div>
+    `;
 
             overviewContainer.innerHTML = overviewHTML;
         }
+
+
+
+
+
+        function hideStageTooltip(index) {
+            const tooltip = document.getElementById(`tooltip-${index}`);
+            if (tooltip) {
+                tooltip.classList.remove('visible');
+            }
+        }
+
 
         function closeSupplyChainView() {
             const modal = document.getElementById('supplyChainModal');
@@ -4531,89 +4763,81 @@
         }
 
         function initializeSupplyChain() {
-            const toggleBottlenecksButton = document.getElementById('toggleBottlenecks');
-            const toggleQuotesButton = document.getElementById('toggleQuotes');
-            const normalTooltips = document.querySelectorAll('.tooltip');
-            const bottleneckTooltips = document.querySelectorAll('.bottleneck-tooltip');
-            const quoteTooltips = document.querySelectorAll('.quote-tooltip');
-            const warningIcons = document.querySelectorAll('.warning-icon');
+            // Initialize all tooltips as hidden
+            const allTooltips = document.querySelectorAll('.stage-tooltip');
+            allTooltips.forEach(tooltip => {
+                tooltip.classList.remove('visible');
+            });
+        }
 
-            let currentMode = 'normal';
+        let currentOpenTooltip = null;
 
-            function setNormalMode() {
-                currentMode = 'normal';
-                normalTooltips.forEach(t => t.style.display = 'block');
-                bottleneckTooltips.forEach(t => t.style.display = 'none');
-                quoteTooltips.forEach(t => t.style.display = 'none');
-                warningIcons.forEach(i => i.style.display = 'none');
+        function toggleStageTooltip(stageIndex) {
+            const tooltip = document.getElementById(`tooltip-${stageIndex}`);
+            const arrow = document.querySelector(`[data-stage-id="${stageIndex}"] .dropdown-arrow`);
+            const bottleneckTooltip = document.getElementById(`bottleneck-${stageIndex}`);
+            const quoteTooltip = document.getElementById(`quote-${stageIndex}`);
 
-                if (toggleBottlenecksButton) {
-                    toggleBottlenecksButton.textContent = 'Show Bottlenecks';
-                    toggleBottlenecksButton.classList.remove('active');
-                }
-                if (toggleQuotesButton) {
-                    toggleQuotesButton.textContent = 'Show Quotes';
-                    toggleQuotesButton.classList.remove('active');
-                }
+            // Close any currently open tooltip from any stage
+            if (currentOpenTooltip !== null && currentOpenTooltip !== stageIndex) {
+                closeAllTooltipsForStage(currentOpenTooltip);
             }
 
-            function setBottleneckMode() {
-                currentMode = 'bottlenecks';
-                normalTooltips.forEach(t => t.style.display = 'none');
-                bottleneckTooltips.forEach(t => t.style.display = 'block');
-                quoteTooltips.forEach(t => t.style.display = 'none');
-                warningIcons.forEach(i => i.style.display = 'flex');
-
-                if (toggleBottlenecksButton) {
-                    toggleBottlenecksButton.textContent = 'Hide Bottlenecks'; // ✅ updated
-                    toggleBottlenecksButton.classList.add('active');
-                }
-                if (toggleQuotesButton) {
-                    toggleQuotesButton.textContent = 'Show Quotes';
-                    toggleQuotesButton.classList.remove('active');
+            // Toggle current tooltip
+            if (tooltip && tooltip.classList.contains('visible')) {
+                // Close current stage tooltips
+                closeAllTooltipsForStage(stageIndex);
+                currentOpenTooltip = null;
+            } else {
+                // Open current stage main tooltip
+                if (tooltip && arrow) {
+                    tooltip.classList.add('visible');
+                    arrow.classList.add('active');
+                    currentOpenTooltip = stageIndex;
                 }
             }
+        }
 
-            function setQuoteMode() {
-                currentMode = 'quotes';
-                normalTooltips.forEach(t => t.style.display = 'none');
-                bottleneckTooltips.forEach(t => t.style.display = 'none');
-                quoteTooltips.forEach(t => t.style.display = 'block');
-                warningIcons.forEach(i => i.style.display = 'none');
+        function closeAllTooltipsForStage(stageIndex) {
+            const tooltip = document.getElementById(`tooltip-${stageIndex}`);
+            const arrow = document.querySelector(`[data-stage-id="${stageIndex}"] .dropdown-arrow`);
+            const bottleneckTooltip = document.getElementById(`bottleneck-${stageIndex}`);
+            const quoteTooltip = document.getElementById(`quote-${stageIndex}`);
 
-                if (toggleBottlenecksButton) {
-                    toggleBottlenecksButton.textContent = 'Show Bottlenecks';
-                    toggleBottlenecksButton.classList.remove('active');
-                }
-                if (toggleQuotesButton) {
-                    toggleQuotesButton.textContent = 'Hide Quotes'; // ✅ updated
-                    toggleQuotesButton.classList.add('active');
-                }
-            }
+            if (tooltip) tooltip.classList.remove('visible');
+            if (arrow) arrow.classList.remove('active');
+            if (bottleneckTooltip) bottleneckTooltip.classList.remove('visible');
+            if (quoteTooltip) quoteTooltip.classList.remove('visible');
+        }
 
-            // initialize to normal
-            setNormalMode();
+        function showBottleneckTooltip(stageIndex) {
+            const mainTooltip = document.getElementById(`tooltip-${stageIndex}`);
+            const bottleneckTooltip = document.getElementById(`bottleneck-${stageIndex}`);
+            const quoteTooltip = document.getElementById(`quote-${stageIndex}`);
 
-            // ✅ attach listeners directly (no cloneNode)
-            if (toggleBottlenecksButton) {
-                toggleBottlenecksButton.addEventListener('click', () => {
-                    if (currentMode === 'bottlenecks') {
-                        setNormalMode();
-                    } else {
-                        setBottleneckMode();
-                    }
-                });
-            }
+            mainTooltip.classList.remove('visible');
+            quoteTooltip.classList.remove('visible');
+            bottleneckTooltip.classList.add('visible');
+        }
 
-            if (toggleQuotesButton) {
-                toggleQuotesButton.addEventListener('click', () => {
-                    if (currentMode === 'quotes') {
-                        setNormalMode();
-                    } else {
-                        setQuoteMode();
-                    }
-                });
-            }
+        function showQuoteTooltip(stageIndex) {
+            const mainTooltip = document.getElementById(`tooltip-${stageIndex}`);
+            const bottleneckTooltip = document.getElementById(`bottleneck-${stageIndex}`);
+            const quoteTooltip = document.getElementById(`quote-${stageIndex}`);
+
+            mainTooltip.classList.remove('visible');
+            bottleneckTooltip.classList.remove('visible');
+            quoteTooltip.classList.add('visible');
+        }
+
+        function hideNestedTooltip(stageIndex) {
+            const mainTooltip = document.getElementById(`tooltip-${stageIndex}`);
+            const bottleneckTooltip = document.getElementById(`bottleneck-${stageIndex}`);
+            const quoteTooltip = document.getElementById(`quote-${stageIndex}`);
+
+            bottleneckTooltip.classList.remove('visible');
+            quoteTooltip.classList.remove('visible');
+            mainTooltip.classList.add('visible');
         }
     </script>
 
@@ -4830,6 +5054,8 @@
             if (!clickBox.contains(e.target)) clickBox.style.display = "none";
         });
     </script>
+
+
 
 </body>
 
