@@ -78,8 +78,8 @@
         .supply-chain-container {
             position: relative;
             width: 100%;
-            max-width: 1200px;
-            height: 600px;
+            /* max-width: 1200px; */
+            height: 570px;
             margin: 0 auto;
             overflow: visible;
         }
@@ -122,39 +122,6 @@
             font-family: 'Nunito', sans-serif;
         }
 
-        /* .warning-icon {
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            width: 24px;
-            height: 24px;
-            background-color: #A65C2D;
-            border: 2px solid white;
-            border-radius: 50%;
-            color: white;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            cursor: pointer;
-        } */
-
-        /* .dropdown-arrow {
-            display: inline-flex;
-            margin-left: 8px;
-            width: 20px;
-            height: 20px;
-            background-color: #45552C;
-            border: 1px solid white;
-            border-radius: 50%;
-            color: white;
-            text-align: center;
-            line-height: 20px;
-            font-size: 10px;
-            cursor: pointer;
-            vertical-align: middle;
-            transition: transform 0.2s ease;
-        } */
         .dropdown-arrow {
             display: inline-flex;
             align-items: center;
@@ -183,16 +150,6 @@
             transform: scale(1.1);
         }
 
-        /* .dropdown-arrow.active {
-            transform: rotate(180deg);
-        } */
-
-        /* .stage-title-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 5px;
-        } */
         .stage-title-container {
             display: flex;
             align-items: center;
@@ -331,7 +288,7 @@
 
         .tooltip-btn {
             padding: 6px 12px;
-            background: #45552C;
+            background: #3D3D3D;
             color: white;
             border: none;
             border-radius: 4px;
@@ -342,7 +299,7 @@
         }
 
         .tooltip-btn:hover {
-            background: #3a4624;
+            background: #3D3D3D;
         }
 
         .bottleneck-tooltip {
@@ -376,13 +333,13 @@
 
         .toggle-button {
             background-color: white;
-            color: #45552C;
+            color: #3D3D3D;
             padding: 8px 16px;
             border-radius: 6px;
             font-weight: bold;
             cursor: pointer;
             transition: background-color 0.3s;
-            border: 1px solid #45552C;
+            border: 1px solid #3D3D3D;
             font-size: 14px;
             font-family: 'Nunito', sans-serif;
             margin-right: 10px;
@@ -394,7 +351,7 @@
 
         .toggle-button.active {
             background-color: #EAE3DB;
-            color: #45552C;
+            color: #3D3D3D;
             border: 1px solid #EAE3DB;
         }
 
@@ -429,6 +386,37 @@
             transform-origin: center top;
         }
 
+        /* Background image styles */
+        .supply-chain-background {
+            position: absolute;
+            top: -32px;
+            left: 50%;
+            transform: translateX(-50%);
+            /* Center horizontally */
+            width: 130%;
+            height: 200%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.3;
+            z-index: 1;
+        }
+
+
+        /* Background headings styles */
+        /* .background-heading {
+            position: absolute;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 2rem;
+            color: rgba(69, 85, 44, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            z-index: 2;
+            pointer-events: none;
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+        } */
+
         /* Responsive adjustments for supply chain */
         @media (max-width: 1200px) {
             .supply-chain-modal {
@@ -451,11 +439,19 @@
             .bottleneck-tooltip {
                 width: 200px;
             }
+
+            .background-heading {
+                font-size: 1.5rem;
+            }
         }
 
         @media (max-width: 576px) {
             .supply-chain-modal {
                 transform: scale(0.45);
+            }
+
+            .background-heading {
+                font-size: 1.2rem;
             }
         }
 
@@ -470,6 +466,19 @@
             border: 1px solid #ccc;
             padding: 6px;
             text-align: left;
+        }
+
+        /* .background-heading {
+            display: none !important;
+        } */
+
+        #productOverview {
+            position: relative;
+            z-index: 10;
+            background: white;
+            /* Ensure it has solid background */
+            margin-top: 160px;
+            /* Increase this value to push it down */
         }
     </style>
 </head>
@@ -486,7 +495,7 @@
                     </div>
                 </div>
                 <div>
-                    <h1 class="text-xl font-bold text-olive-green font-poppins">AGRI SUPPLY CHAIN</h1>
+                    <h1 class="text-xl font-bold text-olive-green font-poppins">Farm2Market</h1>
                     <p class="text-xs text-reseda-green font-nunito">Cultivating Knowledge</p>
                 </div>
             </div>
@@ -520,7 +529,7 @@
             <div class="text-center mb-10">
                 <h2 class="text-3xl font-bold text-olive-green mb-4 font-poppins">Agricultural Products</h2>
                 <p class="text-sm text-reseda-green max-w-2xl mx-auto font-open-sans leading-relaxed">Discover detailed
-                    supply chain insights for Pakistan’s key agricultural products — from farm production zones to
+                    supply chain insights for Pakistan's key agricultural products — from farm production zones to
                     national and regional market networks</p>
             </div>
             <div class="flex justify-center flex-wrap mb-8" id="category-buttons">
@@ -562,7 +571,7 @@
                 <div class="product-card bg-alabaster rounded shadow-md overflow-hidden transition-all duration-300 border border-dun"
                     data-category="grains">
                     <div class="h-40 bg-gray-100 relative">
-                        <img src="https://cdn.pixabay.com/photo/2016/08/15/06/35/rice-1594612_1280.jpg" alt="Rice"
+                        <img src="https://i.postimg.cc/4xh8WVH0/IMG-20250806-WA0119.jpg" alt="Rice"
                             class="w-full h-full object-cover object-top">
                     </div>
                     <div class="p-4">
@@ -599,7 +608,7 @@
                 <div class="product-card bg-alabaster rounded shadow-md overflow-hidden transition-all duration-300 border border-dun"
                     data-category="vegetables">
                     <div class="h-40 bg-gray-100 relative">
-                        <img src="https://cdn.pixabay.com/photo/2019/06/25/18/53/pepperoni-4298825_1280.jpg" alt="Chili"
+                        <img src="https://i.postimg.cc/xjvn4NMc/IMG-20250806-WA0130.jpg" alt="Chili"
                             class="w-full h-full object-cover object-top">
                     </div>
                     <div class="p-4">
@@ -617,7 +626,7 @@
                 <div class="product-card bg-alabaster rounded shadow-md overflow-hidden transition-all duration-300 border border-dun"
                     data-category="vegetables">
                     <div class="h-40 bg-gray-100 relative">
-                        <img src="https://cdn.pixabay.com/photo/2017/02/25/13/24/garlic-2097759_1280.jpg" alt="Garlic"
+                        <img src="https://i.postimg.cc/7Z1cnS2N/IMG-20250806-WA0096.jpg" alt="Garlic"
                             class="w-full h-full object-cover object-top">
                     </div>
                     <div class="p-4">
@@ -636,7 +645,7 @@
                 <div class="product-card bg-alabaster rounded shadow-md overflow-hidden transition-all duration-300 border border-dun"
                     data-category="vegetables">
                     <div class="h-40 bg-gray-100 relative">
-                        <img src="https://cdn.pixabay.com/photo/2018/05/25/15/40/potato-3429379_1280.jpg" alt="Potato"
+                        <img src="https://i.postimg.cc/k5bkRLyB/IMG-20250806-WA0125.jpg" alt="Potato"
                             class="w-full h-full object-cover object-top">
                     </div>
                     <div class="p-4">
@@ -655,7 +664,7 @@
                 <div class="product-card bg-alabaster rounded shadow-md overflow-hidden transition-all duration-300 border border-dun"
                     data-category="fruits">
                     <div class="h-40 bg-gray-100 relative">
-                        <img src="https://cdn.pixabay.com/photo/2022/09/05/09/50/tomatoes-7433786_1280.jpg" alt="Tomato"
+                        <img src="https://i.postimg.cc/yxQ9HQtT/IMG-20250806-WA0080.jpg" alt="Tomato"
                             class="w-full h-full object-cover object-top">
                     </div>
                     <div class="p-4">
@@ -674,7 +683,7 @@
                 <div class="product-card bg-alabaster rounded shadow-md overflow-hidden transition-all duration-300 border border-dun"
                     data-category="fruits">
                     <div class="h-40 bg-gray-100 relative">
-                        <img src="https://cdn.pixabay.com/photo/2020/04/01/18/27/yellow-4992183_1280.jpg" alt="Mango"
+                        <img src="https://i.postimg.cc/Vv613Dj1/IMG-20250806-WA0059.jpg" alt="Mango"
                             class="w-full h-full object-cover object-top">
                     </div>
                     <div class="p-4">
@@ -730,7 +739,7 @@
                 <div class="product-card bg-alabaster rounded shadow-md overflow-hidden transition-all duration-300 border border-dun"
                     data-category="others">
                     <div class="h-40 bg-gray-100 relative">
-                        <img src="https://cdn.pixabay.com/photo/2023/02/06/17/34/lentils-7772450_1280.jpg" alt="Lentils"
+                        <img src="https://i.postimg.cc/T3KtwSVF/IMG-20250806-WA0108.jpg" alt="Lentils"
                             class="w-full h-full object-cover object-top">
                     </div>
                     <div class="p-4">
@@ -805,7 +814,7 @@
                 <div class="product-card bg-alabaster rounded shadow-md overflow-hidden transition-all duration-300 border border-dun"
                     data-category="fruits">
                     <div class="h-40 bg-gray-100 relative">
-                        <img src="https://cdn.pixabay.com/photo/2014/04/16/09/58/banana-325461_1280.jpg" alt="Banana"
+                        <img src="https://i.postimg.cc/gjMQ8pLb/IMG-20250806-WA0044.jpg" alt="Banana"
                             class="w-full h-full object-cover object-top">
                     </div>
                     <div class="p-4">
@@ -826,7 +835,7 @@
     <div id="supplyChainModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 overflow-y-auto">
         <div class="min-h-screen px-4 text-center">
             <div
-                class="inline-block w-full max-w-[95vw] h-[95vh] my-4 text-left align-middle bg-white rounded shadow-xl transform transition-all border border-dun">
+                class="inline-block w-full max-w-[92vw] h-[100vh] my-4 text-left align-middle bg-white rounded shadow-xl transform transition-all border border-dun">
                 <div class="relative h-full flex flex-col">
                     <div class="flex items-center justify-between p-4 border-b bg-alabaster flex-shrink-0">
                         <h3 class="text-2xl font-bold text-olive-green font-poppins" id="modalTitle">Supply Chain Map
@@ -839,10 +848,6 @@
                     </div>
                     <div class="flex-1 p-6 overflow-y-auto">
                         <div class="supply-chain-modal">
-                            <!-- <div class="relative mb-6">
-                                <button id="toggleBottlenecks" class="toggle-button">Show Bottlenecks</button>
-                                <button id="toggleQuotes" class="toggle-button">Show Quotes</button>
-                            </div> -->
                             <div id="supplyChainContainer" class="supply-chain-container">
                                 <!-- Supply chain content will be dynamically generated here -->
                             </div>
@@ -893,109 +898,207 @@
     </script>
 
     <script id="supply-chain-data">
+        // Product background images - one for each product
+        const productBackgroundImages = {
+            'Wheat': 'https://cdn.pixabay.com/photo/2023/07/30/07/23/soft-wheat-8158264_1280.jpg',
+            'Rice': 'https://i.postimg.cc/4xh8WVH0/IMG-20250806-WA0119.jpg',
+            'Sugarcane': 'https://cdn.pixabay.com/photo/2020/07/09/20/00/sugarcane-5388614_1280.jpg',
+            'Chili': 'https://i.postimg.cc/xjvn4NMc/IMG-20250806-WA0130.jpg',
+            'Garlic': 'https://i.postimg.cc/7Z1cnS2N/IMG-20250806-WA0096.jpg',
+            'Potato': 'https://i.postimg.cc/k5bkRLyB/IMG-20250806-WA0125.jpg',
+            'Tomato': 'https://i.postimg.cc/yYjpJ74f/IMG-20250806-WA0080.jpg',
+            'Mango': 'https://i.postimg.cc/c4SBM2MV/IMG-20250806-WA0059.jpg',
+            'Apple': 'https://cdn.pixabay.com/photo/2019/03/14/21/15/apple-4055926_1280.jpg',
+            'Orange': 'https://cdn.pixabay.com/photo/2016/01/02/02/03/orange-1117645_1280.jpg',
+            'Lentils': 'https://i.postimg.cc/T3KtwSVF/IMG-20250806-WA0108.jpg',
+            'Maize': 'https://cdn.pixabay.com/photo/2020/03/30/21/18/corn-4985460_1280.jpg',
+            'Milk': 'https://cdn.pixabay.com/photo/2017/01/18/15/23/milk-can-1990072_1280.jpg',
+            'Mustard': 'https://cdn.pixabay.com/photo/2019/10/22/13/27/autumn-4568733_1280.jpg',
+            'Banana': 'https://i.postimg.cc/gjMQ8pLb/IMG-20250806-WA0044.jpg'
+        };
+
+        // // Product background headings - 3 headings per product with positions
+        // const productBackgroundHeadings = {
+        //     'Wheat': [
+        //         { text: 'FARM TO TABLE', top: '15%', left: '10%' },
+        //         { text: 'GRAIN PRODUCTION', top: '45%', left: '75%' },
+        //         { text: 'NATIONAL STAPLE', top: '75%', left: '35%' }
+        //     ],
+        //     'Rice': [
+        //         { text: 'PADDY FIELDS', top: '20%', left: '15%' },
+        //         { text: 'EXPORT QUALITY', top: '50%', left: '70%' },
+        //         { text: 'MILLING PROCESS', top: '80%', left: '25%' }
+        //     ],
+        //     'Sugarcane': [
+        //         { text: 'SWEET HARVEST', top: '10%', left: '65%' },
+        //         { text: 'SUGAR MILLS', top: '40%', left: '20%' },
+        //         { text: 'ENERGY SOURCE', top: '75%', left: '60%' }
+        //     ],
+        //     'Chili': [
+        //         { text: 'SPICE TRADE', top: '25%', left: '10%' },
+        //         { text: 'DRYING PROCESS', top: '55%', left: '75%' },
+        //         { text: 'GLOBAL DEMAND', top: '85%', left: '40%' }
+        //     ],
+        //     'Garlic': [
+        //         { text: 'BULB CULTIVATION', top: '15%', left: '70%' },
+        //         { text: 'CURING STAGE', top: '45%', left: '15%' },
+        //         { text: 'FLAVOR ESSENCE', top: '75%', left: '55%' }
+        //     ],
+        //     'Potato': [
+        //         { text: 'TUBER HARVEST', top: '20%', left: '20%' },
+        //         { text: 'COLD STORAGE', top: '50%', left: '65%' },
+        //         { text: 'PROCESSING READY', top: '80%', left: '30%' }
+        //     ],
+        //     'Tomato': [
+        //         { text: 'FRESH PRODUCE', top: '10%', left: '15%' },
+        //         { text: 'MARKET GARDEN', top: '40%', left: '70%' },
+        //         { text: 'VALUE CHAIN', top: '70%', left: '25%' }
+        //     ],
+        //     'Mango': [
+        //         { text: 'KING OF FRUITS', top: '25%', left: '65%' },
+        //         { text: 'ORCHARD MANAGEMENT', top: '55%', left: '10%' },
+        //         { text: 'EXPORT PREMIUM', top: '85%', left: '50%' }
+        //     ],
+        //     'Apple': [
+        //         { text: 'MOUNTAIN ORCHARDS', top: '15%', left: '20%' },
+        //         { text: 'COLD CLIMATE', top: '45%', left: '75%' },
+        //         { text: 'QUALITY HARVEST', top: '75%', left: '35%' }
+        //     ],
+        //     'Orange': [
+        //         { text: 'CITRUS GROVES', top: '20%', left: '70%' },
+        //         { text: 'VITAMIN C SOURCE', top: '50%', left: '15%' },
+        //         { text: 'JUICE INDUSTRY', top: '80%', left: '60%' }
+        //     ],
+        //     'Lentils': [
+        //         { text: 'PROTEIN POWER', top: '10%', left: '10%' },
+        //         { text: 'PULSE CROP', top: '40%', left: '65%' },
+        //         { text: 'NUTRITIONAL VALUE', top: '70%', left: '25%' }
+        //     ],
+        //     'Maize': [
+        //         { text: 'FEED GRAIN', top: '25%', left: '75%' },
+        //         { text: 'CORN FIELDS', top: '55%', left: '20%' },
+        //         { text: 'INDUSTRIAL USE', top: '85%', left: '55%' }
+        //     ],
+        //     'Milk': [
+        //         { text: 'DAIRY FARMS', top: '15%', left: '15%' },
+        //         { text: 'FRESH QUALITY', top: '45%', left: '70%' },
+        //         { text: 'CALCIUM RICH', top: '75%', left: '30%' }
+        //     ],
+        //     'Mustard': [
+        //         { text: 'OIL SEED', top: '20%', left: '65%' },
+        //         { text: 'YELLOW FIELDS', top: '50%', left: '10%' },
+        //         { text: 'EXTRACTION READY', top: '80%', left: '45%' }
+        //     ],
+        //     'Banana': [
+        //         { text: 'TROPICAL FRUIT', top: '10%', left: '25%' },
+        //         { text: 'PLANTATION CROP', top: '40%', left: '70%' },
+        //         { text: 'POTASSIUM SOURCE', top: '70%', left: '15%' }
+        //     ]
+        // };
+
         // Product color schemes - each product gets unique background, icon border, and tooltip colors
         const productColors = {
             'Wheat': {
-                background: '#FFF5E1', // ICON BACKGROUND
+                background: '#F9FBE7', // ICON BACKGROUND
                 titleBackground: '#987654',  // STAGE BACKGROUND
-                tooltipBackground: '#FFF5E1', // TOOLTIP BACKGROUND
+                tooltipBackground: '#F9FBE7', // TOOLTIP BACKGROUND
                 stageIconBg: '#987654',     // STAGE NUMBER BACKGROUND
 
             },
             'Rice': {
                 background: '#F9FBE7',
-                titleBackground: '#827717',
+                titleBackground: '#9f892f',
                 tooltipBackground: '#F9FBE7',
-                stageIconBg: '#827717',
+                stageIconBg: '#9f892f',
             },
             'Sugarcane': {
-                background: '#E8F5E9',
+                background: '#F9FBE7',
                 titleBackground: '#2E7D32',
-                tooltipBackground: '#E8F5E9',
+                tooltipBackground: '#F9FBE7',
                 stageIconBg: '#2E7D32',
             },
             'Chili': {
-                background: '#FFEBEE',
+                background: '#F9FBE7',
                 titleBackground: '#C62828',
-                tooltipBackground: '#FFEBEE',
+                tooltipBackground: '#F9FBE7',
                 stageIconBg: '#C62828',
 
             },
             'Garlic': {
-                background: '#FDFCF7',
+                background: '#F9FBE7',
                 titleBackground: '#8D6E63',
-                tooltipBackground: '#FDFCF7',
+                tooltipBackground: '#F9FBE7',
                 stageIconBg: '#8D6E63',
 
             },
             'Potato': {
-                background: '#FBE9E7',
-                titleBackground: '#6D4C41',
-                tooltipBackground: '#FBE9E7',
-                stageIconBg: '#6D4C41',
+                background: '#F9FBE7',
+                titleBackground: '#964B00',
+                tooltipBackground: '#F9FBE7',
+                stageIconBg: '#964B00',
 
             },
             'Tomato': {
-                background: '#FFF3E0',
-                titleBackground: '#C62828',
-                tooltipBackground: '#FFF3E0',
-                stageIconBg: '#C62828',
+                background: '#F9FBE7',
+                titleBackground: '#EC2D01',
+                tooltipBackground: '#F9FBE7',
+                stageIconBg: '#EC2D01',
 
             },
             'Mango': {
-                background: '#FFF8E1',
-                titleBackground: '#FFA000',
-                tooltipBackground: '#FFF8E1',
-                stageIconBg: '#FFA000',
+                background: '#F9FBE7',
+                titleBackground: '#FDBE02',
+                tooltipBackground: '#F9FBE7',
+                stageIconBg: '#FDBE02',
 
             },
             'Apple': {
                 background: '#F9FBE7',
-                titleBackground: '#C62828',
+                titleBackground: '#D21F3C',
                 tooltipBackground: '#F9FBE7',
-                stageIconBg: ' #C62828',
+                stageIconBg: ' #D21F3C',
 
             },
             'Orange': {
-                background: '#FFF3E0',
-                titleBackground: '#FB8C00',
-                tooltipBackground: '#FFF3E0',
-                stageIconBg: '#FB8C00',
+                background: '#F9FBE7',
+                titleBackground: '#FFA500',
+                tooltipBackground: '#F9FBE7',
+                stageIconBg: '#FFA500',
 
             },
             'Lentils': {
-                background: '#FBE9E7',
-                titleBackground: '#5D4037',
-                tooltipBackground: '#FBE9E7',
-                stageIconBg: '#5D4037',
+                background: '#F9FBE7',
+                titleBackground: '#9e876a',
+                tooltipBackground: '#F9FBE7',
+                stageIconBg: '#9e876a',
 
             },
             'Maize': {
-                background: '#FFFDE7',
-                titleBackground: '#FBC02D',
-                tooltipBackground: '#FFFDE7',
-                stageIconBg: '#FBC02D',
+                background: '#F9FBE7',
+                titleBackground: '#FFE135',
+                tooltipBackground: '#F9FBE7',
+                stageIconBg: '#FFE135',
 
             },
             'Milk': {
-                background: '#F0F4C3',
-                titleBackground: '#689F38',
-                tooltipBackground: '#F0F4C3',
-                stageIconBg: '#689F38',
+                background: '#F9FBE7',
+                titleBackground: '#FE7F9C',
+                tooltipBackground: '#F9FBE7',
+                stageIconBg: '#FE7F9C',
 
             },
             'Mustard': {
-                background: '#FFF9C4',
-                titleBackground: '#FBC02D',
-                tooltipBackground: '#FFF9C4',
-                stageIconBg: '#FBC02D',
+                background: '#F9FBE7',
+                titleBackground: '#FFCE1B',
+                tooltipBackground: '#F9FBE7',
+                stageIconBg: '#FFCE1B',
 
             },
             'Banana': {
-                background: '#FFFDE7',
-                titleBackground: '#FBC02D',
-                tooltipBackground: '#FFFDE7',
-                stageIconBg: '#FBC02D',
+                background: '#F9FBE7',
+                titleBackground: '#FFBF00',
+                tooltipBackground: 'F9FBE7',
+                stageIconBg: '#FFBF00',
 
             }
         };
@@ -1122,7 +1225,7 @@
                     {
                         "title": "Procurement & Transport",
                         "description": "Sourcing rice from key regions and coordinating logistics",
-                        "icon": "https://i.ibb.co/JjHCNHzX/Storage-Transport.png",
+                        "icon": " ",
                         "position": { "top": 470, "left": 480 },
                         "tooltip": {
                             "content": "<p>Traders and distributors procure rice primarily from Punjab, followed by Sindh. Factory outlets are often preferred for bulk purchases. Transport is typically handled by trucks or cars, and digital tools like WhatsApp are widely used for coordination. However, the journey is not without obstacles—issues like tolls, theft, and occasional bribe demands complicate logistics.</p>",
@@ -1733,192 +1836,175 @@
             'Garlic': {
                 stages: [
                     {
-                        title: 'Clove Selection',
-                        description: 'Selecting healthy garlic cloves for planting',
-                        icon: 'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z',
+                        title: 'Seed Selection',
+                        description: 'Choosing garlic varieties based on market demand, shelf life, and regional suitability',
+                        icon: 'https://i.ibb.co/LzrhY1Lk/Seed-Selection.png',
                         position: { top: 50, left: 100 },
                         tooltip: {
-                            title: 'Garlic Clove Selection Details',
-                            content: 'Large, disease-free cloves from certified bulbs. Cold treatment improves bulb formation. Organic cloves command premium prices.',
+                            content: "Farmers choose between multiple garlic varieties, balancing shelf life, market demand, and regional suitability. G1 dominates due to longer storage potential and strong wholesale prices, while Desi types remain valued for flavor but are less commercially viable.<br><br><b>Types of Garlic Varieties</b><table> <tr> <th>Variety</th> <th>Appearance & Traits</th> <th>Shelf Life</th> <th>Market Preference</th> <th>Key Regions Grown</th> <th>Notes</th> </tr> <tr> <td>G1 (Hybrid)</td> <td>Large cloves, white, uniform</td> <td>2–3 years</td> <td>High (wholesalers)</td> <td>Punjab, KP</td> <td>Grown from Chinese seed locally</td> </tr> <tr> <td>Chinese Garlic</td> <td>Very large bulbs, white</td> <td>2–3 years</td> <td>High (urban markets)</td> <td>Imported & some local</td> <td>Sometimes confused with G1</td> </tr> <tr> <td>Desi Gulabi</td> <td>Small, pink-skinned, pungent</td> <td>Few months</td> <td>Niche (flavor-driven)</td> <td>Sindh, KP</td> <td>Tastier but less marketable</td> </tr> <tr> <td>Swat White</td> <td>Thick cloves, sometimes called 'China'</td> <td>1–2 years</td> <td>Moderate</td> <td>Swat, KP</td> <td>Local but named after China</td> </tr> <tr> <td>Aam Desi</td> <td>Small, irregular, traditional</td> <td>Few months</td> <td>Low</td> <td>Rural Sindh/Punjab</td> <td>Low commercial viability</td> </tr> </table><br><b>Regional Preferences</b><table> <tr> <th>Region</th> <th>Preferred Variety</th> <th>Notes</th> </tr> <tr> <td>KP (Swabi, Dir)</td> <td>G1 / Swat White</td> <td>G1 seed grown locally, sometimes confused with imported Chinese seed</td> </tr> <tr> <td>Punjab (Faisalabad, Bhakkar)</td> <td>G1</td> <td>Strong market orientation, G1 widely used for storage/sale</td> </tr> <tr> <td>Sindh (Hyderabad)</td> <td>Desi / G1</td> <td>Desi still present but being replaced due to shelf-life constraints</td> </tr> </table><br><b>Key Notes</b><br>• G1 is favored for longer shelf life and better market rates.<br>• Farmers in KP and Punjab are increasingly using Chinese seed locally.<br>• Desi garlic remains popular for flavor but has shorter shelf life and thinner cloves.<br>• Market confusion exists between imported garlic and locally grown garlic from Chinese seed.",
                             stats: [
-                                'Clove Size: 3-5 grams each',
-                                'Planting Rate: 800-1200 kg/hectare',
-                                'Germination: 90-95%',
-                                'Cold Treatment: 4-6 weeks'
+                                "Shelf Life Range: Few months to 3 years depending on variety",
+                                "Average clove weight in G1: 4–6 grams",
+                                "Market price premium for G1 over Desi: 15–20%",
+                                "Chinese garlic imports contribute less than 20% to total market supply"
                             ]
                         },
-                        "bottleneck": 'Disease-free seed availability, storage infrastructure',
-                        "quote": "5678"
+                        bottleneck: "Market confusion over seed origin, short shelf life of Desi varieties, inconsistent seed quality standards.",
+                        quote: "“hybrid ki paidawar zyada hoti hai. Aur desi ki paidawar kam hoti hai.” — Baddar Commercial Local Vendor\n“Hybrid zyada pedaawar hasil karne ke liye, hybrid cheez ka istemaal kiya jaata hai.” — IR Farm\n“Naam iss ka hai China wala lassan lekin abhi Pakistan main sab cheez jo hai ugg rahi hai.” — Munaza Delawala Vendor\n“Pakistan mein jo growth hai woh 4 type ki garlic hai. Ek yeh NARCH G1 ho gaya. Phir Swat White hai, jisko China bhi kehte hain. Yeh mota wala. Phir Desi Gulabi hai. Aur ek Aam Desi hoti hai, jo chhoti hoti hai.” — Munaza Garlic Farmer\n“Faida hi nahi hai na. Idhar toh China ka seed mil jata hai aram say, udhar se mangwane ki kya zarurat hai?” — Munaza Garlic Farmer"
                     },
+
                     {
-                        title: 'Land Preparation',
-                        description: 'Soil preparation with organic matter',
-                        icon: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z',
-                        position: { top: 50, left: 300 },
-                        tooltip: {
-                            title: 'Land Preparation Details',
-                            content: 'Well-drained soil with pH 6.0-7.0 optimal. Raised beds improve drainage. Organic matter incorporation enhances soil structure.',
-                            stats: [
-                                'Optimal pH: 6.0-7.0',
-                                'Bed Height: 15-20 cm',
-                                'Organic Matter: 20-25 tons/hectare',
-                                'Drainage: Critical requirement'
+                        "title": "Land Preparation & Crop Planning",
+                        "description": "Preparing fertile, well-drained soil and planning rotations for garlic cultivation",
+                        "icon": "https://i.ibb.co/sJgxZJZK/Land-Preparation.png",
+                        "position": { "top": 50, "left": 350 },
+                        "tooltip": {
+                            "title": "Garlic Land Preparation & Crop Planning Details",
+                            "content": "Garlic is cultivated in diverse agro-climatic zones, with key production in KP (Mansehra, Swabi), Hyderabad in Sindh, and Faisalabad in Punjab. Farmers prepare the soil to ensure drainage and fertility, often using compost and natural fertilizers before sowing.<br><br><b>Key Growing Regions</b><table> <tr> <th>Region</th> <th>Notes</th> </tr> <tr> <td>Khyber Pakhtunkhwa</td> <td>Mansehra, Swabi — known for hybrid and Swat White varieties</td> </tr> <tr> <td>Sindh</td> <td>Hyderabad — mix of Desi and hybrid cultivation</td> </tr> <tr> <td>Punjab</td> <td>Faisalabad and surrounding districts — market-oriented hybrid production</td> </tr> </table><br><b>Crop Rotation Practices</b><table> <tr> <th>Rotation Crop</th> <th>Notes</th> </tr> <tr> <td>Onion</td> <td>Commonly rotated; helps break pest cycles</td> </tr> <tr> <td>Other vegetables</td> <td>Land cleared from vegetables often planted with garlic immediately</td> </tr> </table><br><b>Soil & Input Requirements</b><table> <tr> <th>Requirement</th> <th>Details</th> </tr> <tr> <td>Soil Type</td> <td>Fertile, well-drained</td> </tr> <tr> <td>Organic Input</td> <td>Compost and cow dung applied before sowing</td> </tr> <tr> <td>Fertilizer</td> <td>DAP applied at 100–120 kg/hectare before planting</td> </tr> <tr> <td>Handling</td> <td>Desi varieties require more careful handling</td> </tr> </table><br><b>Planning Factors</b><table> <tr> <th>Factor</th> <th>Impact</th> </tr> <tr> <td>High input costs</td> <td>May limit scale of planting</td> </tr> <tr> <td>Unpredictable weather</td> <td>Affects timing and location of planting</td> </tr> </table>",
+                            "stats": [
+                                "Typical plant height before transplanting: ~6 inches",
+                                "Rotation gap before garlic: typically 1 season from onion or other vegetables",
+                                "Land preparation often involves ploughing followed by rotavator use"
                             ]
                         },
-                        "bottleneck": 'Poor drainage, soil pH management, organic matter costs',
-                        "quote": "5678"
+                        "bottleneck": "Fragility of some Desi varieties, high input costs, and unpredictable weather affecting planting schedules.",
+                        "quote": "“Inn ko acha healthy grow karnay kay liye buhat saara fertile soil chahiye hota hai.” — Homegrower Soha\n“Jab hum zameen tayar karte hain toh jab hal chala dete hain, us ke baad usko rotavator bolte hain, jis se na yeh mitti agar aap mitti ko ghoondo toh woh aise baal baal hoti hai na, toh rotavator usko bolte hain, woh chalaate hain, jis se yeh mitti bilkul narm ho jaati hai. Toh ismein hum yeh natural jo gobar wali khaad hoti hai woh daalte hain, aur saath mein phir DAP, lagane se pehle.” — Farmer Fatima\n“Pehle iski paneeri tayar ki jaati hai. Us ke baad isko field mein shift kiya jaata hai jab aap ka plant taqreeban 6 inch ka ho jaata hai.” — IR Farm\n“Pakistan ke mukhtalif ilaqon mein lagaya jaata hai. Jaise ke shumaali side ilaaqon mein lagaya jaata hai. Maghribi side pe bhi lagaya jaata hai.” — IR Farm"
                     },
+
                     {
-                        title: 'Planting',
-                        description: 'Planting cloves at optimal depth',
-                        icon: 'M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10',
-                        position: { top: 50, left: 500 },
-                        tooltip: {
-                            title: 'Planting Details',
-                            content: 'Cloves planted 3-5 cm deep with pointed end up. Spacing of 10cm x 15cm optimizes bulb development. October-November planting ideal.',
-                            stats: [
-                                'Planting Depth: 3-5 cm',
-                                'Spacing: 10cm x 15cm',
-                                'Planting Season: October-November',
-                                'Orientation: Pointed end up'
+                        "title": "Sowing",
+                        "description": "Planting of garlic cloves with emphasis on timing, regional variations, methods, and land preparation practices.",
+                        "icon": "",
+                        "position": { "top": 50, "left": 600 },
+                        "tooltip": {
+                            "content": "Garlic sowing typically begins in September–October, with most completed by mid-November for better yields. Sowing takes place across Swabi, Mansehra, Dir, Kohat, Charsadda, Mardan, and Hyderabad.<br><br><b>Methods</b><table> <tr> <th>Method</th> <th>Description</th> </tr> <tr> <td>Manual Hand Planting</td> <td>Common on small farms; cloves planted in rows; often involves family labor, including women and children.</td> </tr> <tr> <td>Seed-Dropping Machines</td> <td>Used by larger or better-resourced farmers for faster, more even planting.</td> </tr> <tr> <td>Irrigation Preparation</td> <td>Canal or groundwater used to moisten land before sowing.</td> </tr> <tr> <td>Spacing for Desi Garlic</td> <td>~6 inches between cloves due to size variation.</td> </tr> </table><br><b>Seasonal Activity Calendar</b><table> <tr> <th>Activity</th> <th>Timing</th> <th>Notes</th> </tr> <tr> <td>Seed Selection</td> <td>August – September</td> <td>Based on availability and price of G1, Desi, or China</td> </tr> <tr> <td>Land Preparation</td> <td>September</td> <td>Plowing, rotavating, compost/DAP application</td> </tr> <tr> <td>Sowing</td> <td>September – Mid-November</td> <td>Hand planting, irrigation prep, family labor</td> </tr> <tr> <td>Crop Management</td> <td>October – February</td> <td>Regular irrigation, weed removal, fertilization</td> </tr> <tr> <td>Harvesting</td> <td>March – May</td> <td>Manual harvesting, drying for 15–20 days</td> </tr> <tr> <td>Storage & Sale</td> <td>April onwards</td> <td>Sorted by type, stored in sheds, sold via intermediaries</td> </tr> </table>",
+                            "stats": [
+                                "Preferred sowing completion: before mid-November",
+                                "Seed price peak: Rs. 12,000 per 40kg (G1)",
+                                "Clove spacing for desi garlic: ~6 inches"
                             ]
                         },
-                        "bottleneck": 'Seasonal timing, labor-intensive planting, orientation accuracy',
-                        "quote": "5678"
+
+                        "bottleneck": "High seed costs, fluctuating seed availability, uncertain seed quality from informal sources, and sowing delays caused by weather or water shortages.",
+                        "quote": "“20 September se 10 October ke darmiyan jo aise sowing ki jaati hai is ki.” — Farmer in Bhakkar\n“Zameen kay upar hee iss ki jo clove hoti hai iss ki bujai kardain. Phir ek raised bed ka tareeqa hota hai.” — Alaina Waqas Pyramid Interview\n“Un ke beech mein space taqreeban 6 inches ki rakhtay hain, kyunki unko grow karne ke liye jagah chahiye hoti hai.” — Homegrower Soha\n“Hum yeh 15 October ko lagate hain. 15 se 30 October ke darmiyan. Aur 15 May ko jo hai na iski harvesting karte hain.” — Munaza Garlic Farmer"
+
                     },
+
                     {
-                        title: 'Crop Management',
-                        description: 'Irrigation, weeding, and nutrient management',
-                        icon: 'M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z',
-                        position: { top: 50, left: 700 },
-                        tooltip: {
-                            title: 'Crop Management Details',
-                            content: 'Moderate irrigation prevents bulb rot. Regular weeding crucial as garlic competes poorly. Sulfur application enhances bulb quality.',
-                            stats: [
-                                'Water Requirement: 400-500 mm',
-                                'Growing Period: 180-210 days',
-                                'Weeding: 3-4 times',
-                                'Sulfur Application: Critical'
+                        "title": "Crop Management",
+                        "description": "Managing irrigation, weed control, and fertilizer application to ensure healthy garlic crop growth",
+                        "icon": "https://i.ibb.co/cXTtQn9M/Crop-Management.png",
+                        "position": { "top": 100, "left": 850 },
+                        "tooltip": {
+
+                            "content": "Garlic cultivation involves careful irrigation, weed control, and nutrient management to achieve optimal yields.<br><br><b>Irrigation Methods</b><table> <tr> <th>Method</th> <th>Details</th> </tr> <tr> <td>Flood Irrigation</td> <td>Commonly used on large-scale farms</td> </tr> <tr> <td>Drip Irrigation</td> <td>Used by some farmers for water efficiency</td> </tr> <tr> <td>Rain-fed</td> <td>Relied upon in areas like Dir</td> </tr> </table><br><b>Weed Control & Maintenance</b><table> <tr> <th>Practice</th> <th>Notes</th> </tr> <tr> <td>Manual Weed Removal (Nirkai)</td> <td>Done multiple times, especially early growth</td> </tr> <tr> <td>Fertilizer after First Irrigation</td> <td>Promotes stronger growth</td> </tr> <tr> <td>Organic Manure</td> <td>Common among traditional farmers</td> </tr> </table><br><b>Fertilizer Use</b><table> <tr> <th>Type</th> <th>Details</th> </tr> <tr> <td>Chemical</td> <td>Urea, DAP for size and faster growth</td> </tr> <tr> <td>Organic</td> <td>Dung (gobar) for soil health and flavor</td> </tr> <tr> <td>Minimal Pesticide</td> <td>Garlic is pest-resistant; neem oil for occasional treatment</td> </tr> </table>",
+                            "stats": [
+                                "Irrigation frequency: every 10–15 days",
+                                "Bed width for mulching: 42 inches",
+                                "Major fertilizer nutrients: Nitrogen, Phosphorus, Potassium",
+                                "Common weed removal frequency: multiple times during early growth",
+                                "Fungal disease risk highest in high-humidity areas"
                             ]
                         },
-                        "bottleneck": 'Weed competition, precise irrigation, sulfur availability',
-                        "quote": "5678"
+                        "bottleneck": "Water shortages, fungal rot in swampy areas, and rising fertilizer prices increase production costs.",
+                        "quote": "“To ismein bhi hum 42 inch ke bed ke upar rice straw jo hota hai na, prali hoti hai. Woh daal dete hain… Iska faida yeh hai ke eik to neeche jo nami ka element hai woh zyada der rehta hai. Dusra yeh hai ke jo khudro hain woh nahi ugtay, unko saya mil jaata hai.” [Alaina Waqas Pyramid Interview]\n“Mainly to ismein nitrogen hai, phosphorus hai, aur potassium hota hai jo ke SOP kehlata hai. Yeh major 3 fertilizers chalti hain.” [Alaina Waqas Pyramid]\n“Chemical fertilizers ke use ki wajah se iss ki shelf life kam hoti jaa rahi hai.” [Farmer in Bhakkar]\n“Aur pesticide bilkul use nahi karta hoon. Sirf jo hai woh neem oil agar kabhi zarurat hoti hai to us ka main spray karta hoon.” [Homegrower Soha]\n“Hum aisa karte hain ke isko paani laga ke na, jis side se paani aa raha hota hai, jab saari bed mein paani bhar jata hai, matlab har jagah pe bhi paani bhar jata hai, toh jo outlet hota hai na, woh khol ke phir saara paani nikal jata hain, bas zameen geeli reh jati hai.” [Interview with a farmer Fatima]\n“Is mein insects hote hain. Is mein thrips waghera ka attack bohot zyada hota hai. Jo uski tayari hai, yeh taqreeban hybrid ki mushkil hoti hai desi ke nisbat.” [IR Farm]\n“Iss main do tareekay aa jatay hain, jaisay kay aap bata rahay hain, drip irrigation aa jata hai aur agar aap nay baray paimanay pay lagana hota hai aap iss ko flood kay zariye kartay hain. Paani flood kartay hain.” [IR Farm]"
+
                     },
+
                     {
-                        title: 'Harvesting',
-                        description: 'Harvesting when lower leaves turn brown',
-                        icon: 'M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4',
-                        position: { top: 180, left: 850 },
-                        tooltip: {
-                            title: 'Harvesting Details',
-                            content: 'Harvest when 50-60% leaves turn brown. Careful lifting prevents bulb damage. Immediate curing begins preservation.',
-                            stats: [
-                                'Harvest Indicator: 50-60% brown leaves',
-                                'Harvest Window: 7-10 days',
-                                'Yield: 8-15 tons/hectare',
-                                'Handling: Very careful required'
+                        "title": "Harvesting",
+                        "description": "Manual harvesting of garlic followed by sun-drying to reduce moisture and extend shelf life",
+                        "icon": "https://i.ibb.co/7JpjP5NT/Harvesting.png",
+                        "position": { "top": 275, "left": 950 },
+                        "tooltip": {
+
+                            "content": "Garlic is harvested when leaves dry and flop, usually between March and April. In smaller farms, the work is done by family members, including women and children, while larger farms may hire seasonal labor, especially for export crops.<br><br><b>Timing & Methods</b><table><tr><th>Aspect</th><th>Details</th></tr><tr><td>Harvest Timing</td><td>March–April, after leaves dry and flop</td></tr><tr><td>Method</td><td>Mostly manual; seasonal labor hired for large-scale harvests</td></tr></table><br><b>Drying Post-Harvest</b><table><tr><th>Aspect</th><th>Details</th></tr><tr><td>Drying Duration</td><td>15–20 days</td></tr><tr><td>Location</td><td>In-field or near the house</td></tr><tr><td>Purpose</td><td>Reduce weight and improve shelf life</td></tr></table>",
+                            "stats": [
+                                "Weight loss during drying: up to 10% for G1 variety",
+                                "Typical crop duration: ~120 days before harvest",
+                                "Drying period: 15–20 days before sale"
                             ]
                         },
-                        " bottleneck": 'Narrow harvest window, weather dependency, careful handling',
-                        "quote": "5678"
+                        "bottleneck": "Labor shortages during peak harvest season and variable drying methods affecting quality.",
+                        "quote": "“May main iss ki harvesting hoti hai, May - June kay andar hee yeh sara nikal jaata hai.” [Farmer in Bhakkar] “Yeh takreeban 20 days, 15-20 days ke andar dry ho jaata hai, aur sale honay ke laayak ho jaata hai.” [Farmer in Bhakkar] “Toh hum toh manually lagate bhi hain aur nikalte bhi manually hain.” [Interview with a Farmer Fatima] “Sukhana is liye zaroori hota hai kyunke agar is ko aise geela rakhein na to is pe direct bacteria kar jaati hai to phir wo kharab ho jata hai. Aur agar is pe bacteria attack kare na to wo bohot tezi se phir is ke andar phail jata hai.” [Interview with a Farmer] “Yeh kam se kam 120 din ki crop hoti hai. 120 din ke baad aap isko harvest karte hain.” [IR Farm] “Dry mein jaise G1 variety hai, usmein 10% tak weight kam ho jata hai.” [Munaza Garlic Farmer]"
+
                     },
+
                     {
-                        title: 'Curing',
-                        description: 'Drying bulbs to extend storage life',
-                        icon: 'M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11',
-                        position: { top: 350, left: 850 },
-                        tooltip: {
-                            title: 'Curing Details',
-                            content: 'Proper curing reduces moisture from 80% to 65-70%. Ventilated storage with controlled temperature. Braiding facilitates air circulation.',
-                            stats: [
-                                'Curing Period: 2-4 weeks',
-                                'Final Moisture: 65-70%',
-                                'Storage Life: 6-8 months',
-                                'Method: Braiding or bundling'
+                        "title": "Storage",
+                        "description": "Sorting and storing garlic by variety and quality to maintain freshness and extend shelf life",
+                        "icon": "https://i.ibb.co/JjHCNHzX/Storage-Transport.png",
+                        "position": { "top": 450, "left": 850 },
+                        "tooltip": {
+                            "content": "Garlic is sorted into Chhilawa (peeled), Desi, G1, and China types. Chhilawa is produced in-house or by vendors and sold at a premium, while broken bulbs or older stock are sold at lower prices or blended with fresher garlic.<br><br><b>Storage Practices</b><table><tr><th>Aspect</th><th>Details</th></tr><tr><td>Small Vendors</td><td>Cooler shop corners</td></tr><tr><td>Wholesalers</td><td>Plastic crates or sacks in dry storerooms</td></tr><tr><td>Without Refrigeration</td><td>Weeks to months; G1 lasts 2–3 years</td></tr></table>",
+                            "stats": [
+                                "G1 garlic shelf life: up to 2–3 years",
+                                "Chhilawa garlic loses freshness in 2–3 days if unsold",
+                                "Storage conditions: dry, cool, and ventilated areas to prevent spoilage"
                             ]
                         },
-                        "bottleneck": 'Humidity control, adequate ventilation, infrastructure',
-                        "quote": "5678"
+                        "bottleneck": "Moisture, poor ventilation, and delayed sales leading to spoilage. Climate variability and extreme weather events, such as floods and erratic rainfall, cause pest outbreaks, accelerate spoilage during storage, and disrupt transportation.",
+                        "quote": "“Hum jab isko harvest karte hain to hamare paas apne sheds hain, do sheds hain. Hum uss main jo hai harvest karne ke baad hum usmein ek structure bana hua hai, pipes ka aur baas ka structure hota hai, aur hum garlic ko usmein hang kar dete hain, close close.” [Farmer in Bhakkar] “To jab hum ye garlic harvest karte hain, phir us ki gaddiyan banate hain, matlab aise 20-25 bulbs ko hum ek saath baandh lete hain. Aur jo rassi hum ne ek satoon se doosri satoon par baandh di hoti hai to us mein phir hum us ko latka dete hain.” [Interview with a Farmer Fatima] “Masla yeh hota hai storage main ke hum iss ko zyada garmi mein nahi rakh saktay.” [Munaza Garlic Farmer] “Mandi mein mix milta hai. Purana dana reh gaya toh naram ho jata hai.” [Interview: Munaza – Defence Market] “Green garlic ka season hota hai, uske baad dry garlic aata hai. Lekin green agar zyada din rahe toh saara stock kharab kar deta hai.” [Interview: KP Farmer] “Yeh chhilawa garlic agar 2-3 din na bike to naya nahi lagta. Lekin G1 toh ek mahine baad bhi chalega.” [Interview: Munaza – Defence Market]"
                     },
+
                     {
-                        title: 'Grading & Sorting',
-                        description: 'Size grading for different markets',
-                        icon: 'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z',
-                        position: { top: 470, left: 700 },
-                        tooltip: {
-                            title: 'Grading Details',
-                            content: 'Size grading into small, medium, large categories. Quality sorting removes damaged bulbs. Premium grades command higher prices.',
-                            stats: [
-                                'Size Categories: 3 main grades',
-                                'Quality Standards: Export vs domestic',
-                                'Premium Price: 20-30% higher',
-                                'Grading Criteria: Size, quality, appearance'
+                        "title": "Market Intermediaries",
+                        "description": "Brokers, commission agents, traders, and exporters facilitating garlic sales between farmers and markets",
+                        "icon": "",
+                        "position": { "top": 500, "left": 600 },
+                        "tooltip": {
+                            "content": "Market channels involve arthis (brokers), commission agents, mandi traders, shopkeepers, and exporters. Farmers either sell directly at mandis or use brokers/wholesalers for market access.<br><br><b>Price Fluctuation Factors</b><table><tr><th>Aspect</th><th>Details</th></tr><tr><td>Oversupply</td><td>Leads to sudden price drops</td></tr><tr><td>Opportunistic Price Hikes</td><td>G1 garlic prices reached PKR 12,000/kg but dropped to PKR 150/kg within a year</td></tr><tr><td>Garlic Type Impact</td><td>Desi garlic’s short shelf life forces quick sale; G1 can be stored for longer periods</td></tr></table>",
+                            "stats": [
+                                "G1 garlic can be stored for years, allowing delayed selling",
+                                "Desi/local garlic must be sold quickly due to short shelf life",
+                                "Mandi prices highly volatile depending on supply and demand"
                             ]
                         },
-                        "bottleneck": 'Quality standardization, grading equipment, market specifications',
-                        "quote": "5678"
+                        "bottleneck": "Over-reliance on middlemen limits farmers’ bargaining power and reduces profit margins; weak direct linkages between retailers and growers hinder transparent pricing.",
+                        "quote": "“Logoun ne 12 hazaar rupay kilo tak le liya tha, agle saal kisi ne nahi liya, price seedha 170-150 hogaya.” [KP Farmer Interview]"
                     },
+
                     {
-                        title: 'Packaging',
-                        description: 'Packaging in mesh bags or cartons',
-                        icon: 'M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4',
-                        position: { top: 470, left: 500 },
-                        tooltip: {
-                            title: 'Packaging Details',
-                            content: 'Mesh bags allow air circulation. Various pack sizes for retail and wholesale. Branding adds value for premium markets.',
-                            stats: [
-                                'Pack Sizes: 250g, 500g, 1kg, 10kg',
-                                'Materials: Mesh bags, cartons',
-                                'Shelf Life: 6-8 months',
-                                'Ventilation: Critical requirement'
+                        "title": "Retail & Consumption",
+                        "description": "Garlic sold to households, restaurants, and grocery chains based on taste, shelf life, and convenience",
+                        "icon": "",
+                        "position": { "top": 500, "left": 350 },
+                        "tooltip": {
+                            "content": "End buyers include households of all income levels, restaurants, khansamas, and grocery chains like Imtiaz, Fresh Basket, and Defence Market shops.<br><br><b>Consumer Preferences</b><table><tr><th>Feature / Preference</th><th>Desi Garlic</th><th>G1 / Chinese Garlic</th></tr><tr><td>Taste</td><td>Strong, pungent</td><td>Mild to medium</td></tr><tr><td>Shelf Life</td><td>Short (2–3 months)</td><td>Long (1–3 years)</td></tr><tr><td>Clove Size & Appearance</td><td>Small, irregular, pinkish</td><td>Large, uniform, white</td></tr><tr><td>Ease of Peeling</td><td>Harder to peel</td><td>Easy to peel</td></tr><tr><td>Market Cost (per kg)</td><td>Higher</td><td>Lower (when in surplus)</td></tr><tr><td>Storage Needs</td><td>Dry, cooler air</td><td>Cold storage or sacks</td></tr><tr><td>Common Consumers</td><td>Home-based cooks, elderly, traditionalists</td><td>Restaurants, caterers, grocery chains</td></tr><tr><td>Preferred Selling Form</td><td>Whole bulbs</td><td>Peeled (Chhilawa)</td></tr><tr><td>Consumer Rationale</td><td>Flavor, tradition, perceived health</td><td>Convenience, bulk cooking, long shelf life</td></tr></table>",
+                            "stats": [
+                                "Desi garlic is considered more flavorful and traditional for home cooking",
+                                "Chinese garlic is preferred for bulk cooking due to easy peeling",
+                                "Cold storage is mainly used for Chinese garlic because of its longer shelf life"
                             ]
                         },
-                        "bottleneck": 'Packaging costs, ventilation requirements, material availability',
-                        "quote": "5678"
+                        "bottleneck": "Flavor and convenience preferences divide the market, influencing storage and pricing strategies. Low consumer awareness of quality differences and preference for convenience products limit demand for higher-quality desi garlic, despite its superior flavor.",
+                        "quote": "“Desi lasan mehnga hai, lekin swaad mein zyada behtar hai. Khansama log to chhila hua lena pasand karte hain.” [Munaza – Defence Market] | “Ji, main toh China ka lasan leti hoon kyunki uski demand hi itni hai, aur log wohi prefer karte hain, aur main bhi khud wohi prefer karti hoon.” [Fatima – Home based small business owner] | “isko cold storages mein bhi rakha jata hai, jismein mainly zyada tar China ka lehsan rakha jata hai. Kyunke uski shelf life zyada hoti hai, usko aap poore ek saal ke liye store kar sakte ho.” [Interview with aarti fruit mandi Soha]"
                     },
+
                     {
-                        title: 'Distribution',
-                        description: 'Wholesale and retail distribution',
-                        icon: 'M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0',
-                        position: { top: 470, left: 300 },
-                        tooltip: {
-                            title: 'Distribution Details',
-                            content: 'Cold storage maintains quality. Regional markets prefer different sizes. Export markets require strict quality standards.',
-                            stats: [
-                                'Storage Temperature: 0-2°C',
-                                'Distribution Radius: 500-1500 km',
-                                'Market Segments: Fresh, processing, export',
-                                'Quality Maintenance: Critical'
+                        "title": "Export & Import",
+                        "description": "Garlic import and export flows, driven by domestic shortages and international supply dynamics",
+                        "icon": "",
+                        "position": { "top": 500, "left": 100 },
+                        "tooltip": {
+                            "content": "Chinese garlic is widely imported and circulated via Karachi’s New Sabzi Mandi. Some imported Chinese seed is also locally grown and referred to as “G1” or “China” garlic in markets.<br><br><b>Import Trends</b><ul><li>Pakistan imports most of its garlic from China.</li><li>Iranian garlic is also imported but in insufficient quantities to meet demand.</li><li>Government import duties and taxes keep imported garlic prices high.</li></ul><b>Export Status</b><ul><li>Very limited garlic exports due to local demand and quality concerns.</li><li>Occasional shipments to markets like Saudi Arabia.</li><li>Floods and climate shocks increase import dependency.</li></ul>",
+                            "stats": [
+                                "Pakistan grows only around 20% of its garlic demand; 80% is imported, mainly from China.",
+                                "Government import duties and taxes raise imported garlic prices.",
+                                "Saudi Arabia has received small trial shipments from Pakistan."
                             ]
                         },
-                        "bottleneck": 'Cold storage infrastructure, quality maintenance, market access',
-                        "quote": "5678"
-                    },
-                    {
-                        title: 'Retail Sales',
-                        description: 'Consumer sales through various channels',
-                        icon: 'M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z',
-                        position: { top: 470, left: 100 },
-                        tooltip: {
-                            title: 'Retail Sales Details',
-                            content: 'Multiple retail channels serve different segments. Organic garlic commands premium. Value-added products include peeled and minced forms.',
-                            stats: [
-                                'Retail Channels: 4+ types',
-                                'Organic Premium: 40-60%',
-                                'Value Addition: 100-200%',
-                                'Products: Fresh, peeled, minced, powder'
-                            ]
-                        },
-                        "bottleneck": 'Price competition, quality perception, shelf life management',
-                        "quote": "5678"
+                        "bottleneck": "High dependence on imports due to low domestic production and quality limitations restricts export potential.",
+                        "quote": "“Pakistan apni need ka zyadatar garlic jo hai China say hee import karta hai.” [Alaina Waqas Pyramid] | “Pakistan toh only 20% garlic grow kar raha hai apna. Baaqi 80% Chinese garlic Pakistan mein aa raha hai. Log import kar rahe hain. We are not importers, we are growers and brokers.” [Farmer in Bhakkar] | “Iran se aate hain hamare paas.” [Fatima NNA Rapid Solutions] | “Lekin uski quantity itni sufficient nahi hoti ke woh hamari mulk ki requirement poori kar sake. Lehaza humein import par bhi inhisaar karna padta hai.” [Interview with aarti fruit mandi Soha] | “Jee beta is mein aisa hi hai, government ki policies jo hain, wo import ke hawale se, uspe duties hain, taxes hotay hain, jis ki wajah se imported garlic ki pricing high rehti hai.” [Interview with Aarti Fruit Mandi Soha] | “Hum ne is dafa Saudi Arabia export kiya hai. Hum ne 2 containers udhar diye hain.” [Munaza Garlic Farmer] | “It's a winter crop and as the population of Pakistan has grown, the agricultural sector did not grow as fast. So, there's always been a deficiency of food in Pakistan. And we are not irrespective of what anybody says, we are not an agriculturally self-sufficient country.” [Toufiq Pasha Interview]"
                     }
+
                 ],
                 overview: {
                     title: 'Garlic Supply Chain Overview',
                     stats: [
-                        { title: 'Pakistan Production', value: '150 Thousand', subtitle: 'Metric tons annually', color: 'olive-green' },
-                        { title: 'Export Potential', value: '$25 Million', subtitle: 'Annual export opportunity', color: 'fresh-green' },
-                        { title: 'Storage Life', value: '6-8 Months', subtitle: 'With proper curing', color: 'reseda-green' }
+                        { title: 'Pakistan Production', value: '-', subtitle: 'Metric tons annually', color: 'olive-green' },
+                        { title: 'Export Potential', value: '-', subtitle: 'Annual export opportunity', color: 'fresh-green' },
+                        { title: 'Storage Life', value: '-', subtitle: 'With proper curing', color: 'reseda-green' }
                     ]
                 }
             },
@@ -2158,7 +2244,7 @@
                         "position": { "top": 50, "left": 480 },
                         "tooltip": {
 
-                            "content": "Tomato cultivation begins with nursery-based sapling preparation. Farmers commonly grow seedlings at home using hybrid seeds and transplant them into the field after 25–30 days.<br><br><b>Nursery & Sowing Practices</b><table> <tr> <th>Stage</th> <th>Details</th> </tr> <tr> <td>Nursery Use</td> <td>Common; transplanting after 25–30 days</td> </tr> <tr> <td>Sowing Season</td> <td>October–December, depending on regional climate</td> </tr> </table><br><b>Labor Use</b><br>Transplanting is a manual and labor-intensive activity, involving both men and women. Areas like Sindh often aim for early sowing to benefit from higher prices in the off-season.<br><br><b>Challenges</b><br>Extreme weather conditions during transplanting (heat or cold) can stress seedlings and reduce survival rates. Additionally, labor shortages during the peak sowing window can delay operations.",
+                            "content": "Tomato cultivation begins with nursery-based sapling preparation. Farmers commonly grow seedlings at home using hybrid seeds and transplant them into the field after 25–30 days.<br><br><b>Nursery & Sowing Practices</b><table> <tr> <th>Stage</th> <th>Details</th> </tr> <tr> <td>Nursery Use</td> <td>Common; transplanting after 25–30 days</td> </tr> <tr> <td>Sowing Season</td> <td>October–December, depending on regional climate</td> </tr> </table><br><b>Labor Use</b><br>Transplanting is a manual and labor-intensive activity, involving both men and women. Areas like Sindh often aim for early sowing to benefit from higher prices in the off-season.",
                             "stats": [
                                 "Transplanting typically happens 25–30 days after nursery sowing.",
                                 "Sowing season spans October to December, varying by region.",
@@ -3758,8 +3844,8 @@
                     ]
                 }
             }
-
         };
+
     </script>
 
     <script id="product-interactions">
@@ -3816,8 +3902,26 @@
                 return;
             }
 
+            // Get background image and headings for this product
+            const backgroundImage = productBackgroundImages[productName] || '';
+            // const backgroundHeadings = productBackgroundHeadings[productName] || [];
+
             let stagesHTML = '';
             let tooltipsHTML = '';
+
+            // Add background image
+            if (backgroundImage) {
+                stagesHTML += `<div class="supply-chain-background" style="background-image: url('${backgroundImage}');"></div>`;
+            }
+
+            // Add background headings
+            // backgroundHeadings.forEach((heading, index) => {
+            //     stagesHTML += `
+            //         <div class="background-heading" style="top: ${heading.top}; left: ${heading.left};">
+            //             ${heading.text}
+            //         </div>
+            //     `;
+            // });
 
             productData.stages.forEach((stage, index) => {
                 const top = stage.position.top;
@@ -4059,9 +4163,15 @@
                 button.addEventListener('click', () => {
                     const selectedCategory = button.getAttribute('data-category');
 
-                    // Update active button styling
-                    buttons.forEach(btn => btn.classList.remove('active'));
-                    button.classList.add('active');
+                    // Reset all buttons to inactive style
+                    buttons.forEach(btn => {
+                        btn.classList.remove('bg-olive-green', 'text-white');
+                        btn.classList.add('bg-dun', 'text-reseda-green');
+                    });
+
+                    // Set clicked button to active style
+                    button.classList.remove('bg-dun', 'text-reseda-green');
+                    button.classList.add('bg-olive-green', 'text-white');
 
                     // Show/hide products
                     products.forEach(product => {
@@ -4078,8 +4188,6 @@
     </script>
 
 
-
 </body>
-
 
 </html>
