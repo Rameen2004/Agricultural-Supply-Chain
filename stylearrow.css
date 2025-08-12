@@ -1,0 +1,247 @@
+/* Positioning: (Icons) */
+/* top: 20, 200, 390 */
+/* 4: 40, 330, 620, 910 */
+/* 3: 220, 470, 720 */
+
+/* Positioning: (Arrows) */
+/* 20,200,390 */
+/* 250,550,835 */
+
+/* Mango Arrows */
+
+.MangoArrow{
+    position: absolute;
+    display: none;
+    width: 70px;
+}
+.MangoArrow.arrow0{
+    display: block;
+    top: 20px;
+    left: 410px;
+}
+.MangoArrow.arrow1{
+    display: block;
+    top: 20px;
+    left: 660px;
+}
+.MangoArrow.arrow2{
+    display: block;
+    transform: rotate(180deg);
+    top: 200px;
+    left: 660px;
+}
+.MangoArrow.arrow3{
+    display: block;
+    transform: rotate(180deg);
+    top: 200px;
+    left: 410px;
+}
+.MangoArrow.arrow4{
+    display: block;
+    top: 380px;
+    left: 250px;
+}
+.MangoArrow.arrow5{
+    display: block;
+    top: 380px;
+    left: 550px;
+}
+.MangoArrow.arrow6{
+    display: block;
+    top: 380px;
+    left: 835px;
+}
+.MangoArrow.curvearrow0{
+    display: block;
+    top: 127px;
+    width: 90px;
+    left: 900px;
+    transform: scaleX(-1) rotate(-42deg);
+}
+.MangoArrow.curvearrow1{
+    display: block;
+    top: 270px;
+    width: 90px;
+    left: 120px;
+    transform: rotate(5deg);
+}
+
+/* Wheat Arrows */
+.WheatArrow{
+    position: absolute;
+    display: none;
+    width: 70px;
+}
+.WheatArrow.arrow0{
+    display: block;
+    top: 20px;
+    left: 250px;
+}
+.WheatArrow.arrow1{
+    display: block;
+    top: 20px;
+    left: 550px;
+}
+.WheatArrow.arrow2{
+    display: block;
+    top: 20px;
+    left: 835px;
+}
+.WheatArrow.arrow3{
+    display: block;
+    top: 200px;
+    left: 250px;
+    transform: rotate(180deg);
+}
+.WheatArrow.arrow4{
+    display: block;
+    top: 200px;
+    left: 550px;
+    transform: rotate(180deg);
+}
+.WheatArrow.arrow5{
+    display: block;
+    top: 200px;
+    left: 835px;
+    transform: rotate(180deg);
+}
+.WheatArrow.arrow6{
+    display: block;
+    top: 390px;
+    left: 250px;
+}
+.WheatArrow.arrow7{
+    display: block;
+    top: 390px;
+    left: 550px;
+}
+.WheatArrow.arrow8{
+    display: block;
+    top: 390px;
+    left: 835px;
+}
+.WheatArrow.curvearrow0{
+    display: block;
+    top: 140px;
+    width: 90px;
+    left: 1100px;
+    transform: scaleX(-1) rotate(-35deg);
+}
+.WheatArrow.curvearrow1{
+    display: block;
+    top: 350px;
+    width: 90px;
+    left: -30px;
+    transform: rotate(-35deg);
+}
+
+/* Chili: */
+.ChiliArrow{
+    position: absolute;
+    display: none;
+    width: 70px;
+}
+.ChiliArrow.arrow0{
+    display: block;
+    top: 20px;
+    left: 410px;
+}
+.ChiliArrow.arrow1{
+    display: block;
+    top: 20px;
+    left: 660px;
+}
+.ChiliArrow.arrow2{
+    display: block;
+    transform: rotate(180deg);
+    top: 200px;
+    left: 660px;
+}
+.ChiliArrow.arrow3{
+    display: block;
+    transform: rotate(180deg);
+    top: 200px;
+    left: 410px;
+}
+.ChiliArrow.arrow4{
+    display: block;
+    top: 380px;
+    left: 410px;
+}
+.ChiliArrow.arrow5{
+    display: block;
+    top: 380px;
+    left: 660px;
+}
+.ChiliArrow.curvearrow0{
+    display: block;
+    top: 127px;
+    width: 90px;
+    left: 900px;
+    transform: scaleX(-1) rotate(-42deg);
+}
+.ChiliArrow.curvearrow1{
+    display: block;
+    top: 315px;
+    width: 90px;
+    left: 150px;
+    transform: rotate(-42deg);
+}
+
+/* Banana */
+.BananaArrow{
+    position: absolute;
+    display: none;
+    width: 70px;
+}
+.BananaArrow.arrow0{
+    display: block;
+    top: 20px;
+    left: 410px;
+}
+.BananaArrow.arrow1{
+    display: block;
+    top: 20px;
+    left: 660px;
+}
+.BananaArrow.arrow2{
+    display: block;
+    transform: rotate(180deg);
+    top: 200px;
+    left: 660px;
+}
+.BananaArrow.arrow3{
+    display: block;
+    transform: rotate(180deg);
+    top: 200px;
+    left: 410px;
+}
+.BananaArrow.arrow4{
+    display: block;
+    top: 380px;
+    left: 250px;
+}
+.BananaArrow.arrow5{
+    display: block;
+    top: 380px;
+    left: 550px;
+}
+.BananaArrow.arrow6{
+    display: block;
+    top: 380px;
+    left: 835px;
+}
+.BananaArrow.curvearrow0{
+    display: block;
+    top: 127px;
+    width: 90px;
+    left: 900px;
+    transform: scaleX(-1) rotate(-42deg);
+}
+.BananaArrow.curvearrow1{
+    display: block;
+    top: 270px;
+    width: 90px;
+    left: 120px;
+    transform: rotate(5deg);
+}
