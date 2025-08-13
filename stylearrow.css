@@ -53,16 +53,14 @@
 }
 .MangoArrow.curvearrow0{
     display: block;
-    top: 127px;
-    width: 90px;
+    top: 140px;
     left: 900px;
     transform: scaleX(-1) rotate(-42deg);
 }
 .MangoArrow.curvearrow1{
     display: block;
-    top: 270px;
-    width: 90px;
-    left: 120px;
+    top: 280px;
+    left: 130px;
     transform: rotate(5deg);
 }
 
@@ -122,16 +120,16 @@
 }
 .WheatArrow.curvearrow0{
     display: block;
-    top: 140px;
-    width: 90px;
+    top: 160px;
+   
     left: 1100px;
     transform: scaleX(-1) rotate(-35deg);
 }
 .WheatArrow.curvearrow1{
     display: block;
-    top: 350px;
-    width: 90px;
-    left: -30px;
+    top: 360px;
+    
+    left: -15px;
     transform: rotate(-35deg);
 }
 
@@ -175,16 +173,16 @@
 }
 .ChiliArrow.curvearrow0{
     display: block;
-    top: 127px;
-    width: 90px;
+    top: 150px;
+    
     left: 900px;
     transform: scaleX(-1) rotate(-42deg);
 }
 .ChiliArrow.curvearrow1{
     display: block;
-    top: 315px;
-    width: 90px;
-    left: 150px;
+    top: 350px;
+  
+    left: 170px;
     transform: rotate(-42deg);
 }
 
@@ -233,15 +231,85 @@
 }
 .BananaArrow.curvearrow0{
     display: block;
-    top: 127px;
-    width: 90px;
+    top: 150px;
+    
     left: 900px;
     transform: scaleX(-1) rotate(-42deg);
 }
 .BananaArrow.curvearrow1{
     display: block;
-    top: 270px;
-    width: 90px;
-    left: 120px;
-    transform: rotate(5deg);
+    top: 300px;
+   
+    left: 150px;
+    transform: rotate(20deg);
+}
+
+/* Orange Arrows*/
+
+.OrangeArrow{
+    position: absolute;
+    display: none;
+    width: 70px;
+}
+.OrangeArrow.arrow0{
+    display: block;
+    top: 20px;
+    left: 250px;
+}
+.OrangeArrow.arrow1{
+    display: block;
+    top: 20px;
+    left: 550px;
+}
+.OrangeArrow.arrow2{
+    display: block;
+    top: 20px;
+    left: 835px;
+}
+.OrangeArrow.arrow3{
+    display: block;
+    top: 200px;
+    left: 250px;
+    transform: rotate(180deg);
+}
+.OrangeArrow.arrow4{
+    display: block;
+    top: 200px;
+    left: 550px;
+    transform: rotate(180deg);
+}
+.OrangeArrow.arrow5{
+    display: block;
+    top: 200px;
+    left: 835px;
+    transform: rotate(180deg);
+}
+.OrangeArrow.arrow6{
+    display: block;
+    top: 390px;
+    left: 250px;
+}
+.OrangeArrow.arrow7{
+    display: block;
+    top: 390px;
+    left: 550px;
+}
+.OrangeArrow.arrow8{
+    display: block;
+    top: 390px;
+    left: 835px;
+}
+.OrangeArrow.curvearrow0{
+    display: block;
+    top: 160px;
+   
+    left: 1100px;
+    transform: scaleX(-1) rotate(-35deg);
+}
+.OrangeArrow.curvearrow1{
+    display: block;
+    top: 360px;
+    
+    left: -5px;
+    transform: rotate(-35deg);
 }
