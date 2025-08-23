@@ -9,60 +9,60 @@
 /* 300, 600, 885 */
 /* 490, 740 */
 
-/* Mango Arrows */
 
+/* Mango  */
 .MangoArrow{
     position: absolute;
     display: none;
-    width: 70px;
+    width: 80px;
 }
 .MangoArrow.arrow0{
     display: block;
-    top: 20px;
-    left: 490px;
+    top: 50px;
+    left: 410px;
 }
 .MangoArrow.arrow1{
     display: block;
-    top: 20px;
-    left: 740px;
+    top: 50px;
+    left: 710px;
 }
 .MangoArrow.arrow2{
     display: block;
     transform: rotate(180deg);
-    top: 200px;
-    left: 740px;
+    top: 250px;
+    left: 710px;
 }
 .MangoArrow.arrow3{
     display: block;
     transform: rotate(180deg);
-    top: 200px;
-    left: 490px;
+    top: 250px;
+    left: 410px;
 }
 .MangoArrow.arrow4{
     display: block;
-    top: 380px;
-    left: 300px;
+    top: 450px;
+    left: 290px;
 }
 .MangoArrow.arrow5{
     display: block;
-    top: 380px;
-    left: 600px;
+    top: 450px;
+    left: 590px;
 }
 .MangoArrow.arrow6{
     display: block;
-    top: 380px;
-    left: 885px;
+    top: 450px;
+    left: 875px;
 }
 .MangoArrow.curvearrow0{
     display: block;
-    top: 140px;
+    top: 200px;
     left: 980px;
     transform: scaleX(-1) rotate(-42deg);
 }
 .MangoArrow.curvearrow1{
     display: block;
-    top: 280px;
-    left: 200px;
+    top: 360px;
+    left: 110px;
     transform: rotate(15deg);
 }
 
@@ -139,52 +139,50 @@
 .ChiliArrow{
     position: absolute;
     display: none;
-    width: 70px;
+    width: 80px;
 }
 .ChiliArrow.arrow0{
     display: block;
-    top: 20px;
-    left: 490px;
+    top: 80px;
+    left: 410px;
 }
 .ChiliArrow.arrow1{
     display: block;
-    top: 20px;
-    left: 740px;
+    top: 80px;
+    left: 710px;
 }
 .ChiliArrow.arrow2{
     display: block;
     transform: rotate(180deg);
-    top: 200px;
-    left: 740px;
+    top: 300px;
+    left: 710px;
 }
 .ChiliArrow.arrow3{
     display: block;
     transform: rotate(180deg);
-    top: 200px;
-    left: 490px;
+    top: 300px;
+    left: 410px;
 }
 .ChiliArrow.arrow4{
     display: block;
-    top: 380px;
-    left: 490px;
+    top: 480px;
+    left: 410px;
 }
 .ChiliArrow.arrow5{
     display: block;
-    top: 380px;
-    left: 740px;
+    top: 480px;
+    left: 710px;
 }
 .ChiliArrow.curvearrow0{
     display: block;
-    top: 160px;
-    
+    top: 250px;
     left: 980px;
     transform: scaleX(-1) rotate(-42deg);
 }
 .ChiliArrow.curvearrow1{
     display: block;
-    top: 360px;
-  
-    left: 250px;
+    top: 450px;
+    left: 120px;
     transform: rotate(-42deg);
 }
 
@@ -192,57 +190,55 @@
 .BananaArrow{
     position: absolute;
     display: none;
-    width: 70px;
+    width: 80px;
 }
 .BananaArrow.arrow0{
     display: block;
-    top: 20px;
-    left: 490px;
+    top: 50px;
+    left: 410px;
 }
 .BananaArrow.arrow1{
     display: block;
-    top: 20px;
-    left: 740px;
+    top: 50px;
+    left: 710px;
 }
 .BananaArrow.arrow2{
     display: block;
     transform: rotate(180deg);
-    top: 200px;
-    left: 740px;
+    top: 250px;
+    left: 710px;
 }
 .BananaArrow.arrow3{
     display: block;
     transform: rotate(180deg);
-    top: 200px;
-    left: 490px;
+    top: 250px;
+    left: 410px;
 }
 .BananaArrow.arrow4{
     display: block;
-    top: 380px;
-    left: 300px;
+    top: 450px;
+    left: 290px;
 }
 .BananaArrow.arrow5{
     display: block;
-    top: 380px;
-    left: 600px; 
+    top: 450px;
+    left: 590px; 
 }
 .BananaArrow.arrow6{
     display: block;
-    top: 380px;
-    left: 885px;
+    top: 450px;
+    left: 875px;
 }
 .BananaArrow.curvearrow0{
     display: block;
-    top: 150px;
-    
+    top: 200px;
     left: 980px;
     transform: scaleX(-1) rotate(-42deg);
 }
 .BananaArrow.curvearrow1{
     display: block;
-    top: 290px;
-   
-    left: 210px;
+    top: 360px;
+    left: 110px;
     transform: rotate(20deg);
 }
 
@@ -255,64 +251,62 @@
 }
 .OrangeArrow.arrow0{
     display: block;
-    top: 20px;
+    top: 50px;
     left: 300px;
 }
 .OrangeArrow.arrow1{
     display: block;
-    top: 20px;
+    top: 50px;
     left: 600px;
 }
 .OrangeArrow.arrow2{
     display: block;
-    top: 20px;
+    top: 50px;
     left: 885px;
 }
 .OrangeArrow.arrow3{
     display: block;
-    top: 200px;
+    top: 250px;
     left: 300px;
     transform: rotate(180deg);
 }
 .OrangeArrow.arrow4{
     display: block;
-    top: 200px;
+    top: 250px;
     left: 600px;
     transform: rotate(180deg);
 }
 .OrangeArrow.arrow5{
     display: block;
-    top: 200px;
+    top: 250px;
     left: 885px;
     transform: rotate(180deg);
 }
 .OrangeArrow.arrow6{
     display: block;
-    top: 390px;
+    top: 450px;
     left: 300px;
 }
 .OrangeArrow.arrow7{
     display: block;
-    top: 390px;
+    top: 450px;
     left: 600px;
 }
 .OrangeArrow.arrow8{
     display: block;
-    top: 390px;
+    top: 450px;
     left: 885px;
 }
 .OrangeArrow.curvearrow0{
     display: block;
-    top: 160px;
-   
-    left: 1150px;
+    top: 230px;
+    left: 1160px;
     transform: scaleX(-1) rotate(-35deg);
 }
 .OrangeArrow.curvearrow1{
     display: block;
-    top: 360px;
-    
-    left: 55px;
+    top: 440px;
+    left: 30px;
     transform: rotate(-35deg);
 }
 
@@ -320,47 +314,46 @@
 .MaizeArrow{
     position: absolute;
     display: none;
-    width: 70px;
+    width: 80px;
 }
+
 .MaizeArrow.arrow0{
     display: block;
-    top: 20px;
-    left: 610px;
+    top: 50px;
+    left: 560px;
 }
 .MaizeArrow.arrow1{
     display: block;
     transform: rotate(180deg);
-    top: 200px;
-    left: 740px;
+    top: 250px;
+    left: 700px;
 }
 .MaizeArrow.arrow2{
     display: block;
     transform: rotate(180deg);
-    top: 200px;
-    left: 490px;
+    top: 250px;
+    left: 400px;
 }
 .MaizeArrow.arrow3{
     display: block;
-    top: 380px;
-    left: 490px;
+    top: 450px;
+    left: 400px;
 }
 .MaizeArrow.arrow4{
     display: block;
-    top: 380px;
-    left: 740px;
+    top: 450px;
+    left: 700px;
 }
 .MaizeArrow.curvearrow0{
     display: block;
-    top: 100px;
-    
-    left: 885px;
+    top: 150px;
+    left: 900px;
     transform: scaleX(-1) rotate(-10deg);
 }
 .MaizeArrow.curvearrow1{
     display: block;
-    top: 350px;
-  
-    left: 250px;
+    top: 400px;
+    left: 120px;
     transform: rotate(-42deg);
 }
 
@@ -368,200 +361,411 @@
 .MustardArrow{
     position: absolute;
     display: none;
-    width: 70px;
+    width: 80px;
 }
 .MustardArrow.arrow0{
     display: block;
-    top: 20px;
-    left: 610px;
+    top: 90px;
+    left: 710px;
 }
 .MustardArrow.arrow1{
     display: block;
     transform: rotate(180deg);
-    top: 210px;
-    left: 610px;
+    top: 300px;
+    left: 900px;
 }
 
 .MustardArrow.arrow2{
     display: block;
-    top: 410px;
-    left: 490px;
+    top: 90px;
+    left: 410px;
 }
-.MustardArrow.arrow3{
+
+.MustardArrow.arrow4 {
     display: block;
-    top: 410px;
-    left: 740px;
+    transform: rotate(180deg);
+    top: 300px;
+    left: 600px;
+}
+.MustardArrow.arrow5 {
+    display: block;
+    transform: rotate(180deg);
+    top: 300px;
+    left: 300px;
 }
 .MustardArrow.curvearrow0{
     display: block;
-    top: 165px;
-    
-    left: 870px;
-    transform: scaleX(-1) rotate(-42deg);
+    top: 190px;
+    left: 1080px;
+    transform: scaleX(-1) rotate(-40deg);
 }
-.MustardArrow.curvearrow1{
-    display: block;
-    top: 310px;
-  
-    left: 330px;
-    transform: rotate(-15deg);
-}
+
 
 /* Milk */
 .MilkArrow{
     position: absolute;
     display: none;
-    width: 70px;
+    width: 80px;
 }
 .MilkArrow.arrow0{
     display: block;
     transform: rotate(180deg);
-    top: 210px;
-    left: 610px;
+    top:  250px;
+    left: 400px;
 }
 .MilkArrow.arrow1{
     display: block;
-    top: 410px;
-    left: 610px;
+    top: 50px;
+    left: 550px;
 }
-.MilkArrow.curvearrow0{
+.MilkArrow.arrow2 {
     display: block;
-    top: 100px;
-    
-    left: 765px;
-    transform: scaleX(-1) rotate(-15deg);
-}
-.MilkArrow.curvearrow1{
-    display: block;
-    top: 360px;
-  
-    left: 360px;
-    transform: rotate(-35deg);
+    transform: rotate(180deg);
+    top: 250px;
+    left: 700px;
 }
 
-/* Orange Arrows */
-.OrangeArrow{
-    position: absolute;
-    display: none;
-    width: 70px;
-}
-.OrangeArrow.arrow0{
+.MilkArrow.curvearrow0 {
     display: block;
-    top: 20px;
-    left: 300px;
+    top: 175px;
+
+    left: 950px;
+    transform: scaleX(-1) rotate(-42deg);
 }
-.OrangeArrow.arrow1{
-    display: block;
-    top: 20px;
-    left: 600px;
-}
-.OrangeArrow.arrow2{
-    display: block;
-    top: 20px;
-    left: 885px;
-}
-.OrangeArrow.arrow3{
-    display: block;
-    top: 200px;
-    left: 300px;
-    transform: rotate(180deg);
-}
-.OrangeArrow.arrow4{
-    display: block;
-    top: 200px;
-    left: 600px;
-    transform: rotate(180deg);
-}
-.OrangeArrow.arrow5{
-    display: block;
-    top: 200px;
-    left: 885px;
-    transform: rotate(180deg);
-}
-.OrangeArrow.arrow6{
-    display: block;
-    top: 390px;
-    left: 300px;
-}
-.OrangeArrow.arrow7{
-    display: block;
-    top: 390px;
-    left: 600px;
-}
-.OrangeArrow.arrow8{
-    display: block;
-    top: 390px;
-    left: 885px;
-}
-.OrangeArrow.curvearrow0{
-    display: block;
-    top: 170px;
-   
-    left: 1150px;
-    transform: scaleX(-1) rotate(-45deg);
-}
-.OrangeArrow.curvearrow1{
-    display: block;
-    top: 370px;
-    
-    left: 35px;
-    transform: rotate(-45deg);
-}
+
 
 /* Tomato */
 .TomatoArrow{
     position: absolute;
     display: none;
-    width: 70px;
+    width: 80px;
 }
 .TomatoArrow.arrow0{
     display: block;
-    top: 20px;
-    left: 490px;
+    top: 50px;
+    left: 410px;
 }
 .TomatoArrow.arrow1{
     display: block;
-    top: 20px;
-    left: 740px;
+    top: 50px;
+    left: 710px;
 }
 .TomatoArrow.arrow2{
     display: block;
     transform: rotate(180deg);
-    top: 200px;
-    left: 740px;
+    top: 250px;
+    left: 710px;
 }
 .TomatoArrow.arrow3{
     display: block;
     transform: rotate(180deg);
-    top: 200px;
-    left: 490px;
+    top: 250px;
+    left: 710px;
 }
 .TomatoArrow.arrow4{
     display: block;
-    top: 380px;
-    left: 300px;
+    top: 450px;
+    left: 290px;
 }
 .TomatoArrow.arrow5{
     display: block;
-    top: 380px;
-    left: 600px; 
+    top: 400px;
+    left: 590px; 
 }
 .TomatoArrow.arrow6{
     display: block;
-    top: 380px;
-    left: 885px;
+    top: 450px;
+    left: 875px;
 }
 .TomatoArrow.curvearrow0{
     display: block;
-    top: 150px;
-    
+    top: 200px;
     left: 980px;
     transform: scaleX(-1) rotate(-42deg);
 }
 .TomatoArrow.curvearrow1{
     display: block;
-    top: 290px;
-   
-    left: 210px;
+    top: 360px;
+    left: 110px;
     transform: rotate(20deg);
 }
+
+/* Potato */
+.PotatoArrow {
+    position: absolute;
+    display: none;
+    width: 80px;
+}
+
+.PotatoArrow.arrow0 {
+    display: block;
+    top: 90px;
+    left: 710px;
+}
+
+.PotatoArrow.arrow1 {
+    display: block;
+    transform: rotate(180deg);
+    top: 300px;
+    left: 900px;
+}
+
+.PotatoArrow.arrow2 {
+    display: block;
+    top: 90px;
+    left: 410px;
+}
+
+.PotatoArrow.arrow4 {
+    display: block;
+    transform: rotate(180deg);
+    top: 300px;
+    left: 600px;
+}
+
+.PotatoArrow.arrow5 {
+    display: block;
+    transform: rotate(180deg);
+    top: 300px;
+    left: 300px;
+}
+
+.PotatoArrow.curvearrow0 {
+    display: block;
+    top: 190px;
+    left: 1080px;
+    transform: scaleX(-1) rotate(-40deg);
+}
+
+/* Rice */
+.RiceArrow {
+    position: absolute;
+    display: none;
+    width: 80px;
+}
+
+.RiceArrow.arrow0 {
+    display: block;
+    top: 50px;
+    left: 410px;
+}
+
+.RiceArrow.arrow1 {
+    display: block;
+    top: 50px;
+    left: 710px;
+}
+
+.RiceArrow.arrow2 {
+    display: block;
+    transform: rotate(180deg);
+    top: 250px;
+    left: 710px;
+}
+
+.RiceArrow.arrow3 {
+    display: block;
+    transform: rotate(180deg);
+    top: 250px;
+    left: 410px;
+}
+
+.RiceArrow.arrow4 {
+    display: block;
+    top: 450px;
+    left: 290px;
+}
+
+.RiceArrow.arrow5 {
+    display: block;
+    top: 450px;
+    left: 590px;
+}
+
+.RiceArrow.arrow6 {
+    display: block;
+    top: 450px;
+    left: 875px;
+}
+
+.RiceArrow.curvearrow0 {
+    display: block;
+    top: 200px;
+    left: 980px;
+    transform: scaleX(-1) rotate(-42deg);
+}
+
+.RiceArrow.curvearrow1 {
+    display: block;
+    top: 360px;
+    left: 110px;
+    transform: rotate(20deg);
+}
+
+/* Sugarcane */
+.SugarcaneArrow {
+    position: absolute;
+    display: none;
+    width: 80px;
+}
+
+.SugarcaneArrow.arrow0 {
+    display: block;
+    top: 50px;
+    left: 410px;
+}
+
+.SugarcaneArrow.arrow1 {
+    display: block;
+    top: 50px;
+    left: 710px;
+}
+
+.SugarcaneArrow.arrow2 {
+    display: block;
+    transform: rotate(180deg);
+    top: 250px;
+    left: 710px;
+}
+
+.SugarcaneArrow.arrow3 {
+    display: block;
+    transform: rotate(180deg);
+    top: 250px;
+    left: 410px;
+}
+
+.SugarcaneArrow.arrow4 {
+    display: block;
+    top: 450px;
+    left: 290px;
+}
+
+.SugarcaneArrow.arrow5 {
+    display: block;
+    top: 450px;
+    left: 590px;
+}
+
+.SugarcaneArrow.arrow6 {
+    display: block;
+    top: 450px;
+    left: 875px;
+}
+
+.SugarcaneArrow.curvearrow0 {
+    display: block;
+    top: 200px;
+    left: 980px;
+    transform: scaleX(-1) rotate(-42deg);
+}
+
+.SugarcaneArrow.curvearrow1 {
+    display: block;
+    top: 360px;
+    left: 110px;
+    transform: rotate(20deg);
+}
+/* Garlic*/
+
+.GarlicArrow {
+    position: absolute;
+    display: none;
+    width: 80px;
+}
+
+.GarlicArrow.arrow0 {
+    display: block;
+    top: 80px;
+    left: 410px;
+}
+
+.GarlicArrow.arrow1 {
+    display: block;
+    top: 80px;
+    left: 710px;
+}
+
+.GarlicArrow.arrow2 {
+    display: block;
+    transform: rotate(180deg);
+    top: 300px;
+    left: 710px;
+}
+
+.GarlicArrow.arrow3 {
+    display: block;
+    transform: rotate(180deg);
+    top: 300px;
+    left: 410px;
+}
+
+.GarlicArrow.arrow4 {
+    display: block;
+    top: 480px;
+    left: 410px;
+}
+
+.GarlicArrow.arrow5 {
+    display: block;
+    top: 480px;
+    left: 710px;
+}
+
+.GarlicArrow.curvearrow0 {
+    display: block;
+    top: 250px;
+    left: 980px;
+    transform: scaleX(-1) rotate(-42deg);
+}
+
+.GarlicArrow.curvearrow1 {
+    display: block;
+    top: 450px;
+    left: 120px;
+    transform: rotate(-42deg);
+}
+
+/* Apple*/
+
+.AppleArrow {
+    position: absolute;
+    display: none;
+    width: 80px;
+}
+
+.AppleArrow.arrow0 {
+    display: block;
+    top: 80px;
+    left: 410px;
+}
+
+.AppleArrow.arrow1 {
+    display: block;
+    top: 80px;
+    left: 710px;
+}
+
+.AppleArrow.arrow2 {
+    display: block;
+    transform: rotate(180deg);
+    top: 300px;
+    left: 710px;
+}
+
+.AppleArrow.curvearrow0 {
+    display: block;
+    top: 250px;
+    left: 980px;
+    transform: scaleX(-1) rotate(-42deg);
+}
+
+.AppleArrow.arrow3 {
+    display: block;
+    transform: rotate(180deg);
+    top: 300px;
+    left: 410px;
+}
+
+
+
