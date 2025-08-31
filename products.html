@@ -481,7 +481,7 @@
                     </div>
                 </div>
                 <div>
-                    <h1 class="text-xl font-bold text-olive-green font-poppins">BEEJ</h1>
+                    <h1 class="text-xl font-bold text-olive-green font-poppins">Safar-e-Fasal</h1>
                     <p class="text-xs text-reseda-green font-nunito">Cultivating Knowledge</p>
                 </div>
             </div>
@@ -842,7 +842,7 @@
             <div
                 class="inline-block w-full max-w-[92vw] h-[100vh] my-4 text-left align-middle bg-white rounded shadow-xl transform transition-all border border-dun">
                 <div class="relative h-full flex flex-col">
-                    <div class="flex items-center justify-between p-4 border-b bg-alabaster flex-shrink-0">
+                    <div class="flex items-center justify-between p-2 border-b bg-alabaster flex-shrink-0">
                         <h3 class="text-2xl font-bold text-olive-green font-poppins" id="modalTitle">Supply Chain Map
                         </h3>
                         <button onclick="closeSupplyChainView()" class="text-reseda-green hover:text-olive-green">
@@ -852,7 +852,42 @@
                         </button>
                     </div>
                     <div class="flex-1 p-6 overflow-y-auto">
-                        <div class="supply-chain-modal">
+                        <div class="supply-chain-modal relative">
+                            <!-- Help Icon + Label (moved OUTSIDE scaling) -->
+                            <div id="helpIconWrapper"
+                                class="absolute -top-6 -left-12 flex flex-col items-start z-[9999]">
+                                <button id="helpIcon" class="flex items-center gap-2 px-4 -py-6 bg-[#F9FBE7] text-[#3D3D3D] rounded-xl shadow-md 
+                                        hover:bg-[#F0F4C3] hover:shadow-lg transition cursor-pointer">
+                                    <i class="ri-question-line ri-2x"></i>
+                                    <span class="text-base font-nunito font-bold">Want to explore the stages? Start
+                                        here.</span>
+                                </button>
+
+                                <!-- Tooltip -->
+                                <div id="helpTooltip"
+                                    class="hidden absolute mt-2 bg-[#F9FBE7] text-[#3D3D3D] rounded-xl shadow-lg border border-dun p-4 w-[450px]">
+                                    <button id="closeHelpTooltip"
+                                        class="absolute top-2 right-2 text-[#3D3D3D] hover:text-red-500 font-bold">×</button>
+
+                                    <h4 class="mb-4 font-poppins text-[#3D3D3D]">How to Navigate</h4>
+                                    <div class="space-y-4 text-sm">
+                                        <div class="flex items-center gap-3">
+                                            <img src="https://i.ibb.co/JR3Spyny/arrow.png" class="w-8 h-8">
+                                            <span>Click to open detailed insights for each stage.</span>
+                                        </div>
+                                        <div class="flex items-center gap-3">
+                                            <img src="https://i.ibb.co/fdYtsBDm/Screenshot-2025-08-25-152809.png"
+                                                class="w-17 h-8">
+                                            <span>Click to uncover the challenges at each stage.</span>
+                                        </div>
+                                        <div class="flex items-center gap-3">
+                                            <img src="https://i.ibb.co/k2TfWPHY/quotes.png" class="w-18 h-8">
+                                            <span>Get perspectives from individuals shaping each step.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div id="supplyChainContainer" class="supply-chain-container">
                                 <!-- Supply chain content will be dynamically generated here -->
                             </div>
@@ -861,10 +896,12 @@
                                 <!-- Product overview will be dynamically generated here -->
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
     <script id="mobile-menu-toggle">
@@ -3677,9 +3714,6 @@
         }
 
 
-
-
-
         function hideStageTooltip(index) {
             const tooltip = document.getElementById(`tooltip-${index}`);
             if (tooltip) {
@@ -3710,7 +3744,7 @@
             const bottleneckTooltip = document.getElementById(`bottleneck-${stageIndex}`);
             const quoteTooltip = document.getElementById(`quote-${stageIndex}`);
 
-            // Close any currently open tooltip from any stage
+            // Close any currently open tooltip from another stage
             if (currentOpenTooltip !== null && currentOpenTooltip !== stageIndex) {
                 closeAllTooltipsForStage(currentOpenTooltip);
             }
@@ -3747,9 +3781,9 @@
             const bottleneckTooltip = document.getElementById(`bottleneck-${stageIndex}`);
             const quoteTooltip = document.getElementById(`quote-${stageIndex}`);
 
-            mainTooltip.classList.remove('visible');
-            quoteTooltip.classList.remove('visible');
-            bottleneckTooltip.classList.add('visible');
+            if (mainTooltip) mainTooltip.classList.remove('visible');
+            if (quoteTooltip) quoteTooltip.classList.remove('visible');
+            if (bottleneckTooltip) bottleneckTooltip.classList.add('visible');
         }
 
         function showQuoteTooltip(stageIndex) {
@@ -3757,9 +3791,9 @@
             const bottleneckTooltip = document.getElementById(`bottleneck-${stageIndex}`);
             const quoteTooltip = document.getElementById(`quote-${stageIndex}`);
 
-            mainTooltip.classList.remove('visible');
-            bottleneckTooltip.classList.remove('visible');
-            quoteTooltip.classList.add('visible');
+            if (mainTooltip) mainTooltip.classList.remove('visible');
+            if (bottleneckTooltip) bottleneckTooltip.classList.remove('visible');
+            if (quoteTooltip) quoteTooltip.classList.add('visible');
         }
 
         function hideNestedTooltip(stageIndex) {
@@ -3767,10 +3801,26 @@
             const bottleneckTooltip = document.getElementById(`bottleneck-${stageIndex}`);
             const quoteTooltip = document.getElementById(`quote-${stageIndex}`);
 
-            bottleneckTooltip.classList.remove('visible');
-            quoteTooltip.classList.remove('visible');
-            mainTooltip.classList.add('visible');
+            if (bottleneckTooltip) bottleneckTooltip.classList.remove('visible');
+            if (quoteTooltip) quoteTooltip.classList.remove('visible');
+            if (mainTooltip) mainTooltip.classList.add('visible');
         }
+
+        // 🔹 Close tooltips when clicking outside
+        document.addEventListener("click", (e) => {
+            // Ignore clicks inside tooltips
+            if (e.target.closest(".stage-tooltip")) return;
+
+            // Ignore clicks on stage nodes (their own handler manages toggle)
+            if (e.target.closest(".stage-node")) return;
+
+            // Close if a tooltip is open
+            if (currentOpenTooltip !== null) {
+                closeAllTooltipsForStage(currentOpenTooltip);
+                currentOpenTooltip = null;
+            }
+        });
+
     </script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -3804,6 +3854,34 @@
             });
         });
     </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const helpIcon = document.getElementById("helpIcon");
+            const helpTooltip = document.getElementById("helpTooltip");
+            const closeHelp = document.getElementById("closeHelpTooltip");
+
+            if (helpIcon && helpTooltip && closeHelp) {
+                // Toggle tooltip
+                helpIcon.addEventListener("click", (e) => {
+                    e.stopPropagation();
+                    helpTooltip.classList.toggle("hidden");
+                });
+
+                // Close with X
+                closeHelp.addEventListener("click", (e) => {
+                    e.stopPropagation();
+                    helpTooltip.classList.add("hidden");
+                });
+
+                // Close if clicking on supply chain stage area
+                document.getElementById("supplyChainContainer").addEventListener("click", () => {
+                    helpTooltip.classList.add("hidden");
+                });
+            }
+        });
+    </script>
+
 
 </body>
 
