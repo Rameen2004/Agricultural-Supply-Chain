@@ -63,7 +63,7 @@
     display: block;
     top: 360px;
     left: 110px;
-    transform: rotate(15deg);
+    transform: rotate(-10deg);
 }
 
 /* Wheat Arrows */
@@ -74,62 +74,62 @@
 }
 .WheatArrow.arrow0{
     display: block;
-    top: 20px;
-    left: 300px;
+    top: 50px;
+    left: 290px;
 }
 .WheatArrow.arrow1{
     display: block;
-    top: 20px;
-    left: 600px;
+    top: 50px;
+    left: 580px;
 }
 .WheatArrow.arrow2{
     display: block;
-    top: 20px;
-    left: 885px;
+    top: 50px;
+    left: 870px;
 }
 .WheatArrow.arrow3{
     display: block;
-    top: 200px;
-    left: 300px;
+    top: 250px;
+    left: 290px;
     transform: rotate(180deg);
 }
 .WheatArrow.arrow4{
     display: block;
-    top: 200px;
-    left: 600px;
+    top: 250px;
+    left: 580px;
     transform: rotate(180deg);
 }
 .WheatArrow.arrow5{
     display: block;
-    top: 200px;
-    left: 885px;
+    top: 250px;
+    left: 870px;
     transform: rotate(180deg);
 }
 .WheatArrow.arrow6{
     display: block;
-    top: 390px;
-    left: 300px;
+    top: 450px;
+    left: 290px;
 }
 .WheatArrow.arrow7{
     display: block;
-    top: 390px;
-    left: 600px;
+    top: 450px;
+    left: 580px;
 }
 .WheatArrow.arrow8{
     display: block;
-    top: 390px;
-    left: 885px;
+    top: 450px;
+    left: 870px;
 }
 .WheatArrow.curvearrow0{
     display: block;
-    top: 170px;
+    top: 210px;
    
     left: 1150px;
     transform: scaleX(-1) rotate(-45deg);
 }
 .WheatArrow.curvearrow1{
     display: block;
-    top: 370px;
+    top: 410px;
     
     left: 35px;
     transform: rotate(-45deg);
@@ -181,9 +181,9 @@
 }
 .ChiliArrow.curvearrow1{
     display: block;
-    top: 450px;
+    top: 440px;
     left: 120px;
-    transform: rotate(-42deg);
+    transform: rotate(-40deg);
 }
 
 /* Banana */
@@ -239,7 +239,7 @@
     display: block;
     top: 360px;
     left: 110px;
-    transform: rotate(20deg);
+    transform: rotate(-10deg);
 }
 
 /* Orange Arrows*/
@@ -299,13 +299,13 @@
 }
 .OrangeArrow.curvearrow0{
     display: block;
-    top: 230px;
-    left: 1160px;
+    top: 210px;
+    left: 1150px;
     transform: scaleX(-1) rotate(-35deg);
 }
 .OrangeArrow.curvearrow1{
     display: block;
-    top: 440px;
+    top: 420px;
     left: 30px;
     transform: rotate(-35deg);
 }
@@ -346,9 +346,9 @@
 }
 .MaizeArrow.curvearrow0{
     display: block;
-    top: 150px;
-    left: 900px;
-    transform: scaleX(-1) rotate(-10deg);
+    top: 130px;
+    left: 860px;
+    transform: scaleX(-1) rotate(-5deg);
 }
 .MaizeArrow.curvearrow1{
     display: block;
@@ -395,9 +395,9 @@
 }
 .MustardArrow.curvearrow0{
     display: block;
-    top: 190px;
-    left: 1080px;
-    transform: scaleX(-1) rotate(-40deg);
+    top: 170px;
+    left: 1010px;
+    transform: scaleX(-1) rotate(10deg);
 }
 
 
@@ -427,10 +427,10 @@
 
 .MilkArrow.curvearrow0 {
     display: block;
-    top: 175px;
+    top: 145px;
 
-    left: 950px;
-    transform: scaleX(-1) rotate(-42deg);
+    left: 850px;
+    transform: scaleX(-1) rotate(-5deg);
 }
 
 
@@ -487,7 +487,7 @@
     display: block;
     top: 360px;
     left: 110px;
-    transform: rotate(20deg);
+    transform: rotate(-10deg);
 }
 
 /* Potato */
@@ -532,9 +532,9 @@
 
 .PotatoArrow.curvearrow0 {
     display: block;
-    top: 190px;
-    left: 1080px;
-    transform: scaleX(-1) rotate(-40deg);
+    top: 160px;
+    left: 1020px;
+    transform: scaleX(-1) rotate(-0deg);
 }
 
 /* Rice */
@@ -599,7 +599,7 @@
     display: block;
     top: 360px;
     left: 110px;
-    transform: rotate(20deg);
+    transform: rotate(-30deg);
 }
 
 /* Sugarcane */
@@ -664,7 +664,7 @@
     display: block;
     top: 360px;
     left: 110px;
-    transform: rotate(20deg);
+    transform: rotate(-10deg);
 }
 /* Garlic*/
 
