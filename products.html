@@ -242,7 +242,7 @@
             border: 1px solid #cc5500;
             color: #c50;
             font-family: 'Open Sans', sans-serif;
-            width: 240px;
+            width: 350px;
             height: 240px;
         }
 
@@ -266,7 +266,7 @@
             border: 1px solid #cc5500;
             color: #cc5500;
             font-family: 'Open Sans', sans-serif;
-            width: 240px;
+            width: 350px;
             height: 240px;
         }
 
@@ -764,7 +764,7 @@
                 <div class="product-card bg-alabaster rounded shadow-md overflow-hidden transition-all duration-300 border border-dun"
                     data-category="grains" data-product="Maize" onclick="showSupplyChainView(this)">
                     <div class="h-40 bg-gray-100 relative">
-                        <img src="https://cdn.pixabay.com/photo/2020/03/30/21/18/corn-4985460_1280.jpg" alt="Maize"
+                        <img src="https://i.postimg.cc/9FFhR1QC/maize.jpg" alt="Maize"
                             class="w-full h-full object-cover object-top">
                     </div>
                     <div class="p-4">
@@ -783,7 +783,7 @@
                 <div class="product-card bg-alabaster rounded shadow-md overflow-hidden transition-all duration-300 border border-dun"
                     data-category="dairy" data-product="Milk" onclick="showSupplyChainView(this)">
                     <div class="h-40 bg-gray-100 relative">
-                        <img src="https://i.postimg.cc/MGBcLBjR/Screenshot-2025-09-29-172552.png" alt="Milk"
+                        <img src="https://i.postimg.cc/RZxKM3Rt/Screenshot-2025-11-04-122953.png" alt="Milk"
                             class="w-full h-full object-cover object-top">
                     </div>
                     <div class="p-4">
@@ -803,7 +803,7 @@
                 <div class="product-card bg-alabaster rounded shadow-md overflow-hidden transition-all duration-300 border border-dun"
                     data-category="others" data-product="Mustard" onclick="showSupplyChainView(this)">
                     <div class="h-40 bg-gray-100 relative">
-                        <img src="https://cdn.pixabay.com/photo/2019/10/22/13/27/autumn-4568733_1280.jpg" alt="Mustard"
+                        <img src="https://i.postimg.cc/PrLSR869/Screenshot-2025-11-04-121613.png" alt="Mustard"
                             class="w-full h-full object-cover object-top">
                     </div>
                     <div class="p-4">
@@ -959,7 +959,7 @@
             'Orange': 'https://i.ibb.co/jZ5w73NZ/Whats-App-Image-2025-09-06-at-2-08-01-AM.jpg',
             'Lentils': 'https://i.postimg.cc/T3KtwSVF/IMG-20250806-WA0108.jpg',
             'Maize': 'https://cdn.pixabay.com/photo/2020/03/30/21/18/corn-4985460_1280.jpg',
-            'Milk': ' https://i.postimg.cc/MGBcLBjR/Screenshot-2025-09-29-172552.png',
+            'Milk': "https://i.postimg.cc/RZxKM3Rt/Screenshot-2025-11-04-122953.png",
             'Mustard': 'https://cdn.pixabay.com/photo/2019/10/22/13/27/autumn-4568733_1280.jpg',
             'Banana': 'https://i.postimg.cc/gjMQ8pLb/IMG-20250806-WA0044.jpg'
         };
@@ -2818,198 +2818,121 @@
                     ]
                 }
             },
-            'Lentils': {
+           'Lentils': {
                 stages: [
                     {
-                        title: 'Seed Selection',
-                        description: 'Selecting certified lentil varieties',
-                        icon: 'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z',
-                        position: { top: 50, left: 100 },
-                        tooltip: {
-                            title: 'Lentil Seed Selection Details',
-                            content: 'Certified seeds ensure uniform germination and disease resistance. Different varieties selected for cooking quality and market demand.',
-                            stats: [
-                                'Seed Rate: 25-30 kg/hectare',
-                                'Germination: 85-90%',
-                                'Varieties: Red, black, green',
-                                'Certification: Required'
+                        "title": "Seed & Inputs",
+                        "description": "Limited access to certified seeds and weak agronomic support",
+                        "icon": "https://i.ibb.co/LzrhY1Lk/Seed-Selection.png",
+                        "position": { "top": 85, "left": 200 },
+                        "tooltip": {
+                            "title": "Seed & Input Challenges Details",
+                            "content": "<p>Most farmers rely on saved or informal seed systems, resulting in inconsistent germination and lower yields. Extension services are weak and policy support for pulses remains minimal.</p><b>Regional Varieties and Conditions</b><table><tr><th>Region</th><th>Common Varieties</th><th>Notes</th></tr><tr><td>Punjab</td><td>Masoor Chasi, Naya Masoor 2006</td><td>Locally adapted; good for moderate-rainfall areas</td></tr><tr><td>Sindh</td><td>Masoor Local, Early Moong</td><td>Grown in sandy, low-rainfall zones</td></tr><tr><td>KPK</td><td>Local small-grain varieties</td><td>Limited cultivation; often mixed with wheat crops</td></tr></table><b>Needed Improvements</b><ul><li>Stronger seed-certification systems and quality control</li><li>Expanded extension services for smallholder training</li><li>Research partnerships for climate-resilient varieties</li></ul>",
+                            "stats": [
+                                "Certified Seed Coverage: <20%",
+                                "Average Yield Potential: ~0.6 t/ha (for lentils/pulses)",
+                                "Per-Capita Lentil Consumption: 0.5-1 kg in Pakistan"
                             ]
                         },
-                        bottleneck: 'Limited certified seed availability, variety-specific demands',
-                        "quote": "5678"
+                        "bottleneck": "Weak seed certification, limited farmer training, low research investment.",
+                        "quote": "“Pulses receive far less attention and policy support than wheat or rice.” — Agricultural Expert"
                     },
                     {
-                        title: 'Land Preparation',
-                        description: 'Soil preparation and field conditioning',
-                        icon: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z',
-                        position: { top: 50, left: 300 },
-                        tooltip: {
-                            title: 'Land Preparation Details',
-                            content: 'Well-drained soils with pH 6.0-7.5 optimal. Shallow tillage preserves moisture. Rhizobium inoculation enhances nitrogen fixation.',
-                            stats: [
-                                'Optimal pH: 6.0-7.5',
-                                'Tillage: 15-20 cm depth',
-                                'Inoculation: Rhizobium bacteria',
-                                'Drainage: Critical'
+                        "title": "Cultivation",
+                        "description": "Lentil farming improves soil health but uses limited area",
+                        "icon": "https://i.postimg.cc/jjLymqmF/Land-Preparation.png",
+                        "position": { "top": 85, "left": 500 },
+                        "tooltip": {
+                            "title": "Production & Cultivation Details",
+                            "content": "<p>Lentils are grown on less than 5% of Pakistan’s agricultural area. The crop is adapted to sandy or degraded soils and contributes to nitrogen fixation, improving soil health.</p><b>Cultivation Facts</b><table><tr><th>Aspect</th><th>Details</th></tr><tr><td>Major Producing Regions</td><td>Punjab (largest), Sindh, KPK</td></tr><tr><td>Soil Type</td><td>Sandy, degraded, moderate fertility</td></tr><tr><td>Crop Rotation</td><td>Often with wheat, canola or followed by maize</td></tr><tr><td>Innovations</td><td>Laser-leveling, bio-fertilizers, drought-tolerant varieties</td></tr><tr><td>Challenges</td><td>Irrigation access, pests (aphids & pod borers), low mechanisation</td></tr></table>",
+                            "stats": [
+                                "Area under Lentils: <5% of agricultural land",
+                                "Growing Period: Approx. 90-120 days",
+                                "Water Requirement: ~300-400 mm (typical lentil crop)"
                             ]
                         },
-                        bottleneck: 'Poor drainage, soil pH issues, inoculant availability',
-                        "quote": "5678"
+                        "bottleneck": "Irrigation constraints, pest outbreaks, limited mechanisation.",
+                        "quote": "“Lentils are grown mostly in ‘meethay pani ka zameen’ – lands of moderate fertility.” — Field Researcher"
                     },
                     {
-                        title: 'Sowing',
-                        description: 'Planting at optimal depth and spacing',
-                        icon: 'M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10',
-                        position: { top: 50, left: 500 },
-                        tooltip: {
-                            title: 'Sowing Details',
-                            content: 'Sown at 2-3 cm depth with 20-25 cm row spacing. October-November sowing ensures optimal conditions. Seed treatment prevents diseases.',
-                            stats: [
-                                'Sowing Depth: 2-3 cm',
-                                'Row Spacing: 20-25 cm',
-                                'Sowing Time: October-November',
-                                'Seed Treatment: Recommended'
+                        "title": "Markets & Trade",
+                        "description": "High import dependence and limited domestic supply",
+                        "icon": "https://i.postimg.cc/SQVH7DLN/marketintermediaries.png",
+                        "position": { "top": 85, "left": 800 },
+                        "tooltip": {
+                            "title": "Economic & Market Dynamics Details",
+                            "content": "<p>Pakistan relies heavily on imports to meet its lentil demand. Domestic production remains stagnant while consumption grows. Market drivers include demand for affordable protein and population growth.</p><b>Key Economic Indicators</b><table><tr><th>Factor</th><th>Details</th></tr><tr><td>Import Dependence</td><td>80-90% of total supply</td></tr><tr><td>Annual Import Value</td><td>~USD 1 billion</td></tr><tr><td>Domestic Area Under Cultivation</td><td><5% of land</td></tr><tr><td>Main Market Drivers</td><td>Affordable protein, rising population</td></tr><tr><td>Key Issues</td><td>Price volatility, weak marketing channels, low policy support</td></tr></table>",
+                            "stats": [
+                                "Import Share: 80-90%",
+                                "Annual Import Value: ~USD 1 billion",
+                                "Per-Capita Consumption of Lentils: 0.5-1 kg (Pakistan)"
                             ]
                         },
-                        bottleneck: 'Timing precision, seed placement accuracy, weather dependency',
-                        "quote": "5678"
+                        "bottleneck": "High import reliance, unstable prices, weak domestic marketing infrastructure.",
+                        "quote": "“Every year we import almost a billion dollars of lentils.” — Trade Expert"
                     },
                     {
-                        title: 'Crop Management',
-                        description: 'Minimal irrigation and pest control',
-                        icon: 'M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z',
-                        position: { top: 50, left: 700 },
-                        tooltip: {
-                            title: 'Crop Management Details',
-                            content: 'Drought-tolerant crop requiring minimal irrigation. Weed control critical in early stages. Aphid and pod borer management essential.',
-                            stats: [
-                                'Water Requirement: 300-400 mm',
-                                'Growing Period: 90-120 days',
-                                'Irrigation: 1-2 times if needed',
-                                'Major Pests: Aphids, pod borers'
+                        "title": "Imports & Logistics",
+                        "description": "Major lentil types imported, processed and distributed domestically",
+                        "icon": "https://i.postimg.cc/63fgPhDc/export-import.png",
+                        "position": { "top": 285, "left": 800 },
+                        "tooltip": {
+                            "title": "Importing & Logistics Details",
+                            "content": "<p>Pakistan imports different types of lentils—raw, husked, split—from key origins. Processing hubs near ports handle distribution. Transit times, port congestion and documentation pose challenges.</p><b>Import Origins & Logistics</b><table><tr><th>Lentil Type</th><th>Main Origins</th><th>Processing Location</th><th>Remarks</th></tr><tr><td>Channa (Gram)</td><td>Australia</td><td>Processed locally</td><td>Imported raw, husked & polished domestically</td></tr><tr><td>Masoor (Red Lentil)</td><td>Australia, Canada, Ukraine, Russia</td><td>Karachi & Hyderabad</td><td>Arrives raw or semi-processed</td></tr><tr><td>Maash (Black Gram)</td><td>Myanmar, Thailand</td><td>Karachi</td><td>Imported bulk, cleaned locally</td></tr><tr><td>Moong (Green Gram)</td><td>Tanzania, Brazil, Kenya, Argentina (50% local)</td><td>Mixed</td><td>Split between local and import</td></tr></table><b>Logistics Notes</b><ul><li>Transit Time: ~60 days</li><li>Bottlenecks: Port congestion, customs delays, strict GMO/HSE documentation</li><li>Key hubs: Karachi (SITE area, Gulshan-e-Maymar), Hyderabad (less humidity)</li></ul>",
+                            "stats": [
+                                "Import Volume (2023): ~117.8 million kg",
+                                "Key Origins: Australia (>65%), Canada, Russia",
+                                "Transit Time: ~60 days"
                             ]
                         },
-                        bottleneck: 'Weed competition, pest outbreaks, drought stress',
-                        "quote": "5678"
+                        "bottleneck": "Port congestion, customs/documentation delays, import-logistics costs.",
+                        "quote": "“Most red lentils reach Karachi semi-processed and finish here for domestic sale.” — Importer"
                     },
                     {
-                        title: 'Harvesting',
-                        description: 'Harvesting when pods are mature',
-                        icon: 'M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4',
-                        position: { top: 180, left: 850 },
-                        tooltip: {
-                            title: 'Harvesting Details',
-                            content: 'Harvested when pods turn brown and rattle. Early morning harvesting reduces shattering. Combine harvesters used for large areas.',
-                            stats: [
-                                'Harvest Indicator: Brown, dry pods',
-                                'Harvest Time: Early morning',
-                                'Yield: 1.5-2.5 tons/hectare',
-                                'Shattering Loss: Minimize'
+                        "title": "Processing",
+                        "description": "Cleaning, grading, packaging and distributing lentils across markets",
+                        "icon": "https://i.postimg.cc/Ss9CQTyL/processing.png",
+                        "position": { "top": 285, "left": 500 },
+                        "tooltip": {
+                            "title": "Processing & Distribution Details",
+                            "content": "<p>Processing includes cleaning, polishing, grading by size and color, and packaging for local and export markets. Moisture and storage control are critical especially in humid zones.</p><b>Processing Stages</b><table><tr><th>Stage</th><th>Purpose</th><th>Notes</th></tr><tr><td>Cleaning & Polishing</td><td>Improve appearance & remove impurities</td><td>Remove dust, stones, husks</td></tr><tr><td>Grading</td><td>Segregate by size & color</td><td>Determines price tier</td></tr><tr><td>Packaging</td><td>Ensure hygiene & shelf-life</td><td>Poly-bags local, vacuum pack export</td></tr><tr><td>Moisture Control</td><td>Prevent spoilage</td><td>Crucial in coastal/humid areas</td></tr></table><b>Distribution & Market Hubs</b><ul><li>Wholesale centre: Jodia Bazaar (Karachi)</li><li>Processing/redistribution hubs: Korangi, Malir, Hyderabad</li><li>Supply chain flow: Farmer → Processor/Importer → Wholesaler → Retailer → Consumer</li></ul>",
+                            "stats": [
+                                "Cleaning Efficiency: >99%",
+                                "By-product use: Husks used as animal feed",
+                                "Shelf-life risk: 8-10 days in high humidity without proper control"
                             ]
                         },
-                        bottleneck: 'Shattering losses, narrow harvest window, weather dependency',
-                        "quote": "5678"
+                        "bottleneck": "Humidity/spoilage risk, grading precision, high processing cost.",
+                        "quote": "“If moisture stays high, lentils blacken within a week.” — Processor, Hyderabad"
                     },
                     {
-                        title: 'Threshing',
-                        description: 'Separating seeds from pods',
-                        icon: 'M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 113 0v1m0 0V11m0-5.5a1.5 1.5 0 113 0v3m0 0V11',
-                        position: { top: 350, left: 850 },
-                        tooltip: {
-                            title: 'Threshing Details',
-                            content: 'Mechanical threshing separates seeds efficiently. Proper adjustment prevents damage. Winnowing removes chaff and debris.',
-                            stats: [
-                                'Threshing Efficiency: 95-98%',
-                                'Seed Damage: <2%',
-                                'Cleaning: Multiple winnowing',
-                                'Quality Factor: Minimal damage'
+                        "title": "Consumption",
+                        "description": "Staple protein source with varied uses and rising health trends",
+                        "icon": "https://i.postimg.cc/m2DJdCV3/retail-consumption.png",
+                        "position": { "top": 285, "left": 200 },
+                        "tooltip": {
+                            "title": "Consumption & Demand Details",
+                            "content": "<p>Lentils are sales-tax exempt and consumed across income levels. Different types serve different regional/cultural uses and health trends are increasing demand for lighter varieties.</p><b>Consumption Patterns by Lentil Type</b><table><tr><th>Lentil Type</th><th>Main Use</th><th>Consumer Base</th><th>Trend</th></tr><tr><td>Channa Daal</td><td>Staple household dish</td><td>All income levels</td><td>Stable demand</td></tr><tr><td>Moong Daal</td><td>Light, healthy meals</td><td>Health-conscious consumers</td><td>Growing popularity</td></tr><tr><td>Masoor Daal</td><td>Everyday cooking</td><td>Urban households</td><td>Consistent demand</td></tr><tr><td>Maash Daal</td><td>Restaurant/hotel use</td><td>Commercial buyers</td><td>High demand in food service</td></tr></table><b>Price Influences</b><ul><li>Seasonal shortages and import delays</li><li>Moisture conditions and spoilage risk</li><li>Preference for imported lentils due to better colour and shelf-life</li></ul>",
+                            "stats": [
+                                "Sales-Tax: Exempt",
+                                "Protein Content: 24-26%",
+                                "Domestic Consumption Trend: Rising despite low production"
                             ]
                         },
-                        bottleneck: 'Seed damage, cleaning efficiency, equipment availability',
-                        "quote": "5678"
-                    },
-                    {
-                        title: 'Cleaning & Grading',
-                        description: 'Removing impurities and size grading',
-                        icon: 'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z',
-                        position: { top: 470, left: 700 },
-                        tooltip: {
-                            title: 'Cleaning & Grading Details',
-                            content: 'Multi-stage cleaning removes stones and foreign matter. Size grading separates into market categories. Color sorting removes discolored seeds.',
-                            stats: [
-                                'Cleaning Efficiency: 99%+',
-                                'Size Categories: 3-4 grades',
-                                'Foreign Matter: <1%',
-                                'Color Sorting: Available'
-                            ]
-                        },
-                        bottleneck: 'Cleaning equipment costs, grading precision, quality standards',
-                        "quote": "5678"
-                    },
-                    {
-                        title: 'Storage',
-                        description: 'Proper storage to maintain quality',
-                        icon: 'M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4',
-                        position: { top: 470, left: 500 },
-                        tooltip: {
-                            title: 'Storage Details',
-                            content: 'Moisture below 12% prevents mold. Hermetic storage prevents insects. Temperature control maintains quality and viability.',
-                            stats: [
-                                'Moisture: <12%',
-                                'Temperature: 15-20°C',
-                                'Storage Life: 12-18 months',
-                                'Pest Control: Hermetic storage'
-                            ]
-                        },
-                        bottleneck: 'Moisture control, pest management, storage infrastructure',
-                        "quote": "5678"
-                    },
-                    {
-                        title: 'Processing',
-                        description: 'Dehulling and splitting',
-                        icon: 'M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0',
-                        position: { top: 470, left: 300 },
-                        tooltip: {
-                            title: 'Processing Details',
-                            content: 'Dehulling removes outer coat for split lentils. Different processing methods produce whole, split, and flour products. Value addition increases price.',
-                            stats: [
-                                'Dehulling Recovery: 85-90%',
-                                'Products: Whole, split, flour',
-                                'Value Addition: 50-100%',
-                                'Processing Capacity: Variable'
-                            ]
-                        },
-                        bottleneck: 'Processing capacity, quality control, market segmentation',
-                        "quote": "5678"
-                    },
-                    {
-                        title: 'Marketing',
-                        description: 'Domestic and export sales',
-                        icon: 'M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z',
-                        position: { top: 470, left: 100 },
-                        tooltip: {
-                            title: 'Marketing Details',
-                            content: 'Sold through wholesale markets and retail chains. Organic certification commands premium. Brand development enhances positioning.',
-                            stats: [
-                                'Domestic Market: 80%',
-                                'Export Market: 20%',
-                                'Organic Premium: 30-50%',
-                                'Protein Content: 24-26%'
-                            ]
-                        },
-                        bottleneck: 'Price volatility, quality certification, limited export markets',
-                        "quote": "5678"
+                        "bottleneck": "Price volatility, import-dependence, limited direct market access for farmers.",
+                        "quote": "“Gareeb admi bhi daal chawal kha letay hain.” — Trader, Jodia Bazaar"
                     }
                 ],
                 overview: {
-                    title: 'Lentils Supply Chain Overview',
-                    stats: [
-                        { title: 'Pakistan Production', value: '300 Thousand', subtitle: 'Metric tons annually', color: 'olive-green' },
-                        { title: 'Protein Content', value: '24-26%', subtitle: 'High nutritional value', color: 'fresh-green' },
-                        { title: 'Export Potential', value: '$150 Million', subtitle: 'Annual export opportunity', color: 'reseda-green' }
+                    "title": "Lentils Supply Chain Overview",
+                    "stats": [
+                        { "title": "Import Dependence", "value": "80-90%", "subtitle": "Of total lentil supply", "color": "olive-green" },
+                        { "title": "Annual Import Value", "value": "USD ~1 billion", "subtitle": "Spent on lentil imports", "color": "fresh-green" },
+                        { "title": "Protein Content", "value": "24-26%", "subtitle": "High nutritional value", "color": "reseda-green" }
                     ]
                 }
             },
+
             'Maize': {
                 stages: [
                     {
