@@ -443,7 +443,7 @@
             border: 1px solid #cc5500;
             color: #c50;
             font-family: 'Open Sans', sans-serif;
-            width: 240px;
+            width: 350px;
             height: 240px;
         }
 
@@ -467,7 +467,7 @@
             border: 1px solid #cc5500;
             color: #cc5500;
             font-family: 'Open Sans', sans-serif;
-            width: 240px;
+            width: 350px;
             height: 240px;
         }
 
@@ -727,8 +727,10 @@
         .about-section {
             display: flex;
             flex-wrap: wrap;
-            background-color: alabaster;
-            padding: 30px 20px;
+            background-color: #ffffff;
+            /* instead of plain 'alabaster' keyword */
+            padding: 20px 20px 20px;
+            /* reduced top padding, more bottom padding for balance */
             align-items: center;
         }
 
@@ -743,38 +745,50 @@
 
         .about-text {
             flex: 1 1 50%;
-            padding: 20px;
+            padding: 10px 20px;
+            /* reduced top padding so text block starts higher */
         }
 
         .about-text h2 {
-            font-size: 2.5em;
-            margin-bottom: 15px;
+            font-size: 2.2em;
+            /* slightly smaller so it doesn’t overpower */
+            margin-top: 0;
+            /* remove top margin to push heading up */
+            margin-bottom: 20px;
+            /* give breathing space before paragraph */
             color: #355E3B;
+            line-height: 1.2;
         }
 
         .about-text p {
-            font-size: 1.1em;
+            font-size: 1.05em;
             line-height: 1.6;
             color: #333;
+            margin: 0 0 15px;
+            /* consistent spacing between paragraphs */
         }
 
         .about-image {
             flex: 1 1 50%;
-            padding: 20px;
+            padding: 10px 20px;
+            /* less vertical padding so image aligns with text */
             text-align: center;
-
         }
 
         .about-image img {
-            width: 105%;
-            max-width: none;
-            height: auto;
-            border-radius: 12px;
+            width: 100%;
+            max-width: 500px;
+            /* prevent image from stretching too wide */
+            height: 450px;
+            border-radius: 14px;
+            display: block;
+            margin: 0 auto;
         }
+
 
         .read-more-button {
             display: inline-block;
-            margin-top: 24px;
+            margin-top: 22px;
             margin-left: 20px;
             padding: 7px 23px;
             background-color: #3c5f0e;
@@ -791,7 +805,7 @@
 
         .ending-note-section {
             background-color: alabaster;
-            padding: 60px 20px;
+            padding: 20px 20px 20px;
         }
 
         .ending-note-container {
@@ -829,9 +843,9 @@
         }
 
         .ending-note-image img {
-            width: 105%;
+            width: 100%;
             max-width: none;
-            height: auto;
+            height: 400px;
             border-radius: 12px;
         }
 
@@ -845,15 +859,12 @@
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="container mx-auto px-4 py-3 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <div class="w-12 h-12 flex items-center justify-center bg-olive-green rounded-full text-white relative">
-                    <i class="ri-plant-line ri-lg"></i>
-                    <div
-                        class="absolute -bottom-1 -right-1 w-6 h-6 bg-fresh-green rounded-full flex items-center justify-center">
-                        <div class="w-3 h-3 bg-white rounded-full"></div>
-                    </div>
+                <div class="w-12 h-12 flex items-center justify-center">
+                    <img src="https://i.ibb.co/N6QKR836/2.png" alt="Green Classroom Logo"
+                        class="w-full h-full object-contain rounded-full">
                 </div>
                 <div>
-                    <h1 class="text-xl font-bold text-olive-green font-poppins">Safar-e-Fasal</h1>
+                    <h1 class="text-xl font-bold text-olive-green font-poppins">The Green Classroom</h1>
                     <p class="text-xs text-reseda-green font-nunito">Cultivating Knowledge</p>
                 </div>
             </div>
@@ -882,7 +893,7 @@
             <div class="absolute inset-0 bg-black bg-opacity-10"></div>
 
             <!-- Slide Text -->
-            <div class="relative z-10 text-center text-white cursor-pointer" id="slideContent">
+            <div class="absolute top-[50%] text-center text-white z-10 cursor-pointer" id="slideContent">
                 <h1 class="text-6xl md:text-6xl font-bold font-poppins mb-8">Cultivating the Future of Agriculture</h1>
                 <p class="text-xl md:text-3xl font-open-sans">Pakistan's Agricultural Supply Chain Excellence</p>
             </div>
@@ -904,38 +915,30 @@
     <section class="about-section" id="about">
         <div class="about-container">
             <div class="about-text">
-                <h2>About Us</h2>
+                <h2 class="mb-4 mt-0">About The Green Classroom</h2>
                 <p>
-                    At AgriVision Pakistan, our mission is to bridge the gap between data, farmers, and policy through
-                    transparent
-                    agricultural mapping and digital innovation.
-                    We believe that empowering farmers, traders, and stakeholders with clear, accurate supply chain
-                    visuals can
-                    revolutionize decision-making, reduce inefficiencies,
-                    and improve food security across the nation. By integrating ground-level realities with accessible
-                    technology, we aim to
-                    make agriculture not only more
-                    sustainable and profitable but also more inclusive. Our work spans data visualization, regional
-                    analysis, and
-                    field-based storytelling — all grounded in
-                    the core belief that understanding agriculture better leads to growing it smarter.
+                    The Green Classroom is a research initiative dedicated to mapping and analyzing Pakistan’s
+                    agricultural
+                    supply chains.
+                    We provide critical insights into how <span class="highlight">markets, policies, and power
+                        relations</span> shape food systems,
+                    with the mission to make agriculture more sustainable, inclusive, and equitable.
+                    By bridging research and practice, we aim to strengthen farmer livelihoods and enhance food security
+                    across Pakistan.
                 </p>
             </div>
             <div class="about-image">
-                <img src="https://cdn.pixabay.com/photo/2017/06/11/02/05/wheat-2391348_1280.jpg"
-                    alt="About agriculture">
+                <img src="https://i.postimg.cc/QdqDZrHf/crop-3996327-1280.jpg" alt="Agriculture in Pakistan">
                 <a href="about.html" class="read-more-button">Read More</a>
             </div>
         </div>
     </section>
 
     </section>
-
     <!-- Visual Data Representations Heading  -->
-    <h2 class="text-4xl font-bold text-olive-green text-center py-6 mb-7 font-poppins">Visual Data Representations
+    <h2 class="text-4xl text-olive-green text-center py-6 mb-4 font-poppins">Visual Data Representations
     </h2>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
         <div class="bg-white rounded-lg shadow-md p-6 border border-dun">
             <div class="flex items-center justify-between mb-6">
                 <h3 class="text-lg text-reseda-green font-poppins">Trends in Crop Production Efficiency</h3>
@@ -994,7 +997,7 @@
 
     <section id="breather-section" class="relative h-[400px] flex items-center justify-center text-center">
         <div class="absolute inset-0">
-            <img src="https://cdn.pixabay.com/photo/2024/10/27/07/12/women-9152739_1280.jpg" alt="Background"
+            <img src="https://i.postimg.cc/VNsx9zy8/Screenshot-2025-11-04-181325.png" alt="Background"
                 class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-black bg-opacity-40"></div>
         </div>
@@ -1007,7 +1010,7 @@
     </section>
 
 
-    <section class="py-12 bg-white">
+    <section class="pt-12 pb-6 bg-white">
         <div class="container mx-auto px-4">
             <div class="text-center mb-10">
                 <h2 class="text-3xl font-bold text-olive-green mb-4 font-poppins">Agricultural Products</h2>
@@ -1060,8 +1063,7 @@
                 </p>
             </div>
             <div class="ending-note-image">
-                <img src="https://cdn.pixabay.com/photo/2017/05/19/15/16/countryside-2326787_1280.jpg"
-                    alt="Farmer Image">
+                <img src="https://i.postimg.cc/sfWFy6s9/cutter-4018898-1280.jpg" alt="Farmer Image">
             </div>
         </div>
     </section>
@@ -1311,9 +1313,9 @@
 
     <script id="hero-slideshow">
         const slides = [
-            { image: 'https://cdn.pixabay.com/photo/2020/03/15/13/19/lotus-flowers-4933604_1280.jpg' },
-            { image: 'https://cdn.pixabay.com/photo/2015/12/09/17/11/vegetables-1085063_1280.jpg', link: 'products.html' },
-            { image: 'https://i.ibb.co/Ndt2xqS7/Screenshot-2025-07-21-185925.png', link: 'maps.html' },
+            { image: 'https://i.postimg.cc/wMVLS1ch/Screenshot-2025-11-04-101740.png' },
+            { image: 'https://i.postimg.cc/nV5dk5SG/Screenshot-2025-11-04-101340.png', link: 'products.html' },
+            { image: 'https://i.postimg.cc/QN4w3G7G/Screenshot-2025-11-03-120011.png', link: 'maps.html' },
             { image: 'https://i.ibb.co/s9HYT9y6/Screenshot-2025-07-21-183831.png', link: 'about.html' }
         ];
 
@@ -1376,105 +1378,105 @@
         const allProducts = [
             {
                 name: 'Wheat',
-                image: 'https://cdn.pixabay.com/photo/2023/07/30/07/23/soft-wheat-8158264_1280.jpg',
+                image: "https://i.postimg.cc/gkLGssPN/Whats-App-Image-2025-09-06-at-2-08-02-AM-1.jpg",
                 description: 'Primary grain crop with nationwide cultivation',
                 production: '25.2M tons',
                 category: 'grains'
             },
             {
                 name: 'Rice',
-                image: 'https://i.postimg.cc/4xh8WVH0/IMG-20250806-WA0119.jpg',
+                image: "https://i.postimg.cc/4xh8WVH0/IMG-20250806-WA0119.jpg",
                 description: 'Key export crop grown in irrigated areas',
                 production: '8.4M tons',
                 category: 'grains'
             },
             {
                 name: 'Sugarcane',
-                image: 'https://cdn.pixabay.com/photo/2020/07/09/20/00/sugarcane-5388614_1280.jpg',
+                image: "https://i.ibb.co/Gfkp6Mjf/Whats-App-Image-2025-09-06-at-2-08-02-AM.jpg",
                 description: 'Cash crop for sugar production',
                 production: '75.5M tons',
                 category: 'others'
             },
             {
                 name: 'Chili',
-                image: 'https://i.postimg.cc/xjvn4NMc/IMG-20250806-WA0130.jpg',
+                image: "https://i.postimg.cc/xjvn4NMc/IMG-20250806-WA0130.jpg",
                 description: 'Spice crop with export potential',
                 production: '145K tons',
                 category: 'vegetables'
             },
             {
                 name: 'Garlic',
-                image: 'https://i.postimg.cc/7Z1cnS2N/IMG-20250806-WA0096.jpg',
+                image: "https://i.postimg.cc/7Z1cnS2N/IMG-20250806-WA0096.jpg",
                 description: 'Essential spice crop with domestic and export demand',
                 production: '150K tons',
                 category: 'vegetables'
             },
             {
                 name: 'Potato',
-                image: 'https://i.postimg.cc/k5bkRLyB/IMG-20250806-WA0125.jpg',
+                image: "https://i.ibb.co/PZ8r5qPd/Whats-App-Image-2025-09-06-at-2-08-00-AM.jpg",
                 description: 'Major vegetable crop with nationwide demand',
                 production: '4.6M tons',
                 category: 'vegetables'
             },
             {
                 name: 'Tomato',
-                image: 'https://i.postimg.cc/yxQ9HQtT/IMG-20250806-WA0080.jpg',
+                image: "https://i.ibb.co/dsBMqVnR/Whats-App-Image-2025-09-06-at-2-08-00-AM-1.jpg",
                 description: 'High-value vegetable with processing potential',
                 production: '575K tons',
                 category: 'fruits'
             },
             {
                 name: 'Mango',
-                image: 'https://i.postimg.cc/Vv613Dj1/IMG-20250806-WA0059.jpg',
+                image: "https://i.postimg.cc/Vv613Dj1/IMG-20250806-WA0059.jpg",
                 description: 'Premium fruit with global demand',
                 production: '1.9M tons',
                 category: 'fruits'
             },
             {
                 name: 'Apple',
-                image: 'https://cdn.pixabay.com/photo/2019/03/14/21/15/apple-4055926_1280.jpg',
+                image: "https://i.ibb.co/6RbzXYbT/Whats-App-Image-2025-09-06-at-2-08-01-AM-1.jpg",
                 description: 'High-value fruit from northern areas',
                 production: '600K tons',
                 category: 'fruits'
             },
             {
                 name: 'Orange',
-                image: 'https://cdn.pixabay.com/photo/2016/01/02/02/03/orange-1117645_1280.jpg',
+                image: "https://i.ibb.co/jZ5w73NZ/Whats-App-Image-2025-09-06-at-2-08-01-AM.jpg",
                 description: 'Citrus fruit with domestic and export markets',
                 production: '1.6M tons',
                 category: 'fruits'
             },
             {
                 name: 'Lentils',
-                image: 'https://i.postimg.cc/T3KtwSVF/IMG-20250806-WA0108.jpg',
+                image: "https://i.postimg.cc/T3KtwSVF/IMG-20250806-WA0108.jpg",
                 description: 'Key pulse crop with nutritional value',
                 production: '300K tons',
                 category: 'others'
             },
             {
                 name: 'Maize',
-                image: 'https://cdn.pixabay.com/photo/2020/03/30/21/18/corn-4985460_1280.jpg',
+                image: "https://i.postimg.cc/9FFhR1QC/maize.jpg",
                 description: 'Important feed and grain',
                 production: '6M tons',
                 category: 'grains'
             },
             {
                 name: 'Milk',
-                image: 'https://cdn.pixabay.com/photo/2017/01/18/15/23/milk-can-1990072_1280.jpg',
+                image: "https://i.postimg.cc/RZxKM3Rt/Screenshot-2025-11-04-122953.png",
                 description: 'Major dairy product with widespread production',
                 production: '40M tons',
                 category: 'dairy'
             },
             {
                 name: 'Mustard',
-                image: 'https://cdn.pixabay.com/photo/2019/10/22/13/27/autumn-4568733_1280.jpg',
+                image: "https://i.postimg.cc/PrLSR869/Screenshot-2025-11-04-121613.png",
                 description: 'Oilseed crop for edible oil production',
                 production: '200K tons',
                 category: 'others'
             },
             {
                 name: 'Banana',
-                image: 'https://i.postimg.cc/gjMQ8pLb/IMG-20250806-WA0044.jpg',
+                image: "https://i.postimg.cc/gjMQ8pLb/IMG-20250806-WA0044.jpg",
                 description: 'Popular fruit with domestic demand',
                 production: '150K tons',
                 category: 'fruits'
@@ -1556,21 +1558,21 @@
     <script id="supply-chain-data">
         // Product background images - one for each product
         const productBackgroundImages = {
-            'Wheat': 'https://cdn.pixabay.com/photo/2023/07/30/07/23/soft-wheat-8158264_1280.jpg',
-            'Rice': 'https://i.postimg.cc/4xh8WVH0/IMG-20250806-WA0119.jpg',
-            'Sugarcane': 'https://cdn.pixabay.com/photo/2020/07/09/20/00/sugarcane-5388614_1280.jpg',
-            'Chili': 'https://i.postimg.cc/xjvn4NMc/IMG-20250806-WA0130.jpg',
-            'Garlic': 'https://i.postimg.cc/7Z1cnS2N/IMG-20250806-WA0096.jpg',
-            'Potato': 'https://i.postimg.cc/k5bkRLyB/IMG-20250806-WA0125.jpg',
-            'Tomato': 'https://i.postimg.cc/yYjpJ74f/IMG-20250806-WA0080.jpg',
-            'Mango': 'https://i.postimg.cc/c4SBM2MV/IMG-20250806-WA0059.jpg',
-            'Apple': 'https://cdn.pixabay.com/photo/2019/03/14/21/15/apple-4055926_1280.jpg',
-            'Orange': 'https://cdn.pixabay.com/photo/2016/01/02/02/03/orange-1117645_1280.jpg',
-            'Lentils': 'https://i.postimg.cc/T3KtwSVF/IMG-20250806-WA0108.jpg',
-            'Maize': 'https://cdn.pixabay.com/photo/2020/03/30/21/18/corn-4985460_1280.jpg',
-            'Milk': 'https://cdn.pixabay.com/photo/2017/01/18/15/23/milk-can-1990072_1280.jpg',
-            'Mustard': 'https://cdn.pixabay.com/photo/2019/10/22/13/27/autumn-4568733_1280.jpg',
-            'Banana': 'https://i.postimg.cc/gjMQ8pLb/IMG-20250806-WA0044.jpg'
+            'Wheat': "https://i.postimg.cc/gkLGssPN/Whats-App-Image-2025-09-06-at-2-08-02-AM-1.jpg",
+            'Rice': "https://i.postimg.cc/4xh8WVH0/IMG-20250806-WA0119.jpg",
+            'Sugarcane': "https://i.ibb.co/Gfkp6Mjf/Whats-App-Image-2025-09-06-at-2-08-02-AM.jpg",
+            'Chili': "https://i.postimg.cc/xjvn4NMc/IMG-20250806-WA0130.jpg",
+            'Garlic': "https://i.postimg.cc/7Z1cnS2N/IMG-20250806-WA0096.jpg",
+            'Potato': "https://i.ibb.co/PZ8r5qPd/Whats-App-Image-2025-09-06-at-2-08-00-AM.jpg",
+            'Tomato': "https://i.ibb.co/dsBMqVnR/Whats-App-Image-2025-09-06-at-2-08-00-AM-1.jpg",
+            'Mango': "https://i.postimg.cc/Vv613Dj1/IMG-20250806-WA0059.jpg",
+            'Apple': "https://i.ibb.co/6RbzXYbT/Whats-App-Image-2025-09-06-at-2-08-01-AM-1.jpg",
+            'Orange': "https://i.ibb.co/jZ5w73NZ/Whats-App-Image-2025-09-06-at-2-08-01-AM.jpg",
+            'Lentils': "https://i.postimg.cc/T3KtwSVF/IMG-20250806-WA0108.jpg",
+            'Maize': "https://i.postimg.cc/9FFhR1QC/maize.jpg",
+            'Milk': "https://i.postimg.cc/RZxKM3Rt/Screenshot-2025-11-04-122953.png",
+            'Mustard': "https://i.postimg.cc/PrLSR869/Screenshot-2025-11-04-121613.png",
+            'Banana': "https://i.postimg.cc/gjMQ8pLb/IMG-20250806-WA0044.jpg"
         };
         // Product color schemes - each product gets unique background, icon border, and tooltip colors
         const productColors = {
@@ -1651,16 +1653,16 @@
             },
             'Maize': {
                 background: '#F9FBE7',
-                titleBackground: '#FFE135',
+                titleBackground: '#FFCE1B',
                 tooltipBackground: '#F9FBE7',
-                stageIconBg: '#FFE135',
+                stageIconBg: '#FFCE1B',
 
             },
             'Milk': {
                 background: '#F9FBE7',
-                titleBackground: '#FE7F9C',
+                titleBackground: '#93948f',
                 tooltipBackground: '#F9FBE7',
-                stageIconBg: '#FE7F9C',
+                stageIconBg: '#93948f',
 
             },
             'Mustard': {
@@ -2951,7 +2953,7 @@
                     {
                         title: 'Growing ',
                         description: 'Nurturing young mango plants in controlled nursery environments',
-                        icon: '',
+                        icon: 'https://i.ibb.co/qMhvtSpX/growing.png',
                         position: { top: 50, left: 500 },
                         tooltip: {
                             title: " Growing and Raising Saplings Details ",
@@ -2985,7 +2987,7 @@
                     {
                         title: 'Grafting',
                         description: 'Joining the scion of a desired variety to the rootstock to determine final fruit characteristics',
-                        icon: '',
+                        icon: 'https://i.ibb.co/dJKJNpGw/grafting.png',
                         position: { top: 250, left: 800 },
                         tooltip: {
                             title: "Grafting the Desired Variety (Tazaan) Details ",
@@ -3016,7 +3018,7 @@
                     {
                         title: 'Ripening ',
                         description: 'Processes to mature mangoes before market distribution',
-                        icon: '',
+                        icon: 'https://i.ibb.co/FL963Yd9/ripening.png',
                         position: { top: 250, left: 200 },
                         tooltip: {
                             title: " Ripening Stage – Soakh Details ",
@@ -3248,7 +3250,7 @@
                     {
                         "title": "Early Orchard Years",
                         "description": "Initial fruiting, irrigation management, and intercropping for additional income.",
-                        "icon": "",
+                        "icon": "https://i.ibb.co/qF090Vc4/early-orchard.png",
                         "position": { "top": 50, "left": 670 },
                         "tooltip": {
                             "content": "<p>During the first 1–6 years, orange trees focus on root and canopy development. Care during this stage ensures strong growth and prepares the orchard for future fruiting</p><table border='1' cellspacing='0' cellpadding='5' style='width:550px;'><tr><th>Aspect</th><th>Details</th></tr><tr><td>Fruiting</td><td>Begins after 5–6 years</td></tr><tr><td>Orchard lifespan</td><td>Up to 50 years; young trees yield better quality fruit</td></tr><tr><td>Intercropping</td><td>Wheat, pulses, vegetables in early years</td></tr><tr><td>Irrigation & Fertilization</td><td>Separate for citrus trees and intercrops</td></tr></table>",
@@ -3376,7 +3378,7 @@
                             ]
                         },
                         "bottleneck": "Strict quality standards limit export volume; dependence on Karachi port can cause delays.",
-                        "quote": "Exports are nearly shut down. The cost of oranges in Pakistan is so high that we can’t compete internationally—the factories are closing"
+                        "quote": "Exports are nearly shut down. The cost of oranges in Pakistan is so high that we can’t compete internationally—the factories are closing."
                     },
                     {
                         "title": "Local Market",
@@ -3401,7 +3403,7 @@
                     {
                         "title": "Food Processing",
                         "description": "Oranges are further processed into value-added products for domestic and export markets.",
-                        "icon": "",
+                        "icon": "https://i.postimg.cc/Ss9CQTyL/processing.png",
                         "position": { "top": 450, "left": 960 },
                         "tooltip": {
                             title: "Food Processing & Value Addition Details",
@@ -3418,204 +3420,127 @@
                 overview: {
                     title: 'Orange Supply Chain Overview',
                     stats: [
-                        { title: 'Pakistan Production', value: '1.6 Million', subtitle: 'Metric tons annually', color: 'olive-green' },
-                        { title: 'Processing Potential', value: '40%', subtitle: 'For juice and concentrate', color: 'fresh-green' },
-                        { title: 'Export Opportunity', value: '$80 Million', subtitle: 'Annual export potential', color: 'reseda-green' }
+                        { title: 'Pakistan Production', value: '-', subtitle: 'Metric tons annually', color: 'olive-green' },
+                        { title: 'Processing Potential', value: '-', subtitle: 'For juice and concentrate', color: 'fresh-green' },
+                        { title: 'Export Opportunity', value: '-', subtitle: 'Annual export potential', color: 'reseda-green' }
                     ]
                 }
             },
             'Lentils': {
-                stages: [
-                    {
-                        title: 'Seed Selection',
-                        description: 'Selecting certified lentil varieties',
-                        icon: 'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z',
-                        position: { top: 50, left: 100 },
-                        tooltip: {
-                            title: 'Lentil Seed Selection Details',
-                            content: 'Certified seeds ensure uniform germination and disease resistance. Different varieties selected for cooking quality and market demand.',
-                            stats: [
-                                'Seed Rate: 25-30 kg/hectare',
-                                'Germination: 85-90%',
-                                'Varieties: Red, black, green',
-                                'Certification: Required'
-                            ]
-                        },
-                        bottleneck: 'Limited certified seed availability, variety-specific demands',
-                        "quote": "5678"
-                    },
-                    {
-                        title: 'Land Preparation',
-                        description: 'Soil preparation and field conditioning',
-                        icon: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z',
-                        position: { top: 50, left: 300 },
-                        tooltip: {
-                            title: 'Land Preparation Details',
-                            content: 'Well-drained soils with pH 6.0-7.5 optimal. Shallow tillage preserves moisture. Rhizobium inoculation enhances nitrogen fixation.',
-                            stats: [
-                                'Optimal pH: 6.0-7.5',
-                                'Tillage: 15-20 cm depth',
-                                'Inoculation: Rhizobium bacteria',
-                                'Drainage: Critical'
-                            ]
-                        },
-                        bottleneck: 'Poor drainage, soil pH issues, inoculant availability',
-                        "quote": "5678"
-                    },
-                    {
-                        title: 'Sowing',
-                        description: 'Planting at optimal depth and spacing',
-                        icon: 'M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10',
-                        position: { top: 50, left: 500 },
-                        tooltip: {
-                            title: 'Sowing Details',
-                            content: 'Sown at 2-3 cm depth with 20-25 cm row spacing. October-November sowing ensures optimal conditions. Seed treatment prevents diseases.',
-                            stats: [
-                                'Sowing Depth: 2-3 cm',
-                                'Row Spacing: 20-25 cm',
-                                'Sowing Time: October-November',
-                                'Seed Treatment: Recommended'
-                            ]
-                        },
-                        bottleneck: 'Timing precision, seed placement accuracy, weather dependency',
-                        "quote": "5678"
-                    },
-                    {
-                        title: 'Crop Management',
-                        description: 'Minimal irrigation and pest control',
-                        icon: 'M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z',
-                        position: { top: 50, left: 700 },
-                        tooltip: {
-                            title: 'Crop Management Details',
-                            content: 'Drought-tolerant crop requiring minimal irrigation. Weed control critical in early stages. Aphid and pod borer management essential.',
-                            stats: [
-                                'Water Requirement: 300-400 mm',
-                                'Growing Period: 90-120 days',
-                                'Irrigation: 1-2 times if needed',
-                                'Major Pests: Aphids, pod borers'
-                            ]
-                        },
-                        bottleneck: 'Weed competition, pest outbreaks, drought stress',
-                        "quote": "5678"
-                    },
-                    {
-                        title: 'Harvesting',
-                        description: 'Harvesting when pods are mature',
-                        icon: 'M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4',
-                        position: { top: 180, left: 850 },
-                        tooltip: {
-                            title: 'Harvesting Details',
-                            content: 'Harvested when pods turn brown and rattle. Early morning harvesting reduces shattering. Combine harvesters used for large areas.',
-                            stats: [
-                                'Harvest Indicator: Brown, dry pods',
-                                'Harvest Time: Early morning',
-                                'Yield: 1.5-2.5 tons/hectare',
-                                'Shattering Loss: Minimize'
-                            ]
-                        },
-                        bottleneck: 'Shattering losses, narrow harvest window, weather dependency',
-                        "quote": "5678"
-                    },
-                    {
-                        title: 'Threshing',
-                        description: 'Separating seeds from pods',
-                        icon: 'M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 113 0v1m0 0V11m0-5.5a1.5 1.5 0 113 0v3m0 0V11',
-                        position: { top: 350, left: 850 },
-                        tooltip: {
-                            title: 'Threshing Details',
-                            content: 'Mechanical threshing separates seeds efficiently. Proper adjustment prevents damage. Winnowing removes chaff and debris.',
-                            stats: [
-                                'Threshing Efficiency: 95-98%',
-                                'Seed Damage: <2%',
-                                'Cleaning: Multiple winnowing',
-                                'Quality Factor: Minimal damage'
-                            ]
-                        },
-                        bottleneck: 'Seed damage, cleaning efficiency, equipment availability',
-                        "quote": "5678"
-                    },
-                    {
-                        title: 'Cleaning & Grading',
-                        description: 'Removing impurities and size grading',
-                        icon: 'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z',
-                        position: { top: 470, left: 700 },
-                        tooltip: {
-                            title: 'Cleaning & Grading Details',
-                            content: 'Multi-stage cleaning removes stones and foreign matter. Size grading separates into market categories. Color sorting removes discolored seeds.',
-                            stats: [
-                                'Cleaning Efficiency: 99%+',
-                                'Size Categories: 3-4 grades',
-                                'Foreign Matter: <1%',
-                                'Color Sorting: Available'
-                            ]
-                        },
-                        bottleneck: 'Cleaning equipment costs, grading precision, quality standards',
-                        "quote": "5678"
-                    },
-                    {
-                        title: 'Storage',
-                        description: 'Proper storage to maintain quality',
-                        icon: 'M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4',
-                        position: { top: 470, left: 500 },
-                        tooltip: {
-                            title: 'Storage Details',
-                            content: 'Moisture below 12% prevents mold. Hermetic storage prevents insects. Temperature control maintains quality and viability.',
-                            stats: [
-                                'Moisture: <12%',
-                                'Temperature: 15-20°C',
-                                'Storage Life: 12-18 months',
-                                'Pest Control: Hermetic storage'
-                            ]
-                        },
-                        bottleneck: 'Moisture control, pest management, storage infrastructure',
-                        "quote": "5678"
-                    },
-                    {
-                        title: 'Processing',
-                        description: 'Dehulling and splitting',
-                        icon: 'M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0',
-                        position: { top: 470, left: 300 },
-                        tooltip: {
-                            title: 'Processing Details',
-                            content: 'Dehulling removes outer coat for split lentils. Different processing methods produce whole, split, and flour products. Value addition increases price.',
-                            stats: [
-                                'Dehulling Recovery: 85-90%',
-                                'Products: Whole, split, flour',
-                                'Value Addition: 50-100%',
-                                'Processing Capacity: Variable'
-                            ]
-                        },
-                        bottleneck: 'Processing capacity, quality control, market segmentation',
-                        "quote": "5678"
-                    },
-                    {
-                        title: 'Marketing',
-                        description: 'Domestic and export sales',
-                        icon: 'M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z',
-                        position: { top: 470, left: 100 },
-                        tooltip: {
-                            title: 'Marketing Details',
-                            content: 'Sold through wholesale markets and retail chains. Organic certification commands premium. Brand development enhances positioning.',
-                            stats: [
-                                'Domestic Market: 80%',
-                                'Export Market: 20%',
-                                'Organic Premium: 30-50%',
-                                'Protein Content: 24-26%'
-                            ]
-                        },
-                        bottleneck: 'Price volatility, quality certification, limited export markets',
-                        "quote": "5678"
-                    }
-                ],
-                overview: {
-                    title: 'Lentils Supply Chain Overview',
-                    stats: [
-                        { title: 'Pakistan Production', value: '300 Thousand', subtitle: 'Metric tons annually', color: 'olive-green' },
-                        { title: 'Protein Content', value: '24-26%', subtitle: 'High nutritional value', color: 'fresh-green' },
-                        { title: 'Export Potential', value: '$150 Million', subtitle: 'Annual export opportunity', color: 'reseda-green' }
-                    ]
-                }
+    stages: [
+        {
+            "title": "Seed & Inputs",
+            "description": "Limited access to certified seeds and weak agronomic support",
+            "icon": "https://i.ibb.co/LzrhY1Lk/Seed-Selection.png",
+            "position": { "top": 85, "left": 200 },
+            "tooltip": {
+                "title": "Seed & Input Challenges Details",
+                "content": "<p>Most farmers rely on saved or informal seed systems, resulting in inconsistent germination and lower yields. Extension services are weak and policy support for pulses remains minimal.</p><b>Regional Varieties and Conditions</b><table><tr><th>Region</th><th>Common Varieties</th><th>Notes</th></tr><tr><td>Punjab</td><td>Masoor Chasi, Naya Masoor 2006</td><td>Locally adapted; good for moderate-rainfall areas</td></tr><tr><td>Sindh</td><td>Masoor Local, Early Moong</td><td>Grown in sandy, low-rainfall zones</td></tr><tr><td>KPK</td><td>Local small-grain varieties</td><td>Limited cultivation; often mixed with wheat crops</td></tr></table><b>Needed Improvements</b><ul><li>Stronger seed-certification systems and quality control</li><li>Expanded extension services for smallholder training</li><li>Research partnerships for climate-resilient varieties</li></ul>",
+                "stats": [
+                    "Certified Seed Coverage: <20%",
+                    "Average Yield Potential: ~0.6 t/ha (for lentils/pulses)",
+                    "Per-Capita Lentil Consumption: 0.5-1 kg in Pakistan"
+                ]
             },
+            "bottleneck": "Weak seed certification, limited farmer training, low research investment.",
+            "quote": "“Pulses receive far less attention and policy support than wheat or rice.” — Agricultural Expert"
+        },
+        {
+            "title": "Cultivation",
+            "description": "Lentil farming improves soil health but uses limited area",
+            "icon": "https://i.postimg.cc/jjLymqmF/Land-Preparation.png",
+            "position": { "top": 85, "left": 500 },
+            "tooltip": {
+                "title": "Production & Cultivation Details",
+                "content": "<p>Lentils are grown on less than 5% of Pakistan’s agricultural area. The crop is adapted to sandy or degraded soils and contributes to nitrogen fixation, improving soil health.</p><b>Cultivation Facts</b><table><tr><th>Aspect</th><th>Details</th></tr><tr><td>Major Producing Regions</td><td>Punjab (largest), Sindh, KPK</td></tr><tr><td>Soil Type</td><td>Sandy, degraded, moderate fertility</td></tr><tr><td>Crop Rotation</td><td>Often with wheat, canola or followed by maize</td></tr><tr><td>Innovations</td><td>Laser-leveling, bio-fertilizers, drought-tolerant varieties</td></tr><tr><td>Challenges</td><td>Irrigation access, pests (aphids & pod borers), low mechanisation</td></tr></table>",
+                "stats": [
+                    "Area under Lentils: <5% of agricultural land",
+                    "Growing Period: Approx. 90-120 days",
+                    "Water Requirement: ~300-400 mm (typical lentil crop)"
+                ]
+            },
+            "bottleneck": "Irrigation constraints, pest outbreaks, limited mechanisation.",
+            "quote": "“Lentils are grown mostly in ‘meethay pani ka zameen’ – lands of moderate fertility.” — Field Researcher"
+        },
+        {
+            "title": "Markets & Trade",
+            "description": "High import dependence and limited domestic supply",
+            "icon": "https://i.postimg.cc/SQVH7DLN/marketintermediaries.png",
+            "position": { "top": 85, "left": 800 },
+            "tooltip": {
+                "title": "Economic & Market Dynamics Details",
+                "content": "<p>Pakistan relies heavily on imports to meet its lentil demand. Domestic production remains stagnant while consumption grows. Market drivers include demand for affordable protein and population growth.</p><b>Key Economic Indicators</b><table><tr><th>Factor</th><th>Details</th></tr><tr><td>Import Dependence</td><td>80-90% of total supply</td></tr><tr><td>Annual Import Value</td><td>~USD 1 billion</td></tr><tr><td>Domestic Area Under Cultivation</td><td><5% of land</td></tr><tr><td>Main Market Drivers</td><td>Affordable protein, rising population</td></tr><tr><td>Key Issues</td><td>Price volatility, weak marketing channels, low policy support</td></tr></table>",
+                "stats": [
+                    "Import Share: 80-90%",
+                    "Annual Import Value: ~USD 1 billion",
+                    "Per-Capita Consumption of Lentils: 0.5-1 kg (Pakistan)"
+                ]
+            },
+            "bottleneck": "High import reliance, unstable prices, weak domestic marketing infrastructure.",
+            "quote": "“Every year we import almost a billion dollars of lentils.” — Trade Expert"
+        },
+        {
+            "title": "Imports & Logistics",
+            "description": "Major lentil types imported, processed and distributed domestically",
+            "icon": "https://i.postimg.cc/63fgPhDc/export-import.png",
+            "position": { "top": 285, "left": 800 },
+            "tooltip": {
+                "title": "Importing & Logistics Details",
+                "content": "<p>Pakistan imports different types of lentils—raw, husked, split—from key origins. Processing hubs near ports handle distribution. Transit times, port congestion and documentation pose challenges.</p><b>Import Origins & Logistics</b><table><tr><th>Lentil Type</th><th>Main Origins</th><th>Processing Location</th><th>Remarks</th></tr><tr><td>Channa (Gram)</td><td>Australia</td><td>Processed locally</td><td>Imported raw, husked & polished domestically</td></tr><tr><td>Masoor (Red Lentil)</td><td>Australia, Canada, Ukraine, Russia</td><td>Karachi & Hyderabad</td><td>Arrives raw or semi-processed</td></tr><tr><td>Maash (Black Gram)</td><td>Myanmar, Thailand</td><td>Karachi</td><td>Imported bulk, cleaned locally</td></tr><tr><td>Moong (Green Gram)</td><td>Tanzania, Brazil, Kenya, Argentina (50% local)</td><td>Mixed</td><td>Split between local and import</td></tr></table><b>Logistics Notes</b><ul><li>Transit Time: ~60 days</li><li>Bottlenecks: Port congestion, customs delays, strict GMO/HSE documentation</li><li>Key hubs: Karachi (SITE area, Gulshan-e-Maymar), Hyderabad (less humidity)</li></ul>",
+                "stats": [
+                    "Import Volume (2023): ~117.8 million kg",
+                    "Key Origins: Australia (>65%), Canada, Russia",
+                    "Transit Time: ~60 days"
+                ]
+            },
+            "bottleneck": "Port congestion, customs/documentation delays, import-logistics costs.",
+            "quote": "“Most red lentils reach Karachi semi-processed and finish here for domestic sale.” — Importer"
+        },
+        {
+            "title": "Processing",
+            "description": "Cleaning, grading, packaging and distributing lentils across markets",
+            "icon": "https://i.postimg.cc/Ss9CQTyL/processing.png",
+            "position": { "top": 285, "left": 500 },
+            "tooltip": {
+                "title": "Processing & Distribution Details",
+                "content": "<p>Processing includes cleaning, polishing, grading by size and color, and packaging for local and export markets. Moisture and storage control are critical especially in humid zones.</p><b>Processing Stages</b><table><tr><th>Stage</th><th>Purpose</th><th>Notes</th></tr><tr><td>Cleaning & Polishing</td><td>Improve appearance & remove impurities</td><td>Remove dust, stones, husks</td></tr><tr><td>Grading</td><td>Segregate by size & color</td><td>Determines price tier</td></tr><tr><td>Packaging</td><td>Ensure hygiene & shelf-life</td><td>Poly-bags local, vacuum pack export</td></tr><tr><td>Moisture Control</td><td>Prevent spoilage</td><td>Crucial in coastal/humid areas</td></tr></table><b>Distribution & Market Hubs</b><ul><li>Wholesale centre: Jodia Bazaar (Karachi)</li><li>Processing/redistribution hubs: Korangi, Malir, Hyderabad</li><li>Supply chain flow: Farmer → Processor/Importer → Wholesaler → Retailer → Consumer</li></ul>",
+                "stats": [
+                    "Cleaning Efficiency: >99%",
+                    "By-product use: Husks used as animal feed",
+                    "Shelf-life risk: 8-10 days in high humidity without proper control"
+                ]
+            },
+            "bottleneck": "Humidity/spoilage risk, grading precision, high processing cost.",
+            "quote": "“If moisture stays high, lentils blacken within a week.” — Processor, Hyderabad"
+        },
+        {
+            "title": "Consumption",
+            "description": "Staple protein source with varied uses and rising health trends",
+            "icon": "https://i.postimg.cc/m2DJdCV3/retail-consumption.png",
+            "position": { "top": 285, "left": 200 },
+            "tooltip": {
+                "title": "Consumption & Demand Details",
+                "content": "<p>Lentils are sales-tax exempt and consumed across income levels. Different types serve different regional/cultural uses and health trends are increasing demand for lighter varieties.</p><b>Consumption Patterns by Lentil Type</b><table><tr><th>Lentil Type</th><th>Main Use</th><th>Consumer Base</th><th>Trend</th></tr><tr><td>Channa Daal</td><td>Staple household dish</td><td>All income levels</td><td>Stable demand</td></tr><tr><td>Moong Daal</td><td>Light, healthy meals</td><td>Health-conscious consumers</td><td>Growing popularity</td></tr><tr><td>Masoor Daal</td><td>Everyday cooking</td><td>Urban households</td><td>Consistent demand</td></tr><tr><td>Maash Daal</td><td>Restaurant/hotel use</td><td>Commercial buyers</td><td>High demand in food service</td></tr></table><b>Price Influences</b><ul><li>Seasonal shortages and import delays</li><li>Moisture conditions and spoilage risk</li><li>Preference for imported lentils due to better colour and shelf-life</li></ul>",
+                "stats": [
+                    "Sales-Tax: Exempt",
+                    "Protein Content: 24-26%",
+                    "Domestic Consumption Trend: Rising despite low production"
+                ]
+            },
+            "bottleneck": "Price volatility, import-dependence, limited direct market access for farmers.",
+            "quote": "“Gareeb admi bhi daal chawal kha letay hain.” — Trader, Jodia Bazaar"
+        }
+    ],
+    overview: {
+        "title": "Lentils Supply Chain Overview",
+        "stats": [
+            { "title": "Import Dependence", "value": "80-90%", "subtitle": "Of total lentil supply", "color": "olive-green" },
+            { "title": "Annual Import Value", "value": "USD ~1 billion", "subtitle": "Spent on lentil imports", "color": "fresh-green" },
+            { "title": "Protein Content", "value": "24-26%", "subtitle": "High nutritional value", "color": "reseda-green" }
+        ]
+    }
+},
+
             'Maize': {
                 stages: [
                     {
@@ -3638,7 +3563,7 @@
                     {
                         title: 'Varieties',
                         description: 'Maize varieties differ in flavor, texture, and uses, from traditional foods to feed and snacks.',
-                        icon: '',
+                        icon: 'https://i.ibb.co/Hp7CBVPk/varieties.png',
                         position: { top: 50, left: 650 },
                         tooltip: {
                             title: 'Varieties, Flavor & End Uses',
@@ -3757,7 +3682,7 @@
                     {
                         "title": "Animal Markets",
                         "description": "Trading hubs for buying and selling animals",
-                        "icon": "",
+                        "icon": "https://i.ibb.co/KxCvy1HD/animal-market.png",
                         "position": { "top": 50, "left": 350 },
                         "tooltip": {
                             "title": "Animal Markets (Mandis) Details",
@@ -3771,7 +3696,7 @@
                     {
                         "title": "Farms",
                         "description": "Buffalo milk production and feeding practices",
-                        "icon": "",
+                        "icon": "https://i.ibb.co/C5kyz9nJ/farms.png",
                         "position": { "top": 50, "left": 650 },
                         "tooltip": {
                             "title": "Farms (Baaraas) Details",
@@ -3862,7 +3787,7 @@
 
                     {
                         title: 'Cultivation & Farming',
-                        description: '"Timely sowing, good soil, balanced inputs yield better canola & raya."',
+                        description: "Timely sowing, good soil, balanced inputs yield better canola & raya.",
                         icon: 'https://i.postimg.cc/bN902B13/Crop-Management.png',
                         position: { top: 85, left: 500 },
                         tooltip: {
@@ -3935,7 +3860,7 @@
                     {
                         title: 'End Buyers',
                         description: "Mustard buyers are households, processors, and feed users, with demand shaped by season and type.",
-                        icon: '',
+                        icon: 'https://i.ibb.co/k6Q6wQqJ/end-buyers.png',
                         position: { top: 285, left: 80 },
                         tooltip: {
                             content: `<table border="1" cellspacing="0" cellpadding="5" style="width:450px;"><tr><th>Buyer Type</th><th>Role in Supply Chain</th><th>Products Purchased</th><th>Products Produced / Uses</th><th>Notes & Demand Trends</th></tr><tr><td>Small Oil Mills</td><td>Local-level oil extraction</td><td>Mustard seeds</td><td>Mustard oil (cooking, pickles), Khal (livestock feed)</td><td>Rural towns; rely on mechanical expellers; cater to household & farmer demand</td></tr><tr><td>Large Solvent Plants</td><td>Industrial-scale extraction</td><td>Khal (mustard cake)</td><td>Extract extra 3–4% oil; Meel (poultry feed); refined/blended oils</td><td>Located in industrial zones; supply to ghee & edible oil brands</td></tr><tr><td>Households</td><td>Final consumer</td><td>Mustard oil</td><td>Cooking, pickles, winter dishes</td><td>Prefer locally milled/homemade oil due to adulteration concerns</td></tr><tr><td>Farmers</td><td>Livestock nutrition</td><td>Khal</td><td>Dairy cattle & buffalo feed</td><td>Improves milk yield; steady year-round demand</td></tr><tr><td>Industry</td><td>Large-scale processing</td><td>Mustard oil</td><td>Ghee production, blended oils, value-added foods</td><td>Demand spikes before Ramzan; bulk procurement common</td></tr></table>`,
@@ -4000,7 +3925,7 @@
                     {
                         title: 'Irrigation',
                         description: 'Banana fields are irrigated with river and tube well water to meet high demand.',
-                        icon: '',
+                        icon: 'https://i.ibb.co/JFQD9CkH/irrigation.png',
                         position: { top: 50, left: 800 },
                         tooltip: {
                             content: `<div style="margin-bottom:8px;">Bananas require consistent irrigation throughout the year, making them one of the most water-demanding crops.</div><table border="1" cellspacing="0" cellpadding="5" style="width:500px;"><tr><th>Aspect</th><th>Details</th></tr><tr><td>Water Use</td><td>~1,200–1,600 L for a dozen bananas; ~30,000–32,000 L for a maund (~40 kg)</td></tr><tr><td>Source</td><td>Primarily Indus River in Sindh</td></tr><tr><td>Irrigation Method</td><td>Mostly flood irrigation → high water loss via evaporation & seepage</td></tr><tr><td>Sources (Share)</td><td>80% river water; 20% tube well (used May–July, adds electricity cost)</td></tr><tr><td>Schedule</td><td>Every 7–8 days in sandy soil; every 12–15 days in heavier soil</td></tr></table>`,
@@ -4017,7 +3942,7 @@
                     {
                         title: 'Fertilization',
                         description: 'Banana plants receive nutrient support through chemical and recycled inputs.',
-                        icon: '',
+                        icon: 'https://i.ibb.co/0jcCXCqT/fertilization.png',
                         position: { top: 250, left: 800 },
                         tooltip: {
                             content: `<table border="1" cellspacing="0" cellpadding="5" style="width:500px;"><tr><th>Aspect</th><th>Details</th></tr><tr><td>Period</td><td>Nutrient application begins in September–October</td></tr><tr><td>Used Inputs</td><td>DAP, Nitrophos, ammonium nitrate, Sulphate of Potash, zinc, boron</td></tr><tr><td>Recycled Material</td><td>Ash from burned banana leaves and stalks</td></tr><tr><td>Cost</td><td>Rs. 4,000–6,000 per acre annually</td></tr></table>`,
@@ -4464,8 +4389,8 @@
                     type: 'line',
                     smooth: true,
                     data: [98.5, 105.2, 112.8, 118.4, 123.9, 127.8],
-                    lineStyle: { color: '#747545' },
-                    itemStyle: { color: '#747545' },
+                    lineStyle: { color: '#6F845D' },
+                    itemStyle: { color: '#6F845D' },
                     areaStyle: {
                         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
                             { offset: 0, color: 'rgba(69, 85, 44, 0.2)' },
@@ -4499,22 +4424,23 @@
                         show: false   //  remove lines from pie to labels
                     },
                     data: [
-                        { value: 20, name: 'Wheat', itemStyle: { color: '#8B0000' } },
-                        { value: 15, name: 'Rice', itemStyle: { color: '#FF8C00' } },
-                        { value: 10, name: 'Chili', itemStyle: { color: '#FFD700' } },
-                        { value: 8, name: 'Garlic', itemStyle: { color: '#006400' } },
-                        { value: 7, name: 'Sugarcane', itemStyle: { color: '#4682B4' } },
-                        { value: 6, name: 'Potato', itemStyle: { color: '#9932CC' } },
-                        { value: 5, name: 'Mango', itemStyle: { color: '#FF1493' } },
-                        { value: 4, name: 'Tomato', itemStyle: { color: '#A52A2A' } },
-                        { value: 4, name: 'Apple', itemStyle: { color: '#5F9EA0' } },
-                        { value: 3, name: 'Lentils', itemStyle: { color: '#B8860B' } },
-                        { value: 3, name: 'Orange', itemStyle: { color: '#2E8B57' } },
-                        { value: 2, name: 'Banana', itemStyle: { color: '#DA70D6' } },
-                        { value: 2, name: 'Milk', itemStyle: { color: '#FF4500' } },
-                        { value: 1, name: 'Maize', itemStyle: { color: '#1E90FF' } },
-                        { value: 1, name: 'Mustard', itemStyle: { color: '#9ACD32' } }
-                    ],
+                        { value: 20, name: 'Wheat', itemStyle: { color: '#FFF689' } },
+                        { value: 15, name: 'Rice', itemStyle: { color: '#F4D35E' } },
+                        { value: 10, name: 'Chili', itemStyle: { color: '#FFB88A' } },
+                        { value: 8, name: 'Garlic', itemStyle: { color: '#FF9C5B' } },
+                        { value: 7, name: 'Sugarcane', itemStyle: { color: '#F67B45' } },
+                        { value: 6, name: 'Potato', itemStyle: { color: '#FBC2C2' } },
+                        { value: 5, name: 'Mango', itemStyle: { color: '#E39B99' } },
+                        { value: 4, name: 'Tomato', itemStyle: { color: '#CB7876' } },
+                        { value: 4, name: 'Apple', itemStyle: { color: '#B4CFA4' } },
+                        { value: 3, name: 'Lentils', itemStyle: { color: '#8BA47C' } },
+                        { value: 3, name: 'Orange', itemStyle: { color: '#62866C' } },
+                        { value: 2, name: 'Banana', itemStyle: { color: '#A0C5E3' } },
+                        { value: 2, name: 'Milk', itemStyle: { color: '#81B2D9' } },
+                        { value: 1, name: 'Maize', itemStyle: { color: '#32769B' } },
+                        { value: 1, name: 'Mustard', itemStyle: { color: '#BBA6DD' } }
+                    ]
+                    ,
                     emphasis: {
                         itemStyle: {
                             shadowBlur: 10,
@@ -4547,21 +4473,21 @@
                     label: { show: false },
                     labelLine: { show: false },
                     data: [
-                        { value: 2, name: 'Wheat', itemStyle: { color: '#8B0000' } },
-                        { value: 2, name: 'Rice', itemStyle: { color: '#FF8C00' } },
-                        { value: 3, name: 'Chili', itemStyle: { color: '#FFD700' } },
-                        { value: 3, name: 'Garlic', itemStyle: { color: '#006400' } },
-                        { value: 4, name: 'Sugarcane', itemStyle: { color: '#4682B4' } },
-                        { value: 6, name: 'Potato', itemStyle: { color: '#9932CC' } },
-                        { value: 6, name: 'Mango', itemStyle: { color: '#FF1493' } },
-                        { value: 5, name: 'Tomato', itemStyle: { color: '#A52A2A' } },
-                        { value: 5, name: 'Apple', itemStyle: { color: '#5F9EA0' } },
-                        { value: 4, name: 'Lentils', itemStyle: { color: '#B8860B' } },
-                        { value: 7, name: 'Orange', itemStyle: { color: '#2E8B57' } },
-                        { value: 8, name: 'Banana', itemStyle: { color: '#DA70D6' } },
-                        { value: 10, name: 'Milk', itemStyle: { color: '#FF4500' } },
-                        { value: 14, name: 'Maize', itemStyle: { color: '#1E90FF' } },
-                        { value: 18, name: 'Mustard', itemStyle: { color: '#9ACD32' } }
+                        { value: 2, name: 'Wheat', itemStyle: { color: '#FFF689' } },
+                        { value: 2, name: 'Rice', itemStyle: { color: '#F4D35E' } },
+                        { value: 3, name: 'Chili', itemStyle: { color: '#FFB88A' } },
+                        { value: 3, name: 'Garlic', itemStyle: { color: '#FF9C5B' } },
+                        { value: 4, name: 'Sugarcane', itemStyle: { color: '#F67B45' } },
+                        { value: 6, name: 'Potato', itemStyle: { color: '#FBC2C2' } },
+                        { value: 6, name: 'Mango', itemStyle: { color: '#E39B99' } },
+                        { value: 5, name: 'Tomato', itemStyle: { color: '#CB7876' } },
+                        { value: 5, name: 'Apple', itemStyle: { color: '#B4CFA4' } },
+                        { value: 4, name: 'Lentils', itemStyle: { color: '#8BA47C' } },
+                        { value: 7, name: 'Orange', itemStyle: { color: '#62866C' } },
+                        { value: 8, name: 'Banana', itemStyle: { color: '#A0C5E3' } },
+                        { value: 10, name: 'Milk', itemStyle: { color: '#81B2D9' } },
+                        { value: 14, name: 'Maize', itemStyle: { color: '#32769B' } },
+                        { value: 18, name: 'Mustard', itemStyle: { color: '#BBA6DD' } }
                     ],
                     emphasis: {
                         itemStyle: {
@@ -4600,9 +4526,9 @@
                 series: [{
                     name: 'Efficiency',
                     type: 'bar',
-                    barWidth: '40%',   // slimmer bars to fit 5 categories
+                    barWidth: '30%',   // slimmer bars to fit 5 categories
                     data: [75, 90, 60, 70, 65],
-                    itemStyle: { color: '#747545' }
+                    itemStyle: { color: '#6F845D' }
                 }]
             };
             efficiencyChart.setOption(efficiencyOption);
