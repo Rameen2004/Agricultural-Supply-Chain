@@ -76,81 +76,70 @@
 }
 
 /* Wheat Arrows */
-.WheatArrow {
+.WheatArrow{
     position: absolute;
     display: none;
     width: 70px;
 }
-
-.WheatArrow.arrow0 {
+.WheatArrow.arrow0{
     display: block;
-    top: 20px;
-    left: 300px;
+    top: 50px;
+    left: 290px;
 }
-
-.WheatArrow.arrow1 {
+.WheatArrow.arrow1{
     display: block;
-    top: 20px;
-    left: 600px;
+    top: 50px;
+    left: 580px;
 }
-
-.WheatArrow.arrow2 {
+.WheatArrow.arrow2{
     display: block;
-    top: 20px;
-    left: 885px;
+    top: 50px;
+    left: 870px;
 }
-
-.WheatArrow.arrow3 {
+.WheatArrow.arrow3{
     display: block;
-    top: 200px;
-    left: 300px;
+    top: 250px;
+    left: 290px;
     transform: rotate(180deg);
 }
-
-.WheatArrow.arrow4 {
+.WheatArrow.arrow4{
     display: block;
-    top: 200px;
-    left: 600px;
+    top: 250px;
+    left: 580px;
     transform: rotate(180deg);
 }
-
-.WheatArrow.arrow5 {
+.WheatArrow.arrow5{
     display: block;
-    top: 200px;
-    left: 885px;
+    top: 250px;
+    left: 870px;
     transform: rotate(180deg);
 }
-
-.WheatArrow.arrow6 {
+.WheatArrow.arrow6{
     display: block;
-    top: 390px;
-    left: 300px;
+    top: 450px;
+    left: 290px;
 }
-
-.WheatArrow.arrow7 {
+.WheatArrow.arrow7{
     display: block;
-    top: 390px;
-    left: 600px;
+    top: 450px;
+    left: 580px;
 }
-
-.WheatArrow.arrow8 {
+.WheatArrow.arrow8{
     display: block;
-    top: 390px;
-    left: 885px;
+    top: 450px;
+    left: 870px;
 }
-
-.WheatArrow.curvearrow0 {
+.WheatArrow.curvearrow0{
     display: block;
-    top: 170px;
-
+    top: 210px;
+   
     left: 1150px;
     transform: scaleX(-1) rotate(-45deg);
 }
-
-.WheatArrow.curvearrow1 {
+.WheatArrow.curvearrow1{
     display: block;
-    top: 370px;
-
+    top: 410px;
+    
     left: 35px;
     transform: rotate(-45deg);
 }
@@ -838,43 +827,88 @@
     left: 410px;
 }
 
-/* Mustard*/
+/* Mustard */
+.MustardArrow{
+    position: absolute;
+    display: none;
+    width: 80px;
+}
+.MustardArrow.arrow0{
+    display: block;
+    top: 90px;
+    left: 710px;
+}
+.MustardArrow.arrow1{
+    display: block;
+    transform: rotate(180deg);
+    top: 300px;
+    left: 900px;
+}
 
-.MustardArrow {
+.MustardArrow.arrow2{
+    display: block;
+    top: 90px;
+    left: 410px;
+}
+
+.MustardArrow.arrow4 {
+    display: block;
+    transform: rotate(180deg);
+    top: 300px;
+    left: 600px;
+}
+.MustardArrow.arrow5 {
+    display: block;
+    transform: rotate(180deg);
+    top: 300px;
+    left: 300px;
+}
+.MustardArrow.curvearrow0{
+    display: block;
+    top: 170px;
+    left: 1010px;
+    transform: scaleX(-1) rotate(10deg);
+}
+
+/* Lentils */
+
+
+.LentilsArrow {
     position: absolute;
     display: none;
     width: 80px;
 }
 
-.MustardArrow.arrow0 {
+.LentilsArrow.arrow0 {
     display: block;
     top: 80px;
     left: 410px;
 }
 
-.MustardArrow.arrow1 {
+.LentilsArrow.arrow1 {
     display: block;
     top: 80px;
     left: 710px;
 }
 
-.MustardArrow.arrow2 {
+.LentilsArrow.arrow2 {
     display: block;
     transform: rotate(180deg);
     top: 300px;
     left: 710px;
 }
 
-.MustardArrow.curvearrow0 {
+.LentilsArrow.curvearrow0 {
     display: block;
     top: 250px;
     left: 980px;
     transform: scaleX(-1) rotate(-42deg);
 }
 
-.MustardArrow.arrow3 {
+.LentilsArrow.arrow3 {
     display: block;
     transform: rotate(180deg);
     top: 300px;
     left: 410px;
 }
+
