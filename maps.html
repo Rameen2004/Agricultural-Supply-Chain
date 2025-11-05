@@ -57,7 +57,6 @@
       align-items: center;
     }
 
-    /* Logo and branding */
     .logo-box {
       display: flex;
       align-items: center;
@@ -65,41 +64,22 @@
       position: relative;
     }
 
-    .logo-circle {
-      width: 48px;
-      height: 48px;
-      background-color: #45552C;
-      /* olive-green */
-      color: white;
-      border-radius: 50%;
+    .logo-box {
       display: flex;
       align-items: center;
-      justify-content: center;
-      position: relative;
-      font-size: 20px;
+      /* keeps logo and text vertically aligned */
+      gap: 10px;
     }
 
-    /* Green dot with white center */
-    .green-dot {
-      position: absolute;
-      bottom: -4px;
-      right: -4px;
-      width: 20px;
-      height: 20px;
-      background-color: #6BBF59;
-      /* fresh green */
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .logo-img {
+      height: 47px;
+      /* adjust logo size */
+      width: 47px;
+      /* keep aspect ratio */
+      display: block;
+      margin-left: -15px;
     }
 
-    .white-dot {
-      width: 10px;
-      height: 10px;
-      background-color: white;
-      border-radius: 50%;
-    }
 
     /* Brand text */
     .brand-text h1 {
@@ -149,17 +129,13 @@
     <div class="nav-container">
       <!-- Left: Logo and Title -->
       <div class="logo-box">
-        <div class="logo-circle">
-          <i class="ri-plant-line"></i>
-          <div class="green-dot">
-            <div class="white-dot"></div>
-          </div>
-        </div>
+        <img src="https://i.ibb.co/N6QKR836/2.png" alt="Green Classroom Logo" class="logo-img">
         <div class="brand-text">
-          <h1>Safar-e-Fasal</h1>
+          <h1>The Green Classroom</h1>
           <p>Cultivating Knowledge</p>
         </div>
       </div>
+
 
       <!-- Center: Navigation Links -->
       <nav class="nav-links">
@@ -174,7 +150,45 @@
     </div>
   </header>
 
-  <div id="map-container">
+
+  <!-- <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 flex items-center justify-center bg-olive-green rounded-full text-white relative">
+                    <i class="ri-plant-line ri-lg"></i>
+                    <div
+                        class="absolute -bottom-1 -right-1 w-6 h-6 bg-fresh-green rounded-full flex items-center justify-center">
+                        <div class="w-3 h-3 bg-white rounded-full"></div>
+                    </div>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold text-olive-green font-poppins">AGRI SUPPLY CHAIN</h1>
+                    <p class="text-xs text-reseda-green font-nunito">Cultivating Knowledge</p>
+                </div>
+            </div>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="text-reseda-green hover:text-olive-green transition-colors font-nunito">Home</a>
+                <a href="products.html" class="text-reseda-green hover:text-olive-green transition-colors font-nunito">Products</a>
+                <a href="maps.html" class="text-olive-green font-medium font-nunito">Maps</a>
+                <a href="about.html" class="text-reseda-green hover:text-olive-green transition-colors font-nunito">About</a>
+            </nav>
+            <div class="flex items-center space-x-4"> -->
+  <!-- <div class="relative ml-4">
+                    <input type="text" placeholder="Search products..."
+                        class="pl-10 pr-4 py-2 w-48 border border-dun rounded-button text-sm focus:outline-none focus:ring-2 focus:ring-olive-green/20 focus:border-olive-green bg-white font-nunito">
+                    <div
+                        class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-reseda-green">
+                        <i class="ri-search-line"></i>
+                    </div>
+                </div> -->
+  <!-- <div class="w-10 h-10 flex items-center justify-center md:hidden cursor-pointer">
+                    <i class="ri-menu-line ri-lg text-olive-green"></i>
+                </div>
+            </div>
+        </div>
+    </header> -->
+
+ <div id="map-container">
     <svg id="svgMap" style="display: inline;" viewBox="0 0 1628 1544" xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink">
       <g id="zoomWrapper">
