@@ -57,6 +57,7 @@
       align-items: center;
     }
 
+    /* Logo and branding */
     .logo-box {
       display: flex;
       align-items: center;
@@ -64,22 +65,41 @@
       position: relative;
     }
 
-    .logo-box {
+    .logo-circle {
+      width: 48px;
+      height: 48px;
+      background-color: #45552C;
+      /* olive-green */
+      color: white;
+      border-radius: 50%;
       display: flex;
       align-items: center;
-      /* keeps logo and text vertically aligned */
-      gap: 10px;
+      justify-content: center;
+      position: relative;
+      font-size: 20px;
     }
 
-    .logo-img {
-      height: 47px;
-      /* adjust logo size */
-      width: 47px;
-      /* keep aspect ratio */
-      display: block;
-      margin-left: -15px;
+    /* Green dot with white center */
+    .green-dot {
+      position: absolute;
+      bottom: -4px;
+      right: -4px;
+      width: 20px;
+      height: 20px;
+      background-color: #6BBF59;
+      /* fresh green */
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
+    .white-dot {
+      width: 10px;
+      height: 10px;
+      background-color: white;
+      border-radius: 50%;
+    }
 
     /* Brand text */
     .brand-text h1 {
@@ -129,13 +149,17 @@
     <div class="nav-container">
       <!-- Left: Logo and Title -->
       <div class="logo-box">
-        <img src="https://i.ibb.co/N6QKR836/2.png" alt="Green Classroom Logo" class="logo-img">
+        <div class="logo-circle">
+          <i class="ri-plant-line"></i>
+          <div class="green-dot">
+            <div class="white-dot"></div>
+          </div>
+        </div>
         <div class="brand-text">
-          <h1>The Green Classroom</h1>
+          <h1>Safar-e-Fasal</h1>
           <p>Cultivating Knowledge</p>
         </div>
       </div>
-
 
       <!-- Center: Navigation Links -->
       <nav class="nav-links">
@@ -150,142 +174,104 @@
     </div>
   </header>
 
-
-  <!-- <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <div class="w-12 h-12 flex items-center justify-center bg-olive-green rounded-full text-white relative">
-                    <i class="ri-plant-line ri-lg"></i>
-                    <div
-                        class="absolute -bottom-1 -right-1 w-6 h-6 bg-fresh-green rounded-full flex items-center justify-center">
-                        <div class="w-3 h-3 bg-white rounded-full"></div>
-                    </div>
-                </div>
-                <div>
-                    <h1 class="text-xl font-bold text-olive-green font-poppins">AGRI SUPPLY CHAIN</h1>
-                    <p class="text-xs text-reseda-green font-nunito">Cultivating Knowledge</p>
-                </div>
-            </div>
-            <nav class="hidden md:flex items-center space-x-8">
-                <a href="index.html" class="text-reseda-green hover:text-olive-green transition-colors font-nunito">Home</a>
-                <a href="products.html" class="text-reseda-green hover:text-olive-green transition-colors font-nunito">Products</a>
-                <a href="maps.html" class="text-olive-green font-medium font-nunito">Maps</a>
-                <a href="about.html" class="text-reseda-green hover:text-olive-green transition-colors font-nunito">About</a>
-            </nav>
-            <div class="flex items-center space-x-4"> -->
-  <!-- <div class="relative ml-4">
-                    <input type="text" placeholder="Search products..."
-                        class="pl-10 pr-4 py-2 w-48 border border-dun rounded-button text-sm focus:outline-none focus:ring-2 focus:ring-olive-green/20 focus:border-olive-green bg-white font-nunito">
-                    <div
-                        class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-reseda-green">
-                        <i class="ri-search-line"></i>
-                    </div>
-                </div> -->
-  <!-- <div class="w-10 h-10 flex items-center justify-center md:hidden cursor-pointer">
-                    <i class="ri-menu-line ri-lg text-olive-green"></i>
-                </div>
-            </div>
-        </div>
-    </header> -->
-
   <div id="map-container">
     <svg id="svgMap" style="display: inline;" viewBox="0 0 1628 1544" xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink">
       <g id="zoomWrapper">
         <g class="model-green" fill="#ffffd0" id="Islamabad" stroke="#d0c0a0">
-          <path class="shape outline maize"
+          <path class="shape outline maize Potohar_Plateau"
             d="m 1246.3,392.4 -3.2,-4.2 -2.8,0.2 -10.6,-7.8 -25.6,9.2 -11.8,3.6 6.4,13.8 18,-8.8 6.8,10.2 -3.8,3 6,4.8 11.2,-7.2 1.6,-9 z"
             id="Islamabad"></path>
         </g>
         <g class="model-green" fill="#ffffd0" id="Balochistan" stroke="#d0c0a0" transform="translate(-27.1,-28.1)">
-          <path class="shape apple outline Ziarat"
+          <path class="shape apple outline Ziarat western_mountains"
             d="m 711.2,780.9 -9.4,-2.6 -6.6,8 -5,0 -2.4,-6.2 -6.2,-1.8 -14.4,11.4 -7.2,9.8 4.4,9 5.4,2.8 1,-4.2 29,10.2 18.6,-11.2 -4,-5.6 7,-7.8 0,-6.2 -8.2,0 z"
             id="Ziarat"></path>
-          <path class="shape outline Zhob"
+          <path class="shape outline Zhob western_mountains"
             d="m 729.2,682.9 6.2,24 16.6,5 47.2,-19 12,4.4 1.8,26.6 38.8,-2.6 16.2,12.2 11.6,-2.4 -10.8,23.2 -22.2,10 8.4,9.6 42.4,22.8 -9,-13.2 7.6,-20.6 18.8,-26.4 0.4,-36.6 21,5.6 5,-12.2 -34,-20.2 -21.4,-27.8 -26.2,-12.4 -7.8,16.8 -10,8.8 -7.2,-2.2 -5.2,5 -9.2,-1 -8.8,-9.8 -1.4,-8.6 -6.2,-0.6 -7,-6 -13.8,7.4 -14.6,0.8 -11.8,-9 -10.4,15.6 -20,12 12.2,11.8 z"
             id="Zhob"></path>
-          <path class="shape outline Washuk"
+          <path class="shape outline Washuk western_mountains"
             d="m 407.8,1088.5 14.2,25.8 -7.8,14 26.4,41 -30.2,16.2 -26.8,-33.8 -31.4,35.4 -28.2,-32.2 -65.8,8 -24,5.6 -16,-4.8 6.8,-36.2 -8,-53.8 54,-32.4 59.2,-6.4 88.6,-40.2 -6.2,45.8 4.2,26.2 z"
             id="Washuk"></path>
-          <path class="shape garlic outline Sibi"
+          <path class="shape garlic outline Sibi western_mountains"
             d="m 692.6,883.9 24,11 13.8,29.4 27.4,-3.8 -5.8,-7 11.4,-16.8 -26.8,-12 10.6,-23.2 37.8,-12.8 -33,-27.6 -73,33.2 7.8,3 z"
             id="Sibi"></path>
-          <path class="shape outline Sheerani"
+          <path class="shape outline Sheerani western_mountains"
             d="m 925.6,621.3 -7.2,-4.6 3,-9.6 -16.8,4.6 -10.6,11.6 -21.8,-1 -12.6,10.6 26.2,12.4 21.4,27.8 34,20.2 -2.6,-16.8 -8.6,-5.2 2.4,-43.8 -7.6,5.2 -3,-3.2 z"
             id="Sheerani"></path>
-          <path class="shape lentils apple tomato outline Quetta"
+          <path class="shape lentils apple tomato outline Quetta western_mountains"
             d="m 664.4,808.5 -4.4,-9 -7.8,1.4 -5.4,6.8 -12,-16.6 -7,0.4 -14.2,33.8 -19.8,-2 -6.6,7 -8.8,-3.4 -14.4,12.4 11.8,9.6 -10.6,13.2 29.4,6.4 20,-36.2 12,13.2 19.8,-5.8 1.2,-13.2 19.6,-6.4 2.6,-8.8 z"
             id="Quetta"></path>
-          <path class="shape potato lentils apple outline Pishin"
+          <path class="shape potato lentils apple outline Pishin western_mountains"
             d="m 667.2,789.7 -7.2,9.8 -7.8,1.4 -5.4,6.8 -12,-16.6 -12.4,-21.2 -8.8,-4 14.8,-25.6 27.4,-1.2 14,-18.6 -0.2,-14.2 6.8,0.6 49.2,10.6 -1.4,8 -35.8,21.8 -4,5.2 8.8,5.6 -9.2,7.6 25.8,2.4 1.4,12.8 -9.4,-2.6 -6.6,8 -5,0 -2.4,-6.2 -6.2,-1.8 z"
             id="Pishin"></path>
-          <path class="shape outline Panjgur"
+          <path class="shape outline Panjgur western_mountains"
             d="m 440.6,1169.3 34.8,32.7 -41.8,59.8 -48,-2 -0.6,12.8 -31,12.4 -30.6,-18.8 -25.2,0.4 0,-14.8 -40.6,-0.4 -0.8,-20.2 2.2,-22.6 9,-3.6 -2.6,-23.9 6.2,-6.4 -13.4,-11.8 65.8,-8 28.2,32.2 31.4,-35.4 26.8,33.8 z"
             id="Panjgur"></path>
-          <path class="shape outline Nushki"
+          <path class="shape outline Nushki western_mountains"
             d="m 531.8,944.9 16.4,-22.4 12.6,-1.4 13.8,-33 -9.4,-26 -118.8,36.8 -2.6,58.8 -25,37 44,-13.6 25,-25.6 32.6,-14 z"
             id="Nushki"></path>
-          <path class="shape outline rice Naseerabad"
+          <path class="shape outline rice Naseerabad Indus_Plain"
             d="m 748,990.7 -14.8,-0.6 4.8,14.8 -17.4,1.6 -0.8,46.4 19.8,-5.6 16.4,-21 23.4,-3 0,-19.4 7.6,-3.2 -1.8,-35 -4.2,-4 -19,6.8 6.2,12 z"
             id="Naseerabad"></path>
-          <path class="shape garlic outline Musakhel"
+          <path class="shape garlic outline Musakhel western_mountains"
             d="m 946.8,683.5 -5.6,9.8 -5,12.2 -21,-5.6 -0.4,36.6 -18.8,26.4 -7.6,20.6 9,13.2 20,16.4 14.8,0.2 4.2,-17.4 10.6,-20.8 -1,-9.2 12,-13.2 6.2,-0.8 -2.2,-6.2 1.2,-23.4 -2.4,-5 4,-24.8 -1.4,-17 z"
             id="Musakhel"></path>
-          <path class="shape apple outline Mastung"
+          <path class="shape apple outline Mastung western_mountains"
             d="m 679,854.3 -2.2,-6.6 9,-6 -3.6,-15.4 -12.8,1.6 -2.2,-7.8 -19.6,6.4 -1.2,13.2 -19.8,5.8 -12,-13.2 -20,36.2 -29.4,-6.4 9.4,26 -13.8,33 16.4,1.4 25.6,-31.4 5.4,20.4 19.2,-12.4 -1.4,13.4 26.8,2 4.4,-10.6 10,-20.2 -8.8,-9.4 -4,-15.2 9.4,-9.4 z"
             id="Mastung"></path>
-          <path class="shape tomato garlic lentils outline Loralai"
+          <path class="shape tomato garlic lentils outline Loralai western_mountains"
             d="m 768.8,787.1 41,-2.6 14.6,8.4 30.6,-19 42.4,22.8 20,16.4 -13,20 -7.4,-2.2 1.6,-7.8 -18.8,22.8 -34.6,7.8 -12.4,-6.4 -28,14.2 -19.8,-12.8 -33,-27.6 -33.6,-15 -4,-5.6 7,-7.8 0,-6.2 -8.2,0 -2,-5.6 26,-10.4 1.2,10.4 20,-3 z"
             id="Loralai"></path>
-          <path class="shape outline Lasbela"
+          <path class="shape outline Lasbela western_mountains"
             d="m 598.4,1376.6 -3.4,0.4 2.4,5.4 15.6,15.6 -5,34.4 2.4,0.8 17,-14.6 6.8,-0.6 8,-9.4 0.4,-7.2 10.6,-10.8 3.4,-18.2 20.8,-27.2 7.2,-21.8 0.6,-29.6 -22.8,-39.8 -8,-26.8 -17.8,15.2 20.2,34.8 -5.4,55 -12.2,3.4 -22,-85.8 -24.8,4.4 -27.6,-5.6 -5,16.8 9.4,52.8 -13.2,31.2 -23.6,8 -38,-1.4 -1.2,-15.2 -31.4,11.6 1.8,25.4 5.8,1 5.2,-3 4,3.2 6.8,-2.2 21.2,4.4 19,-8.6 44.4,-5.8 19,8 1.8,-0.8 -4.8,-6 2.8,-2.6 -4.2,-1.4 -2.4,1.4 -8.4,-8.2 -7.6,1 -5,6.2 -7.8,-2 2.4,-6.4 11.2,-5.2 4.4,1.4 6.2,-3 13.6,13.2 1.6,-1.6 z"
             id="Lasbela"></path>
-          <path class="shape outline Kohlu"
+          <path class="shape outline Kohlu western_mountains"
             d="m 845.2,880.3 37,-19.6 8,-16.4 -10.4,1.6 -34.6,7.8 -12.4,-6.4 -28,14.2 -19.8,-12.8 -37.8,12.8 -10.6,23.2 26.8,12 -11.4,16.8 5.8,7 29.6,19.8 22.6,-7.4 28.6,6.6 3.6,-5 20.4,2.8 7.2,-14.4 21.2,-10.4 -7.8,-7.4 6.2,-19.4 -24.6,9.2 z"
             id="Kohlu"></path>
-          <path class="shape potato tomato apple outline Killa_Saifullah"
+          <path class="shape potato tomato apple outline Killa_Saifullah western_mountains"
             d="m 711.2,671.3 15,-9.2 12.2,11.8 -9.2,9 6.2,24 16.6,5 47.2,-19 12,4.4 1.8,26.6 38.8,-2.6 16.2,12.2 11.6,-2.4 -10.8,23.2 -22.2,10 8.4,9.6 -30.6,19 -14.6,-8.4 -41,2.6 -10.4,-9.2 -20,3 -1.2,-10.4 -26,10.4 -1.4,-12.8 -25.8,-2.4 9.2,-7.6 -8.8,-5.6 4,-5.2 35.8,-21.8 1.4,-8 -49.2,-10.6 42,-16 -1.8,-8 -15.4,1.6 -6,-14.8 z"
             id="Killa_Saifullah"></path>
-          <path class="shape apple outline Killa_Abdullah"
+          <path class="shape apple outline Killa_Abdullah western_mountains"
             d="m 628.4,740.3 27.4,-1.2 14,-18.6 -0.2,-14.2 -24.2,-2.2 -4,-10.8 -28.6,12.8 -4.8,15.8 -12,11.2 -17.2,4.2 -11,42.8 7.4,17 -11.2,42.2 14.4,-12.4 8.8,3.4 6.6,-7 19.8,2 14.2,-33.8 7,-0.4 -12.4,-21.2 -8.8,-4 z"
             id="Killa_Abdullah"></path>
-          <path class="shape tomato outline Khuzdar"
+          <path class="shape tomato outline Khuzdar western_mountains"
             d="m 651.4,1332.2 -12.2,3.4 -22,-85.8 -24.8,4.4 -27.6,-5.6 -3.6,-10 -13.8,21 -12.8,-25 15.8,-69.7 -16.8,7.4 -7.8,-20.6 -23.2,-9 13.2,-36.4 24.6,-24.8 15,0.2 34.4,-23.8 9,-15 -15,-13.6 11,-19.2 8.8,1.6 19,-30.6 42.8,0.6 2.4,14 -8.4,20.4 1.8,18.2 17.8,0 4,13.8 -4.6,43 -15.8,33.6 -9.6,29.2 1.4,73.3 -17.8,15.2 20.2,34.8 z"
             id="Khuzdar"></path>
-          <path class="shape outline Kharan"
+          <path class="shape outline Kharan western_mountains"
             d="m 548.2,922.5 -16.4,22.4 -11.4,-3.4 -32.6,14 -25,25.6 -44,13.6 -6.2,45.8 4.2,26.2 -9,21.8 14.2,25.8 -7.8,14 26.4,41 34.8,32.7 27.2,-59.3 13.2,-36.4 24.6,-24.8 -13.8,-37.2 24.4,-37.8 -8.2,-17 19.2,-27.8 -7.8,-18.8 6.6,-21.8 z"
             id="Kharan"></path>
-          <path class="shape outline Kech"
+          <path class="shape outline Kech western_mountains"
             d="m 160,1359 22,-9.4 54.4,-3 42.4,12.4 7.8,14.6 57.2,-27.6 14.8,5.4 19.2,-7 -7.8,-10.2 10.4,-34.4 13,-4.2 -8.4,-23 -31,12.4 -30.6,-18.8 -25.2,0.4 0,-14.8 -40.6,-0.4 -0.8,-20.2 -36.6,-0.6 -53,15 2,19.8 -14.2,-4.2 -2.8,7.6 -28.2,10.4 -7.2,49.2 22.2,12 6.8,-15.6 1.2,27.6 z"
             id="Kech"></path>
-          <path class="shape potato lentils apple outline"
+          <path class="shape potato lentils apple outline Kalat western_mountains"
             d="m 603.6,1011.7 19,-30.6 42.8,0.6 22.2,-32.6 0,-26.6 -11.6,-10.2 -0.6,-10.8 -14.6,6.2 -3.6,-3.8 -4.4,10.6 -26.8,-2 1.4,-13.4 -19.2,12.4 -5.4,-20.4 -25.6,31.4 -16.4,-1.4 -6.6,21.8 7.8,18.8 -19.2,27.8 8.2,17 -24.4,37.8 13.8,37.2 15,0.2 34.4,-23.8 9,-15 -15,-13.6 11,-19.2 z"
             id="Kalat"></path>
-          <path class="shape outline Jhal_Magsi"
+          <path class="shape outline Jhal_Magsi western_mountains"
             d="m 678.4,993.9 -10.6,1.8 -8.4,20.4 1.8,18.2 17.8,0 4,13.8 -4.6,43 27.6,-6 -1.4,-29.2 15.2,-3 0.8,-46.4 -9.2,-15.8 1.4,-11.2 -13.6,0 -6.4,15 -8.2,-5 z"
             id="Jhal_Magsi"></path>
-          <path class="shape outline rice Jafarabad"
+          <path class="shape outline rice Jafarabad Indus_Plain"
             d="m 704.6,1055.9 1.4,29.2 26,-11.4 10.6,-15.2 32.6,-21.4 11.8,-14.2 66.4,-2.4 -10,-7 -29.2,2.6 -27.2,-15.4 -7.6,3.2 0,19.4 -23.4,3 -16.4,21 -19.8,5.6 z"
             id="Jafarabad"></path>
-          <path class="shape outline Haranai"
+          <path class="shape outline Haranai western_mountains"
             d="m 670.8,807.1 -3.6,13 2.2,7.8 12.8,-1.6 3.6,15.4 -9,6 2.2,6.6 73,-33.2 -33.6,-15 -18.6,11.2 z"
             id="Haranai"></path>
-          <path class="shape outline Gwadar"
+          <path class="shape outline Gwadar western_mountains"
             d="m 150.4,1397.2 -3.6,6 3.8,5.4 -24.8,2 -1.6,6.2 -10.8,-1 4.6,-17 -16.6,-1.4 10.2,-54 -2.8,-14.6 8,-0.4 22.2,12 6.8,-15.6 1.2,27.6 13,6.6 22,-9.4 54.4,-3 42.4,12.4 7.8,14.6 57.2,-27.6 14.8,5.4 -4.6,10.8 25.8,3.6 34,-11.6 48,-1.8 1.8,25.4 -7,9.2 -8.6,-1.8 -29.4,-1.6 -10.4,4.6 -2.4,7.4 4.6,4.6 -6,1.8 -4.4,-1.2 3,-4 -9,-7.2 -10.8,4.6 -17.8,-9.6 -13.4,-1.4 -4,-8.6 5.4,-2.4 1.8,-3 -11.4,-0.4 -6.2,4 3.2,3.2 2.6,-3 3.6,8.4 -14.2,0.8 -18.2,-5.8 -17.6,2.8 -10,8.8 5.2,8.2 -1.4,2.4 -40.2,-7 -10,4.4 -27,-5.2 -27,2.4 1.8,3 -14.6,7.2 5.2,5.6 -10.6,0 2.4,-9.6 -8.6,-4.2 z"
             id="Gwadar"></path>
-          <path class="shape outline Dera_Bugti"
+          <path class="shape outline Dera_Bugti western_mountains"
             d="m 787.8,944.5 -15.4,-6.4 -3.2,5.6 11.8,18 4.2,4 1.8,35 27.2,15.4 29.2,-2.6 10,7 25,-0.8 -5,-12 11.2,-6.4 8.6,-20.2 -3.8,-10.8 21,-21.8 4.6,-24 -5.4,3 -4.8,-6.6 2.2,-7 -10.6,-3.4 4.2,-26.8 -11.2,2 -6.2,19.4 7.8,7.4 -21.2,10.4 -7.2,14.4 -20.4,-2.8 -3.6,5 -28.6,-6.6 -22.6,7.4 z"
             id="Dera_Bugti"></path>
-          <path class="shape lentils outline Chagai"
+          <path class="shape lentils outline Chagai western_mountains"
             d="m 330.2,1034.9 -59.2,6.4 -54,32.4 2,-29.8 -20,2.4 -21.2,-20.6 -26.4,-5.8 -31.2,-17.8 -31.6,-42.2 -12.8,-37.8 -48.2,-60.6 157.8,54.4 113.4,-11.6 51.4,13 16.2,-17 36.6,-6.6 43.4,5.2 -2.6,58.8 -25,37 z"
             id="Chagai"></path>
-          <path class="shape lentils outline Bolan"
+          <path class="shape lentils outline Bolan western_mountains"
             d="m 692.6,883.9 -5.8,-26.6 -7.8,-3 -15.2,-4.6 -9.4,9.4 4,15.2 8.8,9.4 -10,20.2 3.6,3.8 14.6,-6.2 0.6,10.8 11.6,10.2 0,26.6 -22.2,32.6 2.4,14 10.6,-1.8 6.2,-4.4 8.2,5 6.4,-15 13.6,0 -1.4,11.2 9.2,15.8 17.4,-1.6 -4.8,-14.8 14.8,0.6 20.2,-10.2 -6.2,-12 19,-6.8 -11.8,-18 3.2,-5.6 15.4,6.4 -0.4,-4.2 -29.6,-19.8 -27.4,3.8 -13.8,-29.4 z"
             id="Bolan"></path>
-          <path class="shape garlic outline Barkhan"
+          <path class="shape garlic outline Barkhan western_mountains"
             d="m 890.2,844.3 -8,16.4 -37,19.6 19.6,14.6 24.6,-9.2 11.2,-2 13.4,-5.4 15.6,-22.8 8.2,-23.8 7.6,-15.2 -9.6,3.8 -3.6,-7 -14.8,-0.2 -13,20 -7.4,-2.2 1.6,-7.8 -18.8,22.8 z"
             id="Barkhan"></path>
-          <path class="shape outline Awaran"
+          <path class="shape outline Awaran western_mountains"
             d="m 561.2,1238.6 -13.8,21 -12.8,-25 15.8,-69.7 -16.8,7.4 -7.8,-20.6 -23.2,-9 -27.2,59.3 -41.8,59.8 -48,-2 -0.6,12.8 8.4,23 -13,4.2 -10.4,34.4 7.8,10.2 -19.2,7 -4.6,10.8 25.8,3.6 34,-11.6 48,-1.8 31.4,-11.6 1.2,15.2 38,1.4 23.6,-8 13.2,-31.2 -9.4,-52.8 5,-16.8 z"
             id="Awaran"></path>
           <path
@@ -293,73 +279,73 @@
             fill="none" id="Balochistan_Border" stroke="#a08070"></path>
         </g>
         <g class="model-green" fill="#ffffd0" id="Sindh" stroke="#d0c0a0" transform="translate(-27.1,-28.1)">
-          <path class="shape chilli outline Umerkot"
+          <path class="shape chilli outline Umerkot Indus_Plain"
             d="m 911.4,1402.6 20.6,-11.8 38.8,-1 -5.6,-22.4 5.4,-12 -14,-6 10.8,-10.6 -6.6,-9.6 -15.4,5.4 -9.2,-1.8 -21.8,25.8 -16.2,3.8 1.4,-7.6 -39.4,-1.4 1.4,16.4 21.6,18.4 -2,18.2 8.2,28.4 14,-20 11.8,4.6 z"
             id="Umerkot"></path>
-          <path class="shape outline Tharparkar"
+          <path class="shape outline Tharparkar Indus_Plain"
             d="m 1001,1338.2 -20.2,4.2 -13.4,-3.6 -10.8,10.6 14,6 -5.4,12 5.6,22.4 -38.8,1 -20.6,11.8 3.8,16.8 -11.8,-4.6 -14,20 -14.6,8.8 -9,14.2 -1.6,17.8 -16.4,10.8 1.2,18.4 10.8,3.8 11,-4.8 13.2,0.8 14.8,-1.8 13.4,12.8 30,0.6 8.6,-13.2 26,-8 20.4,-7.6 2,3.4 -3.2,3.8 1.2,12 10,3.4 13.2,0.2 9.8,-5 -3.8,-3.8 11.4,-7.4 3.4,1.2 11,-6.6 -10.4,-2.8 -3,-19.4 9.6,-10.4 -14,-26.4 -7,-26.4 -21,-28 0.6,-31.6 z"
             id="Tharparkar"></path>
-          <path class="shape rice tomato chilli lentils mango banana sugarcane garlic outline Thatta"
+          <path class="shape rice tomato chilli lentils mango banana sugarcane garlic outline Thatta Indus_Plain"
             d="m 689.8,1550.2 11.4,3.2 3.2,-9.4 3,15.6 6.6,-0.4 -2.2,-5.2 11.8,3.6 2,-11.6 16.6,16.6 -1.4,-19.6 5.6,2.4 3.4,12.6 -5,9.6 4.6,2.8 1,-3.8 4.4,5 0.8,-24.2 3.8,14.4 4.6,-14.4 12.8,-9.6 38,2.2 1.4,-36.4 -2,-10.2 -30,-4.6 -3.4,-38.8 -9.4,-11 2.6,-9 -4.2,-12.2 2.4,-9.6 -2.4,-19.2 -7.4,-0.4 -14.6,-16.8 -10.8,10.4 0.2,7.4 -8.8,6 0,15.6 -9.8,10.6 -24.8,5.4 3.2,23.4 -13,-7.6 -18.6,7.8 -6,3 -5,8 1,4 5.6,-0.4 4,3.2 -6,3.2 3.8,3.8 2.8,12.6 2.8,-2.6 -0.8,9 8.2,1.8 -7.2,3.4 5,25.6 19.8,4 0.2,13.4 z"
             id="Thatta"></path>
-          <path class="shape rice chilli sugarcane banana tomato mango outline Tando_Muhammad_Khan"
+          <path class="shape rice chilli sugarcane banana tomato mango outline Tando_Muhammad_Khan Indus_Plain"
             d="m 771.4,1439 9.4,11 14.4,-13.8 6.4,2.4 8,-5.8 7.2,0.6 1,-7.2 -15.4,-13.8 -2.2,-4.2 -28,0 -2.4,9.6 4.2,12.2 z"
             id="Tando_Muhammad_Khan"></path>
-          <path class="shape outline rice garlic sugarcane banana milk chilli mango tomato Tando_Allahyar"
+          <path class="shape outline rice garlic sugarcane banana milk chilli mango tomato Tando_Allahyar Indus_Plain"
             d="m 821.2,1336 -10,9 0.6,10 -6.4,9.8 3.2,13.6 -4.4,5.8 3.8,5.8 5.4,-0.2 0.8,5.8 18.8,0 6.2,-9.4 0.6,-13 -6.8,-13.6 0.6,-18.4 z"
             id="Tando_Allahyar"></path>
-          <path class="shape mustard lentils banana tomato outline Sukkur"
+          <path class="shape mustard lentils banana tomato outline Sukkur Indus_Plain"
             d="m 830.2,1154.7 17.6,14.4 43.2,20 7.4,-18.8 23.8,-24.6 -20.6,-8 0.2,-7.6 -20.6,-1.6 -17.8,-22.2 10,-1 -9.2,-29 -10.6,-3 -23.8,24.4 -12.4,2.6 -5.6,6.4 8.8,6.2 12,0 -6.2,19.4 9.2,6.8 z"
             id="Sukkur"></path>
-          <path class="shape rice chilli garlic potato outline Shikarpur"
+          <path class="shape rice chilli garlic potato outline Shikarpur Indus_Plain"
             d="m 817.4,1100.3 12.4,-2.6 23.8,-24.4 -4.2,-5.8 -11,-1.2 -24.8,-8.2 -22.4,7 -10.4,-2.6 -0.4,21.6 -6.4,2.2 19,26.2 18.8,-5.8 z"
             id="Shikarpur"></path>
-          <path class="shape chilli wheat mango milk lentils banana sugarcane outline Sanghar"
+          <path class="shape chilli wheat mango milk lentils banana sugarcane outline Sanghar Indus_Plain"
             d="m 811.2,1345 10,-9 12.4,5.2 10,-4.8 13.6,6 3,11 39.4,1.4 -1.4,7.6 16.2,-3.8 21.8,-25.8 9.2,1.8 15.4,-5.4 -10.8,-15.8 -2.2,-14.4 -90.4,-17.8 -23.6,-26.4 -24,20 4.4,8.8 -8.8,3 -10.2,-8 -9.4,6.8 11.4,16 -4.2,13.6 3.2,11.2 z"
             id="Sanghar"></path>
-          <path class="shape rice outline Qambar_Shahdatkot"
+          <path class="shape rice outline Qambar_Shahdatkot Indus_Plain"
             d="m 662.6,1124.7 -9.6,29.2 94.8,7.2 7.2,-9 -1,-12.4 8.4,-22.6 8.6,-19 -5.6,-3.4 -3,-10.8 -8.8,-5.2 -12.2,0 -9.4,-5 -26,11.4 -27.6,6 z"
             id="Qambar_Shahdatkot"></path>
-          <path class="shape tomato wheat lentils banana sugarcane mango outline Nawabshah"
+          <path class="shape tomato wheat lentils banana sugarcane mango outline Nawabshah Indus_Plain"
             d="m 818,1237.6 -40.2,-2.6 -27.8,5.2 -10.6,7 -4,23.6 28.6,37.8 9,-0.2 10.6,-11.4 13.6,4.4 -11.4,-16 9.4,-6.8 10.2,8 8.8,-3 -4.4,-8.8 24,-20 z"
             id="Nawabshah"></path>
-          <path class="shape tomato wheat banana outline Naushahro_Firoze"
+          <path class="shape tomato wheat banana outline Naushahro_Firoze Indus_Plain"
             d="m 729.8,1210.8 5.6,22.2 -6,6.6 10,7.6 10.6,-7 27.8,-5.2 2,-29.6 9.8,-27.1 -24.2,-12.8 -12.8,13.8 -10.2,6.6 3.4,10 z"
             id="Naushahro_Firoze"></path>
-          <path class="shape tomato chilli lentils mango banana milk outline Mirpur_Khas"
+          <path class="shape tomato chilli lentils mango banana milk outline Mirpur_Khas Indus_Plain"
             d="m 860.2,1353.4 -3,-11 -13.6,-6 -10,4.8 -0.6,18.4 6.8,13.6 -0.6,13 4,22 18.6,17.6 10.2,3.4 2.8,14.4 14.6,-8.8 -8.2,-28.4 2,-18.2 -21.6,-18.4 z"
             id="Mirpur_Khas"></path>
-          <path class="shape banana garlic mango sugarcane outline Matiari"
+          <path class="shape banana garlic mango sugarcane outline Matiari Indus_Plain"
             d="m 793,1315 4.2,-13.6 -13.6,-4.4 -10.6,11.4 -3.2,8.6 9.6,9 -2.2,9.4 15,9.4 -3.6,-13.2 7.6,-5.4 z"
             id="Matiari"></path>
-          <path class="shape rice tomato lentils outline Larkana"
+          <path class="shape rice tomato lentils outline Larkana Indus_Plain"
             d="m 773,1152.1 9.2,-1.8 -8.2,-14.8 8.2,-12.8 16.2,-3.6 -5.4,-6.6 -19,-26.2 -11.6,-2.4 3,10.8 5.6,3.4 -8.6,19 -8.4,22.6 1,12.4 -7.2,9 -4.4,8.6 9.2,9.6 12.8,-13.8 z"
             id="Larkana"></path>
-          <path class="shape chilli wheat banana potato sugarcane outline Khairpur"
+          <path class="shape chilli wheat banana potato sugarcane outline Khairpur Indus_Plain"
             d="m 765.4,1165.5 24.2,12.8 -9.8,27.1 -2,29.6 40.2,2.6 15.8,17.2 23.6,26.4 90.4,17.8 9.2,-21.6 -0.4,-35 -10.2,-5.6 -18.6,2 -39,-21 2.2,-28.7 -43.2,-20 -17.6,-14.4 5.4,-15.6 -9.2,-6.8 6.2,-19.4 -12,0 -8.8,-6.2 -18.8,5.8 5.4,6.6 -16.2,3.6 -8.2,12.8 8.2,14.8 -9.2,1.8 z"
             id="Khairpur"></path>
-          <path class="shape outline rice Kashmore"
+          <path class="shape outline rice Kashmore Indus_Plain"
             d="m 878.4,1019.7 -25,0.8 -15,45.8 11,1.2 4.2,5.8 10.6,3 6.4,-11 24.6,-13 7,8 21,-22 -11.6,-16.8 -23.6,-6.2 z"
             id="Kashmore"></path>
-          <path class="shape tomato milk outline Karachi"
+          <path class="shape tomato milk outline Karachi Indus_Plain"
             d="m 671.6,1403.2 19,13.4 3.2,10.6 3.2,23.4 -13,-7.6 -18.6,7.8 -2.2,-4.2 -5,2.4 -10.6,-5 -0.2,3.6 -12,-8.6 0.2,4.2 -9.8,-5.8 -20.4,3.4 5,-7.6 17,-14.6 6.8,-0.6 8,-9.4 0.4,-7.2 10.6,-10.8 3.4,-18.2 20.8,-27.2 9.2,11.4 -2.2,17.8 z"
             id="Karachi"></path>
-          <path class="shape chilli outline Jamshoro"
+          <path class="shape chilli outline Jamshoro Indus_Plain"
             d="m 739.4,1247.2 -10,-7.6 -14.6,-5 -7.4,37.2 -9.4,-0.2 -12.8,22.2 -0.6,29.6 -7.2,21.8 9.2,11.4 -2.2,17.8 -12.8,28.8 19,13.4 3.2,10.6 24.8,-5.4 9.8,-10.6 0,-15.6 8.8,-6 -0.2,-7.4 10.8,-10.4 14.6,16.8 7.4,0.4 11.4,1.6 -6.6,-21.4 10.2,-7.8 -3.4,-9 10.8,-7.6 -15,-9.4 2.2,-9.4 -9.6,-9 3.2,-8.6 -9,0.2 -28.6,-37.8 z"
             id="Jamshoro"></path>
-          <path class="shape lentils rice outline Jacobabad"
+          <path class="shape lentils rice outline Jacobabad Indus_Plain"
             d="m 853.4,1020.5 -15,45.8 -24.8,-8.2 -22.4,7 -10.4,-2.6 -0.4,21.6 -6.4,2.2 -11.6,-2.4 -8.8,-5.2 -12.2,0 -9.4,-5 10.6,-15.2 32.6,-21.4 11.8,-14.2 z"
             id="Jacobabad"></path>
-          <path class="shape tomato milk lentils mango banana garlic sugarcane outline Hyderabad"
+          <path class="shape tomato milk lentils mango banana garlic sugarcane outline Hyderabad Indus_Plain"
             d="m 800.2,1408.2 2.2,4.2 11.4,-5.6 0.4,-11.2 -0.8,-5.8 -5.4,0.2 -3.8,-5.8 4.4,-5.8 -3.2,-13.6 6.4,-9.8 -0.6,-10 -15,-18.8 -7.6,5.4 3.6,13.2 -10.8,7.6 3.4,9 -10.2,7.8 6.6,21.4 -11.4,-1.6 2.4,19.2 z"
             id="Hyderabad"></path>
-          <path class="shape chilli rice mustard wheat banana outline Ghotki"
+          <path class="shape chilli rice mustard wheat banana outline Ghotki Indus_Plain"
             d="m 901.8,1130.1 -0.2,7.6 20.6,8 20,-20.6 8.4,-22.6 9.8,-13.4 -18,-8.4 -13,-17.8 -6.2,-24.6 -21,22 -7,-8 -24.6,13 -6.4,11 9.2,29 -10,1 17.8,22.2 z"
             id="Ghotki"></path>
-          <path class="shape rice chilli lentils wheat outline Dadu"
+          <path class="shape rice chilli lentils wheat outline Dadu Indus_Plain"
             d="m 752.6,1179.3 -9.2,-9.6 4.4,-8.6 -94.8,-7.2 1.4,73.3 8,26.8 22.8,39.8 12.8,-22.2 9.4,0.2 7.4,-37.2 14.6,5 6,-6.6 -5.6,-22.2 16,-14.9 -3.4,-10 z"
             id="Dadu"></path>
-          <path class="shape rice tomato milk chilli banana sugarcane mango outline Badin"
+          <path class="shape rice tomato milk chilli banana sugarcane mango outline Badin Indus_Plain"
             d="m 784.2,1488.8 30,4.6 2,10.2 6.2,-3.4 3,12.2 6.8,-10.8 7,8.2 9.8,-5 -1.2,-18.4 16.4,-10.8 1.6,-17.8 9,-14.2 -2.8,-14.4 -10.2,-3.4 -18.6,-17.6 -4,-22 -6.2,9.4 -18.8,0 -0.4,11.2 -11.4,5.6 15.4,13.8 -1,7.2 -7.2,-0.6 -8,5.8 -6.4,-2.4 -14.4,13.8 z"
             id="Badin"></path>
           <path
@@ -367,112 +353,112 @@
             fill="none" id="Sindh_Border" stroke="#a08070"></path>
         </g>
         <g class="model-green" fill="#ffffd0" id="Punjab" stroke="#d0c0a0" transform="translate(-27.1,-28.1)">
-          <path class="shape potato tomato rice orange mango wheat outline Vehari"
+          <path class="shape potato tomato rice orange mango wheat outline Vehari Indus_Plain"
             d="m 1123.8,847.1 3.6,2.6 7.6,-1.2 27.6,33 6,-0.4 8,-25.2 17.2,-5.6 12.6,3.8 15.4,-13.8 12.6,-0.8 3,-28 -8.6,-12.4 -35.6,22.8 -6.8,-6.4 -18.2,7.2 -6.6,11.2 -13.2,-5.4 -9.8,11.8 -11.4,1 z"
             id="Vehari"></path>
-          <path class="shape potato maize rice wheat orange outline Toba_Tek_Singh"
+          <path class="shape potato maize rice wheat orange outline Toba_Tek_Singh Indus_Plain"
             d="m 1219.8,762.3 -7.2,-3.4 2,-9.4 -5,-7.6 10,-12.8 -3.4,-8.4 9.4,-19.8 -4.8,-6.2 -16.2,10.8 -18.2,2.4 -23.2,36.8 8.4,12.8 -12.2,4.8 -5.2,13.8 40.8,-2 19.6,0.4 z"
             id="Toba_Tek_Singh"></path>
-          <path class="shape garlic potato tomato rice wheat maize outline Sialkot"
+          <path class="shape garlic potato tomato rice wheat maize outline Sialkot Indus_Plain"
             d="m 1381.6,541.9 3,-20.8 8.4,9.2 16.6,-11.4 -4.8,14 -1.6,14.4 6.4,12.4 12,-1.2 8,2.8 -6.8,9.2 -4,9.2 -8.6,8.4 1.4,8.4 -8.4,3 -3.4,8.2 -5.8,0.4 -6.8,-8.8 -9,-2.2 -11.6,-9.6 -3.8,-13.8 -3.8,-6.4 0,-11.4 13.2,-2.8 z"
             id="Sialkot"></path>
-          <path class="shape milk wheat maize rice sugarcane tomato outline Sheikhupura"
+          <path class="shape milk wheat maize rice sugarcane tomato outline Sheikhupura Indus_Plain"
             d="m 1368,660.3 -7.4,19.4 -9.8,10.6 -4.4,0.6 -1,-8.2 -6.6,-0.2 -0.8,-7 -22.6,-9.8 -2.8,-31.4 9.8,-10.2 8.2,-1 -2.4,11.2 25,-1.8 3.4,5.2 4.2,-6.6 18,-2.6 16,-15 -0.8,-5.4 5.8,-0.4 3.4,8 7.6,4.6 -19.4,22.8 -5.2,14.6 z"
             id="Sheikhupura"></path>
-          <path class="shape mustard orange wheat rice sugarcane maize outline Sargodha"
+          <path class="shape mustard orange wheat rice sugarcane maize outline Sargodha Salt_Range"
             d="m 1221.4,636.9 11.4,-14.8 23.2,9.2 12.2,-22.2 -5.2,-14.2 -8.4,-1.4 -8.4,-10.2 3.4,-6.4 -6.2,-4.8 17.2,-9.6 0,-7.6 -60.6,15 -27.8,23 -11.6,53 13.4,4.4 -12.4,15.8 21.2,-10.6 10.8,-10.8 z"
             id="Sargodha"></path>
-          <path class="shape wheat maize potato milk mango rice orange tomato outline Sahiwal"
+          <path class="shape wheat maize potato milk mango rice orange tomato outline Sahiwal Indus_Plain"
             d="m 1266.6,781.3 9.8,3.8 -0.8,-16.6 2.6,-8.6 -7,-5.4 -4.8,-12.6 -38.6,22.8 -8,-2.4 -5.2,12.2 -19.6,-0.4 -6.8,21.4 -1.8,20 6.8,6.4 35.6,-22.8 19.4,-2 z"
             id="Sahiwal"></path>
-          <path class="shape maize lentils mustard garlic outline Rawalpindi"
+          <path class="shape maize lentils mustard garlic outline Rawalpindi Potohar_Plateau"
             d="m 1278,390.2 13.2,-6 8.6,35.9 -3,8.6 6.2,11.2 -6.2,17.8 6.6,17.8 -17.6,8.4 -9.8,-2.2 -3.2,11 -18.2,3.8 -11.8,3.2 -13.8,-11.2 -30,-7.6 8.8,-18.2 17.6,-11.6 -7.8,-18.2 -9,-2.8 3.6,-6.6 -8.2,-9.6 5.8,-5.2 3.8,3.2 12,-3 -5.2,4.8 10.8,4.2 -11.8,3.6 6.4,13.8 18,-8.8 6.8,10.2 -3.8,3 6,4.8 11.2,-7.2 1.6,-9 7.8,-7.8 -3.2,-4.2 -2.8,0.2 -10.6,-7.8 16.6,-9.2 z"
             id="Rawalpindi"></path>
-          <path class="shape tomato wheat outline Rajanpur"
+          <path class="shape tomato wheat outline Rajanpur Indus_Plain"
             d="m 972.2,870.9 -17.8,-3.2 -10.4,21 3.4,27.4 -13,26.6 -9.2,10.8 1.6,20.4 -14.4,23.2 -6.6,1 5.8,23.4 36.8,-15.2 0,-19.6 14.4,2.8 17.4,-10.2 -4.4,-12.2 15.8,-2.8 7.4,-23.8 -5,-6.8 15,-30.8 1.6,-23.4 -11.6,-8.6 -14.6,18.2 z"
             id="Rajanpur"></path>
-          <path class="shape rice wheat tomato mustard mango sugarcane outline Rahim_Yar_Khan"
+          <path class="shape rice wheat tomato mustard mango sugarcane outline Rahim_Yar_Khan Indus_Plain"
             d="m 1020.4,944.3 -3,11.8 -25.8,8.2 -15.8,2.8 4.4,12.2 -17.4,10.2 -14.4,-2.8 0,19.6 -36.8,15.2 11.6,16.8 6.2,24.6 13,17.8 18,8.4 16,-14.4 19.6,-1.2 11,12 3.2,13.2 5.4,9.6 12.8,1.2 35.8,-16.4 -27.2,-89.8 11,-53.8 -8.4,4 -5.4,-18.6 z"
             id="Rahim_Yar_Khan"></path>
-          <path class="shape outline milk wheat rice Pakpattan"
+          <path class="shape outline milk wheat rice Pakpattan Indus_Plain"
             d="m 1266.6,781.3 -18.4,15.8 -19.4,2 8.6,12.4 -3,28 10.8,4.4 4.6,-8 30.2,-10 26.2,-18.4 -1,-20.6 -18.2,-11.8 -10.6,10 z"
             id="Pakpattan"></path>
-          <path class="shape maize potato milk wheat rice outline Okara"
+          <path class="shape maize potato milk wheat rice outline Okara Indus_Plain"
             d="m 1278.2,759.9 -2.6,8.6 0.8,16.6 10.6,-10 18.2,11.8 1,20.6 21.2,-3.4 5.6,-11.2 10.8,-8.8 3.8,1.6 2.2,-10 13.2,-12.8 -14,-3.8 -10.8,-9.6 -12.6,-1.8 -17.8,-21.2 0,-10.8 -16.8,6 -12.4,11.8 -4.4,-0.4 -7.8,8.8 4.8,12.6 z"
             id="Okara"></path>
-          <path class="shape wheat rice garlic maize outline Narowal"
+          <path class="shape wheat rice garlic maize outline Narowal Indus_Plain"
             d="m 1422.8,570.5 6.8,-9.2 7.4,2.8 7.8,-5.2 7.8,8.2 6,-0.4 12.4,9.2 7,9.6 -14.8,20.4 -2.2,-4 -21.4,10.4 -6.6,-3.6 -13,13 -9.2,-1.4 -7.6,-4.6 -3.4,-8 3.4,-8.2 8.4,-3 -1.4,-8.4 8.6,-8.4 z"
             id="Narowal"></path>
-          <path class="shape wheat outline rice maize Nankana_Sahab"
+          <path class="shape wheat outline rice maize Nankana_Sahab Indus_Plain"
             d="m 1285,665.1 8,20.8 8.6,-3.8 8.6,8.8 -4,10.2 -20.8,13.8 -10,9.6 -1.2,8.6 4.4,0.4 12.4,-11.8 16.8,-6 9.2,-5.4 12,-3 5.4,-5.6 9.6,-2.4 2.4,-8.4 -1,-8.2 -6.6,-0.2 -0.8,-7 -22.6,-9.8 -2.8,-31.4 -13.2,1.8 -8.6,6.2 -22.4,7.8 z"
             id="Nankana_Sahab"></path>
-          <path class="shape mustard sugarcane rice wheat mango tomato milk outline Muzaffargarh"
+          <path class="shape mustard sugarcane rice wheat mango tomato milk outline Muzaffargarh Indus_Plain"
             d="m 1010.6,879.5 -1.6,23.4 -15,30.8 5,6.8 -7.4,23.8 25.8,-8.2 3,-11.8 13.8,-9.4 13.8,-25 0.8,-24.8 13.4,-6.6 -1.6,-27 30,-54 -6.4,-2 8.6,-17.4 -33.4,-21 -7,12.8 -32.6,1.6 3.8,25 -4,24.4 6.4,33 z"
             id="Muzaffargarh"></path>
-          <path class="shape wheat rice orange maize sugarcane mustard mango milk outline Multan"
+          <path class="shape wheat rice orange maize sugarcane mustard mango milk outline Multan Indus_Plain"
             d="m 1067.6,904.3 12.8,6.4 5.4,-41.2 21.8,-25.6 16.6,-27.6 -33.6,-18.8 -30,54 1.6,27 -13.4,6.6 -0.8,24.8 z"
             id="Multan"></path>
-          <path class="shape wheat outline maize Mianwali"
+          <path class="shape wheat outline maize Mianwali Salt_Range"
             d="m 1127,556.1 -11.6,10.4 4,7.6 -9.2,12.8 1,10.8 -58.8,1 11,-21.8 10,-3.8 0.6,-18.8 -9.6,3.6 0.2,-10.6 -7.6,0 -6.4,-19 3.6,-19.6 12.8,-8 15.2,-1.6 2.2,-7.4 -6.2,-18.4 18.4,2.2 4.8,12.6 10.8,4.6 -3.6,12.8 10.8,-2.2 12,19.8 -6.8,9.8 z"
             id="Mianwali"></path>
-          <path class="shape outline wheat rice orange Mandi_Bahauddin"
+          <path class="shape outline wheat rice orange Mandi_Bahauddin Indus_Plain"
             d="m 1293.2,588.5 -9.6,13.2 -15.4,7.4 -5.2,-14.2 -8.4,-1.4 -8.4,-10.2 3.4,-6.4 -6.2,-4.8 17.2,-9.6 0,-7.6 9.2,-4.2 5.4,3 20,-12.8 3.4,-5.8 29.2,36 -17.6,9.6 z"
             id="Mandi_Bahauddin"></path>
-          <path class="shape outline wheat tomato Lodhran"
+          <path class="shape outline wheat tomato Lodhran Indus_Plain"
             d="m 1094.4,913.5 68.2,-32 -27.6,-33 -7.6,1.2 -3.6,-2.6 -16.2,-3.2 -21.8,25.6 -5.4,41.2 z" id="Lodhran">
           </path>
-          <path class="shape outline orange mango mustard wheat Layyah"
+          <path class="shape outline orange mango mustard wheat Layyah Indus_Plain"
             d="m 1120.6,739.5 -4.6,-28.6 -19.2,-8.2 -10.2,10.4 -14,1 -13.4,-21.6 -35.2,-7.6 -7.6,14.4 2.4,46.8 -4.2,9.2 5.2,16.2 32.6,-1.6 7,-12.8 33.4,21 3.6,6 6,-14 z"
             id="Layyah"></path>
-          <path class="shape potato milk maize tomato rice outline Lahore"
+          <path class="shape potato milk maize tomato rice outline Lahore Indus_Plain"
             d="m 1346.4,690.9 4.4,-0.6 9.8,-10.6 7.4,-19.4 18.2,-2.6 5.2,-14.6 12.4,34 -9,19.6 -8.2,-2 -2.6,4.6 -18.2,6 -21.8,-6 z"
             id="Lahore"></path>
-          <path class="shape outline maize rice Khushab"
+          <path class="shape outline maize rice Khushab Salt_Range"
             d="m 1172.2,592.9 27.8,-23 -2,-15 -11.2,-13.2 -11.2,6.6 -24.6,-11.6 -4,8.4 -20,11 -11.6,10.4 4,7.6 -9.2,12.8 1,10.8 1.6,16 -14.6,19.8 13.2,21.2 24.6,18 16.8,-22.6 7.8,-4.2 z"
             id="Khushab"></path>
-          <path class="shape garlic orange mango rice wheat outline Khanewal"
+          <path class="shape garlic orange mango rice wheat outline Khanewal Indus_Plain"
             d="m 1107.6,843.9 16.2,3.2 3.4,-5.8 11.4,-1 9.8,-11.8 13.2,5.4 6.6,-11.2 18.2,-7.2 1.8,-20 6.8,-21.4 -40.8,2 5.2,-13.8 -43.6,13.8 -13.4,-6 -6,14 -3.6,-6 -8.6,17.4 6.4,2 33.6,18.8 z"
             id="Khanewal"></path>
-          <path class="shape potato rice wheat milk outline Kasur"
+          <path class="shape potato rice wheat milk outline Kasur Indus_Plain"
             d="m 1344,699.3 21.8,6 18.2,-6 2.6,-4.6 8.2,2 -0.4,18.6 11.8,3 2.4,4.8 -4.8,5 -8.6,-4.8 -0.6,8.2 -18.2,12.2 -13.4,19.2 -14,-3.8 -10.8,-9.6 -12.6,-1.8 -17.8,-21.2 0,-10.8 9.2,-5.4 12,-3 5.4,-5.6 z"
             id="Kasur"></path>
-          <path class="shape maize lentils mustard rice garlic outline Jhelum"
+          <path class="shape maize lentils mustard rice garlic outline Jhelum Salt_Range"
             d="m 1252.8,539.3 10.2,-0.4 -4,-7.6 -10.2,-1.4 -1.2,-7 8.4,-10 -1.4,-16.4 18.2,-3.8 3.2,-11 9.8,2.2 17.6,-8.4 2.6,7 -3.2,7.2 17.6,9.8 -1,6.4 -19.2,20.8 -1.6,8.4 -3.4,5.8 -20,12.8 -5.4,-3 -9.2,4.2 -60.6,15 -2,-15 7,-4.2 3,5 5.8,-8 25,-4.8 5.4,1.4 z"
             id="Jhelum"></path>
-          <path class="shape sugarcane maize wheat rice potato outline Jhang"
+          <path class="shape sugarcane maize wheat rice potato outline Jhang Indus_Plain"
             d="m 1159.4,762.3 12.2,-4.8 -8.4,-12.8 23.2,-36.8 18.2,-2.4 16.2,-10.8 -1.2,-5.8 -8.8,4 -22.4,-14.8 -5.6,-22.6 -21.2,10.6 12.4,-15.8 -13.4,-4.4 -7.8,4.2 -16.8,22.6 -0.4,30 -10.6,-1.8 -9,10 4.6,28.6 -18.2,30.6 13.4,6 z"
             id="Jhang"></path>
-          <path class="shape rice maize wheat outline Hafizabad"
+          <path class="shape rice maize wheat outline Hafizabad Indus_Plain"
             d="m 1290.8,642.3 -22.4,7.8 -8,-6.6 -4.4,-12.2 12.2,-22.2 15.4,-7.4 9.6,-13.2 17,-7.8 4.2,13.2 7.8,9.4 3.6,12 -3.4,8.8 -9.8,10.2 -13.2,1.8 z"
             id="Hafizabad"></path>
-          <path class="shape rice tomato wheat garlic maize outline Gujranwala"
+          <path class="shape rice tomato wheat garlic maize outline Gujranwala Indus_Plain"
             d="m 1359,567.3 3.8,6.4 3.8,13.8 11.6,9.6 9,2.2 6.8,8.8 0.8,5.4 -16,15 -18,2.6 -4.2,6.6 -3.4,-5.2 -25,1.8 2.4,-11.2 -8.2,1 3.4,-8.8 -3.6,-12 -7.8,-9.4 -4.2,-13.2 17.6,-9.6 11,0.6 20.2,-15.8 z"
             id="Gujranwala"></path>
-          <path class="shape wheat outline maize rice Gujrat"
+          <path class="shape wheat outline maize rice Gujrat Indus_Plain"
             d="m 1327.8,571.1 -29.2,-36 1.6,-8.4 19.2,-20.8 1,-6.4 11.6,-3 9,10 30.8,15 12.8,-0.4 -3,20.8 -9.4,11.2 -13.2,2.8 -20.2,15.8 z"
             id="Gujrat"></path>
-          <path class="shape wheat maize orange milk tomato rice mustard sugarcane outline Faisalabad"
+          <path class="shape wheat maize orange milk tomato rice mustard sugarcane outline Faisalabad Indus_Plain"
             d="m 1216.2,720.7 3.4,8.4 -10,12.8 5,7.6 -2,9.4 7.2,3.4 8,2.4 38.6,-22.8 7.8,-8.8 1.2,-8.6 10,-9.6 20.8,-13.8 4,-10.2 -8.6,-8.8 -8.6,3.8 -8,-20.8 -16.6,-15 -8,-6.6 -40.8,45.4 1.2,5.8 4.8,6.2 z"
             id="Faisalabad"></path>
-          <path class="shape outline wheat mango rice maize tomato Dera_Ghazi_Khan"
+          <path class="shape outline wheat mango rice maize tomato Dera_Ghazi_Khan Indus_Plain"
             d="m 979,705.5 -13.4,6.4 0.6,10 -3,0.4 -1.2,23.4 2.2,6.2 -6.2,0.8 -12,13.2 1,9.2 -10.6,20.8 -4.2,17.4 3.6,7 9.6,-3.8 -7.6,15.2 -8.2,23.8 -15.6,22.8 -13.4,5.4 -4.2,26.8 10.6,3.4 -2.2,7 4.8,6.6 5.4,-3 -4.6,24 -21,21.8 3.8,10.8 -8.6,20.2 -11.2,6.4 5,12 9.6,-4.4 23.6,6.2 -5.8,-23.4 6.6,-1 14.4,-23.2 -1.6,-20.4 9.2,-10.8 13,-26.6 -3.4,-27.4 10.4,-21 17.8,3.2 12.2,18.2 14.6,-18.2 11.6,8.6 15.4,-25.6 -6.4,-33 4,-24.4 -3.8,-25 -5.2,-16.2 4.2,-9.2 -2.4,-46.8 -7.2,-6 -13.6,-1.6 z"
             id="Dera_Ghazi_Khan"></path>
-          <path class="shape wheat potato maize outline rice Chiniot"
+          <path class="shape wheat potato maize outline rice Chiniot Indus_Plain"
             d="m 1221.4,636.9 -27.8,7.8 -10.8,10.8 5.6,22.6 22.4,14.8 8.8,-4 40.8,-45.4 -4.4,-12.2 -23.2,-9.2 z"
             id="Chiniot"></path>
-          <path class="shape maize lentils mustard outline Chakwal"
+          <path class="shape maize lentils mustard outline Chakwal Salt_Range"
             d="m 1184.2,490.5 -23.2,2 -5.2,-4 -6.4,5.6 -7.2,-2.6 -22.8,11.8 12,19.8 -6.8,9.8 2.4,23.2 20,-11 4,-8.4 24.6,11.6 11.2,-6.6 11.2,13.2 7,-4.2 3,5 5.8,-8 25,-4.8 5.4,1.4 8.6,-5 10.2,-0.4 -4,-7.6 -10.2,-1.4 -1.2,-7 8.4,-10 -1.4,-16.4 -11.8,3.2 -13.8,-11.2 -30,-7.6 -6.6,-1.6 z"
             id="Chakwal"></path>
-          <path class="shape outline mustard wheat maize Bhakkar"
+          <path class="shape outline mustard wheat maize Bhakkar Indus_Plain"
             d="m 1135.6,702.7 0.4,-30 -24.6,-18 -13.2,-21.2 14.6,-19.8 -1.6,-16 -58.8,1 -9.8,30.6 -15.8,23.2 -4.4,16.6 6,1 -4.4,14.8 35.2,7.6 13.4,21.6 14,-1 10.2,-10.4 19.2,8.2 9,-10 z"
             id="Bhakkar"></path>
-          <path class="shape wheat milk mustard sugarcane garlic mango outline Bahawalpur"
+          <path class="shape wheat milk mustard sugarcane garlic mango outline Bahawalpur Indus_Plain"
             d="m 1168.6,881.1 -6,0.4 -68.2,32 -14,-2.8 -12.8,-6.4 -19.6,5.6 -13.8,25 5.4,18.6 8.4,-4 -11,53.8 27.2,89.8 50.2,-7 15.4,-6.2 2.2,-17.4 26.2,-28 11.8,-35.2 9.4,-12.8 20.8,-11.6 -8,-25.8 -12.6,0 -3.6,-12.6 6,-5.8 39.8,0 4.2,-13.8 -12,-7 8.4,-27.2 -15.8,-17 -0.2,-11.6 -12.6,-3.8 -17.2,5.6 z"
             id="Bahawalpur"></path>
-          <path class="shape mustard wheat rice outline Bahawalnagar"
+          <path class="shape mustard wheat rice outline Bahawalnagar Indus_Plain"
             d="m 1280,825.9 -30.2,10 -4.6,8 -10.8,-4.4 -12.6,0.8 -15.4,13.8 0.2,11.6 15.8,17 -8.4,27.2 12,7 -4.2,13.8 -39.8,0 -6,5.8 3.6,12.6 12.6,0 8,25.8 34.6,-19.6 30.8,-55.2 13.8,-47.4 40.8,-15.2 16.2,-13.8 -2.2,-13.2 -6.8,-6.4 -21.2,3.4 z"
             id="Bahawalnagar"></path>
-          <path class="shape maize lentils wheat mustard outline Attock"
+          <path class="shape maize lentils wheat mustard outline Attock Potohar_Plateau"
             d="m 1207.8,462.7 -8.8,18.2 -6.6,-1.6 -8.2,11.2 -23.2,2 -5.2,-4 -6.4,5.6 -7.2,-2.6 -22.8,11.8 -10.8,2.2 3.6,-12.8 4.2,-12.8 -5.6,-10.4 2.4,-9.4 14,-6.4 9.2,-14 7.8,-25.2 21,-2.2 0,-18.7 20.4,-9.4 17.2,9.4 -2.6,5.4 7.2,2.5 7,-7.3 8.6,5.8 2.6,8.9 -12,3 -3.8,-3.2 -5.8,5.2 8.2,9.6 -3.6,6.6 9,2.8 7.8,18.2 z"
             id="Attock"></path>
           <path
@@ -481,75 +467,75 @@
         </g>
         <g class="model-green" fill="#ffffd0" id="Khyber_Pakhtunkhwa" stroke="#d0c0a0"
           transform="translate(-27.1,-28.1)">
-          <path class="shape outline potato Upper_Dir"
+          <path class="shape outline potato Upper_Dir northern_mountains"
             d="m 1093.4,260.2 1.8,8 31.2,-3.6 12.4,19.6 12.6,0.2 17.6,-40 6.2,-29 -14.6,-24 1,-4.2 -8,-2.8 -46.4,63.6 z"
             id="Upper_Dir"></path>
-          <path class="shape outline Tank"
+          <path class="shape outline Tank western_mountains"
             d="m 951.2,614.5 -5,-21.4 30.2,-21 9.4,-14.4 10,6 2.6,-6.2 13,11.4 -3.8,17.2 -13.6,18.8 -36,13 z" id="Tank">
           </path>
-          <path class="shape maize rice garlic tomato potato orange apple outline Swat"
+          <path class="shape maize rice garlic tomato potato orange apple outline Swat northern_mountains"
             d="m 1169,244.4 -17.6,40 7.8,13 -7.4,9.6 2.6,10.2 7,0 27.8,-15.4 6.6,-33.4 12.8,-19.4 7,-19.8 -4.6,-6.4 11.4,-50.8 -15.4,4.4 -15.8,-9.4 -13.2,19.2 -16.4,1 -1,4.2 14.6,24 z"
             id="Swat"></path>
-          <path class="shape orange garlic outline Swabi"
+          <path class="shape orange garlic outline Swabi Indus_Plain"
             d="m 1165.2,393.6 20.4,-9.4 32.4,-24.2 -7.8,-18 -17,17.6 -12,-3.6 8,-16.2 -7,-2.2 -10.2,14.6 -9.8,2.6 -1.8,16.8 z"
             id="Swabi"></path>
-          <path class="shape outline Shangla"
+          <path class="shape outline Shangla northern_mountains"
             d="m 1217.8,269.4 -9.2,-20.4 -12.8,19.4 -6.6,33.4 7.6,7.2 11,-5.8 3.2,16.2 8,-6 -2.2,-9 3.6,-14.2 5.2,3.2 4.6,-15.6 -3.6,-9.4 z"
             id="Shangla"></path>
-          <path class="shape garlic tomato outline Peshawar"
+          <path class="shape garlic tomato outline Peshawar Indus_Plain"
             d="m 1089,406.1 0.2,9 9.4,3 10.6,-3.8 4.2,-7.2 3.4,-14.9 -5.4,-17.2 -25.6,-12.4 -9.8,13 5,25.9 z"
             id="Peshawar"></path>
-          <path class="shape garlic potato rice sugarcane outline Nowshera"
+          <path class="shape garlic potato rice sugarcane outline Nowshera Indus_Plain"
             d="m 1165.2,393.6 -4.8,-22 -7.2,2.8 -20.8,-5.6 -6.4,12.8 -14.6,-6.6 5.4,17.2 -3.4,14.9 10.2,6.8 1.4,4.2 19.2,-3.6 21,-2.2 z"
             id="Nowshera"></path>
-          <path class="shape maize garlic potato sugarcane outline Mardan"
+          <path class="shape maize garlic potato sugarcane outline Mardan Indus_Plain"
             d="m 1121.8,350.4 10.6,18.4 20.8,5.6 7.2,-2.8 1.8,-16.8 9.8,-2.6 10.2,-14.6 -18.8,-6 -2.4,-7.2 -21.2,1.8 -15.6,15.8 z"
             id="Mardan"></path>
-          <path class="shape maize potato mustard apple outline Mansehra"
+          <path class="shape maize potato mustard apple outline Mansehra northern_mountains"
             d="m 1225.6,293.4 -5.2,-3.2 -3.6,14.2 2.2,9 -8,6 -3,7 5,9.2 12.4,4.6 11,10 20.2,-3.4 15.8,-16 11,-2 3,-9 16.6,1 9,-23.4 25.4,-11 11.4,-18.6 -2.8,-4.2 6.6,-7.4 -21.2,-9.4 -16,14.2 -20.4,2.8 -10.2,11.6 -12,22.8 -14.2,-6 -12,18.4 -17.2,0.4 z"
             id="Mansehra"></path>
-          <path class="shape outline Malakand"
+          <path class="shape outline Malakand western_mountains"
             d="m 1107.6,333.2 -5,-8.8 3.8,-10 8.6,-5 36.8,-2.4 2.6,10.2 7,0 -0.4,7.2 -21.2,1.8 -15.6,15.8 z"
             id="Malakand"></path>
-          <path class="shape potato outline Lower_Dir"
+          <path class="shape potato outline Lower_Dir northern_mountains"
             d="m 1151.4,284.4 -12.6,-0.2 -12.4,-19.6 -31.2,3.6 -5.4,6.4 10,17 15.6,4.2 -0.4,13.6 36.8,-2.4 7.4,-9.6 z"
             id="Lower_Dir"></path>
-          <path class="shape outline Lakki_Marwat"
+          <path class="shape outline Lakki_Marwat Indus_Plain"
             d="m 986.4,544.3 12,13.2 13,11.4 -3.8,17.2 56.8,-28.2 0.2,-10.6 -7.6,0 -6.4,-19 -15.8,-10.8 -18.4,10.8 -17.8,-5.2 -19.6,13.2 z"
             id="Lakki_Marwat"></path>
-          <path class="shape outline Kohistan"
+          <path class="shape outline Kohistan northern_mountains"
             d="m 1215.6,229.2 -7,19.8 9.2,20.4 8.8,-1 3.6,9.4 12,-7 42.6,4.6 10.2,-11.6 20.4,-2.8 16,-14.2 -18.6,-1.6 -3,-11.2 1.4,-11.4 9.4,-10 -53,-13 -16,-14 0.6,-11.6 -4.8,-3 -9.8,3.6 -15.2,-2.6 -11.4,50.8 z"
             id="Kohistan"></path>
-          <path class="shape outline garlic tomato Kohat"
+          <path class="shape outline garlic tomato Kohat Indus_Plain"
             d="m 1050.2,418.1 -2.4,15.8 16.6,2.6 -14,23.4 27.8,13.4 18.4,2.2 4.8,12.6 10.8,4.6 4.2,-12.8 -5.6,-10.4 2.4,-9.4 14,-6.4 9.2,-14 7.8,-25.2 -19.2,3.6 -5,5 2,6 -13.8,11.2 -8,0.8 -3,-5.4 4.2,-4.8 -18.4,-3.6 -10.2,1.8 -16.6,-11.6 z"
             id="Kohat"></path>
-          <path class="shape outline Karak"
+          <path class="shape outline Karak Indus_Plain"
             d="m 1029,464.1 -16.6,9.4 13.2,5.2 -15.8,16.4 20.6,5.8 4.4,16.6 15.8,10.8 3.6,-19.6 12.8,-8 15.2,-1.6 2.2,-7.4 -6.2,-18.4 -27.8,-13.4 z"
             id="Karak"></path>
-          <path class="shape mustard orange outline Haripur"
+          <path class="shape mustard orange outline Haripur Potohar_Plateau"
             d="m 1185.6,384.2 17.2,9.4 -2.6,5.4 7.2,2.5 7,-7.3 8.6,5.8 2.6,8.9 -5.2,4.8 10.8,4.2 25.6,-9.2 3,-19.5 -8.8,-3.8 4.6,-14.4 -9.4,0 1,-6.6 -10.8,-14.2 -11,-10 -12.4,-4.6 -2.8,6.4 7.8,18 z"
             id="Haripur"></path>
-          <path class="shape outline Hangu"
+          <path class="shape outline Hangu Indus_Plain"
             d="m 1029,464.1 -16.6,9.4 -10.8,-4.2 -4.8,-5.8 -9.2,-11.2 23.4,-8.2 3.2,-10 17,2.8 16.6,-3 16.6,2.6 -14,23.4 z"
             id="Hangu"></path>
-          <path class="shape sugarcane outline Dera_Ismail_Khan"
+          <path class="shape sugarcane outline Dera_Ismail_Khan western_mountains"
             d="m 1016.4,699.3 7.6,-14.4 4.4,-14.8 -6,-1 4.4,-16.6 15.8,-23.2 9.8,-30.6 11,-21.8 10,-3.8 0.6,-18.8 -9.6,3.6 -56.8,28.2 -13.6,18.8 -36,13 2.6,27.2 18.4,60.4 16.6,-13.8 13.6,1.6 z"
             id="Dera_Ismail_Khan"></path>
-          <path class="shape outline apple Chitral"
+          <path class="shape outline apple Chitral northern_mountains"
             d="m 1130.6,97.4 2.8,-6.4 16,-4.2 0.6,-5.8 11.2,-2 -1.8,-3.2 4.6,-7 25.4,-2.8 14.2,-8.2 28.6,0.4 4.4,-3.2 5.8,1.6 11.8,-4 21.2,1.6 28.6,-2.6 8.4,8.2 12.8,5.4 -0.6,9 -26.2,0 -21.4,-4.8 -32.4,8.6 2.6,7.8 -11.6,15.6 -7.4,1.4 -2.8,8.6 -30.8,18.4 -2.6,17.4 4.4,7.4 -5.2,12.4 -13.2,19.2 -16.4,1 -8,-2.8 -46.4,63.6 -12,-11.6 9.4,-18 -5.4,-5.2 1.8,-8.6 -11.2,-6.2 4.6,-10.8 -6.6,-4.8 -1.2,-8.4 -9.2,-13.6 -17.4,-9.4 4.4,-10 31.4,-23.4 0.2,-5.8 8.6,-12.2 19.6,11.4 1.8,-5.2 -4.4,-1.6 1.4,-7.2 z"
             id="Chitral"></path>
-          <path class="shape maize rice garlic sugarcane outline Charsadda"
+          <path class="shape maize rice garlic sugarcane outline Charsadda Indus_Plain"
             d="m 1107.6,333.2 16.6,8.8 -2.4,8.4 10.6,18.4 -6.4,12.8 -14.6,-6.6 -25.6,-12.4 z" id="Charsadda"></path>
-          <path class="shape outline Buner"
+          <path class="shape outline Buner northern_mountains"
             d="m 1196.8,309 11,-5.8 3.2,16.2 -3,7 5,9.2 -2.8,6.4 -17,17.6 -12,-3.6 8,-16.2 -7,-2.2 -18.8,-6 -2.4,-7.2 0.4,-7.2 27.8,-15.4 z"
             id="Buner"></path>
-          <path class="shape mustard outline Battagram"
+          <path class="shape mustard outline Battagram northern_mountains"
             d="m 1242.2,270.8 42.6,4.6 -12,22.8 -14.2,-6 -12,18.4 -17.2,0.4 -3.8,-17.6 4.6,-15.6 z" id="Battagram">
           </path>
-          <path class="shape garlic outline Bannu"
+          <path class="shape garlic outline Bannu Indus_Plain"
             d="m 976.4,521.3 2.6,15 19.6,-13.2 17.8,5.2 18.4,-10.8 -4.4,-16.6 -20.6,-5.8 -17.2,-0.8 z" id="Bannu">
           </path>
-          <path class="shape garlic mustard apple orange outline Abbottabad"
+          <path class="shape garlic mustard apple orange outline Abbottabad northern_mountains"
             d="m 1291.2,384.2 -11.4,-44.6 3.6,-10.8 -11,2 -15.8,16 -20.2,3.4 10.8,14.2 -1,6.6 9.4,0 -4.6,14.4 8.8,3.8 -3,19.5 16.6,-9.2 4.6,-9.3 z"
             id="Abbottabad"></path>
           <path
@@ -557,39 +543,39 @@
             fill="none" id="Khyber_Pakhtunkhwah_Border" stroke="#a08070"></path>
         </g>
         <g class="model-green" fill="#ffffd0" id="FATA" stroke="#d0c0a0" transform="translate(-27.1,-28.1)">
-          <path class="shape outline FR_Tank"
+          <path class="shape outline FR_Tank western_mountains"
             d="m 946.2,593.1 -2,-34.2 24.8,-8.8 17.4,-5.8 12,13.2 -2.6,6.2 -10,-6 -9.4,14.4 z" id="FR_Tank"></path>
-          <path class="shape outline garlic tomato FR_Peshawar"
+          <path class="shape outline garlic tomato FR_Peshawar Indus_Plain"
             d="m 1120,423.1 5,-5 -1.4,-4.2 -10.2,-6.8 -4.2,7.2 -10.6,3.8 23.4,11 z" id="FR_Peshawar"></path>
-          <path class="shape outline FR_Lakki" d="m 986.4,544.3 -7.4,-8 -2.6,-15 -13.6,16.2 6.2,12.6 z" id="FR_Lakki">
+          <path class="shape outline FR_Lakki Indus_Plain" d="m 986.4,544.3 -7.4,-8 -2.6,-15 -13.6,16.2 6.2,12.6 z" id="FR_Lakki">
           </path>
-          <path class="shape garlic outline tomato FR_Kohat"
+          <path class="shape garlic outline tomato FR_Kohat Indus_Plain"
             d="m 1098.6,418.1 23.4,11 -13.8,11.2 -8,0.8 -3,-5.4 4.2,-4.8 -18.4,-3.6 6.2,-12.2 z" id="FR_Kohat"></path>
-          <path class="shape outline FR_D_I_Khan"
+          <path class="shape outline FR_D_I_Khan western_mountains"
             d="m 951.2,614.5 6.8,3.4 2.6,27.2 18.4,60.4 -13.4,6.4 0.6,10 -3,0.4 -2.4,-5 4,-24.8 -1.4,-17 -16.6,8 -5.6,9.8 -2.6,-16.8 -8.6,-5.2 2.4,-43.8 -7.6,5.2 -3,-3.2 3.8,-8.2 7.6,-3.4 9.8,5 z"
             id="FR_D_I_Khan"></path>
-          <path class="shape garlic outline FR_Bannu"
+          <path class="shape garlic outline FR_Bannu Indus_Plain"
             d="m 992.6,494.3 17.2,0.8 15.8,-16.4 -13.2,-5.2 -10.8,-4.2 -22.8,21.4 -18.6,27.2 2.6,19.6 13.6,-16.2 z"
             id="FR_Bannu"></path>
-          <path class="shape outline South_Waziristan"
+          <path class="shape outline South_Waziristan western_mountains"
             d="m 890.4,557.3 13.4,-3.4 1.6,-9.6 22.4,0 35,-6.8 6.2,12.6 -24.8,8.8 2,34.2 5,21.4 -8.2,8.4 -9.8,-5 -7.6,3.4 -7.2,-4.6 3,-9.6 -16.8,4.6 -10.6,11.6 -21.8,-1 -4.6,-19.2 0.8,-27.6 -4.8,-11 4.8,-10.2 10,-4 z"
             id="South_Waziristan"></path>
-          <path class="shape outline Orakzai"
+          <path class="shape outline Orakzai western_mountains"
             d="m 1089.2,415.1 -6.2,12.2 -10.2,1.8 -16.6,-11.6 -6,0.6 -2.4,15.8 -16.6,3 -17,-2.8 -17,-18.2 13.2,4.4 36.6,-19.3 23.2,14.1 z"
             id="Orakzai"></path>
-          <path class="shape outline North_Waziristan"
+          <path class="shape outline North_Waziristan western_mountains"
             d="m 972.4,461.3 24.4,2.2 4.8,5.8 -22.8,21.4 -18.6,27.2 2.6,19.6 -35,6.8 -22.4,0 -1.6,9.6 -13.4,3.4 -12,-7 6.4,-11 -5.8,-11.4 7.2,-9.8 7,-2.4 -4.2,-8.6 1.6,-10 7.2,-7.8 14.2,0.4 6.4,-3.8 9,3.6 14.6,-5.4 4.6,-8.2 8.8,-0.8 z"
             id="North_Waziristan"></path>
-          <path class="shape outline Mohmand"
+          <path class="shape outline Mohmand western_mountains"
             d="m 1048.4,317.6 2.8,-13.8 12.6,11 18.4,-5.4 7,18.4 13.4,-3.4 5,8.8 -21.8,29.4 -9.8,13 -24,-19.4 4.8,-12.4 -9.2,-3.8 -7.2,-7.4 -0.2,-12.2 z"
             id="Mohmand"></path>
-          <path class="shape outline Kurram"
+          <path class="shape outline Kurram western_mountains"
             d="m 940.4,416.1 -14.6,-23.8 3.8,-9.9 11.4,-2.4 22.6,8.6 15.4,2.4 18.2,24.9 17,18.2 -3.2,10 -23.4,8.2 9.2,11.2 -24.4,-2.2 -3.8,-10.4 -11.4,-10.8 1.6,-13.2 -6.6,-9.4 z"
             id="Kurram"></path>
-          <path class="shape outline Khyber"
+          <path class="shape outline Khyber western_mountains"
             d="m 1076,375.6 5,25.9 8,4.6 0.2,9 -19,0 -23.2,-14.1 -36.6,19.3 -13.2,-4.4 -18.2,-24.9 37.6,-0.2 29.8,-11.2 6,-12.8 -0.4,-10.6 z"
             id="Khyber"></path>
-          <path class="shape outline Bajaur"
+          <path class="shape outline Bajaur western_mountains"
             d="m 1061.6,299.6 -10.4,4.2 12.6,11 18.4,-5.4 7,18.4 13.4,-3.4 3.8,-10 8.6,-5 0.4,-13.6 -15.6,-4.2 -10,-17 -18.8,10.2 z"
             id="Bajaur"></path>
           <path
@@ -597,33 +583,33 @@
             fill="none" id="FATA_Border" stroke="#a08070"></path>
         </g>
         <g class="model-green" fill="#ffffd0" id="AJK" stroke="#d0c0a0" transform="translate(-27.1,-28.1)">
-          <path class="shape outline apple Muzaffarabad"
+          <path class="shape outline apple Muzaffarabad northern_mountains"
             d="m 1286.4,319.8 -6.6,19.8 8.1358,31.8294 21.1872,5.4008 -7.8683,-19.2999 10.0832,2.6783 4.8684,-15.9273 0.3937,-7.4813 0.1419,-14.4456 L 1303,320.8 z"
             id="Muzaffarabad"></path>
-          <path class="shape outline Hattian"
+          <path class="shape outline Hattian northern_mountains"
             d="m 1309.123,376.8302 18.077,1.9698 9.8,-21.2 -8.2,-14.4 -5.8,2.4 -6.7937,-1.3187 -4.8684,15.9273 -10.0832,-2.6783 z"
             id="Hattian"></path>
-          <path class="shape outline Poonch"
+          <path class="shape outline Poonch northern_mountains"
             d="m 1294.4634,397.8229 2.0898,8.7238 10.0396,-4.0808 27.8072,14.2341 11.2,-11.6 -9.0542,-12.7521 -9.1935,0.5952 -10.6763,5.6541 -13.126,-12.6107 z"
             id="Poonch"></path>
-          <path class="shape outline Sudhnati"
+          <path class="shape outline Sudhnati northern_mountains"
             d="m 1296.5532,406.5467 3.2468,13.5533 13.9104,12.7197 27.8896,0.6803 -7.2,-16.8 -27.8072,-14.2341 z"
             id="Sudhnati"></path>
-          <path class="shape outline Kotli"
+          <path class="shape outline Kotli northern_mountains"
             d="m 1299.8,420.1 -3,8.6 6.2,11.2 -2.4779,7.114 10.8158,-1.3981 17.2007,27.3779 L 1340,472.1 l 15.8,-12.4 1.6,-14 -9.8,-12.2 -6,0 -27.8896,-0.6803 z"
             id="Kotli"></path>
-          <path class="shape outline Mirpur"
+          <path class="shape outline Mirpur Potohar_Plateau"
             d="m 1300.5221,447.014 -3.7221,10.686 9.2,24.8 -3.2,7.2 17.6,9.8 8.1386,-26.5062 -16.9042,-27.6755 z"
             id="Mirpur"></path>
-          <path class="shape outline Bhimber"
+          <path class="shape outline Bhimber Potohar_Plateau"
             d="M 1328.5386,472.9938 1320.4,499.5 l 11.6,-3 9,10 30.8,15 12.8,-0.4 -3.8,-10 -10.2,-2.4 2.8,-11.4 -14,-2.8 -19.4,-22.4 z"
             id="Bhimber"></path>
-          <path class="shape outline Neelum"
+          <path class="shape outline Neelum northern_mountains"
             d="m 1303,320.8 13.7419,1.5544 -0.1419,14.4456 12,-9.2 -0.2,-5.8 5.2,-3.2 1.2,-14 19,0 15.8,-12 27.2,3.4 9.2,8 23.2,2 11.6,4.8 20.6,-0.8 4.4,-6.8 -2.6,-11.4 -10.2,-9.8 -5.6,8.6 -5.6,-2.6 -7,6.4 -33.8,-15.2 -4,-16 -9.2,-9.8 -24.6,8.4 -10.6,-5.6 -6.6,7.4 2.8,4.2 -11.4,18.6 -25.4,11 z"
             id="Neelum"></path>
-          <path class="shape outline Haveli" d="m 1327.2,378.8 33.2,1.4 4.6,13 -9.2,9.8 -10.2,2.1 -9.0542,-12.7521 z"
+          <path class="shape outline Haveli northern_mountains" d="m 1327.2,378.8 33.2,1.4 4.6,13 -9.2,9.8 -10.2,2.1 -9.0542,-12.7521 z"
             id="Haveli"></path>
-          <path class="shape outline Bagh"
+          <path class="shape outline Bagh northern_mountains"
             d="m 1327.2,378.8 -18.077,-1.9698 -21.1872,-5.4008 6.5276,26.3935 9.0866,-11.8364 13.126,12.6107 10.6763,-5.6541 9.1935,-0.5952 z"
             id="Bagh"></path>
           <path
@@ -631,25 +617,25 @@
             fill="none" id="AJK_Border" stroke="#a08070"></path>
         </g>
         <g class="model-green" fill="#ffffd0" id="Gilgit_Baltistan" stroke="#d0c0a0" transform="translate(-27.1,-28.1)">
-          <path class="shape outline Ghizer"
+          <path class="shape outline Ghizer northern_mountains"
             d="m 1349.3534,106.34004 -4.7964,20.57918 8.5935,11.78808 -3.5973,20.37939 -14.389,14.18565 -45.3655,-2.59737 -19.8674,-6.52955 L 1252.2,174 l -4.8,-2.8 -9.8,3.4 -15.2,-2.6 -15.4,4.4 -15.8,-9.4 5.2,-12.4 -4.4,-7.4 2.6,-17.4 30.8,-18.4 2.8,-8.6 7.4,-1.4 11.5594,-15.72187 L 1244.6,78 l 32.4,-8.6 21.4,4.8 26.2,0 0.6,-9 -12.8,-5.4 -8.4,-8.2 19.2,-0.4 12,7 9,1 29.9346,25.56186 z"
             id="Ghizer"></path>
-          <path class="shape outline Diamer"
+          <path class="shape outline Diamer northern_mountains"
             d="m 1415.5031,228.2168 -11.9909,-30.7689 -14.7887,7.5923 -23.5821,-8.7911 -29.9772,-22.97676 -45.3655,-2.59737 -19.785,-8.39151 L 1252.2,174 l -0.5723,11.6598 15.9878,13.9859 52.9598,12.9868 -9.3929,9.9899 -1.3989,11.3885 2.9977,11.1887 18.5859,1.5984 21.1839,9.3905 10.5919,5.5943 24.5813,-8.3915 7.994,-10.7891 z"
             id="Diamer"></path>
-          <path class="shape outline Astore"
+          <path class="shape outline Astore northern_mountains"
             d="m 1463.8663,256.5881 5.7956,-6.7932 -8.5934,-10.5892 -8.3936,-15.1847 -25.9803,-22.1776 3.3974,-10.5892 -13.9893,-4.7952 -1.399,-13.58626 -8.9931,1.99798 -2.1984,22.57718 11.9909,30.7689 -19.7849,14.3854 -7.994,10.7891 9.193,9.7901 3.997,15.9838 33.7743,15.1847 6.9947,-6.3936 5.5958,2.5974 5.5957,-8.5913 10.9916,-8.5913 z"
             id="Astore"></path>
-          <path class="shape apple outline Hunza_Nagar"
+          <path class="shape apple outline Hunza_Nagar northern_mountains"
             d="M 1523.4211,154.09174 1533.4,146.6 l -0.8,-7.6 8.2,-3.6 -1.8,-5.8 5.2,-0.6 -7,-13.4 2.6,-12 -8,-13.4 -1.2,-7 -18.8,-14.6 -18.4,-2.2 -1.4,5 -7.8,0.2 -6.4,-21.8 1.4,-3.6 -23.8,-5.4 -1.8,-3.6 -11.8,0.8 -10.8,9 -7.2,-6.4 -2.2,-8.4 -7.8,4.8 -6.6,-8.4 -7.2,1.4 -4,5.6 -0.8,8 -4.6,-4 -9.8,0.4 -16.6,10.8 -10.2,-1 -2.4,7.2 -7.4,2.2 29.9346,25.56186 -24.7812,21.57818 8.4091,21.85994 16.0573,14.78579 21.6242,-4.65702 14.8694,8.77567 18.9792,4.19015 12.1908,-6.39353 5.5957,7.59232 16.7872,-19.5802 14.3891,-4.19576 18.1862,12.38748 17.5866,1.99797 z"
             id="Hunza_Nagar"></path>
-          <path class="shape outline Gilgit"
+          <path class="shape outline Gilgit northern_mountains"
             d="m 1410.3134,147.10442 18.9792,4.19015 8.9932,20.77898 -22.1831,14.38545 -1.399,-13.58626 -8.9931,1.99798 -2.1984,22.57718 -14.7887,7.5923 -23.5821,-8.7911 -29.9772,-22.97676 14.389,-14.18565 3.5973,-20.37939 -8.5935,-11.78808 4.7964,-20.57918 8.4091,21.85994 16.0573,14.78579 21.6242,-4.65702 z"
             id="Gilgit"></path>
-          <path class="shape outline Ghanche"
+          <path class="shape outline Ghanche northern_mountains"
             d="m 1581.1772,193.6517 -33.5745,20.3794 -13.3898,28.1715 31.576,17.9818 21.1839,6.1938 -0.7728,26.8218 8.8,4.2 12.6,-0.6 6.8,-19.2 24.225,-1.1719 1.575,-10.8281 14.4,-2.4 -17.2,-31.8 -22,-25.6 -11.8398,12.6267 z"
             id="Ghanche"></path>
-          <path class="shape apple potato outline Skardu"
+          <path class="shape apple potato outline Skardu northern_mountains"
             d="m 1463.8663,273.3711 -10.9916,8.5913 10.3253,9.8376 2.6,11.4 -4.4,6.8 17,11.4 35.4,3.8 30,-18.2 9,3.6 33.4,-17.4 0.7728,-26.8218 -21.1839,-6.1938 -31.576,-17.9818 13.3898,-28.1715 33.5745,-20.3794 22.383,24.775 11.8398,-12.6267 -0.2,-13.4 -8.8,-9.2 -8,-4 -0.8,-13.8 -3.2,-1.4 -17,5.8 -4.8,3.8 -16.2,0 -1.6,-11.2 -6.8,-9.6 -9.0875,-0.49062 -5.5125,-5.70938 -9.9789,7.49174 -9.3929,-10.98889 -17.5866,-1.99797 -18.1862,-12.38748 -14.3891,4.19576 -16.7872,19.5802 -5.5957,-7.59232 -12.1908,6.39353 8.9932,20.77898 -22.1831,14.38545 13.9893,4.7952 -3.3974,10.5892 25.9803,22.1776 8.3936,15.1847 8.5934,10.5892 -5.7956,6.7932 z"
             id="Skardu"></path>
           <path
@@ -868,7 +854,7 @@
 
     <!-- Legend container: -->
     <div id="legend-container">
-      <table id="legend-table">
+      <table id="legend-table" class="legend">
         <caption>Legend</caption>
         <tr>
           <td><span class="legend-box" style="background-color: #FFD8C2 ;"></span></td>
@@ -901,13 +887,83 @@
       </table>
     </div>
 
+    <div id="legend-container2">
+  <table id="legend-table-topo" class="legend">
+    <caption>Topography Legend</caption>
+    <tr>
+      <td><span class="legend-box" style="background-color: #23822c;"></span></td>
+      <td>Indus_Plain/td>
+    </tr>
+    <tr>
+      <td><span class="legend-box" style="background-color: #9ea449;"></span></td>
+      <td>Potohar Plateau</td>
+    </tr>
+    <tr>
+      <td><span class="legend-box" style="background-color: #505325;"></span></td>
+      <td>Western Mountains</td>
+    </tr>
+    <tr>
+      <td><span class="legend-box" style="background-color: #f6f4a2;"></span></td>
+      <td>Salt Range</td>
+    </tr>
+    <tr>
+      <td><span class="legend-box" style="background-color: #e59b3a;"></span></td>
+      <td>Northern Mountains</td>
+    </tr>
+    <tr>
+      <td><span class="legend-box" style="background-color: #000000;"></span></td>
+      <td>No Data</td>
+    </tr>
+  </table>
+</div>
+
+
+    <!-- Map mode toggle -->
+  <div id="mode-toggle">
+    <button id="toggle-topography" type="button" title="Switch to Topography" aria-pressed="false">
+      <img src="icons/topo.svg" alt="" aria-hidden="true" />
+    </button>
+  </div>
+
+  <div id="tooltip-container">
+  <button id="tooltip-toggle">
+    <img src="icons/info.png" alt="How to use map" style="width:20px;height:20px;">
+    How to use
+  </button>
+  <div id="tooltip-content">
+    <p>
+      Click on <strong>Select a Crop</strong> and choose a crop. The colored cities indicate where this crop is grown the most.
+    </p>
+    <p>
+      You can also click on a city on the map to interact with it.
+    </p>
+    <p>
+      Use the zoom in 
+      <img src="icons/zoom-in.svg" alt="Zoom In" style="width:16px; height:16px;">,
+      zoom out 
+      <img src="icons/zoom-out.svg" alt="Zoom Out" style="width:16px; height:16px;">, 
+      and reset 
+      <img src="icons/reset.svg" alt="Reset" style="width:16px; height:16px;"> 
+      buttons to navigate the map.
+    </p>
+    <p>
+      The toggle mode 
+      <img src="icons/topo.svg" alt="Toggle Mode" style="width:16px; height:16px;"> 
+      allows you to switch between the topographical view and the provincial map.
+    </p>
+  </div>
+</div>
+
+
+
+
     <!-- Crop Selector dropdown: -->
     <div id="crop-selector" style="
   position: absolute;
   top: 19px;
   left: 19px;
   background: linear-gradient(135deg, #8ec633, #f9f5ea);
-  padding: 8px 12px;
+  padding: 10px 12px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   z-index: 1000;
@@ -1380,6 +1436,26 @@
 
   const provinces = ["Sindh", "Punjab", "Balochistan", "Khyber_Pakhtunkhwa", "FATA", "AJK", "Gilgit_Baltistan", "Islamabad"]
 
+  // Topographical colors (normal)
+  const topographyColors = {
+    "Indus_Plain": "#23822cff",
+    "Potohar_Plateau": "#9ea449ff",
+    "western_mountains": "#505325ff",
+    "Salt_Range": "#f6f4a2ff",
+    "northern_mountains": "#e59b3aff",
+    "no_data": "#000000"
+  };
+
+  // Topographical colors (hover) → slightly lighter versions
+  const topographyHoverColors = {
+    "Indus_Plain": "#2fb63dff",   // lighter green
+    "Potohar_plateau": "#b7bd6dff",     // lighter olive
+    "western_mountains": "#6a6f4bff",// lighter dark green/grey
+    "Salt_Range": "#faf8c9ff",  // lighter yellow
+    "northern_mountains": "#f2b768ff",// lighter orange
+    "no_data": "#333333"             // lighter black/grey
+  };
+
   // Script to load crop svgs as soon as page loads:
   window.addEventListener("load", () => {
     const crops = [
@@ -1393,46 +1469,87 @@
     });
   });
 
-  // function to give color to each city of specified province (Not hovered):
-  function colorProvince(provinceId) {
-    document.querySelectorAll(`#${provinceId} .shape`).forEach(path => {
-      path.style.fill = provinceColors[provinceId];
-    });
+  // Track current mode (default = province mode)
+let isTopoMode = false;
+updateLegend();
+const toggleButton = document.getElementById("toggle-topography");
+toggleButton.addEventListener("click", () => {
+  isTopoMode = !isTopoMode;
+  toggleButton.setAttribute("aria-pressed", isTopoMode);
+  updateLegend();
+  // reapply colors when switching mode
+  provinces.forEach(province => {
+    colorProvince(province);
+    setProvinceHover(province);
+  });
+  // If a crop is selected, re-highlight it in the new mode
+  if (currentCrop) {
+    highlightCrop(currentCrop);
   }
+});
 
-  // function to manage change in city's color when hovered:
-  function setProvinceHover(provinceId) {
-    const paths = document.querySelectorAll(`#${provinceId} .shape`);
+// function to give color to each city of specified province (Not hovered):
+function colorProvince(provinceId) {
+  document.querySelectorAll(`#${provinceId} .shape`).forEach(path => {
+    if (isTopoMode) {
+      // use topography color by class
+      let region = Array.from(path.classList).find(cls => topographyColors[cls]);
+      if (!region) region = "no_data";
+      path.style.fill = topographyColors[region];
+    } else {
+      // normal province coloring
+      path.style.fill = provinceColors[provinceId];
+    }
+  });
+}
 
-    paths.forEach(path => {
-      // Hover behavior
-      path.addEventListener("mouseover", () => {
+// function to manage change in city's color when hovered:
+function setProvinceHover(provinceId) {
+  const paths = document.querySelectorAll(`#${provinceId} .shape`);
+
+  paths.forEach(path => {
+    path.onmouseover = () => {
+      if (isTopoMode) {
+        let region = Array.from(path.classList).find(cls => topographyHoverColors[cls]);
+        if (!region) region = "no_data";
+        path.style.fill = topographyHoverColors[region];
+      } else {
         path.style.fill = provinceHoverColors[provinceId];
-      });
+      }
+    };
 
-      path.addEventListener("mouseout", () => {
-
-
-        if (currentCrop) {
-          if (path.classList.contains("dimmed")) {
-            path.style.fill = "#f0f0f0";
-          }
-          else if (path.classList.contains("highlighted")) {
+    path.onmouseout = () => {
+      if (currentCrop) {
+        if (path.classList.contains("dimmed")) {
+          path.style.fill = "#f0f0f0";
+        } else if (path.classList.contains("highlighted")) {
+          if (isTopoMode) {
+            let region = Array.from(path.classList).find(cls => topographyColors[cls]);
+            if (!region) region = "no_data";
+            path.style.fill = topographyColors[region];
+          } else {
             path.style.fill = provinceColors[provinceId];
           }
         }
-        else {
+      } else {
+        if (isTopoMode) {
+          let region = Array.from(path.classList).find(cls => topographyColors[cls]);
+          if (!region) region = "no_data";
+          path.style.fill = topographyColors[region];
+        } else {
           path.style.fill = provinceColors[provinceId];
         }
-      });
-    });
-  }
+      }
+    };
+  });
+}
 
-  // Execute colorPprovinces and setProvinceHover function for all provinces.
-  provinces.forEach(function (province) {
-    colorProvince(province)
-    setProvinceHover(province)
-  })
+// Initial execution (province mode default)
+provinces.forEach(province => {
+  colorProvince(province);
+  setProvinceHover(province);
+});
+
 
   // function to remove and set text labels on cities:
   function showLabelsForCrop(crop) {
@@ -1457,24 +1574,36 @@
     return parent.getAttribute("id");
   }
 
+  // Get topographical region for a path
+function getTopoRegionFromPath(path) {
+  const classes = path.getAttribute("class") || "";
+  const topoClass = Object.keys(topographyColors).find(t => classes.includes(t));
+  return topoClass || "no_data"; // default if none
+}
+
+
   // Highlight regions for selected crop
   function highlightCrop(crop) {
-    allPaths.forEach(path => {
-      const classes = path.getAttribute("class") || "";
-      const province = getProvinceFromPath(path);
+  allPaths.forEach(path => {
+    const pathClasses = Array.from(path.classList);
+    const province = getProvinceFromPath(path);
+    const topo_region = getTopoRegionFromPath(path);
 
-      path.classList.remove("highlighted", "dimmed");
+    path.classList.remove("highlighted", "dimmed");
 
-      if (classes.includes(crop)) {
-        path.classList.add("highlighted");
-        path.style.fill = provinceColors[province]; // Keep province color
-      } else {
-        path.classList.add("dimmed");
-        path.style.fill = "#f0f0f0"; // Make it white initially
-      }
-    });
-    showLabelsForCrop(crop);
-  }
+    if (pathClasses.includes(crop)) {
+      path.classList.add("highlighted");
+      // Fill according to current mode
+      path.style.fill = isTopoMode ? topographyColors[topo_region] : provinceColors[province];
+    } else {
+      path.classList.add("dimmed");
+      path.style.fill = "#f0f0f0";
+    }
+  });
+
+  showLabelsForCrop(crop);
+}
+
 
   // Add hover effects only on currently highlighted crop regions
   allPaths.forEach(path => {
@@ -1509,33 +1638,52 @@
 
   let currentCrop = null;
 
-  // Crop button click logic to change active crop.
-  document.querySelectorAll(".crop-button").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const crop = btn.dataset.crop;
+// Crop button click logic to change active crop
+document.querySelectorAll(".crop-button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const crop = btn.dataset.crop;
 
-      // Toggle off if same crop clicked again
-      if (currentCrop === crop) {
-        allPaths.forEach(path => {
-          path.classList.remove("highlighted", "dimmed", "hovered");
-          const province = getProvinceFromPath(path);
+    // Toggle off if same crop clicked again
+    if (currentCrop === crop) {
+      allPaths.forEach(path => {
+        path.classList.remove("highlighted", "dimmed", "hovered");
+        const province = getProvinceFromPath(path);
+        const topo_region = getTopoRegionFromPath(path);
+
+        if (isTopoMode) {
+          path.style.fill = topographyColors[topo_region] || topographyColors["no_data"];
+        } else {
           if (province && provinceColors[province]) {
             path.style.fill = provinceColors[province];
           }
-        });
+        }
+      });
 
-        showLabelsForCrop(null);
-        currentCrop = null;
-        document.querySelectorAll(".crop-button").forEach(b => b.classList.remove("active"));
-      } else {
-        highlightCrop(crop);
-        currentCrop = crop;
+      showLabelsForCrop(null);
+      currentCrop = null;
+      document.querySelectorAll(".crop-button").forEach(b => b.classList.remove("active"));
+    } else {
+      highlightCrop(crop);
+      currentCrop = crop;
 
-        document.querySelectorAll(".crop-button").forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-      }
-    });
+      document.querySelectorAll(".crop-button").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+    }
   });
+});
+
+function updateLegend() {
+  const legendNormal = document.getElementById("legend-container");
+  const legendTopo = document.getElementById("legend-container2");
+
+  if (isTopoMode) {
+    legendNormal.style.display = "none";
+    legendTopo.style.display = "block";
+  } else {
+    legendNormal.style.display = "block";
+    legendTopo.style.display = "none";
+  }
+}
 
   // Show popup with region info on click and zoom in.
   allPaths.forEach(path => {
@@ -1566,9 +1714,12 @@
       const regionId = path.getAttribute("id");
       const regionName = regionId.replace(/_/g, " ");
       const classes = path.getAttribute("class").split(" ");
-      const cropClasses = classes.filter(c =>
-        !["shape", "outline", "highlighted", "dimmed", regionId].includes(c)
-      );
+      const crops = [
+        "rice", "wheat", "maize", "chilli", "garlic", "potato", "tomato",
+        "milk", "lentils", "mustard", "orange", "mango", "banana", "apple", "sugarcane"
+      ];
+      const cropClasses = classes.filter(c => crops.includes(c));
+
 
       const regionInfo = document.getElementById("region-info");
       const nameCell = document.getElementById("region-name");
@@ -1797,6 +1948,24 @@
       cropList.style.display = "none";
     }
   });
+
+  // Select tooltip elements
+const tooltipContainer = document.getElementById("tooltip-container");
+const tooltipToggle = document.getElementById("tooltip-toggle");
+
+// Toggle tooltip visibility on button click
+tooltipToggle.addEventListener("click", (e) => {
+  e.stopPropagation(); // prevent triggering document click
+  tooltipContainer.classList.toggle("active");
+});
+
+// Close tooltip when clicking outside
+document.addEventListener("click", (e) => {
+  if (!tooltipContainer.contains(e.target)) {
+    tooltipContainer.classList.remove("active");
+  }
+});
+
 
 
 </script>
