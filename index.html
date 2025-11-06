@@ -621,7 +621,7 @@
             transform: translateX(-50%);
             /* Center horizontally */
             width: 130%;
-            height: 200%;
+            height: 170%;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -659,16 +659,16 @@
             }
         }
 
-        #productOverview {
+        /* #productOverview {
             position: relative;
             z-index: 10;
             background: white;
             /* Ensure it has solid background */
-            margin-top: 160px;
-            /* Increase this value to push it down */
-            margin-left: 100px;
+        /* margin-top: 160px; */
+        /* Increase this value to push it down */
+        /* margin-left: 100px; */
 
-        }
+        /* } */
 
         /* Hero Slideshow Styles */
         #slideshow {
@@ -777,9 +777,9 @@
 
         .about-image img {
             width: 100%;
-            max-width: 500px;
+            max-width: 600px;
             /* prevent image from stretching too wide */
-            height: 450px;
+            height: 400px;
             border-radius: 14px;
             display: block;
             margin: 0 auto;
@@ -844,7 +844,7 @@
 
         .ending-note-image img {
             width: 100%;
-            max-width: none;
+            max-width: 600px;
             height: 400px;
             border-radius: 12px;
         }
@@ -938,16 +938,20 @@
     <!-- Visual Data Representations Heading  -->
     <h2 class="text-4xl text-olive-green text-center py-6 mb-4 font-poppins">Visual Data Representations
     </h2>
+    <p class="text-sm text-gray-500 text-center mb-0">
+        Source: Pakistan Bureau of Statistics, 2024
+    </p>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
         <div class="bg-white rounded-lg shadow-md p-6 border border-dun">
             <div class="flex items-center justify-between mb-6">
-                <h3 class="text-lg text-reseda-green font-poppins">Trends in Crop Production Efficiency</h3>
+                <h3 class="text-lg text-reseda-green font-poppins">Share of Agricultural GDP by Region</h3>
             </div>
+
             <div id="productionChart" class="w-full h-[400px]"></div>
         </div>
         <div class="bg-white rounded-lg shadow-md p-6 border border-dun">
-            <div class="flex items-center justify-between mb-6">
-                <h3 class="text-lg text-reseda-green font-poppins">Crop-Wise Export Distribution</h3>
+            <div class="flex items-center justify-between mb-2">
+                <h3 class="text-lg text-reseda-green font-poppins">Crop-Wise Annual Production</h3>
             </div>
             <div id="distributionChart" class="w-full h-[400px]"></div>
         </div>
@@ -955,26 +959,7 @@
     </div>
     </section>
 
-    <section>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 px-6">
-            <!-- Line Chart Card -->
-            <div class="bg-white rounded-lg shadow-md p-6 border border-gray-300">
-                <div class="flex items-center justify-between mb-6">
-                    <h3 class="text-lg text-reseda-green font-nunito">Crop-Wise Import Distribution</h3>
 
-                </div>
-                <div id="importChart" class="w-full h-[400px]"></div>
-            </div>
-
-            <!-- Pie Chart Card -->
-            <div class="bg-white rounded-lg shadow-md p-6 border border-gray-300">
-                <div class="flex items-center justify-between mb-6">
-                    <h3 class="text-lg text-reseda-green font-nunito">Trends in Crop Production Efficiency</h3>
-                </div>
-                <div id="efficiencyChart" class="w-full h-[400px]"></div>
-            </div>
-        </div>
-    </section>
 
     <style>
         #mapOverlay {
@@ -995,7 +980,7 @@
         });
     </script>
 
-    <section id="breather-section" class="relative h-[400px] flex items-center justify-center text-center">
+    <section id="breather-section" class="relative h-[350px] flex items-center justify-center text-center">
         <div class="absolute inset-0">
             <img src="https://i.postimg.cc/VNsx9zy8/Screenshot-2025-11-04-181325.png" alt="Background"
                 class="w-full h-full object-cover">
@@ -1004,7 +989,8 @@
         <div class="relative z-10 text-white px-4">
             <h2 class="text-3xl md:text-4xl font-poppins font-bold mb-4">Did You Know?</h2>
             <p class="text-lg md:text-xl font-open-sans max-w-2xl mx-auto">
-                Pakistan is the world's 8th largest producer of wheat, contributing over 25 million tons annually.
+                Around 90% of farms in Pakistan are under 5 acres, showing that smallholders drive production, but not
+                policy.
             </p>
         </div>
     </section>
@@ -1068,7 +1054,7 @@
         </div>
     </section>
 
-    <footer class="bg-olive-green text-white py-12">
+    <!-- <footer class="bg-olive-green text-white py-12">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
@@ -1087,10 +1073,8 @@
                         </div>
                     </div>
                     <p class="text-alabaster mb-4 font-open-sans leading-relaxed">Comprehensive visualization of
-                        agricultural
-                        supply chains to support
-                        policy decisions and market efficiency in Pakistan.</p>
-                    <div class="flex space-x-4">
+                        agricultural supply chains to support policy decisions and market efficiency in Pakistan.</p> -->
+    <!-- <div class="flex space-x-4">
                         <a href="#" class="text-alabaster hover:text-white transition-colors">
                             <div class="w-8 h-8 flex items-center justify-center">
                                 <i class="ri-facebook-fill ri-lg"></i>
@@ -1111,8 +1095,8 @@
                                 <i class="ri-instagram-line ri-lg"></i>
                             </div>
                         </a>
-                    </div>
-                </div>
+                    </div> -->
+    <!-- </div>
                 <div>
                     <h3 class="font-bold text-lg text-white mb-4 font-poppins">Quick Links</h3>
                     <ul class="space-y-2">
@@ -1125,19 +1109,13 @@
                         <li><a href="maps.html"
                                 class="text-alabaster hover:text-white transition-colors text-sm font-open-sans">Maps</a>
                         </li>
-                        <li><a href="#"
-                                class="text-alabaster hover:text-white transition-colors text-sm font-open-sans">Methodology</a>
-                        </li>
-                        <li><a href="#"
-                                class="text-alabaster hover:text-white transition-colors text-sm font-open-sans">Data
-                                Sources</a></li>
                         <li><a href="about.html"
                                 class="text-alabaster hover:text-white transition-colors text-sm font-open-sans">About
                                 Us</a>
                         </li>
                     </ul>
-                </div>
-                <div>
+                </div> -->
+    <!-- <div>
                     <h3 class="font-bold text-white text-white mb-4 font-poppins">Partner Organizations</h3>
                     <ul class="space-y-2">
                         <li><a href="#"
@@ -1159,8 +1137,8 @@
                                 class="text-alabaster hover:text-white transition-colors text-sm font-open-sans">Provincial
                                 Agriculture Departments</a></li>
                     </ul>
-                </div>
-                <div>
+                </div> -->
+    <!-- <div>
                     <h3 class="font-bold text-white mb-4 font-poppins">Contact Us</h3>
                     <ul class="space-y-2 text-alabaster">
                         <li class="flex items-start">
@@ -1183,10 +1161,10 @@
                             <span class="font-open-sans">+92-41-9200000</span>
                         </li>
                     </ul>
-                </div>
-            </div>
-            <div class="pt-8 border-t border-reseda-green">
-                <div class="flex flex-col md:flex-row justify-between items-center">
+                </div> -->
+    <!-- </div>
+            <div class="pt-8 border-t border-reseda-green"> -->
+    <!-- <div class="flex flex-col md:flex-row justify-between items-center">
                     <div class="text-white text-sm mb-4 md:mb-0 text-center md:text-left font-open-sans">© 2025 AGRI
                         SUPPLY CHAIN
                         Mapping Project. All Rights Reserved.</div>
@@ -1204,9 +1182,72 @@
                             class="text-alabaster hover:text-white transition-colors text-sm font-open-sans">Accessibility</a>
                     </div>
                 </div>
+            </div> -->
+    <!-- </div>
+    </footer> -->
+    <footer class="bg-olive-green text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-x-10">
+
+                <!-- Logo + Description -->
+                <div class="col-span-1">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div
+                            class="w-12 h-12 flex items-center justify-center bg-white rounded-full text-olive-green relative">
+                            <i class="ri-plant-line ri-lg"></i>
+                            <div
+                                class="absolute -bottom-1 -right-1 w-6 h-6 bg-fresh-green rounded-full flex items-center justify-center">
+                                <div class="w-3 h-3 bg-white rounded-full"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white font-poppins">AGRI SUPPLY CHAIN</h3>
+                            <p class="text-xs text-fresh-green font-nunito">Cultivating Knowledge</p>
+                        </div>
+                    </div>
+                    <p class="text-alabaster mb-4 font-open-sans leading-relaxed">
+                        Comprehensive visualization of agricultural supply chains to support policy decisions and market
+                        efficiency in Pakistan.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="md:col-start-2 md:ml-24 ml-auto">
+                    <h3 class="font-bold text-lg text-white mb-4 font-poppins">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html"
+                                class="text-alabaster hover:text-white transition-colors text-sm font-open-sans">Home</a>
+                        </li>
+                        <li><a href="products.html"
+                                class="text-alabaster hover:text-white transition-colors text-sm font-open-sans">Products</a>
+                        </li>
+                        <li><a href="maps.html"
+                                class="text-alabaster hover:text-white transition-colors text-sm font-open-sans">Maps</a>
+                        </li>
+                        <li><a href="about.html"
+                                class="text-alabaster hover:text-white transition-colors text-sm font-open-sans">About
+                                Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Partner Organizations -->
+                <div class="md:col-start-3 md:ml-0">
+                    <h3 class="font-bold text-white mb-4 font-poppins">Supporting Organizations</h3>
+                    <ul class="space-y-2">
+                        <li><a class="text-alabaster hover:text-white transition-colors text-sm font-open-sans">Pakistan
+                                Agriculture Council</a></li>
+                        <li><a class="text-alabaster hover:text-white transition-colors text-sm font-open-sans">Pakistan
+                                Agriculture Research</a></li>
+                        <li><a class="text-alabaster hover:text-white transition-colors text-sm font-open-sans">National
+                                Rural Support Programme</a></li>
+                        <li><a class="text-alabaster hover:text-white transition-colors text-sm font-open-sans">Habib
+                                University</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </footer>
+
 
     <div id="supplyChainModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 overflow-y-auto">
         <div class="min-h-screen px-4 text-center">
@@ -1316,7 +1357,7 @@
             { image: 'https://i.postimg.cc/wMVLS1ch/Screenshot-2025-11-04-101740.png' },
             { image: 'https://i.postimg.cc/nV5dk5SG/Screenshot-2025-11-04-101340.png', link: 'products.html' },
             { image: 'https://i.postimg.cc/QN4w3G7G/Screenshot-2025-11-03-120011.png', link: 'maps.html' },
-            { image: 'https://i.ibb.co/s9HYT9y6/Screenshot-2025-07-21-183831.png', link: 'about.html' }
+            { image: 'https://i.postimg.cc/G2TvMKgF/Screenshot-2025-11-06-121241.png', link: 'about.html' }
         ];
 
         let currentSlide = 0;
@@ -1380,108 +1421,109 @@
                 name: 'Wheat',
                 image: "https://i.postimg.cc/gkLGssPN/Whats-App-Image-2025-09-06-at-2-08-02-AM-1.jpg",
                 description: 'Primary grain crop with nationwide cultivation',
-                production: '25.2M tons',
+                production: '26M tons',
                 category: 'grains'
             },
             {
                 name: 'Rice',
                 image: "https://i.postimg.cc/4xh8WVH0/IMG-20250806-WA0119.jpg",
                 description: 'Key export crop grown in irrigated areas',
-                production: '8.4M tons',
+                production: '7.5M tons',
+                category: 'grains'
+            },
+            {
+                name: 'Maize',
+                image: "https://i.postimg.cc/9FFhR1QC/maize.jpg",
+                description: 'Important feed and grain',
+                production: '5.4M tons',
                 category: 'grains'
             },
             {
                 name: 'Sugarcane',
                 image: "https://i.ibb.co/Gfkp6Mjf/Whats-App-Image-2025-09-06-at-2-08-02-AM.jpg",
                 description: 'Cash crop for sugar production',
-                production: '75.5M tons',
+                production: '72M tons',
                 category: 'others'
-            },
-            {
-                name: 'Chili',
-                image: "https://i.postimg.cc/xjvn4NMc/IMG-20250806-WA0130.jpg",
-                description: 'Spice crop with export potential',
-                production: '145K tons',
-                category: 'vegetables'
-            },
-            {
-                name: 'Garlic',
-                image: "https://i.postimg.cc/7Z1cnS2N/IMG-20250806-WA0096.jpg",
-                description: 'Essential spice crop with domestic and export demand',
-                production: '150K tons',
-                category: 'vegetables'
-            },
-            {
-                name: 'Potato',
-                image: "https://i.ibb.co/PZ8r5qPd/Whats-App-Image-2025-09-06-at-2-08-00-AM.jpg",
-                description: 'Major vegetable crop with nationwide demand',
-                production: '4.6M tons',
-                category: 'vegetables'
-            },
-            {
-                name: 'Tomato',
-                image: "https://i.ibb.co/dsBMqVnR/Whats-App-Image-2025-09-06-at-2-08-00-AM-1.jpg",
-                description: 'High-value vegetable with processing potential',
-                production: '575K tons',
-                category: 'fruits'
             },
             {
                 name: 'Mango',
                 image: "https://i.postimg.cc/Vv613Dj1/IMG-20250806-WA0059.jpg",
                 description: 'Premium fruit with global demand',
-                production: '1.9M tons',
-                category: 'fruits'
-            },
-            {
-                name: 'Apple',
-                image: "https://i.ibb.co/6RbzXYbT/Whats-App-Image-2025-09-06-at-2-08-01-AM-1.jpg",
-                description: 'High-value fruit from northern areas',
-                production: '600K tons',
+                production: '2M tons',
                 category: 'fruits'
             },
             {
                 name: 'Orange',
                 image: "https://i.ibb.co/jZ5w73NZ/Whats-App-Image-2025-09-06-at-2-08-01-AM.jpg",
                 description: 'Citrus fruit with domestic and export markets',
-                production: '1.6M tons',
+                production: '1.8M tons',
                 category: 'fruits'
-            },
-            {
-                name: 'Lentils',
-                image: "https://i.postimg.cc/T3KtwSVF/IMG-20250806-WA0108.jpg",
-                description: 'Key pulse crop with nutritional value',
-                production: '300K tons',
-                category: 'others'
-            },
-            {
-                name: 'Maize',
-                image: "https://i.postimg.cc/9FFhR1QC/maize.jpg",
-                description: 'Important feed and grain',
-                production: '6M tons',
-                category: 'grains'
-            },
-            {
-                name: 'Milk',
-                image: "https://i.postimg.cc/RZxKM3Rt/Screenshot-2025-11-04-122953.png",
-                description: 'Major dairy product with widespread production',
-                production: '40M tons',
-                category: 'dairy'
-            },
-            {
-                name: 'Mustard',
-                image: "https://i.postimg.cc/PrLSR869/Screenshot-2025-11-04-121613.png",
-                description: 'Oilseed crop for edible oil production',
-                production: '200K tons',
-                category: 'others'
             },
             {
                 name: 'Banana',
                 image: "https://i.postimg.cc/gjMQ8pLb/IMG-20250806-WA0044.jpg",
                 description: 'Popular fruit with domestic demand',
-                production: '150K tons',
+                production: '450k tons',
                 category: 'fruits'
+            },
+            {
+                name: 'Apple',
+                image: "https://i.ibb.co/6RbzXYbT/Whats-App-Image-2025-09-06-at-2-08-01-AM-1.jpg",
+                description: 'High-value fruit from northern areas',
+                production: '200k tons',
+                category: 'fruits'
+            },
+            {
+                name: 'Tomato',
+                image: "https://i.ibb.co/dsBMqVnR/Whats-App-Image-2025-09-06-at-2-08-00-AM-1.jpg",
+                description: 'High-value vegetable with processing potential',
+                production: '3M tons',
+                category: 'vegetables'
+            },
+            {
+                name: 'Potato',
+                image: "https://i.ibb.co/PZ8r5qPd/Whats-App-Image-2025-09-06-at-2-08-00-AM.jpg",
+                description: 'Major vegetable crop with nationwide demand',
+                production: '7.5M tons',
+                category: 'vegetables'
+            },
+            {
+                name: 'Garlic',
+                image: "https://i.postimg.cc/7Z1cnS2N/IMG-20250806-WA0096.jpg",
+                description: 'Essential spice crop with domestic and export demand',
+                production: '120k tons',
+                category: 'vegetables'
+            },
+            {
+                name: 'Chili',
+                image: "https://i.postimg.cc/xjvn4NMc/IMG-20250806-WA0130.jpg",
+                description: 'Spice crop with export potential',
+                production: '100k tons',
+                category: 'vegetables'
+            },
+            {
+                name: 'Lentils',
+                image: "https://i.postimg.cc/T3KtwSVF/IMG-20250806-WA0108.jpg",
+                description: 'Key pulse crop with nutritional value',
+                production: '80k tons',
+                category: 'others'
+            },
+            {
+                name: 'Mustard',
+                image: "https://i.postimg.cc/PrLSR869/Screenshot-2025-11-04-121613.png",
+                description: 'Oilseed crop for edible oil production',
+                production: '150k tons',
+                category: 'others'
+            },
+            {
+                name: 'Milk',
+                image: "https://i.postimg.cc/RZxKM3Rt/Screenshot-2025-11-04-122953.png",
+                description: 'Major dairy product with widespread production',
+                production: '50M tons',
+                category: 'dairy'
             }
         ];
+
 
         let currentPage = 0;
         const productsPerPage = 5;
@@ -2612,7 +2654,7 @@
                             ]
                         },
                         "bottleneck": "High cost of imported seed limits adoption.<br><br>Certified seed supply is very low.<br><br>Recycling increases disease spread.<br><br>Lack of awareness about seed quality.",
-                        "quote": "“Mozeeka aur Santa sabse mashhoor variety hai…aik lambi, aik chhoti, dono ka apna market hai.”"
+                        "quote": ""
                     },
 
                     {
@@ -2630,7 +2672,7 @@
                             ]
                         },
                         "bottleneck": "High diesel and fertilizer prices increase costs.<br><br>Uneven land leads to drainage issues and crop loss.<br><br>Small farmers face delays due to machinery shortages.",
-                        "quote": "“Farmer ka sabse bara kharcha seed aur fertilizer pe hota hai — agar yeh dono strong hain to crop apne aap khush hoti hai.”"
+                        "quote": ""
                     },
 
                     {
@@ -2666,7 +2708,7 @@
                             ]
                         },
                         "bottleneck": "Overuse of pesticides raises costs and damages soil.<br><br>Late blight epidemics in Punjab’s winters cause major losses.<br><br>Water scarcity in Sindh increases costs and risks.<br><br>Unpredictable rainfall worsens vulnerability.",
-                        "quote": "“Aloo ki fasal mein har 10 din baad faisla lena padta hai…spray karein ya rukhein, pani de ya na de.”"
+                        "quote": ""
                     },
 
                     {
@@ -2684,7 +2726,7 @@
                             ]
                         },
                         "bottleneck": "Labor shortages during peak harvest raise costs.<br><br>Manual harvesting contributes to significant losses.<br><br>Inadequate drying encourages fungal infections.",
-                        "quote": "“Open truck mein hawa lagni zaroori hai, warna aloo saans nahi le pata.” “Storage se quality bacha lete hain, warna garmi mein aloo sirf do din ka mehmaan hota hai.”"
+                        "quote": ""
                     },
 
                     {
@@ -2702,7 +2744,7 @@
                             ]
                         },
                         "bottleneck": "Cold storage rent is very high per bag.<br><br>Energy shortages increase costs.<br><br>Limited access forces small farmers to sell quickly.",
-                        "quote": "“Cold storage humare liye bank ki tarah hai, jo fasal aaj nahi bikti, kal double daam pe bik jati hai.” “Ek 120 kilo ki bohri ko store karne ka kharcha 1300 rupay tak jata hai, lekin sahi waqt pe nikalo to pura return mil jata hai.”"
+                        "quote": ""
                     },
 
                     {
@@ -2715,7 +2757,7 @@
                             "stats": []
                         },
                         "bottleneck": "Middlemen control prices and farmer access.<br><br>Sharp seasonal price crashes.<br><br>Weak export infrastructure for smallholders.",
-                        "quote": "“Humara aloo Iran, Afghanistan aur Uzbekistan tak jata hai, Pakistan ka aloo har zameen mein jata hai.” Dubai mein lal aloo chalta hai, Karachi mein safed… har market ka apna rang hai.” “Mandi ka asli system connection pe chalta hai, paper pe nahi.” “Aarti aur dealer beech mein bridge hain.  bina unke kisaan ka maal market tak nahi pahuchta.”"
+                        "quote": ""
                     }
 
                 ],
@@ -2746,7 +2788,7 @@
                         },
 
                         "bottleneck": "Hybrid seeds are costly, not always adapted to local climates, and access remains unequal—especially disadvantaging smallholders compared to contract growers",
-                        "quote": " “Eik company ki 20 varieties hoti hain — har area ka apna beej chal sakta hai. Badin mein jo chalta hai, zaroori nahi ke woh Nawabshah mein bhi chale.” - Aarti Hum zameendaaron ko beej dete hain, unhein batate hain ke kis ilaqe mein kaunsa beej survive karega. Jab fasal tayyar hoti hai to woh mandi tak aati hai hum wahan recovery karte hain.” - Aarti “Hybrid beej Pakistan mein banta hi nahi…80% beej baahir se aata hai. Korean, Thai, Indian… sab imported hain.” Middlemen “Area wise konsi variety kis ilaqay main ab o hawa main survive karti hai phir woh variety uss area main.” — Aarti Interview Summaiya Zuberi<br><br>“Local hybrid banta hee nahi hai, hybrid beej saaray baahir say hee atay hain. Pakistan main toh iss kay upar working nahi hai.” — Aarti Interview Summaiya Zuberi<br><br>“Hum apna koi seed bana hee nahi rahay khaas tor par, makhsoos seed, hum import kar rahay hain, hum hybrid pay kaam kar rahay hain. Toh farmer kay paas high quality seed ki accessibility nahi hai.” — Research Institution Alina"
+                        "quote": "“Area wise konsi variety kis ilaqay main ab o hawa main survive karti hai phir woh variety uss area main.” — Aarti Interview Summaiya Zuberi<br><br>“Local hybrid banta hee nahi hai, hybrid beej saaray baahir say hee atay hain. Pakistan main toh iss kay upar working nahi hai.” — Aarti Interview Summaiya Zuberi<br><br>“Hum apna koi seed bana hee nahi rahay khaas tor par, makhsoos seed, hum import kar rahay hain, hum hybrid pay kaam kar rahay hain. Toh farmer kay paas high quality seed ki accessibility nahi hai.” — Research Institution Alina"
                     },
 
                     {
@@ -2785,7 +2827,7 @@
                         },
 
                         "bottleneck": "Seedling losses due to heat or cold during transplanting are common.<br><br>Labor shortages—especially of skilled workers—during peak sowing periods create delays and inefficiencies.",
-                        "quote": "“Tamatar har jagha alag time par lagta hau. Badin mein June–July mein lagta hai, Tando Allahyar mein November–December mein, Larkana mein December–January, aur Punjab side pe January–February mein. Aise poora saal tamatar chalta rehta hai.” - Middlemen “Tamatar k dou season hotay hain… ek July se August tak aur doosra October se December tak. Beech ke do mahine thoda sukoon hota hai.” - Farmer “Pakistan mein tomato hybrid pe working hi nahi ho rahi. Local seed system agar mazboot hota to hum itna depend na karte import pe.” Local Seed Supplier"
+                        "quote": ""
                     },
 
                     {
@@ -2823,7 +2865,7 @@
                         },
 
                         "bottleneck": "High perishability and lack of cold storage facilities lead to significant post-harvest losses.<br><br>Manual harvesting and poor packaging result in bruising, while labor shortages can delay harvest rounds during peak periods.",
-                        "quote": "“Aksar baarishon main keeray lag jaatay hain.” — Sahar Sabzi Mandi <br><br> “Infrastructure inefficiencies buhat zyada hain, uss main challenges humaray paas buhat zyada hain.” — Research Institution<br>“Post-harvest losses kam az kam 40% yah 60% reported hain.” — Research Institution Alina “Tamatar k dou season hotay hain… ek July se August tak aur doosra October se December tak. Beech ke do mahine thoda sukoon hota hai.” - Farmer"
+                        "quote": "“Aksar baarishon main keeray lag jaatay hain.” — Sahar Sabzi Mandi <br><br> “Infrastructure inefficiencies buhat zyada hain, uss main challenges humaray paas buhat zyada hain.” — Research Institution<br>“Post-harvest losses kam az kam 40% yah 60% reported hain.” — Research Institution Alina"
                     },
 
                     {
@@ -2880,7 +2922,7 @@
                         },
 
                         "bottleneck": "Consumers bear high and fluctuating prices with limited knowledge of true supply chain costs.<br><br>Retailers face spoilage risks, while quality inconsistencies persist due to poor handling upstream",
-                        "quote": "“Humara Pakistani saaf sutra hai.” — Sahar Sabzi Mandi<br><br>“Hum sirf aur sirf satisfy hotay hain fresh tomato say.” — Research Institution Alina<br><br>“Tamatar is a taste enhancer.” — Research Institution Alina<br><br>“Punjabi families used to use more tomatoes and urdu-speaking families used to use more dahi.” — Research Institution Alina<br><br>“Tamatar ki price eik jaisi nahi rehti hai, kisi waqt humay buhat zyada, zaroorat say zyada pay karna hota hai, bakra eid waghera, ramzan waghera kay waqt.” “Hum packet pe 100 ya 300 rupay tak ka margin rakhte hain. Agar koi credit pe le raha hai aur doubt hai, to rate thoda badha dete hain.” - Aarti"
+                        "quote": "“Humara Pakistani saaf sutra hai.” — Sahar Sabzi Mandi<br><br>“Hum sirf aur sirf satisfy hotay hain fresh tomato say.” — Research Institution Alina<br><br>“Tamatar is a taste enhancer.” — Research Institution Alina<br><br>“Punjabi families used to use more tomatoes and urdu-speaking families used to use more dahi.” — Research Institution Alina<br><br>“Tamatar ki price eik jaisi nahi rehti hai, kisi waqt humay buhat zyada, zaroorat say zyada pay karna hota hai, bakra eid waghera, ramzan waghera kay waqt.”"
                     },
 
                     {
@@ -2947,7 +2989,7 @@
                             ]
                         },
                         bottleneck: 'Seed rot due to overwatering<br><br>Poor germination rates from low-quality seeds',
-                        quote: "“Climate change se sabse zyada aam ki fasal pr asar hai. Research zaroori hai ke kis waqt paani dena chahiye, pehle lagana hai ya baad mein.” - Retailer"
+                        quote: ""
                     },
 
                     {
@@ -2964,7 +3006,7 @@
                             ]
                         },
                         bottleneck: 'Heatwaves in Sindh causing leaf scorch<br><br>Cold snaps in southern Punjab slowing early growth<br><br>Limited nursery management training for smallholder farmers',
-                        "quote": "“Peak timing aam ke liye June, July aur August hai. Sindh ka aam pehle June ke baad mature hota hai, phir Punjab ka shuru hota hai.” - Retailer"
+                        "quote": ""
                     },
 
                     {
@@ -2998,7 +3040,7 @@
                             ]
                         },
                         bottleneck: 'Shortage of skilled grafters in rural Sindh and Punjab<br><br>Extreme summer temperatures can cause graft failure if not timed properly',
-                        "quote": "“Sindh ke andar aam 70% Sindhri hote hain, baaqi varieties mein Suruli, Langra aur doosre aam aate hain.” - Exporter"
+                        "quote": ""
                     },
 
                     {
@@ -3026,7 +3068,7 @@
                             stats: []
                         },
                         bottleneck: 'Unsafe ripening practices risk export rejection, reduced consumer trust, and potential health hazards <br><br>Use of calcium carbide poses health risks and lowers quality.',
-                        "quote": "“Pichhle do teen saal se fasal kam ho rahi hai, mausam ke halat aise ho gaye hain. Abhi bhi garmi zyada hai, phool gir jata hai.” - Farmer “Aam bikta hai daikhnay pe. Rang aur khushboo achi ho toh customer double le jata hai.” - Local Vendor "
+                        "quote": ""
                     }
                     ,
                     {
@@ -3039,7 +3081,7 @@
                             stats: []
                         },
                         bottleneck: 'Unpredictable weather disrupts flowering and harvest timing.',
-                        quote: '“Karachi market mein har din 150 se 200 truck aam aate hain, ye fasal pe depend karta hai. Agar fasal kam ho, to supply bhi kam hoti hai.” - Aarti “Season ke shuru mein aam mehnga hota hai kyunke supply kam hoti hai. Jaise jaise fasal barhti hai, rate neeche aata hai.” - Retailer'
+                        quote: ''
                     }
 
                     ,
@@ -3056,7 +3098,7 @@
                             ]
                         },
                         bottleneck: 'Only 25–32% reach market in good condition due to sap burn, bruising, and disease (upto 75% loss)<br><br>Cold storage shortage in rural areas reduces freshness',
-                        "quote": "To increase shelf life we need cold storage… We need machinery to decrease the temperature of mangoes during harvest. “Export ka maal direct gardens se pack hota hai. Pehle sahi packing hoti hai, phir Karachi aake pre-cool aur cold store mein jaata hai, phir reefer container se port se Dubai bhejte hain.” - Exporter"
+                        "quote": "To increase shelf life we need cold storage… We need machinery to decrease the temperature of mangoes during harvest."
                     }
                     ,
                     {
@@ -3069,7 +3111,7 @@
                             stats: [],
                         },
                         bottleneck: 'Despite being the 3rd largest mango exporter, Pakistan’s earnings are low ($579/ton) due to short shelf life, fruit fly issues, lack of cold storage and  limited traceability — reducing competitiveness in high-value markets.',
-                        quote: '“Global market mein demand hai, lekin certification aur packaging ki kami se hum peeche hain.” - Exporter “By sea export hota hai Dubai, Muscat aur Arab countries mein. Iran bhi bohot badi market ban gayi hai Pakistan ke liye, wo by road border se jaata hai.” - Exporter'
+                        quote: ''
                     }
                     ,
                     {
@@ -3273,7 +3315,7 @@
                             "stats": []
                         },
                         "bottleneck": "Unpredictable weather causing pest outbreaks.<br><br>Farmers paying retail prices for inputs but selling fruit at below wholesale rates.",
-                        "quote": "“Jab thand zyada ho, kinnow ka rang acha ata hai. Garmi ho toh fruit jal jata hai.” - Farmer"
+                        "quote": ""
                     },
 
                     {
@@ -3287,7 +3329,7 @@
                             "stats": []
                         },
                         "bottleneck": "Improper handling can cause bruising and reduce market value.<br><br>Late or untimely harvest may affect fruit sweetness and shelf life.<br><br>Lack of trained labor for careful harvesting and sorting.",
-                        "quote": "“Is bar rate bohot barhay hain,Fasl kam hui hai na, is liye daam upar gaye.” - Vendor"
+                        "quote": ""
                     },
 
                     {
@@ -3322,7 +3364,7 @@
                             ]
                         },
                         "bottleneck": "High cost of imported wax.<br><br>Limited automation in small facilities.<br><br>Water quality issues can spread diseases.<br><br>Packaging failures during long shipments.",
-                        "quote": "“Kinnow export ke liye cleaning aur grading chahiye, lekin humare paas machinery nahi.” - Farmer"
+                        "quote": ""
                     },
 
                     {
@@ -3340,7 +3382,7 @@
                             ]
                         },
                         "bottleneck": "Punjab has better cold storage infrastructure; Sindh’s storage capacity is limited, leading to regional supply constraints.",
-                        "quote": "Cold storage lets big suppliers keep oranges for 2–3 months. Later, they sell them slightly cheaper than the market price, but still profit. “Store karne ka kharcha bhi hai,  har peti ke upar taqriban 100 rupay lagte hain.” - Supplier"
+                        "quote": "Cold storage lets big suppliers keep oranges for 2–3 months. Later, they sell them slightly cheaper than the market price, but still profit."
                     },
 
                     {
@@ -3359,7 +3401,7 @@
                             ]
                         },
                         "bottleneck": "Middlemen control pricing; farmers often lack direct access to buyers, reducing profit margins.",
-                        "quote": "“Boli subah namaz ke baad lagti hai. Jaisa maal hota hai, usi ke hisaab se rate tay hota hai, kisi ka 1700, kisi ka 1800 rupay.” Middlemen"
+                        "quote": ""
                     },
 
                     {
@@ -3396,7 +3438,7 @@
                             ]
                         },
                         "bottleneck": "Differing quality preferences complicate supply; limited awareness of organic options.",
-                        "quote": "“Market mein ye maal taqriban chay maheene tak chalta hai — uske baad khatam ho jata hai.” - Retailer"
+                        "quote": ""
                     },
 
 
@@ -3427,119 +3469,119 @@
                 }
             },
             'Lentils': {
-    stages: [
-        {
-            "title": "Seed & Inputs",
-            "description": "Limited access to certified seeds and weak agronomic support",
-            "icon": "https://i.ibb.co/LzrhY1Lk/Seed-Selection.png",
-            "position": { "top": 85, "left": 200 },
-            "tooltip": {
-                "title": "Seed & Input Challenges Details",
-                "content": "<p>Most farmers rely on saved or informal seed systems, resulting in inconsistent germination and lower yields. Extension services are weak and policy support for pulses remains minimal.</p><b>Regional Varieties and Conditions</b><table><tr><th>Region</th><th>Common Varieties</th><th>Notes</th></tr><tr><td>Punjab</td><td>Masoor Chasi, Naya Masoor 2006</td><td>Locally adapted; good for moderate-rainfall areas</td></tr><tr><td>Sindh</td><td>Masoor Local, Early Moong</td><td>Grown in sandy, low-rainfall zones</td></tr><tr><td>KPK</td><td>Local small-grain varieties</td><td>Limited cultivation; often mixed with wheat crops</td></tr></table><b>Needed Improvements</b><ul><li>Stronger seed-certification systems and quality control</li><li>Expanded extension services for smallholder training</li><li>Research partnerships for climate-resilient varieties</li></ul>",
-                "stats": [
-                    "Certified Seed Coverage: <20%",
-                    "Average Yield Potential: ~0.6 t/ha (for lentils/pulses)",
-                    "Per-Capita Lentil Consumption: 0.5-1 kg in Pakistan"
-                ]
+                stages: [
+                    {
+                        "title": "Seed & Inputs",
+                        "description": "Limited access to certified seeds and weak agronomic support",
+                        "icon": "https://i.ibb.co/LzrhY1Lk/Seed-Selection.png",
+                        "position": { "top": 85, "left": 200 },
+                        "tooltip": {
+                            "title": "Seed & Input Challenges Details",
+                            "content": "<p>Most farmers rely on saved or informal seed systems, resulting in inconsistent germination and lower yields. Extension services are weak and policy support for pulses remains minimal.</p><b>Regional Varieties and Conditions</b><table><tr><th>Region</th><th>Common Varieties</th><th>Notes</th></tr><tr><td>Punjab</td><td>Masoor Chasi, Naya Masoor 2006</td><td>Locally adapted; good for moderate-rainfall areas</td></tr><tr><td>Sindh</td><td>Masoor Local, Early Moong</td><td>Grown in sandy, low-rainfall zones</td></tr><tr><td>KPK</td><td>Local small-grain varieties</td><td>Limited cultivation; often mixed with wheat crops</td></tr></table><b>Needed Improvements</b><ul><li>Stronger seed-certification systems and quality control</li><li>Expanded extension services for smallholder training</li><li>Research partnerships for climate-resilient varieties</li></ul>",
+                            "stats": [
+                                "Certified Seed Coverage: <20%",
+                                "Average Yield Potential: ~0.6 t/ha (for lentils/pulses)",
+                                "Per-Capita Lentil Consumption: 0.5-1 kg in Pakistan"
+                            ]
+                        },
+                        "bottleneck": "Weak seed certification, limited farmer training, low research investment.",
+                        "quote": "“Pulses receive far less attention and policy support than wheat or rice.” — Agricultural Expert"
+                    },
+                    {
+                        "title": "Cultivation",
+                        "description": "Lentil farming improves soil health but uses limited area",
+                        "icon": "https://i.postimg.cc/jjLymqmF/Land-Preparation.png",
+                        "position": { "top": 85, "left": 500 },
+                        "tooltip": {
+                            "title": "Production & Cultivation Details",
+                            "content": "<p>Lentils are grown on less than 5% of Pakistan’s agricultural area. The crop is adapted to sandy or degraded soils and contributes to nitrogen fixation, improving soil health.</p><b>Cultivation Facts</b><table><tr><th>Aspect</th><th>Details</th></tr><tr><td>Major Producing Regions</td><td>Punjab (largest), Sindh, KPK</td></tr><tr><td>Soil Type</td><td>Sandy, degraded, moderate fertility</td></tr><tr><td>Crop Rotation</td><td>Often with wheat, canola or followed by maize</td></tr><tr><td>Innovations</td><td>Laser-leveling, bio-fertilizers, drought-tolerant varieties</td></tr><tr><td>Challenges</td><td>Irrigation access, pests (aphids & pod borers), low mechanisation</td></tr></table>",
+                            "stats": [
+                                "Area under Lentils: <5% of agricultural land",
+                                "Growing Period: Approx. 90-120 days",
+                                "Water Requirement: ~300-400 mm (typical lentil crop)"
+                            ]
+                        },
+                        "bottleneck": "Irrigation constraints, pest outbreaks, limited mechanisation.",
+                        "quote": "“Lentils are grown mostly in ‘meethay pani ka zameen’ – lands of moderate fertility.” — Field Researcher"
+                    },
+                    {
+                        "title": "Markets & Trade",
+                        "description": "High import dependence and limited domestic supply",
+                        "icon": "https://i.postimg.cc/SQVH7DLN/marketintermediaries.png",
+                        "position": { "top": 85, "left": 800 },
+                        "tooltip": {
+                            "title": "Economic & Market Dynamics Details",
+                            "content": "<p>Pakistan relies heavily on imports to meet its lentil demand. Domestic production remains stagnant while consumption grows. Market drivers include demand for affordable protein and population growth.</p><b>Key Economic Indicators</b><table><tr><th>Factor</th><th>Details</th></tr><tr><td>Import Dependence</td><td>80-90% of total supply</td></tr><tr><td>Annual Import Value</td><td>~USD 1 billion</td></tr><tr><td>Domestic Area Under Cultivation</td><td><5% of land</td></tr><tr><td>Main Market Drivers</td><td>Affordable protein, rising population</td></tr><tr><td>Key Issues</td><td>Price volatility, weak marketing channels, low policy support</td></tr></table>",
+                            "stats": [
+                                "Import Share: 80-90%",
+                                "Annual Import Value: ~USD 1 billion",
+                                "Per-Capita Consumption of Lentils: 0.5-1 kg (Pakistan)"
+                            ]
+                        },
+                        "bottleneck": "High import reliance, unstable prices, weak domestic marketing infrastructure.",
+                        "quote": "“Every year we import almost a billion dollars of lentils.” — Trade Expert"
+                    },
+                    {
+                        "title": "Imports & Logistics",
+                        "description": "Major lentil types imported, processed and distributed domestically",
+                        "icon": "https://i.postimg.cc/63fgPhDc/export-import.png",
+                        "position": { "top": 285, "left": 800 },
+                        "tooltip": {
+                            "title": "Importing & Logistics Details",
+                            "content": "<p>Pakistan imports different types of lentils—raw, husked, split—from key origins. Processing hubs near ports handle distribution. Transit times, port congestion and documentation pose challenges.</p><b>Import Origins & Logistics</b><table><tr><th>Lentil Type</th><th>Main Origins</th><th>Processing Location</th><th>Remarks</th></tr><tr><td>Channa (Gram)</td><td>Australia</td><td>Processed locally</td><td>Imported raw, husked & polished domestically</td></tr><tr><td>Masoor (Red Lentil)</td><td>Australia, Canada, Ukraine, Russia</td><td>Karachi & Hyderabad</td><td>Arrives raw or semi-processed</td></tr><tr><td>Maash (Black Gram)</td><td>Myanmar, Thailand</td><td>Karachi</td><td>Imported bulk, cleaned locally</td></tr><tr><td>Moong (Green Gram)</td><td>Tanzania, Brazil, Kenya, Argentina (50% local)</td><td>Mixed</td><td>Split between local and import</td></tr></table><b>Logistics Notes</b><ul><li>Transit Time: ~60 days</li><li>Bottlenecks: Port congestion, customs delays, strict GMO/HSE documentation</li><li>Key hubs: Karachi (SITE area, Gulshan-e-Maymar), Hyderabad (less humidity)</li></ul>",
+                            "stats": [
+                                "Import Volume (2023): ~117.8 million kg",
+                                "Key Origins: Australia (>65%), Canada, Russia",
+                                "Transit Time: ~60 days"
+                            ]
+                        },
+                        "bottleneck": "Port congestion, customs/documentation delays, import-logistics costs.",
+                        "quote": "“Most red lentils reach Karachi semi-processed and finish here for domestic sale.” — Importer"
+                    },
+                    {
+                        "title": "Processing",
+                        "description": "Cleaning, grading, packaging and distributing lentils across markets",
+                        "icon": "https://i.postimg.cc/Ss9CQTyL/processing.png",
+                        "position": { "top": 285, "left": 500 },
+                        "tooltip": {
+                            "title": "Processing & Distribution Details",
+                            "content": "<p>Processing includes cleaning, polishing, grading by size and color, and packaging for local and export markets. Moisture and storage control are critical especially in humid zones.</p><b>Processing Stages</b><table><tr><th>Stage</th><th>Purpose</th><th>Notes</th></tr><tr><td>Cleaning & Polishing</td><td>Improve appearance & remove impurities</td><td>Remove dust, stones, husks</td></tr><tr><td>Grading</td><td>Segregate by size & color</td><td>Determines price tier</td></tr><tr><td>Packaging</td><td>Ensure hygiene & shelf-life</td><td>Poly-bags local, vacuum pack export</td></tr><tr><td>Moisture Control</td><td>Prevent spoilage</td><td>Crucial in coastal/humid areas</td></tr></table><b>Distribution & Market Hubs</b><ul><li>Wholesale centre: Jodia Bazaar (Karachi)</li><li>Processing/redistribution hubs: Korangi, Malir, Hyderabad</li><li>Supply chain flow: Farmer → Processor/Importer → Wholesaler → Retailer → Consumer</li></ul>",
+                            "stats": [
+                                "Cleaning Efficiency: >99%",
+                                "By-product use: Husks used as animal feed",
+                                "Shelf-life risk: 8-10 days in high humidity without proper control"
+                            ]
+                        },
+                        "bottleneck": "Humidity/spoilage risk, grading precision, high processing cost.",
+                        "quote": "“If moisture stays high, lentils blacken within a week.” — Processor, Hyderabad"
+                    },
+                    {
+                        "title": "Consumption",
+                        "description": "Staple protein source with varied uses and rising health trends",
+                        "icon": "https://i.postimg.cc/m2DJdCV3/retail-consumption.png",
+                        "position": { "top": 285, "left": 200 },
+                        "tooltip": {
+                            "title": "Consumption & Demand Details",
+                            "content": "<p>Lentils are sales-tax exempt and consumed across income levels. Different types serve different regional/cultural uses and health trends are increasing demand for lighter varieties.</p><b>Consumption Patterns by Lentil Type</b><table><tr><th>Lentil Type</th><th>Main Use</th><th>Consumer Base</th><th>Trend</th></tr><tr><td>Channa Daal</td><td>Staple household dish</td><td>All income levels</td><td>Stable demand</td></tr><tr><td>Moong Daal</td><td>Light, healthy meals</td><td>Health-conscious consumers</td><td>Growing popularity</td></tr><tr><td>Masoor Daal</td><td>Everyday cooking</td><td>Urban households</td><td>Consistent demand</td></tr><tr><td>Maash Daal</td><td>Restaurant/hotel use</td><td>Commercial buyers</td><td>High demand in food service</td></tr></table><b>Price Influences</b><ul><li>Seasonal shortages and import delays</li><li>Moisture conditions and spoilage risk</li><li>Preference for imported lentils due to better colour and shelf-life</li></ul>",
+                            "stats": [
+                                "Sales-Tax: Exempt",
+                                "Protein Content: 24-26%",
+                                "Domestic Consumption Trend: Rising despite low production"
+                            ]
+                        },
+                        "bottleneck": "Price volatility, import-dependence, limited direct market access for farmers.",
+                        "quote": "“Gareeb admi bhi daal chawal kha letay hain.” — Trader, Jodia Bazaar"
+                    }
+                ],
+                overview: {
+                    "title": "Lentils Supply Chain Overview",
+                    "stats": [
+                        { "title": "Import Dependence", "value": "80-90%", "subtitle": "Of total lentil supply", "color": "olive-green" },
+                        { "title": "Annual Import Value", "value": "USD ~1 billion", "subtitle": "Spent on lentil imports", "color": "fresh-green" },
+                        { "title": "Protein Content", "value": "24-26%", "subtitle": "High nutritional value", "color": "reseda-green" }
+                    ]
+                }
             },
-            "bottleneck": "Weak seed certification, limited farmer training, low research investment.",
-            "quote": "“Pulses receive far less attention and policy support than wheat or rice.” — Agricultural Expert"
-        },
-        {
-            "title": "Cultivation",
-            "description": "Lentil farming improves soil health but uses limited area",
-            "icon": "https://i.postimg.cc/jjLymqmF/Land-Preparation.png",
-            "position": { "top": 85, "left": 500 },
-            "tooltip": {
-                "title": "Production & Cultivation Details",
-                "content": "<p>Lentils are grown on less than 5% of Pakistan’s agricultural area. The crop is adapted to sandy or degraded soils and contributes to nitrogen fixation, improving soil health.</p><b>Cultivation Facts</b><table><tr><th>Aspect</th><th>Details</th></tr><tr><td>Major Producing Regions</td><td>Punjab (largest), Sindh, KPK</td></tr><tr><td>Soil Type</td><td>Sandy, degraded, moderate fertility</td></tr><tr><td>Crop Rotation</td><td>Often with wheat, canola or followed by maize</td></tr><tr><td>Innovations</td><td>Laser-leveling, bio-fertilizers, drought-tolerant varieties</td></tr><tr><td>Challenges</td><td>Irrigation access, pests (aphids & pod borers), low mechanisation</td></tr></table>",
-                "stats": [
-                    "Area under Lentils: <5% of agricultural land",
-                    "Growing Period: Approx. 90-120 days",
-                    "Water Requirement: ~300-400 mm (typical lentil crop)"
-                ]
-            },
-            "bottleneck": "Irrigation constraints, pest outbreaks, limited mechanisation.",
-            "quote": "“Lentils are grown mostly in ‘meethay pani ka zameen’ – lands of moderate fertility.” — Field Researcher"
-        },
-        {
-            "title": "Markets & Trade",
-            "description": "High import dependence and limited domestic supply",
-            "icon": "https://i.postimg.cc/SQVH7DLN/marketintermediaries.png",
-            "position": { "top": 85, "left": 800 },
-            "tooltip": {
-                "title": "Economic & Market Dynamics Details",
-                "content": "<p>Pakistan relies heavily on imports to meet its lentil demand. Domestic production remains stagnant while consumption grows. Market drivers include demand for affordable protein and population growth.</p><b>Key Economic Indicators</b><table><tr><th>Factor</th><th>Details</th></tr><tr><td>Import Dependence</td><td>80-90% of total supply</td></tr><tr><td>Annual Import Value</td><td>~USD 1 billion</td></tr><tr><td>Domestic Area Under Cultivation</td><td><5% of land</td></tr><tr><td>Main Market Drivers</td><td>Affordable protein, rising population</td></tr><tr><td>Key Issues</td><td>Price volatility, weak marketing channels, low policy support</td></tr></table>",
-                "stats": [
-                    "Import Share: 80-90%",
-                    "Annual Import Value: ~USD 1 billion",
-                    "Per-Capita Consumption of Lentils: 0.5-1 kg (Pakistan)"
-                ]
-            },
-            "bottleneck": "High import reliance, unstable prices, weak domestic marketing infrastructure.",
-            "quote": "“Every year we import almost a billion dollars of lentils.” — Trade Expert"
-        },
-        {
-            "title": "Imports & Logistics",
-            "description": "Major lentil types imported, processed and distributed domestically",
-            "icon": "https://i.postimg.cc/63fgPhDc/export-import.png",
-            "position": { "top": 285, "left": 800 },
-            "tooltip": {
-                "title": "Importing & Logistics Details",
-                "content": "<p>Pakistan imports different types of lentils—raw, husked, split—from key origins. Processing hubs near ports handle distribution. Transit times, port congestion and documentation pose challenges.</p><b>Import Origins & Logistics</b><table><tr><th>Lentil Type</th><th>Main Origins</th><th>Processing Location</th><th>Remarks</th></tr><tr><td>Channa (Gram)</td><td>Australia</td><td>Processed locally</td><td>Imported raw, husked & polished domestically</td></tr><tr><td>Masoor (Red Lentil)</td><td>Australia, Canada, Ukraine, Russia</td><td>Karachi & Hyderabad</td><td>Arrives raw or semi-processed</td></tr><tr><td>Maash (Black Gram)</td><td>Myanmar, Thailand</td><td>Karachi</td><td>Imported bulk, cleaned locally</td></tr><tr><td>Moong (Green Gram)</td><td>Tanzania, Brazil, Kenya, Argentina (50% local)</td><td>Mixed</td><td>Split between local and import</td></tr></table><b>Logistics Notes</b><ul><li>Transit Time: ~60 days</li><li>Bottlenecks: Port congestion, customs delays, strict GMO/HSE documentation</li><li>Key hubs: Karachi (SITE area, Gulshan-e-Maymar), Hyderabad (less humidity)</li></ul>",
-                "stats": [
-                    "Import Volume (2023): ~117.8 million kg",
-                    "Key Origins: Australia (>65%), Canada, Russia",
-                    "Transit Time: ~60 days"
-                ]
-            },
-            "bottleneck": "Port congestion, customs/documentation delays, import-logistics costs.",
-            "quote": "“Most red lentils reach Karachi semi-processed and finish here for domestic sale.” — Importer"
-        },
-        {
-            "title": "Processing",
-            "description": "Cleaning, grading, packaging and distributing lentils across markets",
-            "icon": "https://i.postimg.cc/Ss9CQTyL/processing.png",
-            "position": { "top": 285, "left": 500 },
-            "tooltip": {
-                "title": "Processing & Distribution Details",
-                "content": "<p>Processing includes cleaning, polishing, grading by size and color, and packaging for local and export markets. Moisture and storage control are critical especially in humid zones.</p><b>Processing Stages</b><table><tr><th>Stage</th><th>Purpose</th><th>Notes</th></tr><tr><td>Cleaning & Polishing</td><td>Improve appearance & remove impurities</td><td>Remove dust, stones, husks</td></tr><tr><td>Grading</td><td>Segregate by size & color</td><td>Determines price tier</td></tr><tr><td>Packaging</td><td>Ensure hygiene & shelf-life</td><td>Poly-bags local, vacuum pack export</td></tr><tr><td>Moisture Control</td><td>Prevent spoilage</td><td>Crucial in coastal/humid areas</td></tr></table><b>Distribution & Market Hubs</b><ul><li>Wholesale centre: Jodia Bazaar (Karachi)</li><li>Processing/redistribution hubs: Korangi, Malir, Hyderabad</li><li>Supply chain flow: Farmer → Processor/Importer → Wholesaler → Retailer → Consumer</li></ul>",
-                "stats": [
-                    "Cleaning Efficiency: >99%",
-                    "By-product use: Husks used as animal feed",
-                    "Shelf-life risk: 8-10 days in high humidity without proper control"
-                ]
-            },
-            "bottleneck": "Humidity/spoilage risk, grading precision, high processing cost.",
-            "quote": "“If moisture stays high, lentils blacken within a week.” — Processor, Hyderabad"
-        },
-        {
-            "title": "Consumption",
-            "description": "Staple protein source with varied uses and rising health trends",
-            "icon": "https://i.postimg.cc/m2DJdCV3/retail-consumption.png",
-            "position": { "top": 285, "left": 200 },
-            "tooltip": {
-                "title": "Consumption & Demand Details",
-                "content": "<p>Lentils are sales-tax exempt and consumed across income levels. Different types serve different regional/cultural uses and health trends are increasing demand for lighter varieties.</p><b>Consumption Patterns by Lentil Type</b><table><tr><th>Lentil Type</th><th>Main Use</th><th>Consumer Base</th><th>Trend</th></tr><tr><td>Channa Daal</td><td>Staple household dish</td><td>All income levels</td><td>Stable demand</td></tr><tr><td>Moong Daal</td><td>Light, healthy meals</td><td>Health-conscious consumers</td><td>Growing popularity</td></tr><tr><td>Masoor Daal</td><td>Everyday cooking</td><td>Urban households</td><td>Consistent demand</td></tr><tr><td>Maash Daal</td><td>Restaurant/hotel use</td><td>Commercial buyers</td><td>High demand in food service</td></tr></table><b>Price Influences</b><ul><li>Seasonal shortages and import delays</li><li>Moisture conditions and spoilage risk</li><li>Preference for imported lentils due to better colour and shelf-life</li></ul>",
-                "stats": [
-                    "Sales-Tax: Exempt",
-                    "Protein Content: 24-26%",
-                    "Domestic Consumption Trend: Rising despite low production"
-                ]
-            },
-            "bottleneck": "Price volatility, import-dependence, limited direct market access for farmers.",
-            "quote": "“Gareeb admi bhi daal chawal kha letay hain.” — Trader, Jodia Bazaar"
-        }
-    ],
-    overview: {
-        "title": "Lentils Supply Chain Overview",
-        "stats": [
-            { "title": "Import Dependence", "value": "80-90%", "subtitle": "Of total lentil supply", "color": "olive-green" },
-            { "title": "Annual Import Value", "value": "USD ~1 billion", "subtitle": "Spent on lentil imports", "color": "fresh-green" },
-            { "title": "Protein Content", "value": "24-26%", "subtitle": "High nutritional value", "color": "reseda-green" }
-        ]
-    }
-},
 
             'Maize': {
                 stages: [
@@ -3604,7 +3646,7 @@
                             ]
                         },
                         bottleneck: 'Regional differences in handling (shelled vs whole ears) complicate logistics.<br><br>Reliance on middlemen reduces farmers’ profit margins.<br><br>High seasonal volume can overwhelm storage and transport capacity.<br><br>Limited niche markets (like sweet corn) restrict overall market reach.',
-                        quote: '“Makai ka daam market ki hawa kay saath chalta hai. Agar poultry walay demand barha dein to rate double ho jata hai, warna maal godaam mein pada rehta hai.”'
+                        quote: ''
                     },
 
                     {
@@ -3633,7 +3675,7 @@
                             stats: []
                         },
                         bottleneck: 'Moisture control during storage and processing is critical; failure can result in total loss of stock.<br><br>Limited on-site testing and quality control capacity increases the risk of contamination.<br><br>Dependence on consistent maize supply makes mills vulnerable to seasonal shortages and price volatility.<br><br>Breakdowns in processing equipment can halt operations and disrupt supply chains.',
-                        quote: '“Sindh mein makai abhi itni aam nahi hui, lekin dairy aur feed industries badh rahi hain. Jis din yeh industry poori tarah active ho gayi, makai sona ban jaayegi.” - Trader “Humaray liye makai sirf crop nahi, base raw material hai. Lekin supply chain itni unstable hai ke kabhi stock milta nahi, kabhi quality compromise hoti hai.” - Poultry Owner'
+                        quote: ''
                     },
 
                     {
@@ -3782,7 +3824,7 @@
                             ]
                         },
                         bottleneck: 'Limited access to certified, high-quality seed varieties reduces yield potential and increases vulnerability to pests.',
-                        quote: '“Pakistan mein abhi tak seed quality check karne ka proper system nahi hai. Hum to aankh aur tajurbe se pehchante hain ke daana acha hai ya nahi.” - Farmer'
+                        quote: ''
                     },
 
                     {
@@ -3798,7 +3840,7 @@
                             ]
                         },
                         bottleneck: 'Late sowing, inadequate irrigation, and poor pest control significantly reduce yield potential and oil quality.',
-                        quote: '“Jitni blackish color ki sarson hoti hai, utna zyada us mein oil hota hai. Red wali mein oil kam nikalta hai, ye sab experience se pata chalta hai.” - Farmer'
+                        quote: ''
                     },
 
                     {
@@ -3813,7 +3855,7 @@
                             ]
                         },
                         bottleneck: 'High moisture at harvest increases threshing costs and reduces oil extraction efficiency.',
-                        quote: '“Mill walay har gaari ka sample check karte hain. Agar oil kam niklay to ‘quality cut’ lagta hai,  uska nuqsan trader ko uthana parta hai, grower ko nahi.”- Trader “Oil nikalne ke baad jo cake bacha hai, woh cattle feed mein chala jata hai. Bada plant us se bhi oil nikalta hai aur phir ‘meal’ banti hai jo feed mein lagti hai.” - Trader'
+                        quote: ''
                     },
 
                     {
@@ -3827,7 +3869,7 @@
                             stats: []
                         },
                         bottleneck: 'Price volatility from seasonal supply swings and external pressure from imported oils (e.g., palm) can undercut farm-gate returns.',
-                        quote: 'Har taraf arrival aa rahi hoti hai, to us waqt woh depend kar raha hota hai ke aap ko kitni demand hai “Pakistan mein koi bhi cheez fix rate pe nahi chalti — sab demand aur supply pe depend karta hai. Jab maal zyada hota hai to rate neeche, aur jab demand zyada hoti hai to rate upar. - Trader, Sindh'
+                        quote: 'Har taraf arrival aa rahi hoti hai, to us waqt woh depend kar raha hota hai ke aap ko kitni demand hai'
                     },
 
                     {
@@ -3975,7 +4017,7 @@
                             stats: []
                         },
                         bottleneck: 'High losses occur if harvest is delayed; market timing is critical for profitability.',
-                        quote: '"Kela lagana asaan lagta hai, lekin paani aur mazdoori ka kharcha din ba din barhta ja raha hai.” - Farmer'
+                        quote: ''
                     },
 
                     {
@@ -3988,7 +4030,7 @@
                             stats: []
                         },
                         bottleneck: 'Police extortion increases costs and delays.<br><br>Poor roads cause frequent transport disruptions.<br><br>Lack of driver union leaves workers underpaid and unsupported.<br><br>Mechanical failures during long trips lead to spoilage and losses.',
-                        quote: '“Union ho tou achi baat hai, abhi ye khali pattay hain... support ka masla hota hai.” — Truck Driver “Kele ka rate hum supply aur demand pe rakhte hain. Jab transport delay hota hai toh sara maal kharab ho jata hai.” - Middlemen“'
+                        quote: '“Union ho tou achi baat hai, abhi ye khali pattay hain... support ka masla hota hai.” — Truck Driver'
                     },
 
                     {
@@ -4029,7 +4071,7 @@
                             stats: []
                         },
                         bottleneck: 'Off-season supply dips but demand continues.<br><br>Processing requires extra labor and equipment.<br><br>Storage of value-added products is challenging.',
-                        quote: 'Kelay ki market pooray 12 mahine ki hy, 12 mahinay sell krtay hyn, ismein rate fluctuation hoti hy market mein jaisay ap log purchase krty hyn , tou upper neechay rate miltay hongay, tou jasiy hi wahan rate change hotay hy jahan se hm retail krty hyn  waisy hi yahan uss rate pr hm sale krty hyn, up and down atay hyn iskay ander. - Supplier'
+                        quote: ''
                     }
 
                 ],
@@ -4090,15 +4132,15 @@
 
         function generateSupplyChainContent(productName) {
             const container = document.getElementById('supplyChainContainer');
-            const overviewContainer = document.getElementById('productOverview');
+            //const overviewContainer = document.getElementById('productOverview');
             const productData = supplyChainData[productName];
             const colors = productColors[productName] || productColors['Apple'];
 
-            if (!productData) {
-                container.innerHTML = '<p class="text-reseda-green">Supply chain data not available for this product.</p>';
-                overviewContainer.innerHTML = '<p class="text-reseda-green">Overview data not available for this product.</p>';
-                return;
-            }
+            // if (!productData) {
+            //     container.innerHTML = '<p class="text-reseda-green">Supply chain data not available for this product.</p>';
+            //     overviewContainer.innerHTML = '<p class="text-reseda-green">Overview data not available for this product.</p>';
+            //     return;
+            // }
             // Get background image and headings for this product
             const backgroundImage = productBackgroundImages[productName] || '';
             // const backgroundHeadings = productBackgroundHeadings[productName] || [];
@@ -4226,26 +4268,26 @@
             });
 
             // Render Overview Section
-            const colorClasses = {
-                'olive-green': 'bg-alabaster border-l-4 border-olive-green',
-                'fresh-green': 'bg-alabaster border-l-4 border-olive-green',
-                'reseda-green': 'bg-alabaster border-l-4 border-olive-green'
-            };
+            // const colorClasses = {
+            //     'olive-green': 'bg-alabaster border-l-4 border-olive-green',
+            //     'fresh-green': 'bg-alabaster border-l-4 border-olive-green',
+            //     'reseda-green': 'bg-alabaster border-l-4 border-olive-green'
+            // };
 
-            const overviewHTML = `
-        <h4 class="text-xl font-bold text-olive-green mb-4 font-poppins">${productData.overview.title}</h4>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-            ${productData.overview.stats.map(stat => `
-                <div class="${colorClasses[stat.color]} p-4 rounded-md">
-                    <h5 class="font-semibold text-olive-green font-poppins">${stat.title}</h5>
-                    <p class="text-xl font-bold text-olive-green font-poppins">${stat.value}</p>
-                    <p class="text-sm text-reseda-green font-open-sans">${stat.subtitle}</p>
-                </div>
-            `).join('')}
-        </div>
-    `;
+            //         const overviewHTML = `
+            //     <h4 class="text-xl font-bold text-olive-green mb-4 font-poppins">${productData.overview.title}</h4>
+            //     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            //         ${productData.overview.stats.map(stat => `
+            //             <div class="${colorClasses[stat.color]} p-4 rounded-md">
+            //                 <h5 class="font-semibold text-olive-green font-poppins">${stat.title}</h5>
+            //                 <p class="text-xl font-bold text-olive-green font-poppins">${stat.value}</p>
+            //                 <p class="text-sm text-reseda-green font-open-sans">${stat.subtitle}</p>
+            //             </div>
+            //         `).join('')}
+            //     </div>
+            // `;
 
-            overviewContainer.innerHTML = overviewHTML;
+            //         overviewContainer.innerHTML = overviewHTML;
         }
 
 
@@ -4357,52 +4399,67 @@
         });
     </script>
 
-
     <script id="charts-initialization">
         document.addEventListener('DOMContentLoaded', function () {
-            const productionChart = echarts.init(document.getElementById('productionChart'));
-            const distributionChart = echarts.init(document.getElementById('distributionChart'));
 
-            // Line Chart Option
+            // --- Bar Chart (Agricultural GDP by Province) ---
+            const productionChart = echarts.init(document.getElementById('productionChart'));
             const productionOption = {
                 animation: false,
                 tooltip: {
                     trigger: 'axis',
-                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
-                    textStyle: { color: '#3D3D3D', fontFamily: 'Open Sans' }
+                    formatter: '{b}: {c}%',
+                    backgroundColor: '#fff',
+                    borderColor: '#ccc',
+                    borderWidth: 1,
+                    textStyle: { color: '#333', fontFamily: 'Open Sans' }
                 },
-                grid: { top: 40, right: 30, bottom: 60, left: 60, containLabel: true },
                 xAxis: {
                     type: 'category',
-                    data: ['2020', '2021', '2022', '2023', '2024', '2025'],
+                    data: [
+                        'Punjab',
+                        'Sindh',
+                        'Khyber Pakhtunkhwa',
+                        'Balochistan',
+                        'Gilgit-Baltistan',
+                        'AJK'
+                    ],
                     axisLine: { lineStyle: { color: '#DBC7B1' } },
-                    axisLabel: { color: '#3D3D3D', fontSize: 12, fontFamily: 'Open Sans' }
+                    axisLabel: {
+                        interval: 0,
+                        color: '#3D3D3D',
+                        fontSize: 12,
+                        fontFamily: 'Open Sans',
+                        rotate: 15
+                    }
                 },
                 yAxis: {
                     type: 'value',
+                    // name: '% of Agricultural GDP',
                     axisLine: { lineStyle: { color: '#DBC7B1' } },
                     axisLabel: { color: '#3D3D3D', fontSize: 12, fontFamily: 'Open Sans' },
                     splitLine: { lineStyle: { color: '#DBC7B1' } }
                 },
                 series: [{
-                    name: 'Production',
-                    type: 'line',
-                    smooth: true,
-                    data: [98.5, 105.2, 112.8, 118.4, 123.9, 127.8],
-                    lineStyle: { color: '#6F845D' },
-                    itemStyle: { color: '#6F845D' },
-                    areaStyle: {
-                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-                            { offset: 0, color: 'rgba(69, 85, 44, 0.2)' },
-                            { offset: 1, color: 'rgba(69, 85, 44, 0.05)' }
-                        ])
-                    },
-                    symbol: 'none'
+                    // name: '% of Agricultural GDP',
+                    type: 'bar',
+                    barWidth: '40%',
+                    data: [65, 20, 10, 5, 1, 1],
+                    itemStyle: { color: '#6F845D' }
                 }]
             };
-            // Pie Chart Option
+            productionChart.setOption(productionOption);
+
+            // --- Pie Chart (Annual Crop Production) ---
+            const distributionChart = echarts.init(document.getElementById('distributionChart'));
             const distributionOption = {
                 animation: false,
+                backgroundColor: 'transparent',
+                title: {
+                    left: 'center',
+                    top: 10,
+                    textStyle: { fontFamily: 'Poppins', fontSize: 16, color: '#3D3D3D' }
+                },
                 tooltip: {
                     trigger: 'item',
                     formatter: '{b}: {d}%'
@@ -4413,196 +4470,44 @@
                     textStyle: { fontFamily: 'Open Sans', color: '#3D3D3D' }
                 },
                 series: [{
-                    name: 'Agri Products',
                     type: 'pie',
-                    radius: '75%',
-                    center: ['60%', '50%'],
-                    label: {
-                        show: false   //  hide labels on the pie
-                    },
-                    labelLine: {
-                        show: false   //  remove lines from pie to labels
-                    },
-                    data: [
-                        { value: 20, name: 'Wheat', itemStyle: { color: '#FFF689' } },
-                        { value: 15, name: 'Rice', itemStyle: { color: '#F4D35E' } },
-                        { value: 10, name: 'Chili', itemStyle: { color: '#FFB88A' } },
-                        { value: 8, name: 'Garlic', itemStyle: { color: '#FF9C5B' } },
-                        { value: 7, name: 'Sugarcane', itemStyle: { color: '#F67B45' } },
-                        { value: 6, name: 'Potato', itemStyle: { color: '#FBC2C2' } },
-                        { value: 5, name: 'Mango', itemStyle: { color: '#E39B99' } },
-                        { value: 4, name: 'Tomato', itemStyle: { color: '#CB7876' } },
-                        { value: 4, name: 'Apple', itemStyle: { color: '#B4CFA4' } },
-                        { value: 3, name: 'Lentils', itemStyle: { color: '#8BA47C' } },
-                        { value: 3, name: 'Orange', itemStyle: { color: '#62866C' } },
-                        { value: 2, name: 'Banana', itemStyle: { color: '#A0C5E3' } },
-                        { value: 2, name: 'Milk', itemStyle: { color: '#81B2D9' } },
-                        { value: 1, name: 'Maize', itemStyle: { color: '#32769B' } },
-                        { value: 1, name: 'Mustard', itemStyle: { color: '#BBA6DD' } }
-                    ]
-                    ,
-                    emphasis: {
-                        itemStyle: {
-                            shadowBlur: 10,
-                            shadowOffsetX: 0,
-                            shadowColor: 'rgba(0, 0, 0, 0.5)'
-                        }
-                    }
-                }]
-            };
-
-
-            productionChart.setOption(productionOption);
-            distributionChart.setOption(distributionOption);
-
-            // --- Import Distribution (Pie Chart with all 15 products) ---
-            const importChart = echarts.init(document.getElementById('importChart'));
-            const importOption = {
-                animation: false,
-                tooltip: { trigger: 'item', formatter: '{b}: {d}%' },
-                legend: {
-                    orient: 'vertical',
-                    left: 'left',
-                    textStyle: { fontFamily: 'Open Sans', color: '#3D3D3D' }
-                },
-                series: [{
-                    name: 'Imports',
-                    type: 'pie',
-                    radius: '75%',
-                    center: ['60%', '50%'],
+                    radius: '80%', // full pie
+                    center: ['55%', '50%'],
+                    minAngle: 3,
                     label: { show: false },
                     labelLine: { show: false },
                     data: [
-                        { value: 2, name: 'Wheat', itemStyle: { color: '#FFF689' } },
-                        { value: 2, name: 'Rice', itemStyle: { color: '#F4D35E' } },
-                        { value: 3, name: 'Chili', itemStyle: { color: '#FFB88A' } },
-                        { value: 3, name: 'Garlic', itemStyle: { color: '#FF9C5B' } },
-                        { value: 4, name: 'Sugarcane', itemStyle: { color: '#F67B45' } },
-                        { value: 6, name: 'Potato', itemStyle: { color: '#FBC2C2' } },
-                        { value: 6, name: 'Mango', itemStyle: { color: '#E39B99' } },
-                        { value: 5, name: 'Tomato', itemStyle: { color: '#CB7876' } },
-                        { value: 5, name: 'Apple', itemStyle: { color: '#B4CFA4' } },
-                        { value: 4, name: 'Lentils', itemStyle: { color: '#8BA47C' } },
-                        { value: 7, name: 'Orange', itemStyle: { color: '#62866C' } },
-                        { value: 8, name: 'Banana', itemStyle: { color: '#A0C5E3' } },
-                        { value: 10, name: 'Milk', itemStyle: { color: '#81B2D9' } },
-                        { value: 14, name: 'Maize', itemStyle: { color: '#32769B' } },
-                        { value: 18, name: 'Mustard', itemStyle: { color: '#BBA6DD' } }
+                        { value: 25, name: 'Wheat', itemStyle: { color: '#FFF689' } },
+                        { value: 7, name: 'Rice', itemStyle: { color: '#F4D35E' } },
+                        { value: 5, name: 'Maize', itemStyle: { color: '#32769B' } },
+                        { value: 69, name: 'Sugarcane', itemStyle: { color: '#F67B45' } },
+                        { value: 2, name: 'Mango', itemStyle: { color: '#E39B99' } },
+                        { value: 1.7, name: 'Orange', itemStyle: { color: '#62866C' } },
+                        { value: 0.4, name: 'Banana', itemStyle: { color: '#A0C5E3' } },
+                        { value: 0.2, name: 'Apple', itemStyle: { color: '#B4CFA4' } },
+                        { value: 2.9, name: 'Tomato', itemStyle: { color: '#CB7876' } },
+                        { value: 7, name: 'Potato', itemStyle: { color: '#FBC2C2' } },
+                        { value: 0.1, name: 'Garlic', itemStyle: { color: '#FF9C5B' } },
+                        { value: 0.1, name: 'Chillies', itemStyle: { color: '#FFB88A' } },
+                        { value: 0.08, name: 'Lentils', itemStyle: { color: '#8BA47C' } },
+                        { value: 0.15, name: 'Mustard', itemStyle: { color: '#BBA6DD' } },
+                        { value: 48, name: 'Milk', itemStyle: { color: '#81B2D9' } }
                     ],
                     emphasis: {
                         itemStyle: {
-                            shadowBlur: 10,
+                            shadowBlur: 8,
                             shadowOffsetX: 0,
-                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                            shadowColor: 'rgba(0, 0, 0, 0.3)'
                         }
                     }
                 }]
             };
-            importChart.setOption(importOption);
+            distributionChart.setOption(distributionOption);
 
-            // --- Distribution Efficiency (Bar Chart with 5 provinces) ---
-            const efficiencyChart = echarts.init(document.getElementById('efficiencyChart'));
-            const efficiencyOption = {
-                animation: false,
-                tooltip: { trigger: 'axis' },
-                xAxis: {
-                    type: 'category',
-                    data: ['Sindh', 'Punjab', 'Balochistan', 'KPK', 'Gilgit Baltistan'],
-                    axisLine: { lineStyle: { color: '#DBC7B1' } },
-                    axisLabel: {
-                        interval: 0,   // 👈 force show every label
-                        color: '#3D3D3D',
-                        fontSize: 12,
-                        fontFamily: 'Open Sans',
-
-                    }
-                },
-                yAxis: {
-                    type: 'value',
-                    axisLine: { lineStyle: { color: '#DBC7B1' } },
-                    axisLabel: { color: '#3D3D3D', fontSize: 12, fontFamily: 'Open Sans' },
-                    splitLine: { lineStyle: { color: '#DBC7B1' } }
-                },
-                series: [{
-                    name: 'Efficiency',
-                    type: 'bar',
-                    barWidth: '30%',   // slimmer bars to fit 5 categories
-                    data: [75, 90, 60, 70, 65],
-                    itemStyle: { color: '#6F845D' }
-                }]
-            };
-            efficiencyChart.setOption(efficiencyOption);
         });
     </script>
 
 
-
-    <!-- <script>
-        const svgObject = document.getElementById("svgMap");
-        const hoverBox = document.getElementById("hoverBox");
-        const clickBox = document.getElementById("clickBox");
-
-        const cropData = {
-            "punjab_south_irrigated_land": [{ crop: "Wheat", percent: "60%" }, { crop: "Sugarcane", percent: "25%" }, { crop: "Cotton", percent: "15%" }],
-            "punjab_northern_irrigated_land": [{ crop: "Wheat", percent: "55%" }, { crop: "Maize", percent: "30%" }, { crop: "Vegetables", percent: "15%" }],
-            "punjab_desert1": [{ crop: "Millet", percent: "50%" }, { crop: "Barley", percent: "30%" }, { crop: "Dates", percent: "20%" }],
-            "punjab_desert2": [{ crop: "Barley", percent: "40%" }, { crop: "Fodder", percent: "35%" }, { crop: "Millet", percent: "25%" }],
-            "punjab_suleman_piedmont": [{ crop: "Wheat", percent: "50%" }, { crop: "Maize", percent: "30%" }, { crop: "Barley", percent: "20%" }],
-            "punjab_west_mountains": [{ crop: "Wheat", percent: "40%" }, { crop: "Potato", percent: "35%" }, { crop: "Apples", percent: "25%" }],
-            "punjab_barani_land": [{ crop: "Chickpeas", percent: "45%" }, { crop: "Lentils", percent: "30%" }, { crop: "Barley", percent: "25%" }],
-            "punjab_wet_mountains": [{ crop: "Potato", percent: "50%" }, { crop: "Apples", percent: "30%" }, { crop: "Peas", percent: "20%" }]
-        };
-
-        svgObject.addEventListener("load", () => {
-            const svgDoc = svgObject.contentDocument;
-            const regions = svgDoc.querySelectorAll("path");
-
-            regions.forEach(region => {
-                const id = region.id;
-                if (!id) return;
-
-                region.style.cursor = "pointer";
-
-                region.addEventListener("mouseover", (e) => {
-                    hoverBox.innerText = `Region: ${id}`;
-                    hoverBox.style.top = e.pageY + 10 + "px";
-                    hoverBox.style.left = e.pageX + 10 + "px";
-                    hoverBox.style.display = "block";
-
-                    // Apply hover effect manually
-                    region.style.filter = "brightness(1.25)";
-                });
-
-                region.addEventListener("mouseout", () => {
-                    hoverBox.style.display = "none";
-                    // Reset original stroke and brightness
-                    region.style.filter = "";
-                });
-
-                region.addEventListener("click", (e) => {
-                    const data = cropData[id];
-                    let table = `<strong style="color: #45552C; font-family: 'Poppins', sans-serif;">${id.replaceAll("_", " ")}</strong><table><tr><th style="color: #45552C; font-family: 'Poppins', sans-serif;">Crop</th><th style="color: #45552C; font-family: 'Poppins', sans-serif;">Percentage</th></tr>`;
-                    if (data) {
-                        data.forEach(row => {
-                            table += `<tr><td style="font-family: 'Open Sans', sans-serif;">${row.crop}</td><td style="font-family: 'Open Sans', sans-serif;">${row.percent}</td></tr>`;
-                        });
-                    } else {
-                        table += `<tr><td colspan='2' style="font-family: 'Open Sans', sans-serif;">No data available</td></tr>`;
-                    }
-                    table += `</table><button class='close-btn' onclick='clickBox.style.display="none"'>Close</button>`;
-
-                    clickBox.innerHTML = table;
-                    clickBox.style.top = e.pageY + "px";
-                    clickBox.style.left = e.pageX + "px";
-                    clickBox.style.display = "block";
-                });
-            });
-        });
-
-        document.addEventListener("click", (e) => {
-            if (!clickBox.contains(e.target)) clickBox.style.display = "none";
-        });
-    </script> -->
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
