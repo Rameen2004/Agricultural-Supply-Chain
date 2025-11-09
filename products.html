@@ -404,7 +404,7 @@
             transform: translateX(-50%);
             /* Center horizontally */
             width: 130%;
-            height: 200%;
+            height: 170%;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -456,16 +456,14 @@
             text-align: left;
         }
 
-        #productOverview {
+        /* #productOverview {
             position: relative;
             z-index: 10;
             background: white;
             /* Ensure it has solid background */
-            margin-top: 160px;
-            /* Increase this value to push it down */
-            margin-left: 100px;
-
-        }
+        /* margin-top: 160px; */
+        /* Increase this value to push it down */
+        /* margin-left: 100px; */
     </style>
 </head>
 
@@ -554,7 +552,7 @@
                         <p class="text-reseda-green text-sm mb-3 font-open-sans">Primary grain crop with nationwide
                             cultivation</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-xs text-dark-grey font-nunito">Production: 25.2M tons</span>
+                            <span class="text-xs text-dark-grey font-nunito">Production: 26M tons</span>
                             <button
                                 class="text-olive-green hover:text-reseda-green transition-colors text-sm font-medium !rounded-button whitespace-nowrap font-nunito">View
                                 Map</button>
@@ -574,7 +572,7 @@
                         <p class="text-reseda-green text-sm mb-3 font-open-sans">Key export crop grown in irrigated
                             areas</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-xs text-dark-grey font-nunito">Production: 8.4M tons</span>
+                            <span class="text-xs text-dark-grey font-nunito">Production: 7.5M tons</span>
                             <button
                                 class="text-olive-green hover:text-reseda-green transition-colors text-sm font-medium !rounded-button whitespace-nowrap font-nunito">View
                                 Map</button>
@@ -582,7 +580,26 @@
                     </div>
                 </div>
 
-                <!-- Product 3: Sugarcane -->
+                <!-- Product 3: Maize -->
+                <div class="product-card bg-alabaster rounded shadow-md overflow-hidden transition-all duration-300 border border-dun"
+                    data-category="grains" data-product="Maize" onclick="showSupplyChainView(this)">
+                    <div class="h-40 bg-gray-100 relative">
+                        <img src="https://i.postimg.cc/9FFhR1QC/maize.jpg" alt="Maize"
+                            class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-olive-green mb-1 font-poppins">Maize</h3>
+                        <p class="text-reseda-green text-sm mb-3 font-open-sans">Important feed and grain</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-dark-grey font-nunito">Production: 5.4M tons</span>
+                            <button
+                                class="text-olive-green hover:text-reseda-green transition-colors text-sm font-medium !rounded-button whitespace-nowrap font-nunito">View
+                                Map</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4: Sugarcane -->
                 <div class="product-card bg-alabaster rounded shadow-md overflow-hidden transition-all duration-300 border border-dun"
                     data-category="others" data-product="Sugarcane" onclick="showSupplyChainView(this)">
                     <div class="h-40 bg-gray-100 relative">
@@ -593,7 +610,7 @@
                         <h3 class="font-bold text-olive-green mb-1 font-poppins">Sugarcane</h3>
                         <p class="text-reseda-green text-sm mb-3 font-open-sans">Cash crop for sugar production</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-xs text-dark-grey font-nunito">Production: 75.5M tons</span>
+                            <span class="text-xs text-dark-grey font-nunito">Production: 72M tons</span>
                             <button
                                 class="text-olive-green hover:text-reseda-green transition-colors text-sm font-medium !rounded-button whitespace-nowrap font-nunito">View
                                 Map</button>
@@ -601,87 +618,7 @@
                     </div>
                 </div>
 
-                <!-- Product 4: Chili -->
-                <div class="product-card bg-alabaster rounded shadow-md overflow-hidden transition-all duration-300 border border-dun"
-                    data-category="vegetables" data-product="Chili" onclick="showSupplyChainView(this)">
-                    <div class="h-40 bg-gray-100 relative">
-                        <img src="https://i.postimg.cc/xjvn4NMc/IMG-20250806-WA0130.jpg" alt="Chili"
-                            class="w-full h-full object-cover object-top">
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-olive-green mb-1 font-poppins">Chili</h3>
-                        <p class="text-reseda-green text-sm mb-3 font-open-sans">Spice crop with export potential</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xs text-dark-grey font-nunito">Production: 145K tons</span>
-                            <button
-                                class="text-olive-green hover:text-reseda-green transition-colors text-sm font-medium !rounded-button whitespace-nowrap font-nunito">View
-                                Map</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 5: Garlic -->
-                <div class="product-card bg-alabaster rounded shadow-md overflow-hidden transition-all duration-300 border border-dun"
-                    data-category="vegetables" data-product="Garlic" onclick="showSupplyChainView(this)">
-                    <div class="h-40 bg-gray-100 relative">
-                        <img src="https://i.postimg.cc/7Z1cnS2N/IMG-20250806-WA0096.jpg" alt="Garlic"
-                            class="w-full h-full object-cover object-top">
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-olive-green mb-1 font-poppins">Garlic</h3>
-                        <p class="text-reseda-green text-sm mb-3 font-open-sans">Essential spice crop with domestic and
-                            export
-                            demand</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xs text-dark-grey font-nunito">Production: 150K tons</span>
-                            <button
-                                class="text-olive-green hover:text-reseda-green transition-colors text-sm font-medium !rounded-button whitespace-nowrap font-nunito">View
-                                Map</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 6: Potato -->
-                <div class="product-card bg-alabaster rounded shadow-md overflow-hidden transition-all duration-300 border border-dun"
-                    data-category="vegetables" data-product="Potato" onclick="showSupplyChainView(this)">
-                    <div class="h-40 bg-gray-100 relative">
-                        <img src="https://i.ibb.co/PZ8r5qPd/Whats-App-Image-2025-09-06-at-2-08-00-AM.jpg" alt="Potato"
-                            class="w-full h-full object-cover object-top">
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-olive-green mb-1 font-poppins">Potato</h3>
-                        <p class="text-reseda-green text-sm mb-3 font-open-sans">Major vegetable crop with nationwide
-                            demand</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xs text-dark-grey font-nunito">Production: 4.6M tons</span>
-                            <button
-                                class="text-olive-green hover:text-reseda-green transition-colors text-sm font-medium !rounded-button whitespace-nowrap font-nunito">View
-                                Map</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 7: Tomato -->
-                <div class="product-card bg-alabaster rounded shadow-md overflow-hidden transition-all duration-300 border border-dun"
-                    data-category="fruits" data-product="Tomato" onclick="showSupplyChainView(this)">
-                    <div class="h-40 bg-gray-100 relative">
-                        <img src="https://i.ibb.co/dsBMqVnR/Whats-App-Image-2025-09-06-at-2-08-00-AM-1.jpg" alt="Tomato"
-                            class="w-full h-full object-cover object-top">
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-olive-green mb-1 font-poppins">Tomato</h3>
-                        <p class="text-reseda-green text-sm mb-3 font-open-sans">High-value vegetable with processing
-                            potential</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xs text-dark-grey font-nunito">Production: 575K tons</span>
-                            <button
-                                class="text-olive-green hover:text-reseda-green transition-colors text-sm font-medium !rounded-button whitespace-nowrap font-nunito">View
-                                Map</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 8: Mango -->
+                <!-- Product 5: Mango -->
                 <div class="product-card bg-alabaster rounded shadow-md overflow-hidden transition-all duration-300 border border-dun"
                     data-category="fruits" data-product="Mango" onclick="showSupplyChainView(this)">
                     <div class="h-40 bg-gray-100 relative">
@@ -692,7 +629,7 @@
                         <h3 class="font-bold text-olive-green mb-1 font-poppins">Mango</h3>
                         <p class="text-reseda-green text-sm mb-3 font-open-sans">Premium fruit with global demand</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-xs text-dark-grey font-nunito">Production: 1.9M tons</span>
+                            <span class="text-xs text-dark-grey font-nunito">Production: 2M tons</span>
                             <button
                                 class="text-olive-green hover:text-reseda-green transition-colors text-sm font-medium !rounded-button whitespace-nowrap font-nunito">View
                                 Map</button>
@@ -700,27 +637,7 @@
                     </div>
                 </div>
 
-                <!-- Product 9: Apple -->
-                <div class="product-card bg-alabaster rounded shadow-md overflow-hidden transition-all duration-300 border border-dun"
-                    data-category="fruits" data-product="Apple" onclick="showSupplyChainView(this)">
-                    <div class="h-40 bg-gray-100 relative">
-                        <img src="https://i.ibb.co/6RbzXYbT/Whats-App-Image-2025-09-06-at-2-08-01-AM-1.jpg" alt="Apple"
-                            class="w-full h-full object-cover object-top">
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-olive-green mb-1 font-poppins">Apple</h3>
-                        <p class="text-reseda-green text-sm mb-3 font-open-sans">High-value fruit from northern areas
-                        </p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xs text-dark-grey font-nunito">Production: 600K tons</span>
-                            <button
-                                class="text-olive-green hover:text-reseda-green transition-colors text-sm font-medium !rounded-button whitespace-nowrap font-nunito">View
-                                Map</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 10: Orange -->
+                <!-- Product 6: Orange -->
                 <div class="product-card bg-alabaster rounded shadow-md overflow-hidden transition-all duration-300 border border-dun"
                     data-category="fruits" data-product="Orange" onclick="showSupplyChainView(this)">
                     <div class="h-40 bg-gray-100 relative">
@@ -732,7 +649,7 @@
                         <p class="text-reseda-green text-sm mb-3 font-open-sans">Citrus fruit with domestic and export
                             markets</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-xs text-dark-grey font-nunito">Production: 1.6M tons</span>
+                            <span class="text-xs text-dark-grey font-nunito">Production: 1.8M tons</span>
                             <button
                                 class="text-olive-green hover:text-reseda-green transition-colors text-sm font-medium !rounded-button whitespace-nowrap font-nunito">View
                                 Map</button>
@@ -740,7 +657,106 @@
                     </div>
                 </div>
 
-                <!-- Product 11: Lentils -->
+                <!-- Product 7: Banana -->
+                <div class="product-card bg-alabaster rounded shadow-md overflow-hidden transition-all duration-300 border border-dun"
+                    data-category="fruits" data-product="Banana" onclick="showSupplyChainView(this)">
+                    <div class="h-40 bg-gray-100 relative">
+                        <img src="https://i.postimg.cc/gjMQ8pLb/IMG-20250806-WA0044.jpg" alt="Banana"
+                            class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-olive-green mb-1 font-poppins">Banana</h3>
+                        <p class="text-reseda-green text-sm mb-3 font-open-sans">Popular fruit with domestic demand</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-dark-grey font-nunito">Production: 450K tons</span>
+                            <button
+                                class="text-olive-green hover:text-reseda-green transition-colors text-sm font-medium !rounded-button whitespace-nowrap font-nunito">View
+                                Map</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 8: Apple -->
+                <div class="product-card bg-alabaster rounded shadow-md overflow-hidden transition-all duration-300 border border-dun"
+                    data-category="fruits" data-product="Apple" onclick="showSupplyChainView(this)">
+                    <div class="h-40 bg-gray-100 relative">
+                        <img src="https://i.ibb.co/6RbzXYbT/Whats-App-Image-2025-09-06-at-2-08-01-AM-1.jpg" alt="Apple"
+                            class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-olive-green mb-1 font-poppins">Apple</h3>
+                        <p class="text-reseda-green text-sm mb-3 font-open-sans">High-value fruit from northern areas
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-dark-grey font-nunito">Production: 200K tons</span>
+                            <button
+                                class="text-olive-green hover:text-reseda-green transition-colors text-sm font-medium !rounded-button whitespace-nowrap font-nunito">View
+                                Map</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 9: Tomato -->
+                <div class="product-card bg-alabaster rounded shadow-md overflow-hidden transition-all duration-300 border border-dun"
+                    data-category="vegetables" data-product="Tomato" onclick="showSupplyChainView(this)">
+                    <div class="h-40 bg-gray-100 relative">
+                        <img src="https://i.ibb.co/dsBMqVnR/Whats-App-Image-2025-09-06-at-2-08-00-AM-1.jpg" alt="Tomato"
+                            class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-olive-green mb-1 font-poppins">Tomato</h3>
+                        <p class="text-reseda-green text-sm mb-3 font-open-sans">High-value vegetable with processing
+                            potential</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-dark-grey font-nunito">Production: 3M tons</span>
+                            <button
+                                class="text-olive-green hover:text-reseda-green transition-colors text-sm font-medium !rounded-button whitespace-nowrap font-nunito">View
+                                Map</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 10: Garlic -->
+                <div class="product-card bg-alabaster rounded shadow-md overflow-hidden transition-all duration-300 border border-dun"
+                    data-category="vegetables" data-product="Garlic" onclick="showSupplyChainView(this)">
+                    <div class="h-40 bg-gray-100 relative">
+                        <img src="https://i.postimg.cc/7Z1cnS2N/IMG-20250806-WA0096.jpg" alt="Garlic"
+                            class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-olive-green mb-1 font-poppins">Garlic</h3>
+                        <p class="text-reseda-green text-sm mb-3 font-open-sans">Essential spice crop with domestic and
+                            export demand
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-dark-grey font-nunito">Production: 120K tons</span>
+                            <button
+                                class="text-olive-green hover:text-reseda-green transition-colors text-sm font-medium !rounded-button whitespace-nowrap font-nunito">View
+                                Map</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 11: Chili -->
+                <div class="product-card bg-alabaster rounded shadow-md overflow-hidden transition-all duration-300 border border-dun"
+                    data-category="vegetables" data-product="Chili" onclick="showSupplyChainView(this)">
+                    <div class="h-40 bg-gray-100 relative">
+                        <img src="https://i.postimg.cc/xjvn4NMc/IMG-20250806-WA0130.jpg" alt="Chili"
+                            class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-olive-green mb-1 font-poppins">Chili</h3>
+                        <p class="text-reseda-green text-sm mb-3 font-open-sans">Spice crop with export potential</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-dark-grey font-nunito">Production: 100K tons</span>
+                            <button
+                                class="text-olive-green hover:text-reseda-green transition-colors text-sm font-medium !rounded-button whitespace-nowrap font-nunito">View
+                                Map</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 12: Lentils -->
                 <div class="product-card bg-alabaster rounded shadow-md overflow-hidden transition-all duration-300 border border-dun"
                     data-category="others" data-product="Lentils" onclick="showSupplyChainView(this)">
                     <div class="h-40 bg-gray-100 relative">
@@ -752,7 +768,7 @@
                         <p class="text-reseda-green text-sm mb-3 font-open-sans">Key pulse crop with nutritional value
                         </p>
                         <div class="flex justify-between items-center">
-                            <span class="text-xs text-dark-grey font-nunito">Production: 300K tons</span>
+                            <span class="text-xs text-dark-grey font-nunito">Production: 80K tons</span>
                             <button
                                 class="text-olive-green hover:text-reseda-green transition-colors text-sm font-medium !rounded-button whitespace-nowrap font-nunito">View
                                 Map</button>
@@ -760,46 +776,7 @@
                     </div>
                 </div>
 
-                <!-- Product 12: Maize -->
-                <div class="product-card bg-alabaster rounded shadow-md overflow-hidden transition-all duration-300 border border-dun"
-                    data-category="grains" data-product="Maize" onclick="showSupplyChainView(this)">
-                    <div class="h-40 bg-gray-100 relative">
-                        <img src="https://i.postimg.cc/9FFhR1QC/maize.jpg" alt="Maize"
-                            class="w-full h-full object-cover object-top">
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-olive-green mb-1 font-poppins">Maize</h3>
-                        <p class="text-reseda-green text-sm mb-3 font-open-sans">Important feed and grain</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xs text-dark-grey font-nunito">Production: 6M tons</span>
-                            <button
-                                class="text-olive-green hover:text-reseda-green transition-colors text-sm font-medium !rounded-button whitespace-nowrap font-nunito">View
-                                Map</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 13: Milk -->
-                <div class="product-card bg-alabaster rounded shadow-md overflow-hidden transition-all duration-300 border border-dun"
-                    data-category="dairy" data-product="Milk" onclick="showSupplyChainView(this)">
-                    <div class="h-40 bg-gray-100 relative">
-                        <img src="https://i.postimg.cc/RZxKM3Rt/Screenshot-2025-11-04-122953.png" alt="Milk"
-                            class="w-full h-full object-cover object-top">
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-olive-green mb-1 font-poppins">Milk</h3>
-                        <p class="text-reseda-green text-sm mb-3 font-open-sans">Major dairy product with widespread
-                            production</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-xs text-dark-grey font-nunito">Production: 40M tons</span>
-                            <button
-                                class="text-olive-green hover:text-reseda-green transition-colors text-sm font-medium !rounded-button whitespace-nowrap font-nunito">View
-                                Map</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 14: Mustard -->
+                <!-- Product 13: Mustard -->
                 <div class="product-card bg-alabaster rounded shadow-md overflow-hidden transition-all duration-300 border border-dun"
                     data-category="others" data-product="Mustard" onclick="showSupplyChainView(this)">
                     <div class="h-40 bg-gray-100 relative">
@@ -811,7 +788,7 @@
                         <p class="text-reseda-green text-sm mb-3 font-open-sans">Oilseed crop for edible oil production
                         </p>
                         <div class="flex justify-between items-center">
-                            <span class="text-xs text-dark-grey font-nunito">Production: 200K tons</span>
+                            <span class="text-xs text-dark-grey font-nunito">Production: 150K tons</span>
                             <button
                                 class="text-olive-green hover:text-reseda-green transition-colors text-sm font-medium !rounded-button whitespace-nowrap font-nunito">View
                                 Map</button>
@@ -819,18 +796,37 @@
                     </div>
                 </div>
 
-                <!-- Product 15: Banana -->
+                <!-- Product 14: Milk -->
                 <div class="product-card bg-alabaster rounded shadow-md overflow-hidden transition-all duration-300 border border-dun"
-                    data-category="fruits" data-product="Banana" onclick="showSupplyChainView(this)">
+                    data-category="dairy" data-product="Milk" onclick="showSupplyChainView(this)">
                     <div class="h-40 bg-gray-100 relative">
-                        <img src="https://i.postimg.cc/gjMQ8pLb/IMG-20250806-WA0044.jpg" alt="Banana"
+                        <img src="https://i.postimg.cc/RZxKM3Rt/Screenshot-2025-11-04-122953.png" alt="Milk"
                             class="w-full h-full object-cover object-top">
                     </div>
                     <div class="p-4">
-                        <h3 class="font-bold text-olive-green mb-1 font-poppins">Banana</h3>
-                        <p class="text-reseda-green text-sm mb-3 font-open-sans">Popular fruit with domestic demand</p>
+                        <h3 class="font-bold text-olive-green mb-1 font-poppins">Milk</h3>
+                        <p class="text-reseda-green text-sm mb-3 font-open-sans">Major dairy product with widespread
+                            production</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-xs text-dark-grey font-nunito">Production: 150K tons</span>
+                            <span class="text-xs text-dark-grey font-nunito">Production: 50M tons</span>
+                            <button
+                                class="text-olive-green hover:text-reseda-green transition-colors text-sm font-medium !rounded-button whitespace-nowrap font-nunito">View
+                                Map</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card bg-alabaster rounded shadow-md overflow-hidden transition-all duration-300 border border-dun"
+                    data-category="vegetables" data-product="Potato" onclick="showSupplyChainView(this)">
+                    <div class="h-40 bg-gray-100 relative">
+                        <img src="https://i.ibb.co/PZ8r5qPd/Whats-App-Image-2025-09-06-at-2-08-00-AM.jpg" alt="Potato"
+                            class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-olive-green mb-1 font-poppins">Potato</h3>
+                        <p class="text-reseda-green text-sm mb-3 font-open-sans">Major vegetable crop with nationwide
+                            demand</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-dark-grey font-nunito">Production: 7.5M tons</span>
                             <button
                                 class="text-olive-green hover:text-reseda-green transition-colors text-sm font-medium !rounded-button whitespace-nowrap font-nunito">View
                                 Map</button>
@@ -897,9 +893,7 @@
                                 <!-- Supply chain content will be dynamically generated here -->
                             </div>
 
-                            <div id="productOverview" class="bg-white p-6 rounded-lg shadow-lg border border-dun mt-32">
-                                <!-- Product overview will be dynamically generated here -->
-                            </div>
+
                         </div>
 
                     </div>
@@ -2818,7 +2812,7 @@
                     ]
                 }
             },
-           'Lentils': {
+            'Lentils': {
                 stages: [
                     {
                         "title": "Seed & Inputs",
